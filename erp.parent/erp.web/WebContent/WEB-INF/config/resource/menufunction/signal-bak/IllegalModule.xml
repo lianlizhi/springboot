@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+	-->
+	<Project Key="ATMS_03" Name="违法处理" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_03_01" ParentKey="ATMS_03"  Name="违法处理" Path="#/illegalDispose"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:9"/>
+			<Menu Key="ATMS_03_04" ParentKey="ATMS_03"  Name="综合查询" Path="#/illegalHandleRecord"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:12"/>
+			<Menu Key="ATMS_03_05" ParentKey="ATMS_03"  Name="统计分析" Path="#/statisticAnalysis"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:16"/>
+			<Menu Key="ATMS_03_06" ParentKey="ATMS_03"  Name="人员考核" Path="#/assessStatistics"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:5"/>
+			<Menu Key="ATMS_03_07" ParentKey="ATMS_03"  Name="特牌车管理" Path="#/brandCarManage"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:6"/>
+			<Menu Key="ATMS_03_08" ParentKey="ATMS_03"  Name="违法行为管理" Path="#/illegalUnlawfulAct"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:10"/>
+
+			<!--违法处理-->
+			<Menu Key="ATMS_03_01_01" ParentKey="ATMS_03_01"  Name="录入" Path="#/illegalDispose"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02" ParentKey="ATMS_03_01"  Name="有效一审" Path="#/illegalDispose"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03" ParentKey="ATMS_03_01"  Name="有效二审" Path="#/illegalDispose"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04" ParentKey="ATMS_03_01"  Name="有效三审" Path="#/illegalDispose"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05" ParentKey="ATMS_03_01"  Name="无效一审" Path="#/illegalDispose"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06" ParentKey="ATMS_03_01"  Name="无效二审" Path="#/illegalDispose"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07" ParentKey="ATMS_03_01"  Name="无效三审" Path="#/illegalDispose"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_01_01" ParentKey="ATMS_03_01_01"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_01_02" ParentKey="ATMS_03_01_01"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_01_03" ParentKey="ATMS_03_01_01"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_01_04" ParentKey="ATMS_03_01_01"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_01_05" ParentKey="ATMS_03_01_01"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_01_06" ParentKey="ATMS_03_01_01"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_01_07" ParentKey="ATMS_03_01_01"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_02_01" ParentKey="ATMS_03_01_02"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02_02" ParentKey="ATMS_03_01_02"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02_03" ParentKey="ATMS_03_01_02"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02_04" ParentKey="ATMS_03_01_02"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02_05" ParentKey="ATMS_03_01_02"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02_06" ParentKey="ATMS_03_01_02"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02_07" ParentKey="ATMS_03_01_02"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_03_01" ParentKey="ATMS_03_01_03"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03_02" ParentKey="ATMS_03_01_03"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03_03" ParentKey="ATMS_03_01_03"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03_04" ParentKey="ATMS_03_01_03"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03_05" ParentKey="ATMS_03_01_03"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03_06" ParentKey="ATMS_03_01_03"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03_07" ParentKey="ATMS_03_01_03"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_04_01" ParentKey="ATMS_03_01_04"  Name="闯红灯" Path=""
+				 Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04_02" ParentKey="ATMS_03_01_04"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04_03" ParentKey="ATMS_03_01_04"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04_04" ParentKey="ATMS_03_01_04"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04_05" ParentKey="ATMS_03_01_04"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04_06" ParentKey="ATMS_03_01_04"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04_07" ParentKey="ATMS_03_01_04"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_05_01" ParentKey="ATMS_03_01_05"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05_02" ParentKey="ATMS_03_01_05"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05_03" ParentKey="ATMS_03_01_05"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05_04" ParentKey="ATMS_03_01_05"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05_05" ParentKey="ATMS_03_01_05"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05_06" ParentKey="ATMS_03_01_05"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05_07" ParentKey="ATMS_03_01_05"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_06_01" ParentKey="ATMS_03_01_06"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06_02" ParentKey="ATMS_03_01_06"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06_03" ParentKey="ATMS_03_01_06"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06_04" ParentKey="ATMS_03_01_06"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06_05" ParentKey="ATMS_03_01_06"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06_06" ParentKey="ATMS_03_01_06"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06_07" ParentKey="ATMS_03_01_06"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_03_01_07_01" ParentKey="ATMS_03_01_07"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07_02" ParentKey="ATMS_03_01_07"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07_03" ParentKey="ATMS_03_01_07"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07_04" ParentKey="ATMS_03_01_07"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07_05" ParentKey="ATMS_03_01_07"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07_06" ParentKey="ATMS_03_01_07"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07_07" ParentKey="ATMS_03_01_07"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<!--综合查询-->
+
+
+			<!--统计分析-->
+
+
+			<!--人员考核-->
+			<Menu Key="ATMS_03_04_01" ParentKey="ATMS_03_04"  Name="录入统计" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext="sliderStatus:0"/>
+			<Menu Key="ATMS_03_04_02" ParentKey="ATMS_03_04"  Name="审核统计" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext="sliderStatus:0"/>
+			<!--特牌车管理-->
+			<!--违法行为管理-->
+
+
+
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

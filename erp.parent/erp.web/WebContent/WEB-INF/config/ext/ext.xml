@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd   
+        http://www.springframework.org/schema/aop   
+        http://www.springframework.org/schema/aop/spring-aop-4.1.xsd   
+        http://www.springframework.org/schema/tx   
+        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd"
+	default-autowire="byName">
+	
+	<!--     
+	             图片地址转化， 此配置在跨网配置中用到，目前用到的项目包括邹城和潮州
+	    
+	            邹城项目：
+	            通行记录图片下载的时候用到
+	             邹城项目图片url较复杂， 概况如下：主服务部署在公安网，图片路径既有公安网的图片地址也有视频专网图片地址，
+	             主服务在下载视频专网图片的时候需要使用视频专网图片地址的公安网映射地址来替换才能下载到图片
+        <entry key="192.168.1.24:8080" 	 value="10.51.31.80:8080"/>
+        <entry key="192.168.1.194:8080" 	 value="10.51.31.80:8082"/>
+	             
+	             潮州项目：
+	             公安网从专网bimg图片服务器下载图片打水印时用到，注意专网的服务器无需次配置，直接注释掉键值对即可
+        <entry key="172.30.110.21:6551" 	 value="10.43.255.160:6551"/>
+	    <entry key="44.147.110.21:6551" 	 value="10.43.255.160:6551"/>
+	-->
+	<bean id="picsMap" class="java.util.HashMap">  
+	    <constructor-arg>  
+	       <map>  
+	       <!--
+	         	<entry key="172.30.110.21:6551" 	 value="10.43.255.160:6551"/>
+	         	<entry key="44.147.110.21:6551" 	 value="10.43.255.160:6551"/>
+	       -->
+	       </map>  
+	    </constructor-arg>  
+	</bean>
+	
+	<!-- 
+	            潮州项目专用限行图片水印配置
+	             此配置目前在潮州项目的违法行为【机动车违反禁令标志指示的1344C】(货车限行)用到 
+	-->
+	<bean id="restrictionWarterMarkParam" class="com.np.atms.cms.model.bean.illegal.RestrictionWarterMarkParam">
+		<!-- 是否启用 -->
+		<property name="enabled" value="false"/>
+		<!-- 字体，默认宋体 -->
+		<property name="fontName" value="宋体"/>
+		<!-- 字体大小，默认40 -->
+		<property name="fontSize" value="40"/>
+		<!-- 行高，默认56 -->
+		<property name="fontHeight" value="56"/>
+		<!-- 字体颜色，默认白色，即255,255,255 -->
+		<property name="fontColor" value="255,255,255"/>
+		<!-- 背景颜色，默认黑色，即0,0,0 -->
+		<property name="bgColor" value="0,0,0"/>
+		<!-- 违法代码 -->
+		<property name="vioCode" value="1344C"/>
+		<!-- 水印内容 -->
+		<property name="warterMark" value="违法行为:机动车违反禁令标志指示的 违法代码:1344"/>
+	</bean>
+
+</beans>

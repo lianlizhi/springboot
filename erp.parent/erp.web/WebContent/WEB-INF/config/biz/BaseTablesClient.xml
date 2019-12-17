@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================= -->
+<!-- 基础数据表 					   -->
+<!-- tableName: 表名称 				   -->
+<!-- modelName: 类名称 							   -->
+<!-- isLoadPoint: 是否加载点位数据 				   -->
+<!-- ============================================= -->
+<baseTables>
+	<tables>
+		<Item tableName="t_parameter" modelName="Parameter"  />
+		<Item tableName="t_gis_mark" modelName="GisMark"  />
+		<Item tableName="t_org_unit" modelName="OrgUnit"  />
+		<Item tableName="t_dept" modelName="Dept"  />
+		<Item tableName="t_pvg_server" modelName="PvgServer"  />
+		<Item tableName="t_dvs" modelName="Dvs"  />
+		<Item tableName="t_dvs_input" modelName="DvsInput"  />
+		<Item tableName="t_dvs_output" modelName="DvsOutput"  />
+		<Item tableName="t_camera" modelName="Camera"  isLoadPoint="true"  />
+		<Item tableName="t_decoder" modelName="Decoder"  />
+		<Item tableName="t_decoder_channel" modelName="DecoderChannel"  />
+		<Item tableName="t_tv_wall_layout" modelName="TvWallLayout"  />
+		<Item tableName="t_tv_wall_layout_data" modelName="TvWallLayoutData"  />
+		<Item tableName="t_gate_server" modelName="GateServer"  />
+		<Item tableName="t_gate" modelName="Gate"  isLoadPoint="true"  />
+		<Item tableName="t_gate_channel" modelName="GateChannel"  />
+		<Item tableName="t_ivs_server" modelName="IvsServer"  />
+		<Item tableName="t_business_server" modelName="BusinessServer"  />
+		<Item tableName="t_pfs_server" modelName="PfsServer"  />
+		<Item tableName="t_guide_device" modelName="GuideDevice"   isLoadPoint="true"  />
+		<Item tableName="t_person" modelName="Person"  />
+		<Item tableName="t_gps_car" modelName="GpsCar"  />
+		<Item tableName="t_gps_device" modelName="GpsDevice"  />
+		<Item tableName="t_transport_vehicle" modelName="TransportVehicle"  />
+		<Item tableName="t_gps_bind_object" modelName="GpsBindObject"  />
+		<Item tableName="t_role" modelName="Role"  />
+		<Item tableName="t_user" modelName="User"  />
+		<Item tableName="t_user_role" modelName="UserRole"  />
+		<Item tableName="t_time_template" modelName="TimeTemplate"  />
+		<Item tableName="t_event_rule" modelName="EventRule"  />
+		<Item tableName="t_event_rule_action" modelName="EventRuleAction"  />
+		<Item tableName="t_event_rule_trigger" modelName="EventRuleTrigger"  />
+		<Item tableName="t_alarm_event" modelName="AlarmEvent"  />
+		<Item tableName="t_alarm_plan" modelName="AlarmPlan"  />
+		<Item tableName="t_alarm_plan_data" modelName="AlarmPlanData"  />
+		<Item tableName="t_monitor_vehicle" modelName="MonitorVehicle"  />
+		<Item tableName="t_access_server" modelName="AccessServer"  />
+		<Item tableName="t_module" modelName="Module"  />
+		<Item tableName="t_role_module" modelName="RoleModule"  />
+		<Item tableName="t_resource_operation" modelName="ResourceOperation"  />
+		<Item tableName="t_resource_operation_role" modelName="ResourceOperationRole"  />
+		<Item tableName="t_vio_code" modelName="VioCode"  />
+		<Item tableName="t_guide_sms" modelName="GuideSms"  />
+		<Item tableName="t_guide_program" modelName="GuideProgram"  />
+		<Item tableName="t_guide_info" modelName="GuideInfo"  />
+		<Item tableName="t_utc_control_center" modelName="UtcControlCenter"  />
+		<Item tableName="t_utc_control_area" modelName="UtcControlArea"  />
+		<Item tableName="t_utc_device" modelName="UtcDevice"  />
+		<Item tableName="t_user_cruise_group" modelName="UserCruiseGroup"  />
+		<Item tableName="t_road_segment" modelName="RoadSegment"  />
+		<Item tableName="t_user_cruise_group_data" modelName="UserCruiseGroupData"  />
+		<Item tableName="t_utc_device" modelName="UtcDevice"  />
+		<Item tableName="t_utc_lan" modelName="UtcLan"  />
+		<Item tableName="t_flux_device" modelName="FluxDevice"  />
+		<Item tableName="t_monitor_reason" modelName="MonitorReason"  />
+		<Item tableName="t_district" modelName="District"  />
+		<Item tableName="t_vio_upload_regular" modelName="VioUploadRegular"  />
+		<Item tableName="t_gis_layer" modelName="GisLayer"  />
+		<Item tableName="t_vio_location" modelName="VioLocation"  />
+		<Item tableName="t_velometer_segment" modelName="VelometerSegment"  />
+		<Item tableName="t_key_vehicle" modelName="KeyVehicle"  />
+	</tables>
+</baseTables>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+		
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+		
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+		             补充规则：菜单栏编码同上，功能或按钮规则改为 ATMS_fk_xx_xx_xx_xx
+	-->
+	<Project Key="ATMS_04" Name="缉查布控" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_04_01" ParentKey="ATMS_04"  Name="布控监管" Path="#/monitorSupervise"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:2"/>
+			<Menu Key="ATMS_04_02" ParentKey="ATMS_04"  Name="布控管理" Path="#/monitorBlackManage"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:0"/>
+			<Menu Key="ATMS_04_03" ParentKey="ATMS_04"  Name="研判分析" Path="#/monitorAnalyzing"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:18"/>
+			<Menu Key="ATMS_04_04" ParentKey="ATMS_04"  Name="报警查询" Path="#/monitorQueryMap"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:1"/>
+
+			<Menu Key="ATMS_04_01_01" ParentKey="ATMS_04_01"  Name="布控监管" Path="#/monitorSupervise"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_01_02" ParentKey="ATMS_04_01"  Name="我的关注" Path="#/monitorSupervise"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_04_01_01_01" ParentKey="ATMS_04_01_01"  Name="新增布控" Path=""
+				  Sequence="0" Enable="false" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_04_01_01_02" ParentKey="ATMS_04_01_01"  Name="撤控" Path=""
+				  Sequence="1" Enable="false" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_04_02_01" ParentKey="ATMS_04_02"  Name="黑名单" Path="#/monitorBlackManage"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_02_02" ParentKey="ATMS_04_02"  Name="白名单" Path="#/monitorOtherManage"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_02_03" ParentKey="ATMS_04_02"  Name="红名单" Path="#/monitorOtherManage"
+				  Sequence="2" Enable="false" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_02_04" ParentKey="ATMS_04_02"  Name="重点车辆" Path="#/monitorOtherManage"
+				  Sequence="3" Enable="false" IsCommand="false" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_04_02_01_01" ParentKey="ATMS_04_02_01"  Name="新增布控" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_04_02_01_02" ParentKey="ATMS_04_02_01"  Name="批量布控" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<!--黑名单详情页面-->
+			<Menu Key="ATMS_fk_04_02_01_03" ParentKey="ATMS_04_02_01"  Name="打回" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_04_02_01_04" ParentKey="ATMS_04_02_01"  Name="通过" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_04_02_01_05" ParentKey="ATMS_04_02_01"  Name="撤控" Path=""
+				  Sequence="4" Enable="false" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_04_03_05" ParentKey="ATMS_04_03"  Name="轨迹分析" Path="#/monitorAnalyzing"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_09" ParentKey="ATMS_04_03"  Name="通行查询" Path="#/trafficRecordQuery"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_03" ParentKey="ATMS_04_03"  Name="套牌分析" Path="#/fakePlateNumberAnalyzing"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_21" ParentKey="ATMS_04_03"  Name="无牌车查询" Path="#/unlicensedVehicleQuery"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_24" ParentKey="ATMS_04_03"  Name="以图搜车" Path="#/searchCarByPicture"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_06" ParentKey="ATMS_04_03"  Name="首次入城" Path="#/firstTimeInCity"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_31" ParentKey="ATMS_04_03"  Name="频次分析" Path="#/frequencyAnalysis"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_02" ParentKey="ATMS_04_03"  Name="碰撞分析" Path="#/collisionAnalyzing"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_04_03_42" ParentKey="ATMS_04_03"  Name="频繁过车" Path="#/frequentPassage"
+				  Sequence="8" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<!-- 茂名需求 -->	  
+			<Menu Key="ATMS_04_02_13" ParentKey="ATMS_04_03"  Name="车辆类型" Path="#/analyzeCarType"
+				  Sequence="9" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_04_02_111" ParentKey="ATMS_04_03"  Name="车辆总量" Path="#/vehicletotalAnalysis"
+				  Sequence="10" Enable="true" IsCommand="false" IconPath=""  Ext=""/>			   
+			<Menu Key="ATMS_04_03_70" ParentKey="ATMS_04_03"  Name="出行天数" Path="#/tripDays"
+				  Sequence="11" Enable="true" IsCommand="false" IconPath=""  Ext=""/>	 
+		    <Menu Key="ATMS_04_03_71" ParentKey="ATMS_04_03"  Name="拥堵分析" Path="#/jamAnalysis"
+				  Sequence="12" Enable="true" IsCommand="false" IconPath=""  Ext=""/>	
+		   <Menu Key="ATMS_04_03_81" ParentKey="ATMS_04_03"  Name="出行频度分析" Path="#/travelFrequencyAnalysis"
+				  Sequence="13" Enable="true" IsCommand="false" IconPath=""  Ext=""/>		  
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

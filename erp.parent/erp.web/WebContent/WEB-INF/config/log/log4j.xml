@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- 设置标准日志文件输出方式 -->
+	<appender name="appender.debug.file" class="org.apache.log4j.RollingFileAppender">
+		<!-- 设置File参数：日志输出文件名 -->
+		<param name="File" value="log/debug/debug.log" />
+		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="40MB" />
+		<param name="MaxBackupIndex" value="50" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="\n[%5p] \n\t%d{yyyy/MM/dd HH\:mm\:ss,SSS} \n\t%l \n\t%m %n" />
+		</layout>
+	</appender>
+
+	<!-- 异步输出日志 -->
+	<appender name="appender.debug.file.async" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="256" />
+		<appender-ref ref="appender.debug.file" />
+	</appender>	
+	
+	<!-- 设置警告信息日志文件输出方式 -->
+	<appender name="appender.warn.file" class="org.apache.log4j.RollingFileAppender">
+		<!-- 设置File参数：日志输出文件名 -->
+		<param name="File" value="log/warn/warn.log" />
+		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="40MB" />
+		<param name="MaxBackupIndex" value="50" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="\n[%5p] \n\t%d{yyyy/MM/dd HH\:mm\:ss,SSS} \n\t%l \n\t%m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="warn" />
+			<param name="levelMax" value="warn" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+	
+	<!-- 设置错误信息日志文件输出方式 -->
+	<appender name="appender.error.file" class="org.apache.log4j.RollingFileAppender">
+		<!-- 设置File参数：日志输出文件名 -->
+		<param name="File" value="log/error/error.log" />
+		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="40MB" />
+		<param name="MaxBackupIndex" value="50" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="\n[%5p] \n\t%d{yyyy/MM/dd HH\:mm\:ss,SSS} \n\t%l \n\t%m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="error" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+		
+	<!-- 设置控制台输出 -->
+	<appender name="appender.console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<param name="Threshold" value="info" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The default pattern: Date Priority [Category] Message\n -->
+			<param name="ConversionPattern" value="\n[%5p] \n\t%d{yyyy/MM/dd HH\:mm\:ss,SSS} \n\t%l \n\t%m %n" />
+		</layout>
+	</appender>
+		
+	<!-- 设置域名限制，即com.np.atms.cms域的日志均输出到下面对应的通道中 -->
+	<logger name="com.np.atms.cms">
+		<!-- 设置级别 -->
+		<level value="debug" />
+		<!-- 与前面的通道id相对应 -->
+		<appender-ref ref="appender.debug.file.async" />
+		<appender-ref ref="appender.console" />
+	</logger>
+	
+	<logger name="com.np.sz.cmpt.patch.core">
+		<!-- 设置级别 -->
+		<level value="debug" />
+		<appender-ref ref="appender.debug.file.async" />
+		<appender-ref ref="appender.console" />
+	</logger>
+	
+	<logger name="org.apache">
+		<level value="debug" />
+		<appender-ref ref="appender.debug.file.async" />
+		<appender-ref ref="appender.console" />
+	</logger>
+	
+	<logger name="org.apache.activemq">
+		<level value="debug" />
+		<appender-ref ref="appender.console" />
+	</logger>	
+	
+	<logger name="org.apache.commons.beanutils">
+		<level value="debug" />
+		<appender-ref ref="appender.console" />
+	</logger>	
+	
+	<logger name="com.softwarementors">
+		<level value="debug" />
+		<appender-ref ref="appender.console" />
+	</logger>
+	
+	<!-- 设置接收所有输出的通道-->
+	<root>
+	    <appender-ref ref="appender.warn.file" />
+		<appender-ref ref="appender.error.file" />
+	</root>
+</log4j:configuration>

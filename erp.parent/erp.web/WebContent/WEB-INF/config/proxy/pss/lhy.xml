@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd   
+        http://www.springframework.org/schema/aop   
+        http://www.springframework.org/schema/aop/spring-aop-4.1.xsd   
+        http://www.springframework.org/schema/tx   
+        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd"
+	default-autowire="byName">
+	
+	<!-- 6合1接口 -->
+	<bean id="com.np.atms.cms.proxy.pss.system.lhy.PssLHYConfig" class="com.np.atms.cms.proxy.pss.system.lhy.PssLHYConfig">
+		<!-- 是否上传六合一开关 -->
+		<property name="enable" value="true"/>
+		<!-- 是否启用中文编解码 -->
+		<property name="enableCodec" value="true"/>
+		<!--webService访问地址，潮州：http://10.40.30.110/trffweb/services/TmriOutNewAccess -->
+		<property name="endPoint" value="http://10.40.30.110/trffweb/services/TmriOutNewAccess" />
+		<!-- webservice命名空间，此处暂时不用配 -->
+		<property name="qName" value="" />
+		<!-- 接口访问超时时间  （秒）-->
+		<property name="timeOut"	value="6"/>
+		<!--接口序列号，潮州：781A09090302170408158180E6EFEBF48699879BFCC980AF95C9ABCFA586636E -->
+		<property name="jkxlh" value="781A09090302170408158180E6EFEBF48699879BFCC980AF95C9ABCFA586636E" />
+		<!--查询系统类别 -->
+		<property name="queryXtlb" value="01" />
+		<!--本地车辆查询接口标识 -->
+		<property name="localQueryJkid" value="01C21" />
+		<!--外地车辆查询接口标识 -->
+		<property name="nonLocalQueryJkid" value="01C49" />
+		<!--写入系统类别 -->
+		<property name="writeXtlb" value="04" />
+		<!--本地车写入接口标识 -->
+		<property name="localWriteJkid" value="04C52" />
+		<!--外地车写入接口标识 -->
+		<property name="nonLocalWriteJkid" value="04C53" />
+		<!-- 本地车牌 -->
+		<property name="localPlate" value="粤" />
+		<!--定时写入时间 （小时），默认为0，基本实时 -->
+		<property name="writeTimedExecution" value="0"/>
+		<!-- 违法记录延时36小时上传，默认为0，基本不延时 -->
+		<property name="delayUploadTime" value="0"/>
+		<!-- 违法记录超时时间   (天)-->
+		<property name="daysOverdue" value="30"/>
+		<!-- 是否限制上传图片大小，true:是，false:否，默认false-->
+		<property name="enableLimitImageSize" value="true"/>
+		<!-- 图片最大大小（KB）-->
+		<property name="maxImageSize" value="1500"/>
+		<!-- 尝试下载违法图片次数, 默认5次 -->
+		<property name="tryDownloadImgCount" value="5"/>
+		<!-- 未配置公安网违法系统备案的设备编码直接设置为上传失败 -->
+		<property name="enableUploadFailure" value="true"/>
+		<!-- 采集机关，潮州：445100000000 -->
+		<property name="cjjg" value="445100000000"/>
+		<!-- bimg地址转换启用 -->
+		<property name="enableNginxBimgAddress" value="true"/>
+		<!-- bimg地址，潮州：http://10.43.255.160:18080/bimg/ -->
+		<property name="nginxBimgAddress" value="http://10.43.255.160:18080/bimg/" />
+		<!-- 违法代码映射 key: 中盟平台违法代码, value: 六合一平台违法代码 -->
+		<property name="vioCodeMap">
+			<map key-type="java.lang.String" value-type="java.lang.String">
+				<!-- 货车限行 -->
+				<entry key="1344A" value="1344" />
+				<entry key="1344B" value="1344" />
+				<entry key="1344C" value="1344" />
+				<entry key="1344D" value="1344" />
+				<entry key="1344E" value="1344" />
+				<!-- 车外抛物 -->
+				<entry key="1225" value="1225" />
+				<!-- 不按车道行驶 -->
+				<entry key="1018" value="1018" />
+				<entry key="1208" value="1208" />
+			</map>
+		</property>
+		
+		<!-- 以下为六合一新接口审计参数 -->
+		<!-- 用户标识 -->
+		<property name="yhbz" value=""/>
+		<!-- 单位名称 -->
+		<property name="dwmc" value=""/>
+		<!-- 单位机构代码，潮州：445100000000 -->
+		<property name="dwjgdm" value="445100000000"/>
+		<!-- 用户姓名 -->
+		<property name="yhxm" value=""/>
+		<!-- 终端标识，填入本服务器实际IP，潮州：10.43.255.3 -->
+		<property name="zdbs" value="10.43.255.3"/>
+	</bean>
+	
+	<!-- 六合一系统 -->
+	<bean id="pssLHY" class="com.np.atms.cms.proxy.pss.system.lhy.PssLHY" init-method="init" destroy-method="unInit">
+		<property name="pssLhyConfig" ref="com.np.atms.cms.proxy.pss.system.lhy.PssLHYConfig"/>
+	</bean>
+
+</beans>

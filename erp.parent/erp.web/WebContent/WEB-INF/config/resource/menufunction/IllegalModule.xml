@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+		             补充规则：菜单栏编码同上，功能或按钮规则改为 ATMS_fk_xx_xx_xx_xx
+	-->
+	<Project Key="ATMS_03" Name="违法管理" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_03_09" ParentKey="ATMS_03"  Name="违法导入" Path="#/illegalLeadIn"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:49"/>
+			<Menu Key="ATMS_03_13" ParentKey="ATMS_03"  Name="违法提取" Path="#/illegalScreening"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:55"/>
+			<Menu Key="ATMS_03_01" ParentKey="ATMS_03"  Name="违法处理" Path="#/illegalDispose"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:9"/>  	  
+			<Menu Key="ATMS_03_10" ParentKey="ATMS_03"  Name="限行管理" Path="#/restrictionsMana"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:55"/>  
+			<Menu Key="ATMS_03_11" ParentKey="ATMS_03"  Name="超速管理" Path="#/roadSpeedMeasurement"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:55"/>  	  
+			<Menu Key="ATMS_03_04" ParentKey="ATMS_03"  Name="综合查询" Path="#/integratedQuery"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:12"/>
+			<Menu Key="ATMS_03_05" ParentKey="ATMS_03"  Name="统计分析" Path="#/statisticAnalysis"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:16"/>
+			<Menu Key="ATMS_03_06" ParentKey="ATMS_03"  Name="人员考核" Path="#/userEvaluation"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:5"/>
+			<Menu Key="ATMS_03_07" ParentKey="ATMS_03"  Name="特牌车管理" Path="#/brandCarManage"
+				  Sequence="8" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:6"/>
+			<Menu Key="ATMS_03_08" ParentKey="ATMS_03"  Name="违法行为管理" Path="#/illegalUnlawfulAct"
+				  Sequence="9" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:10"/>
+			<Menu Key="ATMS_03_12" ParentKey="ATMS_03"  Name="上传管理" Path="#/illUploadManagement"
+				  Sequence="10" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:10"/>
+				  
+			
+			<!--限行管理-->
+			<Menu Key="ATMS_03_10_01" ParentKey="ATMS_03_10"  Name="限行规则" Path="#/restrictionsMana"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath="ico-res"  Ext="sliderStatus:1,iconY:5"/>
+			<Menu Key="ATMS_03_10_02" ParentKey="ATMS_03_10"  Name="限行车库" Path="#/limitVehicleManagement"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-resLib"  Ext="sliderStatus:1,iconY:5"/>
+			<Menu Key="ATMS_03_10_24" ParentKey="ATMS_03_10"  Name="通行车库" Path="#/passportManagement"
+				  Sequence="2" Enable="false" IsCommand="false" IconPath="ico-passLib"  Ext="sliderStatus:1,iconY:5"/>
+
+
+			<!--违法处理-->
+			<Menu Key="ATMS_03_01_01" ParentKey="ATMS_03_01"  Name="录入" Path="#/illegalDispose"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_02" ParentKey="ATMS_03_01"  Name="有效一审" Path="#/illegalDispose"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_03" ParentKey="ATMS_03_01"  Name="有效二审" Path="#/illegalDispose"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_04" ParentKey="ATMS_03_01"  Name="有效三审" Path="#/illegalDispose"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_05" ParentKey="ATMS_03_01"  Name="无效一审" Path="#/illegalDispose"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_06" ParentKey="ATMS_03_01"  Name="无效二审" Path="#/illegalDispose"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_03_01_07" ParentKey="ATMS_03_01"  Name="无效三审" Path="#/illegalDispose"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_03_01_01_01" ParentKey="ATMS_03_01_01"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_02" ParentKey="ATMS_03_01_01"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_03" ParentKey="ATMS_03_01_01"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_04" ParentKey="ATMS_03_01_01"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_05" ParentKey="ATMS_03_01_01"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_06" ParentKey="ATMS_03_01_01"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_07" ParentKey="ATMS_03_01_01"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_08" ParentKey="ATMS_03_01_01"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_09" ParentKey="ATMS_03_01_01"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_10" ParentKey="ATMS_03_01_01"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_11" ParentKey="ATMS_03_01_01"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_12" ParentKey="ATMS_03_01_01"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_13" ParentKey="ATMS_03_01_01"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_14" ParentKey="ATMS_03_01_01"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_15" ParentKey="ATMS_03_01_01"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_16" ParentKey="ATMS_03_01_01"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_17" ParentKey="ATMS_03_01_01"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_18" ParentKey="ATMS_03_01_01"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_19" ParentKey="ATMS_03_01_01"  Name="灯光违规" Path=""
+		          Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_20" ParentKey="ATMS_03_01_01"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_01_50" ParentKey="ATMS_03_01_01"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_51" ParentKey="ATMS_03_01_01"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_52" ParentKey="ATMS_03_01_01"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_53" ParentKey="ATMS_03_01_01"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_01_90" ParentKey="ATMS_03_01_01"  Name="显示查询条件" Path=""
+				  Sequence="90" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+ 
+
+			<Menu Key="ATMS_fk_03_01_02_01" ParentKey="ATMS_03_01_02"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_02" ParentKey="ATMS_03_01_02"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_03" ParentKey="ATMS_03_01_02"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_04" ParentKey="ATMS_03_01_02"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_05" ParentKey="ATMS_03_01_02"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_06" ParentKey="ATMS_03_01_02"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_07" ParentKey="ATMS_03_01_02"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_08" ParentKey="ATMS_03_01_02"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_02_09" ParentKey="ATMS_03_01_02"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_10" ParentKey="ATMS_03_01_02"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_11" ParentKey="ATMS_03_01_02"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_12" ParentKey="ATMS_03_01_02"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_02_13" ParentKey="ATMS_03_01_02"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_14" ParentKey="ATMS_03_01_02"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+	        <Menu Key="ATMS_fk_03_01_02_15" ParentKey="ATMS_03_01_02"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_16" ParentKey="ATMS_03_01_02"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_02_17" ParentKey="ATMS_03_01_02"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_02_18" ParentKey="ATMS_03_01_02"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_02_19" ParentKey="ATMS_03_01_02"  Name="灯光违规" Path=""
+				  Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_20" ParentKey="ATMS_03_01_02"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_01_02_50" ParentKey="ATMS_03_01_02"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_51" ParentKey="ATMS_03_01_02"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_52" ParentKey="ATMS_03_01_02"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_53" ParentKey="ATMS_03_01_02"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_54" ParentKey="ATMS_03_01_02"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_02_55" ParentKey="ATMS_03_01_02"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+
+			<Menu Key="ATMS_fk_03_01_03_01" ParentKey="ATMS_03_01_03"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_02" ParentKey="ATMS_03_01_03"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_03" ParentKey="ATMS_03_01_03"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_04" ParentKey="ATMS_03_01_03"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_05" ParentKey="ATMS_03_01_03"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_06" ParentKey="ATMS_03_01_03"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_07" ParentKey="ATMS_03_01_03"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_03_08" ParentKey="ATMS_03_01_03"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_09" ParentKey="ATMS_03_01_03"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_10" ParentKey="ATMS_03_01_03"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_11" ParentKey="ATMS_03_01_03"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_12" ParentKey="ATMS_03_01_03"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_03_13" ParentKey="ATMS_03_01_03"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_14" ParentKey="ATMS_03_01_03"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+            <Menu Key="ATMS_fk_03_01_03_15" ParentKey="ATMS_03_01_03"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_16" ParentKey="ATMS_03_01_03"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_03_17" ParentKey="ATMS_03_01_03"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_18" ParentKey="ATMS_03_01_03"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_03_19" ParentKey="ATMS_03_01_03"  Name="灯光违规" Path=""
+				  Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_20" ParentKey="ATMS_03_01_03"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_01_03_50" ParentKey="ATMS_03_01_03"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_51" ParentKey="ATMS_03_01_03"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_52" ParentKey="ATMS_03_01_03"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_53" ParentKey="ATMS_03_01_03"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_54" ParentKey="ATMS_03_01_03"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_03_55" ParentKey="ATMS_03_01_03"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_03_01_04_01" ParentKey="ATMS_03_01_04"  Name="闯红灯" Path=""
+				 Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_02" ParentKey="ATMS_03_01_04"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_03" ParentKey="ATMS_03_01_04"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_04" ParentKey="ATMS_03_01_04"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_05" ParentKey="ATMS_03_01_04"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_06" ParentKey="ATMS_03_01_04"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_07" ParentKey="ATMS_03_01_04"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_08" ParentKey="ATMS_03_01_04"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_09" ParentKey="ATMS_03_01_04"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_10" ParentKey="ATMS_03_01_04"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_11" ParentKey="ATMS_03_01_04"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_12" ParentKey="ATMS_03_01_04"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_04_13" ParentKey="ATMS_03_01_04"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_14" ParentKey="ATMS_03_01_04"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_15" ParentKey="ATMS_03_01_04"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_16" ParentKey="ATMS_03_01_04"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_04_17" ParentKey="ATMS_03_01_04"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_04_18" ParentKey="ATMS_03_01_04"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_04_19" ParentKey="ATMS_03_01_04"  Name="灯光违规" Path=""
+				  Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_20" ParentKey="ATMS_03_01_04"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_01_04_50" ParentKey="ATMS_03_01_04"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_51" ParentKey="ATMS_03_01_04"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_52" ParentKey="ATMS_03_01_04"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_53" ParentKey="ATMS_03_01_04"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_54" ParentKey="ATMS_03_01_04"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_04_55" ParentKey="ATMS_03_01_04"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_03_01_05_01" ParentKey="ATMS_03_01_05"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_02" ParentKey="ATMS_03_01_05"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_03" ParentKey="ATMS_03_01_05"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_04" ParentKey="ATMS_03_01_05"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_05" ParentKey="ATMS_03_01_05"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_06" ParentKey="ATMS_03_01_05"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_07" ParentKey="ATMS_03_01_05"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_08" ParentKey="ATMS_03_01_05"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_09" ParentKey="ATMS_03_01_05"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_10" ParentKey="ATMS_03_01_05"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_11" ParentKey="ATMS_03_01_05"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_12" ParentKey="ATMS_03_01_05"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_05_13" ParentKey="ATMS_03_01_05"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_14" ParentKey="ATMS_03_01_05"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_15" ParentKey="ATMS_03_01_05"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_05_16" ParentKey="ATMS_03_01_05"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_05_17" ParentKey="ATMS_03_01_05"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_05_18" ParentKey="ATMS_03_01_05"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_05_19" ParentKey="ATMS_03_01_05"  Name="灯光违规" Path=""
+				  Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_20" ParentKey="ATMS_03_01_05"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_01_05_50" ParentKey="ATMS_03_01_05"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_51" ParentKey="ATMS_03_01_05"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_52" ParentKey="ATMS_03_01_05"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_53" ParentKey="ATMS_03_01_05"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_54" ParentKey="ATMS_03_01_05"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_05_55" ParentKey="ATMS_03_01_05"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+				  
+			<Menu Key="ATMS_fk_03_01_06_01" ParentKey="ATMS_03_01_06"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_02" ParentKey="ATMS_03_01_06"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_03" ParentKey="ATMS_03_01_06"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_04" ParentKey="ATMS_03_01_06"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_05" ParentKey="ATMS_03_01_06"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_06" ParentKey="ATMS_03_01_06"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_07" ParentKey="ATMS_03_01_06"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_08" ParentKey="ATMS_03_01_06"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_09" ParentKey="ATMS_03_01_06"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_10" ParentKey="ATMS_03_01_06"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_11" ParentKey="ATMS_03_01_06"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_12" ParentKey="ATMS_03_01_06"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_06_13" ParentKey="ATMS_03_01_06"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_14" ParentKey="ATMS_03_01_06"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+            <Menu Key="ATMS_fk_03_01_06_15" ParentKey="ATMS_03_01_06"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_16" ParentKey="ATMS_03_01_06"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_06_17" ParentKey="ATMS_03_01_06"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_06_18" ParentKey="ATMS_03_01_06"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_06_19" ParentKey="ATMS_03_01_06"  Name="灯光违规" Path=""
+				  Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_20" ParentKey="ATMS_03_01_06"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_01_06_50" ParentKey="ATMS_03_01_06"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_51" ParentKey="ATMS_03_01_06"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_52" ParentKey="ATMS_03_01_06"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_53" ParentKey="ATMS_03_01_06"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_54" ParentKey="ATMS_03_01_06"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_06_55" ParentKey="ATMS_03_01_06"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_03_01_07_01" ParentKey="ATMS_03_01_07"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_02" ParentKey="ATMS_03_01_07"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_03" ParentKey="ATMS_03_01_07"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_04" ParentKey="ATMS_03_01_07"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_05" ParentKey="ATMS_03_01_07"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_06" ParentKey="ATMS_03_01_07"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_07" ParentKey="ATMS_03_01_07"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_08" ParentKey="ATMS_03_01_07"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_09" ParentKey="ATMS_03_01_07"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_10" ParentKey="ATMS_03_01_07"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_11" ParentKey="ATMS_03_01_07"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_12" ParentKey="ATMS_03_01_07"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_07_13" ParentKey="ATMS_03_01_07"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_14" ParentKey="ATMS_03_01_07"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_15" ParentKey="ATMS_03_01_07"  Name="违章变道" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_16" ParentKey="ATMS_03_01_07"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_07_17" ParentKey="ATMS_03_01_07"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_18" ParentKey="ATMS_03_01_07"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_01_07_19" ParentKey="ATMS_03_01_07"  Name="灯光违规" Path=""
+				  Sequence="18" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_20" ParentKey="ATMS_03_01_07"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_01_07_50" ParentKey="ATMS_03_01_07"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_51" ParentKey="ATMS_03_01_07"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_52" ParentKey="ATMS_03_01_07"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_53" ParentKey="ATMS_03_01_07"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_54" ParentKey="ATMS_03_01_07"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_01_07_55" ParentKey="ATMS_03_01_07"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+				  
+				  
+				<!--超速管理-->  
+			<Menu Key="ATMS_08_02_05" ParentKey="ATMS_03_11"  Name="区间测速" Path="#/roadSpeedMeasurement"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath="ico-road-speed-measurement"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_02_06" ParentKey="ATMS_03_11"  Name="超速参数" Path="#/overspeedManagement"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath="ico-overspeed-measurement"  Ext="sliderStatus:1"/>
+				  
+				  
+				  
+			<!--综合查询-->
+			<Menu Key="ATMS_fk_03_04_01" ParentKey="ATMS_03_04"  Name="闯红灯" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_02" ParentKey="ATMS_03_04"  Name="越线、压线" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_03" ParentKey="ATMS_03_04"  Name="超速" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_04" ParentKey="ATMS_03_04"  Name="不按车道行驶" Path=""
+				  Sequence="3" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_05" ParentKey="ATMS_03_04"  Name="逆行" Path=""
+				  Sequence="4" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_06" ParentKey="ATMS_03_04"  Name="违章停车" Path=""
+				  Sequence="5" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_07" ParentKey="ATMS_03_04"  Name="禁行" Path=""
+				  Sequence="6" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_08" ParentKey="ATMS_03_04"  Name="未系安全带" Path=""
+				  Sequence="7" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_09" ParentKey="ATMS_03_04"  Name="人工上传" Path=""
+				  Sequence="8" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_10" ParentKey="ATMS_03_04"  Name="车辆限行" Path=""
+				  Sequence="9" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_11" ParentKey="ATMS_03_04"  Name="车外抛物" Path=""
+				  Sequence="10" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_12" ParentKey="ATMS_03_04"  Name="拥堵超车穿插" Path=""
+				  Sequence="11" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_04_13" ParentKey="ATMS_03_04"  Name="未礼让行人" Path=""
+				  Sequence="12" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_14" ParentKey="ATMS_03_04"  Name="未安全行车" Path=""
+				  Sequence="13" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_15" ParentKey="ATMS_03_04"  Name="违章变道" Path=""
+				Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_16" ParentKey="ATMS_03_04"  Name="不带头盔" Path=""
+				  Sequence="15" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_04_17" ParentKey="ATMS_03_04"  Name="占用应急车道" Path=""
+				  Sequence="16" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_18" ParentKey="ATMS_03_04"  Name="鸣笛" Path=""
+				  Sequence="17" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+		    <Menu Key="ATMS_fk_03_04_19" ParentKey="ATMS_03_04"  Name="灯光违规" Path=""
+				  Sequence="14" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_20" ParentKey="ATMS_03_04"  Name="违规倒车" Path=""
+		          Sequence="19" Enable="true" IsCommand="true" IconPath=""  Ext=""/>	  
+			<Menu Key="ATMS_fk_03_04_50" ParentKey="ATMS_03_04"  Name="地点" Path=""
+				  Sequence="49" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_51" ParentKey="ATMS_03_04"  Name="方向" Path=""
+				  Sequence="50" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_52" ParentKey="ATMS_03_04"  Name="时间" Path=""
+				  Sequence="51" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_53" ParentKey="ATMS_03_04"  Name="车牌" Path=""
+				  Sequence="52" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_54" ParentKey="ATMS_03_04"  Name="录入人员" Path=""
+				  Sequence="53" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_03_04_55" ParentKey="ATMS_03_04"  Name="审核人员" Path=""
+				  Sequence="54" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<!--统计分析-->
+
+
+			<!--人员考核-->
+			<Menu Key="ATMS_fk_03_06_01" ParentKey="ATMS_03_06"  Name="录入统计" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext="sliderStatus:0"/>
+			<Menu Key="ATMS_fk_03_06_02" ParentKey="ATMS_03_06"  Name="审核统计" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext="sliderStatus:0"/>
+			<!--特牌车管理-->
+			<!--违法行为管理-->
+
+
+
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

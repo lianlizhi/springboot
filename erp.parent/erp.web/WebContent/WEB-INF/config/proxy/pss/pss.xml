@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd   
+        http://www.springframework.org/schema/aop   
+        http://www.springframework.org/schema/aop/spring-aop-4.1.xsd   
+        http://www.springframework.org/schema/tx   
+        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd"
+	default-autowire="byName">
+	
+	<!-- 违法数据上传六合一平台，当前使用项目包括：潮州、茂名（查询车辆信息）
+	<import resource="lhy.xml"/>  -->
+	<!-- 违法数据上传公安交通集成指挥平台核心版，当前使用项目包括：邹城、茂名
+	<import resource="ticp.xml"/> -->
+
+	<!-- 公安网系统工厂类  -->
+	<bean id="com.np.atms.cms.proxy.pss.PssFactory" class="com.np.atms.cms.proxy.pss.PssFactory">
+		<property name="pssMap">
+			<map key-type="java.lang.String">
+				<!-- <entry key="TICP" value-ref="pssTICP" />  -->
+				<!-- <entry key="LHY" value-ref="pssLHY" />  -->
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 公安网系统配置 -->
+	<bean id="com.np.atms.cms.proxy.pss.PssProxyService" class="com.np.atms.cms.proxy.pss.PssProxyService">
+		<!-- 公安网系统类型, TICP: 公安交通集成指挥平台核心版; LHY: 六合一系统; -->
+		<!-- <property name="pssTypeName" value="TICP"/> -->
+	</bean>
+	
+</beans>

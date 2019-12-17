@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="Config" Version="1.0">
+	<!-- 权限配置 说明：
+		Module=>Enable: 模块是否可用
+		Module=>Key: 模块唯一标识编码
+		Module=>Name: 模块名称
+		Module=>IconPath: 模块图标路径
+		Module=>Sequence: 模块排序
+		Module=>Remark: 备注
+		Module=>MenuFilePath: 模块菜单配置文件路径
+		Module=>Path: 模块所在路径
+		Module=>IsEntrance: 入口模块
+		Module=>Ext: 扩展，暂不使用
+	-->
+	<Project Key="ATMS" Name="公安交通集成指挥平台">
+		<Modules>
+			<Module Key="ATMS" ParentKey=""
+				Name="公安交通集成指挥平台" Remark="公安交通集成指挥平台" Path="" IconPath=""
+				MenuFilePath="" Sequence="0" IsEntrance="true"
+				Enable="true" Ext="abc:xxx,ed:bd" />
+			
+			<Module Key="ATMS_01" ParentKey="ATMS"
+				Name="指挥调度" Remark="指挥调度" Path="atms/dispatch.html" IconPath="icon/dipatch.icon"
+				MenuFilePath="MenuResources\DispatchCommandModule.xml" Sequence="1" IsEntrance="true"
+				Enable="true" Ext="abc:xxx,ed:bd" />
+			
+			<Module Key="ATMS_02" ParentKey="ATMS"
+				Name="交通监管" Remark="交通监管" Path="" IconPath=""
+				MenuFilePath="MenuResources\TrafficSupModule.xml" Sequence="2" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			<Module Key="ATMS_03" ParentKey="ATMS"
+				Name="违法处理" Remark="违法处理" Path="" IconPath=""
+				MenuFilePath="MenuResources\IllegalModule.xml" Sequence="3" IsEntrance="false"
+				Enable="true" SubEntranceSequence="2" Ext="" />
+			
+			<Module Key="ATMS_04" ParentKey="ATMS"
+				Name="缉查布控" Remark="缉查布控" Path="" IconPath=""
+				MenuFilePath="MenuResources\MonitorModule.xml" Sequence="4" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			<Module Key="ATMS_05" ParentKey="ATMS"
+				Name="信号控制" Remark="信号控制" Path="" IconPath=""
+				MenuFilePath="MenuResources\SignalControlModule.xml" Sequence="5" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			<Module Key="ATMS_06" ParentKey="ATMS"
+				Name="信息发布" Remark="信息发布" Path="" IconPath=""
+				MenuFilePath="MenuResources\InfoDiffusionModule.xml" Sequence="6" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			<Module Key="ATMS_10" ParentKey="ATMS"
+				Name="勤务管理" Remark="勤务管理" Path="" IconPath=""
+				MenuFilePath="MenuResources\DutyManagement.xml" Sequence="7" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			<Module Key="ATMS_11" ParentKey="ATMS"
+				Name="流量分析" Remark="流量分析" Path="" IconPath=""
+				MenuFilePath="MenuResources\FlowAnalysis.xml" Sequence="8" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			
+			<Module Key="ATMS_13" ParentKey="ATMS"
+				Name="重点车辆监控管理" Remark="重点车辆监控管理" Path="" IconPath=""
+				MenuFilePath="MenuResources\KeyVehicleManagement.xml" Sequence="9" IsEntrance="false"
+				Enable="true" Ext="" />	
+			
+			<Module Key="ATMS_14" ParentKey="ATMS"
+				Name="停车场管理" Remark="停车场管理" Path="" IconPath=""
+				MenuFilePath="MenuResources\ParkingModule.xml" Sequence="10" IsEntrance="false"
+				Enable="true" Ext="" />	
+			
+			<Module Key="ATMS_12" ParentKey="ATMS"
+				Name="态势分析" Remark="态势分析" Path="" IconPath=""
+				MenuFilePath="MenuResources\SituationalAnalysis.xml" Sequence="11" IsEntrance="false"
+				Enable="true" Ext="" />
+				
+			<Module Key="ATMS_07" ParentKey="ATMS"
+				Name="运维管理" Remark="运维管理" Path="" IconPath=""
+				MenuFilePath="MenuResources\NetManageModule.xml" Sequence="12" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+			<Module Key="ATMS_08" ParentKey="ATMS"
+				Name="配置管理" Remark="配置管理" Path="" IconPath=""
+				MenuFilePath="MenuResources\ConfigureModule.xml" Sequence="13" IsEntrance="false"
+				Enable="true" Ext="" />
+			
+
+			
+
+		</Modules>
+	</Project>
+</Root>

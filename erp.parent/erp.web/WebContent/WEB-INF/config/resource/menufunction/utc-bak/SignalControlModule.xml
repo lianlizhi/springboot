@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+		
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+		
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+	-->
+	<Project Key="ATMS_05" Name="信号控制" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_05_01" ParentKey="ATMS_05"  Name="基础资料" Path=""
+			      Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:40"/>
+			<Menu Key="ATMS_05_02" ParentKey="ATMS_05"  Name="控制策略" Path="#/planManage"
+			      Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:41"/>
+			<Menu Key="ATMS_05_03" ParentKey="ATMS_05"  Name="灯态监视" Path="#/manualCenter"
+			      Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:42"/>
+			<Menu Key="ATMS_05_04" ParentKey="ATMS_05"  Name="流量分析" Path="#/oneHourFlow"
+			      Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:43"/>
+			<Menu Key="ATMS_05_05" ParentKey="ATMS_05"  Name="协调优化" Path="#/optimizationManage"
+			      Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:44"/>
+
+			
+			<!-- 基础资料 -->	  
+			<Menu Key="ATMS_05_01_01" ParentKey="ATMS_05_01"  Name="控制中心" Path="#/controlCenter"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath="ico-pc-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_02" ParentKey="ATMS_05_01"  Name="控制子区" Path="#/controlSub"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-pcsub-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_03" ParentKey="ATMS_05_01"  Name="路口信息" Path="#/roadManage"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-road-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_27" ParentKey="ATMS_05_01"  Name="车道信息" Path="#/laneManage"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath="ico-lane-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_202" ParentKey="ATMS_05_01"  Name="车检器参数" Path="#/laneDetector"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath="ico-laneDetector-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_04" ParentKey="ATMS_05_01"  Name="信号机信息" Path="#/signalManage"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath="ico-signal-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_68" ParentKey="ATMS_05_01"  Name="灯组信息" Path="#/lampManage"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath="ico-lamp-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_01_127" ParentKey="ATMS_05_01"  Name="区域路口" Path="#/roadLocation"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath="ico-arearoad-white"  Ext="sliderStatus:1"/>
+				  
+			<!-- 方案管理 -->
+			<Menu Key="ATMS_05_02_02" ParentKey="ATMS_05_02"  Name="相序方案" Path="#/phaseSeqProgram"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-phaseSeq-program"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_02_03" ParentKey="ATMS_05_02"  Name="配时方案" Path="#/timeProgram"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-time-program"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_02_04" ParentKey="ATMS_05_02"  Name="时间表方案" Path="#/scheduleProgram"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath="ico-schedule-program"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_02_05" ParentKey="ATMS_05_02"  Name="周方案" Path="#/weekProgram"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath="ico-week-program"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_02_06" ParentKey="ATMS_05_02"  Name="假日方案" Path="#/holidayProgram"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath="ico-holiday-program"  Ext="sliderStatus:1"/>
+			
+			<!-- 中心手动 -->
+			<Menu Key="ATMS_05_03_01" ParentKey="ATMS_05_03"  Name="状态监视" Path="#/lampStateMonitor"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-lampState-monitor"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_03_02" ParentKey="ATMS_05_03"  Name="区域灯态" Path="#/areaLampState"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-area-lampState"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_03_03" ParentKey="ATMS_05_03"  Name="警务路线" Path="#/policeProgram"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath="ico-policeProgram"  Ext="sliderStatus:1"/>
+
+			<!-- 流量统计 -->
+			<Menu Key="ATMS_05_04_33" ParentKey="ATMS_05_04"  Name="路口流量" Path="#/oneHourFlow"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-flow-oneHour"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_04_34" ParentKey="ATMS_05_04"  Name="子区流量" Path="#/controlAreaFlow"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-flow-area"  Ext="sliderStatus:1"/>
+			
+			<!-- 协调优化 -->
+			<Menu Key="ATMS_05_05_01" ParentKey="ATMS_05_05"  Name="参数信息" Path="#/parameterInfo"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-parameter-info"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_05_02" ParentKey="ATMS_05_05"  Name="标准周期" Path="#/standardCycle"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-standard-cycle"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_05_05" ParentKey="ATMS_05_05"  Name="周期优化" Path="#/cycleOptimization"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath="ico-cycle-optimization"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_05_03" ParentKey="ATMS_05_05"  Name="绿信比方案" Path="#/greenRatioPlan"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath="ico-green-ratio-plan"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_05_04" ParentKey="ATMS_05_05"  Name="相位差方案" Path="#/phaseDifference"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath="ico-phase-difference"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_05_05_06" ParentKey="ATMS_05_05"  Name="最佳配时方案" Path="#/timeOptimizationPlan"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath="ico-time-optimization"  Ext="sliderStatus:1"/>
+		    <Menu Key="ATMS_05_05_07" ParentKey="ATMS_05_05"  Name="绿波带" Path="#/serviceLevel"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath="ico-service-level"  Ext="sliderStatus:1"/>
+			
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+		
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+		
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+		             补充规则：菜单栏编码同上，功能或按钮规则改为 ATMS_fk_xx_xx_xx_xx
+	-->
+	<Project Key="ATMS_12" Name="态势分析" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_12_01" ParentKey="ATMS_12"  Name="交通流" Path="#/trafficFlow"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:45"/>
+			<Menu Key="ATMS_12_02" ParentKey="ATMS_12"  Name="交通违法" Path="#/trafficLaw"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:48"/>
+			<Menu Key="ATMS_12_03" ParentKey="ATMS_12"  Name="交通事故" Path="#/trafficAccident"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:46"/>
+			<Menu Key="ATMS_12_04" ParentKey="ATMS_12"  Name="安全态势" Path="#/securitySituationAnalysis "
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:47"/>
+			<Menu Key="ATMS_12_05" ParentKey="ATMS_12"  Name="天气态势" Path="#/weather "
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:50"/>
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

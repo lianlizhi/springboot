@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			
+			var index = 1;
+			function changeImg(){
+				var img1 = document.getElementById("imgId");
+				//操作元素 // 1,2,3,4,5,6,7,8  index%3+1 :1,2,3 
+				img1.src="http://49.235.179.15:8080/pony/img/"+(index%4+1)+".PNG";
+				
+				index++; 		
+			}		
+			window.onload=function(){
+				//开启定时器
+				setInterval("changeImg()",1000);
+			}	
+		</script>
+		
+	
+	</head>
+	<body>
+		
+			<!--轮播图-->
+			<div class="lunbo">
+				<img id="imgId" src="../img/1.PNG"/>
+			</div>
+	
+	</body>
+</html>

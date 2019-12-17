@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+		
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+		
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+		             补充规则：菜单栏编码同上，功能或按钮规则改为 ATMS_fk_xx_xx_xx_xx
+	-->
+	<Project Key="ATMS_02" Name="交通监管" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_02_01" ParentKey="ATMS_02"  Name="视频监控" Path="#/videoMonitor"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:8"/>
+			<Menu Key="ATMS_02_02" ParentKey="ATMS_02"  Name="视频巡逻" Path=""
+				  Sequence="1" Enable="false" IsCommand="false" IconPath=""  Ext="sliderStatus:0"/>
+			<Menu Key="ATMS_02_03" ParentKey="ATMS_02"  Name="过车监控" Path="#/carsMonitor"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:4"/>
+			<Menu Key="ATMS_02_04" ParentKey="ATMS_02"  Name="施工占道" Path="#/roadWork"
+				  Sequence="6" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:12"/>
+			<Menu Key="ATMS_02_05" ParentKey="ATMS_02"  Name="交通管制" Path="#/trafficRegulation"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:16"/>
+			<Menu Key="ATMS_02_06" ParentKey="ATMS_02"  Name="过车统计" Path="#/carStatistics"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:20"/>
+			<Menu Key="ATMS_02_07" ParentKey="ATMS_02"  Name="过车分析" Path="#/vehiclePassingAnalysis"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:20"/>
+			<Menu Key="ATMS_02_08" ParentKey="ATMS_02"  Name="过车对比" Path="#/vehiclePassingContrast"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:20"/>
+				  
+
+			<Menu Key="ATMS_fk_02_01_01" ParentKey="ATMS_02_01"  Name="视频资源" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext="isModule:true"/>
+			<Menu Key="ATMS_fk_02_01_02" ParentKey="ATMS_02_01"  Name="监巡分组" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext="isModule:true"/>
+			<Menu Key="ATMS_fk_02_01_03" ParentKey="ATMS_02_01"  Name="业务" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext="isModule:true"/>
+
+			<Menu Key="ATMS_fk_02_01_03_01" ParentKey="ATMS_fk_02_01_03"  Name="视频巡逻" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext="isModule:true"/>
+			<Menu Key="ATMS_fk_02_01_03_02" ParentKey="ATMS_fk_02_01_03"  Name="标记管理" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext="isModule:true"/>
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

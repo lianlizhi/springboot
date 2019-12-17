@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="Config" Version="1.0">
+	<!-- 权限配置 说明：
+		ID  varchar(32) 'ID' ,
+		Code  varchar(32) 违法行为代码' ,
+		Type  varchar(4) 违法类型' ,
+		Name  varchar(512) 违法行为名称' ,
+		Grade  decimal(6,0)  '违法扣分数' ,
+		Fee  decimal(6,0)  '违法罚款数' ,
+		FeeLowest  decimal(6,0)  '最低罚款' ,
+		FeeHighest  decimal(6,0)  '最高罚款' ,
+		Law  varchar(512) 法律法规条文' ,
+		Enabled  tinyint(1)'是否启用' ,
+		Remark  varchar(512) 备注' ,
+		Ext  varchar(4096) 顺序' ,
+	-->
+	<VioCodes>
+		<!-- 闯红灯 -->
+		<VioCode ID ="1302" Code ="1302" Type ="1" Name ="机动车不按交通信号灯规定通行的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1625" Code ="1625" Type ="1" Name ="驾驶机动车违反道路交通信号灯通行的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="16250" Code ="16250" Type ="1" Name ="驾驶机动车违反道路交通信号灯通行" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="12110" Code ="12110" Type ="1" Name ="通过路口遇停止信号时，停在停止线以内或路口内" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		
+		<!-- 越线、压线 -->
+		<VioCode ID ="4010" Code ="4010" Type ="2" Name ="在高速公路上骑、轧车行道分界线的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1345" Code ="1345" Type ="2" Name ="机动车违反禁止标线指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1211" Code ="1211" Type ="2" Name ="通过路口遇停止信号时，停在停止线以内或路口内的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		
+		<!-- 超速 -->
+		<VioCode ID ="1349" Code ="1349" Type ="3" Name ="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1350" Code ="1350" Type ="3" Name ="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1351" Code ="1351" Type ="3" Name ="驾驶危险物品运输车辆在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="60500" Code ="60500" Type ="3" Name ="驾驶机动车超过规定时速10%以下的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="13521" Code ="13521" Type ="3" Name ="其他机动车在高速公路以外的道路超速10%以上不足20%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="16366" Code ="16366" Type ="3" Name ="其他机动车在高速公路以外的道路超速20%以上不足30%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="16367" Code ="16367" Type ="3" Name ="其他机动车在高速公路以外的道路超速30%以上不足50%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="17215" Code ="17215" Type ="3" Name ="其他车高速公路外超速50%以上不足70%" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="17216" Code ="17216" Type ="3" Name ="其他车高速公路外超速70%以上不足100%" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="17217" Code ="17217" Type ="3" Name ="其他车高速公路外超速100%以上" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+		<VioCode ID ="6050" Code ="6050" Type ="3" Name ="驾驶中型以上载客载货汽车、危险物品运输车辆以外的机动车超过规定时速10%以下的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="1352A" Code ="1352A" Type ="3" Name ="驾驶中型以上载客载货汽车、危险物品运输车辆以外的其他机动车行驶超过规定时速10%以上不到20%的违法行为" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="1636" Code ="1636" Type ="3" Name ="驾驶中型以上载客载货汽车、校车、危险物品运输车辆以外的其他机动车行驶超过规定时速20%以上未达到50%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />  
+        <VioCode ID ="1721A" Code ="1721A" Type ="3" Name ="驾车超过规定最高时速20公里以上的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="4609" Code ="4609" Type ="3" Name ="驾驶中型以上载客汽车在高速公路上行驶超过规定时速未达20％的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="4706" Code ="4706" Type ="3" Name ="驾驶中型以上载客汽车在高速公路上行驶超过规定时速20％以上未达50%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />  
+		<VioCode ID ="4610" Code ="4610" Type ="3" Name ="驾驶中型以上载货汽车在高速公路上行驶超过规定时速未达20％的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="4707" Code ="4707" Type ="3" Name ="驾驶中型以上载货汽车在高速公路上行驶超过规定时速20％以上未达50%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />  
+		<VioCode ID ="1721B" Code ="1721B" Type ="3" Name ="驾驶中型以上载客载货汽车、校车、危险物品运输车辆以外的机动车行驶超过规定时速100%以上" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+        <VioCode ID ="1349A" Code ="1349A" Type ="3" Name ="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1632" Code ="1632" Type ="3" Name ="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上行驶超过规定时速20%以上未达到50%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="1350A" Code ="1350A" Type ="3" Name ="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上行驶超过规定时速未达20%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />  
+		<VioCode ID ="1633" Code ="1633" Type ="3" Name ="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上行驶超过规定时速20%以上未达到50%的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />  
+		                
+		<!-- 不按车道行驶 -->
+		<VioCode ID ="1018" Code ="1018" Type ="4" Name ="机动车不在机动车道内行驶的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1208" Code ="1208" Type ="4" Name ="机动车通过有灯控路口时,不按所需行进方向驶入导向车道的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="12080" Code ="12080" Type ="4" Name ="不按行进方向驶入导向车道" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="60230" Code ="60230" Type ="4" Name ="驾驶机动车在高速公路、城市快速路以外的道路上不按规定车道行驶的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<!-- 逆行 -->
+		<VioCode ID ="1301" Code ="1301" Type ="5" Name ="机动车逆向行驶的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="13010" Code ="13010" Type ="5" Name ="逆向行驶" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+		<!-- 违章停车 -->
+		<VioCode ID ="4613" Code ="4613" Type ="6" Name ="驾驶营运客车，以外的机动车在高速公路行车道上停车的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="7027" Code ="7027" Type ="6" Name ="机动车在禁止掉头或者禁止左转弯标志、标线的地点掉头的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1025" Code ="1025" Type ="6" Name ="遇前方机动车停车排队等候或者缓慢行驶时，在人行横道、网状线区域内停车等候的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		
+		<!-- 禁行 -->
+		<VioCode ID ="1044" Code ="1044" Type ="7" Name ="在禁止掉头或者禁止左转弯标志、标线的地点掉头的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1229" Code ="1229" Type ="7" Name ="机动车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="6044" Code ="6044" Type ="7" Name ="外地驾驶人因不熟悉道路，违反载货汽车禁令标志指示通行的，经交通警察当场指出后立即终止违法行为的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="13440" Code ="13440" Type ="7" Name ="违反禁令标志指示" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="13450" Code ="13450" Type ="7" Name ="违反禁止标线指示" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+        <VioCode ID ="13441" Code ="13441" Type ="7" Name ="机动车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1344" Code ="1344" Type ="7" Name ="机动车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        
+        <!-- 未系安全带 -->
+        <VioCode ID ="60110" Code ="60110" Type ="8" Name ="在高速公路或城市快速路以外的道路上行驶时，驾驶人未按规定使用安全带的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="6011" Code ="6011" Type ="8" Name ="在高速公路或城市快速路以外的道路上行驶时，驾驶人未按规定使用安全带的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="7012" Code ="7012" Type ="8" Name ="机动车驾驶人在乘坐人员未按规定使用安全带的情况下驾驶机动车的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        
+        <!-- 人工上传 -->
+        
+        <!-- 车辆限行 -->
+        <VioCode ID ="1344A" Code ="1344A" Type ="10" Name ="黄标车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1344B" Code ="1344B" Type ="10" Name ="黑烟车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="1344C" Code ="1344C" Type ="10" Name ="货车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1344D" Code ="1344D" Type ="10" Name ="机动车违反单双号限行禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1344E" Code ="1344E" Type ="10" Name ="外地机动车违反禁令标志指示的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        
+        <!-- 车外抛物 -->
+        <VioCode ID ="1225" Code ="1225" Type ="11" Name ="驾车时有其他妨碍安全行车的行为的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		
+		<!-- 拥堵超车穿插 -->
+		<VioCode ID ="12430" Code ="12430" Type ="12" Name ="交通拥堵处随意穿越、交通拥堵处随意穿插" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                                
+		<!-- 未礼让行人 -->
+		<VioCode ID ="13570" Code ="13570" Type ="13" Name ="未停让人行道上的行人" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1358" Code ="1358" Type ="13" Name ="行经没有交通信号的道路时，遇行人横过道路未避让的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		
+		<!-- 未安全行车 -->
+        <VioCode ID ="12230" Code ="12230" Type ="14" Name ="驾车接拨手持电话" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="12250" Code ="12250" Type ="14" Name ="驾车时有其他妨碍安全行车的行为的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="1223" Code ="1223" Type ="14" Name ="驾驶时拨打接听手持电话的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+		<!-- 违章变道 -->
+        <VioCode ID ="1043" Code ="1043" Type ="15" Name ="变更车道时影响正常行驶的机动车的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		<VioCode ID ="10430" Code ="10430" Type ="15" Name ="变更车道影响其他车辆行驶" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+		<!-- 不带头盔 -->
+        <VioCode ID ="1207" Code ="1207" Type ="16" Name ="驾驶摩托车时驾驶人未按规定戴安全头盔的或者乘坐人员未按规定戴安全头盔的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+		<!-- 占用应急车道 -->
+        <VioCode ID ="4608" Code ="4608" Type ="17" Name ="机动车在高速公路遇交通拥堵，占用应急车道行驶的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        <VioCode ID ="7601" Code ="7601" Type ="17" Name ="非紧急情况下在高速公路路肩上停车的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+        
+        <!-- 鸣笛 -->
+        <VioCode ID ="1048" Code ="1048" Type ="18" Name ="在禁止鸣喇叭的区域或者路段鸣喇叭的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		
+		<!-- 灯光违规 -->
+        <VioCode ID ="1102" Code ="1102" Type ="19" Name ="不按规定使用灯光的" 
+		                Grade ="0" Fee ="0" FeeLowest ="0" FeeHighest ="0" Law ="" Enabled ="true" Remark ="" Ext ="" />
+		                
+	</VioCodes>
+</Root>
+
+
+

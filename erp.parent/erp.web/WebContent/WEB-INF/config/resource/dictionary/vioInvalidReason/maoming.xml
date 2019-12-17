@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 茂名版本违法处理原因  -->
+<Param Name="违法无效原因" Value="VioInvalidReason" Ext="">
+	<Param Name="套牌"   	 Value="01" Ext="" />
+	<Param Name="无资料"   	 Value="02" Ext="" />
+	<Param Name="重复录入"	 Value="03" Ext="" />
+	<Param Name="筛选错误" 	 Value="04" Ext="" />
+	<Param Name="圆灯右转" 	 Value="05" Ext="" />
+	<Param Name="号牌残缺不清晰"	 Value="06" Ext="" />
+	<Param Name="军警车"	 Value="07" Ext="" />
+	<Param Name="大车遮挡"	 Value="08" Ext="" />
+	<Param Name="标线不清晰"	 Value="09" Ext="" />
+	<Param Name="树叶遮挡" 		 Value="10" Ext="" />
+	<Param Name="事故现场" 		 Value="11" Ext="" />
+	<Param Name="民警指挥" 		 Value="12" Ext="" />
+	<Param Name="转出"		 Value="13" Ext="" />
+	<Param Name="注销" 		 Value="14" Ext="" />
+	<Param Name="其它" 	 Value="99" Ext="" />
+</Param>

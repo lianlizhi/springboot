@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 邹城版本违法处理原因 -->
+<Param Name="违法无效原因" Value="VioInvalidReason" Ext="">
+	<Param Name="无号牌车"   	 Value="01" Ext="" />
+	<Param Name="号牌遮挡"   	 Value="02" Ext="" />
+	<Param Name="号牌污浊残缺"	 Value="03" Ext="" />
+	<Param Name="图片不清晰" 	 Value="04" Ext="" />
+	<Param Name="补光不足" 	 Value="05" Ext="" />
+	<Param Name="标线不清晰"	 Value="06" Ext="" />
+	<Param Name="违法不清晰"	 Value="07" Ext="" />
+	<Param Name="三轮摩托车"	 Value="08" Ext="" />
+	<Param Name="电动自行车"	 Value="09" Ext="" />
+	<Param Name="自行车" 		 Value="10" Ext="" />
+	<Param Name="军车" 		 Value="11" Ext="" />
+	<Param Name="警车" 		 Value="12" Ext="" />
+	<Param Name="特殊车辆" 	 Value="13" Ext="" />
+	<Param Name="假牌车"		 Value="14" Ext="" />
+	<Param Name="套牌车" 		 Value="15" Ext="" />
+	<Param Name="其它" 		 Value="99" Ext="" />
+</Param>

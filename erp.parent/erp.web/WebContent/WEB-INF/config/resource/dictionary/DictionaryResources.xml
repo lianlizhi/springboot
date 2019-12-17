@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Params>
+    <Param Name="视频分组类型" Value="VideoObjectType" Ext="">
+	  <Param Name="巡逻" Value="patrol" Ext="" />
+	  <Param Name="监巡" Value="inspect" Ext="" />
+    </Param>
+    
+    <Param Name="短信发送状态" Value="SmsSendStatus" Ext="">
+	  <Param Name="未发送" Value="unsend" Ext="" />
+	  <Param Name="已发送" Value="sended" Ext="" />
+    </Param>
+   
+	<Param Name="车辆类型" Value="VehicleType" Ext="">
+	    <Param Name="轿车" Value="K33" Ext="IoD:K33,Pcc:5" />
+	    <Param Name="大型普通客车" Value="K11" Ext="IoD:K11,Pcc:15" />
+		<Param Name="重型普通半挂车" Value="B11" Ext="" />
+		<Param Name="重型厢式半挂车" Value="B12" Ext="" />
+		<Param Name="重型罐式半挂车" Value="B13" Ext="" />
+		<Param Name="重型平板半挂车" Value="B14" Ext="" />
+		<Param Name="重型集装箱半挂车" Value="B15" Ext="" />
+		<Param Name="重型自卸半挂车" Value="B16" Ext="" />
+		<Param Name="重型特殊结构半挂车" Value="B17" Ext="" />
+		<Param Name="中型普通半挂车" Value="B21" Ext="" />
+		<Param Name="中型厢式半挂车" Value="B22" Ext="" />
+		<Param Name="中型罐式半挂车" Value="B23" Ext="" />
+		<Param Name="中型平板半挂车" Value="B24" Ext="" />
+		<Param Name="中型集装箱半挂车" Value="B25" Ext="" />
+		<Param Name="中型自卸半挂车" Value="B26" Ext="" />
+		<Param Name="中型特殊结构半挂车" Value="B27" Ext="" />
+		<Param Name="轻型普通半挂车" Value="B31" Ext="" />
+		<Param Name="轻型厢式半挂车" Value="B32" Ext="" />
+		<Param Name="轻型罐式半挂车" Value="B33" Ext="" />
+		<Param Name="轻型平板半挂车" Value="B34" Ext="" />
+		<Param Name="轻型自卸半挂车" Value="B35" Ext="" />
+		<Param Name="无轨电车" Value="D11" Ext="" />
+		<Param Name="有轨电车" Value="D12" Ext="" />
+		<Param Name="重型普通全挂车" Value="G11" Ext="" />
+		<Param Name="重型厢式 " Value="G12" Ext="" />
+		<Param Name="重型罐式全挂车" Value="G13" Ext="" />
+		<Param Name="重型平板全挂车" Value="G14" Ext="" />
+		<Param Name="重型集装箱全挂车" Value="G15" Ext="" />
+		<Param Name="重型自卸全挂车" Value="G16" Ext="" />
+		<Param Name="中型普通全挂车" Value="G21" Ext="" />
+		<Param Name="中型厢式全挂车" Value="G22" Ext="" />
+		<Param Name="中型罐式全挂车" Value="G23" Ext="" />
+		<Param Name="中型平板全挂车" Value="G24" Ext="" />
+		<Param Name="中型集装箱全挂车" Value="G25" Ext="" />
+		<Param Name="中型自卸全挂车" Value="G26" Ext="" />
+		<Param Name="轻型普通全挂车" Value="G31" Ext="" />
+		<Param Name="轻型厢式全挂车" Value="G32" Ext="" />
+		<Param Name="轻型罐式全挂车" Value="G33" Ext="" />
+		<Param Name="轻型平板全挂车" Value="G34" Ext="" />
+		<Param Name="轻型自卸全挂车" Value="G35" Ext="" />
+		<Param Name="重型普通货车" Value="H11" Ext="IoD:H11,Pcc:19" />
+		<Param Name="重型厢式货车" Value="H12" Ext="" />
+		<Param Name="重型封闭货车" Value="H13" Ext="" />
+		<Param Name="重型罐式货车" Value="H14" Ext="" />
+		<Param Name="重型平板货车" Value="H15" Ext="" />
+		<Param Name="重型集装厢车" Value="H16" Ext="" />
+		<Param Name="重型自卸货车" Value="H17" Ext="" />
+		<Param Name="重型特殊结构货车" Value="H18" Ext="" />
+		<Param Name="中型普通货车" Value="H21" Ext="IoD:H21,Pcc:18" />
+		<Param Name="中型厢式货车" Value="H22" Ext="" />
+		<Param Name="中型封闭货车" Value="H23" Ext="" />
+		<Param Name="中型罐式货车" Value="H24" Ext="" />
+		<Param Name="中型平板货车" Value="H25" Ext="" />
+		<Param Name="中型集装厢车" Value="H26" Ext="" />
+		<Param Name="中型自卸货车" Value="H27" Ext="" />
+		<Param Name="中型特殊结构货车" Value="H28" Ext="" />
+		<Param Name="轻型普通货车" Value="H31" Ext="IoD:H31,Pcc:17" />
+		<Param Name="轻型厢式货车" Value="H32" Ext="" />
+		<Param Name="轻型封闭货车" Value="H33" Ext="" />
+		<Param Name="轻型罐式货车" Value="H34" Ext="" />
+		<Param Name="轻型平板货车" Value="H35" Ext="" />
+		<Param Name="轻型自卸货车" Value="H37" Ext="" />
+		<Param Name="轻型特殊结构货车" Value="H38" Ext="" />
+		<Param Name="微型普通货车" Value="H41" Ext="IoD:H41,Pcc:16" />
+		<Param Name="微型厢式货车" Value="H42" Ext="" />
+		<Param Name="微型封闭货车" Value="H43" Ext="" />
+		<Param Name="微型罐式货车" Value="H44" Ext="" />
+		<Param Name="微型自卸货车" Value="H45" Ext="" />
+		<Param Name="微型特殊结构货车" Value="H46" Ext="" />
+		<Param Name="低速普通货车" Value="H51" Ext="" />
+		<Param Name="低速厢式货车" Value="H52" Ext="" />
+		<Param Name="低速罐式货车" Value="H53" Ext="" />
+		<Param Name="低速自卸货车" Value="H54" Ext="" />
+		<Param Name="轮式装载机械" Value="J11" Ext="" />
+		<Param Name="轮式挖掘 " Value="J12" Ext="" />
+		<Param Name="轮式平地机械" Value="J13" Ext="" />
+		<Param Name="大型双层客车" Value="K12" Ext="" />
+		<Param Name="大型卧铺客车" Value="K13" Ext="" />
+		<Param Name="大型铰接客车" Value="K14" Ext="" />
+		<Param Name="大型越野客车" Value="K15" Ext="" />
+		<Param Name="中型普通客车" Value="K21" Ext="IoD:K21,Pcc:14" />
+		<Param Name="中型双层客车" Value="K22" Ext="" />
+		<Param Name="中型卧铺客车" Value="K23" Ext="" />
+		<Param Name="中型铰接客车" Value="K24" Ext="" />
+		<Param Name="中型越野客车" Value="K25" Ext="" />
+		<Param Name="小型普通客车" Value="K31" Ext="IoD:K31,Pcc:13" />
+		<Param Name="小型越野客车" Value="K32" Ext="" />
+		<Param Name="微型普通客车" Value="K41" Ext="" />
+		<Param Name="微型越野客车" Value="K42" Ext="" />
+		<Param Name="微型轿车" Value="K43" Ext="" />
+		<Param Name="普通正三轮摩托车" Value="M11" Ext="" />
+		<Param Name="轻便正三轮摩托车" Value="M12" Ext="" />
+		<Param Name="正三轮载客摩托车" Value="M13" Ext="" />
+		<Param Name="正三轮载货摩托车" Value="M14" Ext="" />
+		<Param Name="侧三轮摩托车" Value="M15" Ext="" />
+		<Param Name="普通二轮摩托车" Value="M21" Ext="" />
+		<Param Name="轻便二轮摩托车" Value="M22" Ext="" />
+		<Param Name="三轮汽车" Value="N11" Ext="" />
+		<Param Name="重型半挂牵引车" Value="Q11" Ext="" />
+		<Param Name="中型半挂牵引车" Value="Q21" Ext="" />
+		<Param Name="轻型半挂牵引车" Value="Q31" Ext="" />
+		<Param Name="大型轮式拖拉机" Value="T11" Ext="" />
+		<Param Name="小型轮式拖拉机" Value="T21" Ext="" />
+		<Param Name="手扶拖拉机" Value="T22" Ext="" />
+		<Param Name="手扶 " Value="T23" Ext="" />
+		<Param Name="专项作业车" Value="Z" Ext="" />
+		<Param Name="大型专项作业车" Value="Z11" Ext="" />
+		<Param Name="冲型专项作业车" Value="Z21" Ext="" />
+		<Param Name="小型专项作业车" Value="Z31" Ext="" />
+		<Param Name="微型专项作业车" Value="Z41" Ext="" />
+		<Param Name="重型专项作业车" Value="Z51" Ext="" />
+		<Param Name="轻型专项作业车" Value="Z71" Ext="" />
+		<Param Name="大客车" Value="P14" Ext="Pcc:7" />
+		<Param Name="大货车" Value="P15" Ext="Pcc:8" />
+		<Param Name="皮卡" Value="P16" Ext="Pcc:9" />
+		<Param Name="商务车" Value="P17" Ext="Pcc:10" />
+		<Param Name="越野车" Value="P18" Ext="Pcc:11" />
+		<Param Name="摩托车" Value="M10" Ext="Pcc:1" />
+		<Param Name="小型车(轿车)" Value="P10" Ext="Pcc:2" />
+		<Param Name="中型车(SUV、小客车)" Value="P11" Ext="Pcc:3" />
+		<Param Name="大型车(卡车、公交）" Value="P12" Ext="Pcc:4" />
+		<Param Name="面包车" Value="P13" Ext="Pcc:6" />
+		<Param Name="其它" Value="X99" Ext="IoD:X99,Pcc:0" />
+	</Param>
+
+	<Param Name="车辆标识" Value="VehicleLogo" Ext="">
+		<Param Name="无车标" Value="-1" Ext="" />
+		<Param Name="五菱" Value="0" Ext="" />
+		<Param Name="丰田" Value="1" Ext="" />
+		<Param Name="本田" Value="2" Ext="" />
+		<Param Name="现代" Value="3" Ext="" />
+		<Param Name="一汽" Value="4" Ext="" />
+		<Param Name="大众" Value="5" Ext="" />
+		<Param Name="别克" Value="6" Ext="" />
+		<Param Name="标致" Value="7" Ext="" />
+		<Param Name="福特" Value="8" Ext="" />
+		<Param Name="日产" Value="9" Ext="" />
+		<Param Name="雪铁龙" Value="10" Ext="" />
+		<Param Name="奥迪" Value="11" Ext="" />
+		<Param Name="雪佛兰" Value="12" Ext="" />
+		<Param Name="起亚" Value="13" Ext="" />
+		<Param Name="红旗" Value="14" Ext="" />
+		<Param Name="长安" Value="15" Ext="" />
+		<Param Name="长城" Value="16" Ext="" />
+		<Param Name="东南" Value="17" Ext="" />
+		<Param Name="金杯" Value="18" Ext="" />
+		<Param Name="马自达" Value="19" Ext="" />
+		<Param Name="三菱" Value="20" Ext="" />
+		<Param Name="夏利" Value="21" Ext="" />
+		<Param Name="东风" Value="22" Ext="" />
+		<Param Name="比亚迪" Value="23" Ext="" />
+		<Param Name="恒通" Value="24" Ext="" />
+		<Param Name="奇瑞" Value="25" Ext="" />
+		<Param Name="华普" Value="26" Ext="" />
+		<Param Name="铃木" Value="27" Ext="" />
+		<Param Name="宇通" Value="28" Ext="" />
+		<Param Name="金龙" Value="29" Ext="" />
+		<Param Name="哈飞" Value="30" Ext="" />
+		<Param Name="吉利" Value="31" Ext="" />
+		<Param Name="奔驰" Value="32" Ext="" />
+		<Param Name="长城(旧)" Value="33" Ext="" />
+		<Param Name="比亚迪(旧)" Value="34" Ext="" />
+		<Param Name="铃木(字母)" Value="35" Ext="" />
+		<Param Name="宝马" Value="36" Ext="" />
+		<Param Name="中华" Value="37" Ext="" />
+		<Param Name="斯柯达" Value="38" Ext="" />
+		<Param Name="威麟" Value="39" Ext="" />
+		<Param Name="猎豹" Value="40" Ext="" />
+		<Param Name="众泰" Value="41" Ext="" />
+		<Param Name="力帆" Value="42" Ext="" />
+		<Param Name="福田" Value="43" Ext="" />
+		<Param Name="英菲尼迪" Value="44" Ext="" />
+		<Param Name="雷克萨斯" Value="45" Ext="" />
+		<Param Name="斯巴鲁" Value="46" Ext="" />
+		<Param Name="雷诺" Value="47" Ext="" />
+		<Param Name="沃尔沃" Value="48" Ext="" />
+		<Param Name="江淮" Value="49" Ext="" />
+		<Param Name="海格" Value="50" Ext="" />
+		<Param Name="金旅" Value="51" Ext="" />
+		<Param Name="jeep" Value="52" Ext="" />
+		<Param Name="MG" Value="53" Ext="" />
+		<Param Name="上汽大通" Value="54" Ext="" />
+		<Param Name="东风风度" Value="55" Ext="" />
+		<Param Name="东风风行" Value="56" Ext="" />
+		<Param Name="中兴" Value="57" Ext="" />
+		<Param Name="中顺" Value="58" Ext="" />
+		<Param Name="五十铃" Value="59" Ext="" />
+		<Param Name="依维柯" Value="60" Ext="" />
+		<Param Name="保时捷" Value="61" Ext="" />
+		<Param Name="克莱斯勒" Value="62" Ext="" />
+		<Param Name="凯迪拉克" Value="63" Ext="" />
+		<Param Name="北汽" Value="64" Ext="" />
+		<Param Name="华泰" Value="65" Ext="" />
+		<Param Name="双龙" Value="66" Ext="" />
+		<Param Name="黄海" Value="67" Ext="" />
+		<Param Name="奔腾" Value="68" Ext="" />
+		<Param Name="宝骏" Value="69" Ext="" />
+		<Param Name="中通" Value="70" Ext="" />
+		<Param Name="宾利" Value="71" Ext="" />
+		<Param Name="广汽" Value="72" Ext="" />
+		<Param Name="庆铃" Value="73" Ext="" />
+		<Param Name="捷豹" Value="74" Ext="" />
+		<Param Name="昌河" Value="75" Ext="" />
+		<Param Name="江铃" Value="76" Ext="" />
+		<Param Name="海马" Value="77" Ext="" />
+		<Param Name="福特(江铃)" Value="78" Ext="" />
+		<Param Name="纳智捷" Value="79" Ext="" />
+		<Param Name="荣威" Value="80" Ext="" />
+		<Param Name="莲花" Value="81" Ext="" />
+		<Param Name="菲亚特" Value="82" Ext="" />
+		<Param Name="讴歌" Value="83" Ext="" />
+		<Param Name="三一" Value="84" Ext="" />
+		<Param Name="中国重汽" Value="85" Ext="" />
+		<Param Name="五征" Value="86" Ext="" />
+		<Param Name="凯马" Value="87" Ext="" />
+		<Param Name="北京" Value="88" Ext="" />
+		<Param Name="北奔" Value="89" Ext="" />
+		<Param Name="华菱" Value="90" Ext="" />
+		<Param Name="唐骏" Value="91" Ext="" />
+		<Param Name="红岩" Value="92" Ext="" />
+		<Param Name="解放" Value="93" Ext="" />
+		<Param Name="跃进" Value="94" Ext="" />
+		<Param Name="陕汽" Value="95" Ext="" />
+		<Param Name="飞碟" Value="96" Ext="" />
+		<Param Name="路虎" Value="97" Ext="" />
+		<Param Name="道奇" Value="98" Ext="" />
+		<Param Name="陆风" Value="99" Ext="" />
+		<Param Name="徐工" Value="100" Ext="" />
+		<Param Name="阿斯顿·马丁" Value="900" Ext="" />
+		<Param Name="阿尔法·罗密欧" Value="901" Ext="" />
+		<Param Name="迈巴赫" Value="902" Ext="" />
+		<Param Name="迈凯轮" Value="903" Ext="" />
+		<Param Name="路特斯" Value="904" Ext="" />
+		<Param Name="观致" Value="905" Ext="" />
+		<Param Name="福迪" Value="906" Ext="" />
+		<Param Name="理念" Value="907" Ext="" />
+		<Param Name="玛莎拉蒂" Value="908" Ext="" />
+		<Param Name="法拉利" Value="909" Ext="" />
+		<Param Name="汇众" Value="910" Ext="" />
+		<Param Name="欧朗" Value="911" Ext="" />
+		<Param Name="欧宝" Value="912" Ext="" />
+		<Param Name="林肯" Value="913" Ext="" />
+		<Param Name="摩根" Value="914" Ext="" />
+		<Param Name="恒天" Value="915" Ext="" />
+		<Param Name="开瑞" Value="916" Ext="" />
+		<Param Name="布加迪" Value="917" Ext="" />
+		<Param Name="巴博斯" Value="918" Ext="" />
+		<Param Name="大通" Value="919" Ext="" />
+		<Param Name="哈弗" Value="920" Ext="" />
+		<Param Name="启辰" Value="921" Ext="" />
+		<Param Name="英伦" Value="922" Ext="" />
+		<Param Name="帝豪" Value="923" Ext="" />
+		<Param Name="全球鹰" Value="924" Ext="" />
+		<Param Name="劳斯莱斯" Value="925" Ext="" />
+		<Param Name="兰博基尼" Value="926" Ext="" />
+		<Param Name="光冈" Value="927" Ext="" />
+		<Param Name="保斐利" Value="928" Ext="" />
+		<Param Name="俊风" Value="929" Ext="" />
+		<Param Name="九龙" Value="930" Ext="" />
+		<Param Name="TESLA" Value="931" Ext="" />
+		<Param Name="Smart" Value="932" Ext="" />
+		<Param Name="MINI" Value="933" Ext="" />
+		<Param Name="GMC" Value="934" Ext="" />
+		<Param Name="DS" Value="935" Ext="" />
+		<Param Name="AC Schnitzer" Value="936" Ext="" />
+	</Param>
+
+	<Param Name="车辆颜色" Value="VehicleColor" Ext="">
+		<Param Name="白" Value="A" Ext="IoD:A,Pcc:0" />
+		<Param Name="灰" Value="B" Ext="IoD:B,Pcc:1" />
+		<Param Name="黄" Value="C" Ext="IoD:C,Pcc:2" />
+		<Param Name="粉" Value="D" Ext="IoD:D,Pcc:3" />
+		<Param Name="红" Value="E" Ext="IoD:E,Pcc:4" />
+		<Param Name="紫" Value="F" Ext="IoD:F,Pcc:9" />
+		<Param Name="绿" Value="G" Ext="IoD:G,Pcc:5" />
+		<Param Name="蓝" Value="H" Ext="IoD:H,Pcc:6" />
+		<Param Name="棕" Value="I" Ext="IoD:I,Pcc:7" />
+		<Param Name="黑" Value="J" Ext="IoD:J,Pcc:8" />
+		<Param Name="其它" Value="Z" Ext="IoD:Z,Pcc:-1" />
+	</Param>
+
+	<Param Name="号牌颜色" Value="PlateColor" Ext="">
+		<Param Name="白色" Value="0" Ext="IoD:0,Pcc:3" />
+		<Param Name="黄色" Value="1" Ext="IoD:1,Pcc:2" />
+		<Param Name="蓝色" Value="2" Ext="IoD:2,Pcc:1" />
+		<Param Name="黑色" Value="3" Ext="IoD:3,Pcc:4" />
+		<Param Name="绿色" Value="6" Ext="IoD:6,Pcc:5" />
+		<Param Name="黄绿色" Value="7" Ext="IoD:7" />
+		<Param Name="其它" Value="4" Ext="IoD:4,Pcc:0" />
+		<Param Name="无" Value="5" Ext="IoD:5" />
+	</Param>
+	
+	<Param Name="号牌类型" Value="PlateType" Ext="">
+	    <Param Name="小型汽车号牌" Value="02" Ext="IoD:02,Pcc:1" />
+		<Param Name="大型汽车号牌" Value="01" Ext="" />
+		<Param Name="教练汽车号牌" Value="16" Ext="" />
+		<Param Name="教练摩托车号牌" Value="17" Ext="" />
+		<Param Name="香港汽车号牌" Value="26" Ext="" />
+		<Param Name="澳门汽车号牌" Value="27" Ext="" />
+		<Param Name="境外汽车号牌" Value="05" Ext="" />
+		<Param Name="外籍汽车号牌" Value="06" Ext="" />
+		<Param Name="两,三轮摩托车号牌" Value="07" Ext="" />
+		<Param Name="轻便摩托车号牌" Value="08" Ext="" />
+		<Param Name="境外摩托车号牌" Value="11" Ext="" />
+		<Param Name="外籍摩托车号牌" Value="12" Ext="" />
+		<Param Name="农用运输车号牌" Value="13" Ext="" />
+		<Param Name="拖拉机号牌" Value="14" Ext="" />
+		<Param Name="挂车号牌" Value="15" Ext="" />
+		<Param Name="试验汽车号牌" Value="18" Ext="" />
+		<Param Name="试验摩托车号牌" Value="19" Ext="" />
+		<Param Name="临时入境汽车号牌" Value="20" Ext="" />
+		<Param Name="临时入境摩托车号牌" Value="21" Ext="" />
+		<Param Name="临时行驶车号牌" Value="22" Ext="" />
+		<Param Name="警用汽车号牌" Value="23" Ext="IoD:23,Pcc:5" />
+		<Param Name="警用摩托车号牌" Value="24" Ext="" />
+		<Param Name="原农机号牌" Value="25" Ext="" />
+		<Param Name="武警汽车号牌" Value="28" Ext="IoD:28,Pcc:6" />
+		<!-- 
+		<Param Name="黑牌小汽车" Value="101" Ext="IoD:101,Pcc:2" />
+		<Param Name="个性化车牌" Value="102" Ext="IoD:102,Pcc:7" />
+		<Param Name="单排军牌" Value="103" Ext="IoD:103,Pcc:8" />
+		<Param Name="双排军牌" Value="104" Ext="IoD:99,Pcc:9" />
+		<Param Name="香港牌" Value="200" Ext="Pcc:11" />
+		<Param Name="单排黄牌" Value="201" Ext="Pcc:3" />
+		<Param Name="双排黄牌（大车尾牌，农用车）" Value="202" Ext="Pcc:4" />
+		 -->
+		<Param Name="使馆汽车号牌" Value="03" Ext="IoD:03,Pcc:10" />
+		<Param Name="领馆汽车号牌" Value="04" Ext="" />
+		<Param Name="使馆摩托车号牌" Value="09" Ext="" />
+		<Param Name="领馆摩托车号牌" Value="10" Ext="" />
+		<Param Name="大型新能源汽车号牌" Value="51" Ext="" />
+		<Param Name="小型新能源汽车号牌" Value="52" Ext="" />
+		<Param Name="其他号牌" Value="99" Ext="IoD:99,Pcc:0" />
+	</Param>
+
+
+	<Param Name="挂件样式" Value="PendantStyle" Ext="">
+		<Param Name="琉璃挂件" Value="1" Ext="" />
+		<Param Name="木雕挂件" Value="2" Ext="" />
+		<Param Name="水晶挂件" Value="3" Ext="" />
+		<Param Name="玛瑙挂件" Value="4" Ext="" />
+		<Param Name="金属挂件" Value="5" Ext="" />
+		<Param Name="陶瓷挂件" Value="6" Ext="" />
+		<Param Name="玉石挂件" Value="7" Ext="" />
+	</Param>
+
+	<Param Name="遮阳板样式" Value="VisorType" Ext="">
+		<Param Name="水平遮阳板" Value="1" Ext="" />
+		<Param Name="垂直遮阳板" Value="2" Ext="" />
+		<Param Name="格子遮阳板" Value="3" Ext="" />
+	</Param>
+
+	<Param Name="轮胎花纹样式" Value="TirePattern" Ext="">
+		<Param Name="纵向花纹" Value="1" Ext="" />
+		<Param Name="横向花纹" Value="2" Ext="" />
+		<Param Name="纵横向花纹" Value="3" Ext="" />
+		<Param Name="泥雪地花纹" Value="4" Ext="" />
+		<Param Name="越野花纹" Value="5" Ext="" />
+	</Param>
+
+	<Param Name="使用性质" Value="UseForWhat" Ext="">
+		<Param Name="私人生活用车" Value="1" Ext="" />
+		<Param Name="行政用车" Value="2" Ext="" />
+		<Param Name="生产用车" Value="3" Ext="" />
+		<Param Name="营运车辆" Value="4" Ext="" />
+		<Param Name="租赁车辆" Value="5" Ext="" />
+	</Param>
+
+	<Param Name="摄像机资源类型" Value="CameraResourceType" Ext="">
+		<Param Name="治安" Value="1" Ext="" />
+		<Param Name="社区" Value="2" Ext="" />
+		<Param Name="督察" Value="3" Ext="" />
+	</Param>
+
+	<Param Name="摄像机建设类型" Value="CameraClassType" Ext="">
+		<Param Name="一类" Value="OneClass" Ext="" />
+		<Param Name="二类" Value="TwoClass" Ext="" />
+		<Param Name="三类" Value="ThreeClass" Ext="" />
+	</Param>
+	
+	<Param Name="PVG版本" Value="PvgVersionNumber" Ext="">
+		<Param Name="PVG_6_7" Value="P_6.7" Ext="" />
+		<Param Name="PVG_10_1" Value="P_10.1" Ext="" />
+	</Param>
+
+	<Param Name="卡口车道驶向" Value="GateChannelDirection" Ext="">
+	    <Param Name="上行/进城/环线顺时针" Value="1" Ext="" />
+		<Param Name="下行/出城/环线逆时针" Value="2" Ext="" />
+		<Param Name="由东向西" Value="3" Ext="" />
+		<Param Name="由西向东" Value="4" Ext="" />
+		<Param Name="由南向北" Value="5" Ext="" />
+		<Param Name="由北向南" Value="6" Ext="" />
+	</Param>
+	
+	<Param Name="卡口驶向" Value="GateDirection" Ext="">
+		<Param Name="出城" Value="exit" Ext="" />
+		<Param Name="入城" Value="enter" Ext="" />
+	</Param>
+
+	<Param Name="卡口布控类型" Value="MonitorType" Ext="">
+		<Param Name="黑名单" Value="BlackVehicle" Ext="" />
+		<Param Name="白名单" Value="WhiteVehicle" Ext="" />
+		<Param Name="红名单" Value="RedVehicle" Ext="" />
+		<Param Name="黄名单" Value="YellowVehicle" Ext="" />
+		<Param Name="重点车辆名单" Value="FocusVehicle" Ext="" />
+		<Param Name="其它" Value="Other" Ext="" />
+	</Param>
+
+	<Param Name="卡口报警类型" Value="GateAlarmType" Ext="">
+		<Param Name="肇事逃逸车辆布控" Value="Escape" Ext="" />
+		<Param Name="被盗抢车辆布控" Value="Robbery" Ext="" />
+		<Param Name="违法犯罪车辆布控" Value="Violation" Ext="" />
+		<Param Name="假牌套牌车辆布控" Value="DeckVehicle" Ext="" />
+		<Param Name="报废车辆布控" Value="ScrapVehicle" Ext="" />
+		<Param Name="个案信息布控" Value="Supervision" Ext="" />
+		<Param Name="关注" Value="Attention" Ext="" />
+		<!-- <Param Name="其它" Value="Other" Ext="" /> -->
+	</Param>
+
+	<Param Name="摄像机状态" Value="CameraState" Ext="">
+		<Param Name="视频丢失" Value="Fault_VideoLost" Ext="" />
+		<Param Name="画面异常" Value="Fault_VideoException" Ext="" />
+		<Param Name="网络断开" Value="Envi_NetDisconcantException" Ext="" />
+		<Param Name="断电" Value="Envi_PowerFailure" Ext="" />
+		<Param Name="拆除" Value="Cation_Demolition" Ext="" />
+		<Param Name="清洗球罩" Value="Fault_CleanDomeCover" Ext="" />
+		<Param Name="异物遮挡" Value="Fault_ThingsShelter" Ext="" />
+		<Param Name="其他" Value="Cation_Other" Ext="" />
+	</Param>
+
+	<Param Name="卡口抓拍摄像机状态" Value="GateChannelState" Ext="">
+		<Param Name="视频丢失" Value="Fault_VideoLost" Ext="" />
+		<Param Name="画面异常" Value="Fault_VideoException" Ext="" />
+		<Param Name="网络断开" Value="Envi_NetDisconcantException" Ext="" />
+		<Param Name="断电" Value="Envi_PowerFailure" Ext="" />
+		<Param Name="车检器故障" Value="Fault_ViehicleSensors" Ext="" />
+		<Param Name="闪光灯故障" Value="Fault_FlashLamp" Ext="" />
+		<Param Name="车辆识别率过低" Value="Fault_RecognitionRate" Ext="" />
+		<Param Name="拆除" Value="Cation_Demolition" Ext="" />
+		<Param Name="其他" Value="Cation_Other" Ext="" />
+	</Param>
+
+	<Param Name="服务器状态" Value="ServerState" Ext="">
+		<Param Name="系统异常" Value="Fault_SystemException" Ext="" />
+		<Param Name="网络断开" Value="Envi_NetDisconcantException" Ext="" />
+		<Param Name="断电" Value="Envi_PowerFailure" Ext="" />
+		<Param Name="拆除" Value="Cation_Demolition" Ext="" />
+		<Param Name="其他" Value="Cation_Other" Ext="" />
+	</Param>
+
+	<Param Name="摄像机分辨率" Value="ResolutionType" Ext="">
+		<Param Name="高清" Value="HD" Ext="" />
+		<Param Name="标清" Value="SD" Ext="" />
+	</Param>
+
+	<Param Name="系统日志类型" Value="SystemDataCleanType" Ext="">
+		<Param Name="操作日志" Value="OperateLog" Ext="" />
+		<Param Name="报警日志" Value="AlarmLog" Ext="" />
+		<Param Name="拦截日志" Value="InterceptLog" Ext="" />
+		<Param Name="诊断日志" Value="DiagnosisLog" Ext="" />
+	</Param>
+
+	<Param Name="DVS类型" Value="DvsType" Ext="">
+		<Param Name="NetPosa-VS800" Value="vsphost" Ext="" />
+		<Param Name="海康" Value="hikhost" Ext="" />
+		<Param Name="大华" Value="dahuahost" Ext="" />
+	</Param>
+	
+	<Param Name="报警状态" Value="AlarmStatus" Ext="">
+		<Param Name="未处理" Value="Pending" Ext="" />
+		<Param Name="有效" Value="Valid" Ext="" />
+		<Param Name="无效" Value="Invalid" Ext="" />
+	</Param>
+
+	<Param Name="报警级别" Value="AlarmLevelType" Ext="">
+		<Param Name="绿(一般)" Value="0" Ext="" />
+		<Param Name="蓝(重要)" Value="1" Ext="" />
+		<Param Name="黄(较严重)" Value="2" Ext="" />
+		<Param Name="橙(特别重要)" Value="3" Ext="" />
+		<Param Name="红(严重危险)" Value="4" Ext="" />
+	</Param>
+
+
+	<Param Name="图层分组" Value="LayerGroup" Ext="">
+		<Param Name="交通设备资源" Value="TrafficEquipmentResource" Ext="">
+			<Param Name="枪机" Value="NormalCamera" Ext="" />
+			<Param Name="球机" Value="PtzCamera" Ext="" />
+			<Param Name="卡口" Value="Gate" Ext="" />
+			<Param Name="电警" Value="ElectricPolice" Ext="" />
+			<Param Name="信号机" Value="Signal" Ext="" />
+			<Param Name="诱导屏" Value="Guide" Ext="" />
+		</Param>
+		<Param Name="交通设施资源" Value="TrafficFacilityResource" Ext="">
+			<Param Name="道路交通标志" Value="RoadTrafficSign_TfMark" Ext="" />
+			<Param Name="道路交通标线" Value="RoadTrafficMark_TfMark" Ext="" />
+			<Param Name="护栏" Value="GuardRail_TfMark" Ext="" />
+		</Param>
+		<Param Name="交管信息资源" Value="TrafficControlResource" Ext="">
+			<Param Name="施工占道" Value="RoadWork_TcMark" Ext="" />
+			<Param Name="交通管制" Value="TrafficControl_TcMark" Ext="" />
+		</Param>
+		<Param Name="应急资源" Value="EmergencyResource" Ext="">
+			<Param Name="交通治安岗亭" Value="TrafficPoliceBooth_EmgMark" Ext="" />
+			<Param Name="交通管理部门" Value="TrafficDepartment_EmgMark" Ext="" />
+			<Param Name="路政管理部门" Value="HighwayDepartment_EmgMark" Ext="" />
+			<Param Name="高速公路管理部门" Value="ExpresswayDepartment_EmgMark" Ext="" />
+			<Param Name="公安部门" Value="PublicSecurityDepartment_EmgMark" Ext="" />
+			<Param Name="消防部门" Value="FireDepartment_EmgMark" Ext="" />
+			<Param Name="医院" Value="Hospital_EmgMark" Ext="" />
+			<Param Name="交通应急办" Value="TrafficEmergency_EmgMark" Ext="" />
+			<Param Name="安检部门" Value="SecurityCheckDepartment_EmgMark" Ext="" />
+		</Param>
+		<Param Name="GPS警力资源" Value="GpsPoliceResource" Ext="">
+			<Param Name="警员" Value="Person_GpsMark" Ext="" />
+			<Param Name="警车" Value="GpsCar_GpsMark" Ext="" />
+		</Param>
+		<Param Name="一般社会资源" Value="GeneralSocialResource" Ext="">
+			<Param Name="加油站" Value="GasStation_ComMark" Ext="" />
+			<Param Name="学校" Value="School_ComMark" Ext="" />
+			<Param Name="网吧" Value="InternetBar_ComMark" Ext="" />
+			<Param Name="超市" Value="Supermarket_ComMark" Ext="" />
+			<Param Name="购物中心" Value="Shopping_ComMark" Ext="" />
+			<Param Name="银行" Value="Bank_ComMark" Ext="" />
+			<Param Name="景点" Value="ViewSpot_ComMark" Ext="" />
+			<Param Name="酒吧" Value="Bar_ComMark" Ext="" />
+			<Param Name="餐饮" Value="Restaurant_ComMark" Ext="" />
+			<Param Name="洗浴" Value="Bath_ComMark" Ext="" />
+		</Param>
+		<Param Name="用户资源" Value="UserResource" Ext=""/>
+	</Param>
+
+	<Param Name="接入服务器类型" Value="AccessServerType" Ext="">
+		<Param Name="视频代理服务器" Value="PvgProxyServer" Ext="Port:20010" />
+        <Param Name="警综代理服务器" Value="PSISProxyServer" Ext="Port:20020" />
+		<Param Name="解码器代理服务器" Value="DecoderProxyServer" Ext="Port:20024" />
+		<Param Name="控制代理服务器" Value="ControlProxyServer" Ext="Port:30001" />
+		<Param Name="数据采集代理服务器" Value="LogProxyServer" Ext="Port:30301" />
+        <Param Name="GPS代理服务器" Value="GPSProxyServer" Ext="Port:31001" />
+		<Param Name="短信代理服务器" Value="SMSProxyServer" Ext="Port:31101" />
+        <Param Name="诱导屏代理服务器" Value="GuideScreenProxyServer" Ext="Port:31301" />
+        <Param Name="天气代理服务器" Value="WeatherProxyServer" Ext="Port:31601" />
+	</Param>
+
+	<Param Name="解码器类型" Value="DecoderType" Ext="">
+		<Param Name="MD880" Value="MD880" Ext="Port:30002" />
+		<Param Name="MD850" Value="MD850" Ext="Port:8081" />
+		<Param Name="MD882" Value="MD882" Ext="Port:80" />
+		<Param Name="PE" Value="PE" Ext="Port:10300" />
+	</Param>
+	
+	<Param Name="电视墙轮巡控制指令" Value="MonitorLoopControlCommand" Ext="">
+		<Param Name="暂停轮巡" Value="PauseLoop" Ext="" />
+		<Param Name="继续轮巡" Value="ContinueLoop" Ext="" />
+		<Param Name="停止轮巡" Value="StopLoop" Ext="" />
+	</Param>
+
+	<Param Name="对象类型" Value="ObjectType" Ext="">
+		<Param Name="未知" 		Value="Unknown" Ext="" />
+		<Param Name="时间模板" 	Value="TimeTemplate" Ext="" />
+		<Param Name="用户" 		Value="User" Ext="" />
+		<Param Name="客户端" 	Value="Client" Ext="" />
+		<Param Name="组织机构" 	Value="OrgUnit" Ext="" />
+		<Param Name="联动预案" 	Value="EventRule" Ext="" />
+		<Param Name="联动预案触发器" Value="EventRuleTrigger" Ext="" />
+		<Param Name="联动动作" Value="EventRuleAction" Ext="" />
+		<Param Name="中心服务器" Value="CenterServer" Ext="" />
+		<Param Name="接入服务器" Value="AccessServer" Ext="" />
+		<Param Name="视频网关服务器通道分组" Value="PvgChannelGroup" Ext="" />
+		<Param Name="视频编码设备" Value="Dvs" Ext="" />
+		<Param Name="摄像机" Value="Camera" Ext="" />
+		<Param Name="Dvs报警输入" Value="DvsInput" Ext="" />
+		<Param Name="Dvs报警输出" Value="DvsOutput" Ext="" />
+		<Param Name="摄像机分组" Value="CameraGroup" Ext="" />
+		<Param Name="摄像机分组数据" Value="CameraGroupData" Ext="" />
+		<Param Name="用户自定义摄像机分组" Value="UserDefineCameraGroup" Ext="" />
+		<Param Name="Dvs报警输入分组" Value="DvsInputGroup" Ext="" />
+		<Param Name="Dvs报警输出分组" Value="DvsOutputGroup" Ext="" />
+		<Param Name="视图" Value="View" Ext="" />
+		<Param Name="录像文件" Value="RecordingFile" Ext="" />
+		<Param Name="万能解码器" Value="Decoder" Ext="" />
+		<Param Name="解码通道" Value="DecoderMonitor" Ext="" />
+		<Param Name="电视墙布局" Value="TvWallLayout" Ext="" />
+		<Param Name="电视墙布局数据" Value="TvWallLayoutData" Ext="" />
+		<Param Name="PGis" Value="PGis" Ext="" />
+		<Param Name="IVS通道分析任务" Value="IvsChannelTask" Ext="" />
+		<Param Name="智能分析服务器" Value="IvsServer" Ext="" />
+		<Param Name="系统参数" Value="Parameter" Ext="" />
+		<Param Name="视频网关服务器" Value="PvgServer" Ext="" />
+		<Param Name="卡口服务器" Value="GateServer" Ext="" />
+		<Param Name="卡口" Value="Gate" Ext="" />
+		<Param Name="卡口通道" Value="GateChannel" Ext="" />
+		<Param Name="卡口通道分组" Value="GateChannelGroup" Ext="" />
+		<Param Name="套牌分析服务器" Value="DeckRmpServer" Ext="" />
+		<Param Name="角色" Value="Role" Ext="" />
+		<Param Name="权限信息" Value="RoleObjectData" Ext="" />
+		<Param Name="车辆" Value="Vehicle" Ext="" />
+		<Param Name="车辆分组" Value="VehicleGroup" Ext="" />
+		<Param Name="人员" Value="Person" Ext="" />
+		<Param Name="人员分组" Value="PersonGroup" Ext="" />
+		<Param Name="邮件服务器" Value="EmailServer" Ext="" />
+		<Param Name="短信猫" Value="SmsServer" Ext="" />
+		<Param Name="网络设备" Value="NetDevice" Ext="" />
+		<Param Name="认证服务器" Value="AuthServer" Ext="" />
+		<Param Name="网络设备通道" Value="NetDeviceChannel" Ext="" />
+		<Param Name="球机预置位" Value="CameraPreset" Ext="" />
+		<Param Name="布控车辆" Value="MonitorVehicle" Ext="" />
+		<Param Name="报警级别" Value="AlarmLevel" Ext="" />
+		<Param Name="本地计算机" Value="LocalComputer" Ext="" />
+		<Param Name="本地磁盘" Value="LocalDiskInfo" Ext="" />
+		<Param Name="本地目录" Value="LocalDirInfo" Ext="" />
+		<Param Name="本地文件" Value="LocalFileInfo" Ext="" />
+		<Param Name="预案" Value="Plan" Ext="" />
+		<Param Name="预案数据" Value="PlanData" Ext="" />
+		<Param Name="智能分析任务分组" Value="IvsChannelTaskGroup" Ext="" />
+		<Param Name="智能分析任务分组数据" Value="IvsChannelTaskGroupData" Ext="" />
+		<Param Name="GPS服务器" Value="GpsServer" Ext="" />
+		<Param Name="PGIS服务" Value="PGISServer" Ext="" />
+		<Param Name="报警主机" Value="AlarmHost" Ext="" />
+		<Param Name="消息服务器" Value="IMServer" Ext="" />
+		<Param Name="流媒体服务器" Value="MediaServer" Ext="" />
+		<Param Name="工程单位" Value="Engineering" Ext="" />
+		<Param Name="帧标记" Value="FreameTag" Ext="" />
+		<Param Name="菜单权限资源" Value="MenuRoleResource" Ext="" />
+		<Param Name="审核流程" Value="ApproveProcedure" Ext="" />
+		<Param Name="审核流程数据" Value="ApproveProcedureData" Ext="" />
+		<Param Name="审核日志" Value="ApproveLog" Ext="" />
+		<Param Name="案件分析" Value="CaseAnalysis" Ext="" />
+		<Param Name="关注（收藏）" Value="ConcernData" Ext="" />
+		<Param Name="报障单" Value="FaultList" Ext="" />
+		<Param Name="报障工单" Value="FaultWorkList" Ext="" />
+		<Param Name="对象关系" Value="ObjectRelation" Ext="" />
+		<Param Name="ETC控制器" Value="ETC" Ext="" />
+		<Param Name="ETC控制单元" Value="ETCChannel" Ext="" />
+		<Param Name="GPS设备" Value="GpsDevice" Ext="" />
+		<Param Name="报警事件" Value="AlarmEvent" Ext="" />
+		<Param Name="报警方案" Value="AlarmPlan" Ext="" />
+		<Param Name="报警方案数据" Value="AlarmPlanData" Ext="" />
+		<Param Name="灯杆" Value="LampPost" Ext="" />
+		<Param Name="报警日志" Value="AlarmLog" Ext="" />
+		<Param Name="日志" Value="Log" Ext="" />
+		<Param Name="摄像机诊断" Value="CameraAnalyse" Ext="" />
+		<Param Name="诊断摄像机分组" Value="DiagTask" Ext="" />
+		<Param Name="诊断摄像机分组数据" Value="DiagTaskData" Ext="" />
+		<Param Name="CCU" Value="Ccu" Ext="" />
+		<Param Name="信号机" Value="SignalControl" Ext="" />
+		<Param Name="诱导屏" Value="GuideDevice" Ext="" />
+		<Param Name="业务服务器" Value="BusinessServer" Ext="" />
+		<Param Name="控制子区" Value="ControlArea" Ext="" />
+		<Param Name="车道" Value="Lane" Ext="" />
+		<Param Name="配时方案" Value="ProgramFormal" Ext="" />
+		<Param Name="时间表方案" Value="ScheduleProgram" Ext="" />
+		<Param Name="周方案" Value="WeekProgram" Ext="" />
+		<Param Name="警务路线" Value="PoliceLine" Ext="" />
+		<Param Name="绿信比" Value="GreenRatioPlan" Ext="" />
+		<Param Name="控制中心" Value="ControlCenter" Ext="" />
+		<Param Name="路口" Value="RoadManage" Ext="" />
+		<Param Name="相序方案" Value="PhaseSequence" Ext="" />
+		<Param Name="假日方案" Value="HolidayProgram" Ext="" />
+		<Param Name="状态监视" Value="LampStateMonitor" Ext="" />
+		<Param Name="参数信息" Value="ParameterInfo" Ext="" />
+		<Param Name="标准周期" Value="StandardCycle" Ext="" />
+		<Param Name="周期优化" Value="CycleOptimization" Ext="" />
+		<Param Name="岗位" Value="Post" Ext="" />
+		<Param Name="诱导屏节目" Value="Program" Ext="" />
+		<Param Name="警情" Value="PSIS" Ext="" />
+	</Param>
+
+	<Param Name="联动动作" Value="EventRuleAction" Ext="">
+		<!-- <Param Name="刻画轨迹" Value="DrawTrack" Ext="" /> -->
+		<Param Name="打开卡口绑定的视频" Value="OpenCameraToClient" Ext="" />
+		<!-- <Param Name="打开当前车辆经过的卡口" Value="OpenGateChannelToClient" Ext="" /> -->
+		<!-- <Param Name="发送邮件" Value="SendEmail" Ext="" /> -->
+		<Param Name="发送短信" Value="SendSms" Ext="" />
+	</Param>
+
+	<Param Name="诱导屏类型" Value="GuideDeviceType" Ext="">
+	    <!-- 
+		<Param Name="文字屏" Value="TextScreen" Ext="" />
+		<Param Name="光带屏" Value="StripLightScreen" Ext="" />
+		<Param Name="图片屏" Value="PictureScreen" Ext="" />
+		<Param Name="混合屏" Value="MixedScreen" Ext="" />
+		 -->
+		 <!-- 目前只留下点阵屏 -->
+		<Param Name="点阵屏" Value="DotMatrixScreen" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏节目类型" Value="GuideProgramType" Ext="">
+		<Param Name="文字" Value="TextScreen" Ext="" />
+		<Param Name="光带" Value="StripLightScreen" Ext="" />
+		<Param Name="图片" Value="PictureScreen" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏厂家" Value="GuideDeviceBrandType" Ext="">
+		<Param Name="西安诺瓦" Value="Nova" Ext="Port:5000" />
+		<Param Name="模拟器" Value="Simulator" Ext="Port:5999" />
+		<Param Name="其它" Value="Other" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏字体颜色类型" Value="GuideFontColor" Ext="">
+		<Param Name="红" Value="1" Ext="" />
+		<Param Name="绿" Value="2" Ext="" />
+		<Param Name="黄" Value="4" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏呈现方式" Value="GuideDisplayMode" Ext="">
+		<Param Name="立即显示" Value="1" Ext="" />
+		<Param Name="上展" Value="2" Ext="" />
+		<Param Name="下展" Value="3" Ext="" />
+		<Param Name="左展" Value="4" Ext="" />
+		<Param Name="右展" Value="5" Ext="" />
+		<Param Name="上移" Value="6" Ext="" />
+		<Param Name="下移" Value="7" Ext="" />
+		<Param Name="左移" Value="8" Ext="" />
+		<Param Name="右移" Value="9" Ext="" />
+		<Param Name="淡入淡出" Value="10" Ext="" />
+		<Param Name="随机" Value="255" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏字体" Value="GuideFontType" Ext="">
+		<Param Name="黑" Value="1" Ext="" />
+		<Param Name="楷" Value="2" Ext="" />
+		<Param Name="宋" Value="3" Ext="" />
+		<Param Name="仿宋" Value="4" Ext="" />
+		<Param Name="隶书" Value="5" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏字体风格" Value="GuideFontStyle" Ext="">
+		<!-- <Param Name="常规" Value="0" Ext="" /> -->
+		<Param Name="加粗" Value="1" Ext="" />
+		<Param Name="倾斜" Value="2" Ext="" />
+		<Param Name="下划线" Value="4" Ext="" />
+		<Param Name="中划线" Value="8" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏播放特效" Value="GuidePlayEffect" Ext="">
+		<Param Name="无特效" Value="0" Ext="" />
+		<Param Name="从右向左滚动" Value="1" Ext="" />
+		<Param Name="从下向上滚动" Value="2" Ext="" />
+	</Param>
+	
+	<Param Name="诱导屏字符排列方式" Value="GuideWordArrangeType" Ext="">
+		<Param Name="横向排列" Value="0" Ext="" />
+		<Param Name="纵向排列" Value="1" Ext="" />
+	</Param>
+
+	<Param Name="诱导信息发布审核状态" Value="GuideInfoAuditStatus" Ext="">
+		<Param Name="全部" Value="All" Ext="" />
+		<Param Name="未提交" Value="UnCommitted" Ext="" />
+		<Param Name="待审核" Value="CheckPending" Ext="" />
+		<Param Name="未通过" Value="NotPassed" Ext="" />
+		<Param Name="已发布" Value="Diffused" Ext="" />
+		<Param Name="已过期" Value="Overdue" Ext="" />
+		<Param Name="已撤销" Value="Cancelled" Ext="" />
+	</Param>
+
+	<Param Name="系统报警策略类别" Value="AlarmEventClass" Ext="">
+		<Param Name="摄像机" Value="Camera" Ext="" />
+		<Param Name="卡口" Value="GateChannel" Ext="" />
+		<Param Name="中心设备" Value="CenterServer" Ext="" />
+		<Param Name="视频编码设备" Value="Dvs" Ext="" />
+		<Param Name="路段" Value="RoadSegment" Ext="" />
+	</Param>
+
+	<Param Name="接受报警设备类型" Value="AcceptAlarmDeviceType" Ext="">
+		<Param Name="摄像机" Value="Camera" Ext="">
+			<param Name="视频诊断" Value="DiagData" Ext="" />
+			<param Name="手动报警" Value="HandAlarm" Ext="" />
+			<param Name="视频丢失" Value="VideoLost" Ext="" />
+			<param Name="摄像机离线" Value="OffLine" Ext="" />
+		</Param>
+		<Param Name="卡口" Value="GateChannel" Ext="">
+			<param Name="肇事逃逸" Value="Escape" Ext="" />
+			<param Name="被盗抢车辆" Value="Robbery" Ext="" />
+			<Param Name="违法犯罪车辆" Value="Violation" Ext="" />
+			<Param Name="假牌套牌车辆" Value="DeckVehicle" Ext="" />
+		    <Param Name="报废车辆" Value="ScrapVehicle" Ext="" />
+		    <Param Name="个案信息" Value="Supervision" Ext="" />
+		    <Param Name="关注" Value="Attention" Ext="" />
+			<param Name="卡口离线" Value="OffLine" Ext="" />
+		</Param>
+		<Param Name="中心设备" Value="CenterServer" Ext="">
+			<param Name="万能解码器" Value="Decoder" Ext="">
+				<param Name="离线" Value="OffLine" Ext="" />
+			</param>
+			<param Name="卡口网关服务器" Value="GateServer" Ext="">
+				<param Name="离线" Value="OffLine" Ext="" />
+			</param>
+			<param Name="智能分析服务器" Value="IvsServer" Ext="">
+				<param Name="离线" Value="OffLine" Ext="" />
+			</param>
+			<param Name="接入服务器" Value="AccessServer" Ext="">
+				<param Name="离线" Value="OffLine" Ext="" />
+			</param>
+			<param Name="视频网关服务器 " Value="PvgServer" Ext="">
+				<param Name="离线" Value="OffLine" Ext="" />
+			</param>
+		</Param>
+		<Param Name="视频编码设备" Value="Dvs" Ext="">
+			<param Name="磁盘不能写" Value="LiveEvtDiskArrayWriteFialed" Ext="" />
+			<param Name="磁盘不能读写" Value="LiveEvtDiskArrayError" Ext="" />
+			<param Name="IO报警" Value="InputTrigger" Ext="" />
+			<param Name="离线" Value="OffLine" Ext="" />
+		</Param>
+		<Param Name="路段" Value="RoadSegment" Ext="" >
+			<param Name="路段拥堵" Value="Congestion" Ext="" />
+			<param Name="路段严重拥堵" Value="SeriousCongestion" Ext="" />
+		</Param>
+	</Param>
+
+	<Param Name="布控状态" Value="MonitorStatus" Ext="">
+		<Param Name="全部" Value="All" Ext="" />
+		<Param Name="未提交" Value="UnCommitted" Ext="" />
+		<Param Name="待审核" Value="CheckPending" Ext="" />
+		<Param Name="被打回" Value="NotPassed" Ext="" />
+		<Param Name="正在布控" Value="Deploying" Ext="" />
+		<!-- <Param Name="将逾期" Value="WillBeOverdue" Ext="" /> -->
+		<Param Name="已过期" Value="Overdue" Ext="" />
+		<Param Name="已撤销" Value="Cancelled" Ext="" />
+	</Param>
+
+	<Param Name="文本预案类型" Value="PlanType" Ext="">
+		<Param Name="其他" Value="0" Ext="" />
+		<Param Name="交通事故处理预案" Value="1" Ext="" />
+		<Param Name="一般事故处理预案" Value="2" Ext="" />
+		<Param Name="重、特大事故的处理预案" Value="3" Ext="" />
+		<Param Name="道路拥堵的处置预案" Value="4" Ext="" />
+		<Param Name="一般道路拥堵的处置预案" Value="5" Ext="" />
+		<Param Name="主干线严重拥堵的处置预案" Value="6" Ext="" />
+		<Param Name="交通管制的指挥处置预案" Value="7" Ext="" />
+		<Param Name="大型活动、会议勤务预案" Value="8" Ext="" />
+		<Param Name="道路施工管制预案" Value="9" Ext="" />
+		<Param Name="交通肇事逃逸事故处理预案" Value="10" Ext="" />
+		<Param Name="大型故障车交通处置预案" Value="11" Ext="" />
+		<Param Name="突发事件处置预案" Value="12" Ext="" />
+		<Param Name="火灾、爆炸等事件的处置预案" Value="13" Ext="" />
+		<Param Name="断电、跑水等事故的处置预案" Value="14" Ext="" />
+		<Param Name="灾害天气应急预案" Value="15" Ext="" />
+		<Param Name="雨雪雾等恶劣天气应急预案" Value="16" Ext="" />
+	</Param>
+
+	<Param Name="文本预案级别" Value="PlanLevel" Ext="">
+		<Param Name="一级" Value="1" Ext="" />
+		<Param Name="二级" Value="2" Ext="" />
+		<Param Name="三级" Value="3" Ext="" />
+		<Param Name="四级" Value="4" Ext="" />
+		<Param Name="五级" Value="5" Ext="" />
+	</Param>
+
+	<Param Name="角色管理菜单" Value="RoleMenu" Ext="">
+		<Param Name="功能权限" Value="Function" Ext="" />
+		<Param Name="视频设备权限" Value="Camera" Ext="" />
+		<Param Name="卡口设备权限" Value="Gate" Ext="" />
+		<Param Name="信号机设备权限" Value="Signal" Ext="" />
+		<Param Name="诱导屏设备权限" Value="Guide" Ext="" />
+		<Param Name="电视墙" Value="TV" Ext="" />
+	</Param>
+
+	<Param Name="单位类型" Value="UnitType" Ext="">
+		<Param Name="设备厂家" Value="Factory" Ext="" />
+		<Param Name="承建单位" Value="Construction" Ext="" />
+		<Param Name="使用单位" Value="USE" Ext="" />
+		<Param Name="运维单位" Value="OPS" Ext="" />
+		<Param Name="监理单位" Value="Supervision" Ext="" />
+		<Param Name="集成单位" Value="Integrated" Ext="" />
+	</Param>
+
+	<Param Name="警情来源" Value="PsisInfoSource" Ext="">
+		<Param Name="接处警" Value="AlarmSystem" Ext="" />
+		<Param Name="采集器" Value="AlarmCollector" Ext="" />
+		<Param Name="录入" Value="ManualEnter" Ext="" />
+	</Param>
+	
+	<Param Name="警情状态" Value="PsisInfoStatus" Ext="">
+		<Param Name="未处理" Value="UnHandled" Ext="" />
+		<Param Name="处理中" Value="Handling" Ext="" />
+		<Param Name="已处理" Value="Handled" Ext="" />
+	</Param>
+	
+	<Param Name="警情类型" Value="PsisInfoType" Ext="">
+	<!--<Param Name="交通事故" Value="TrafficAccident" Ext="" />
+		<Param Name="交通拥堵" Value="TrafficCongestion" Ext="" />
+		<Param Name="自然灾害" Value="NaturalDisasters" Ext="" />
+		<Param Name="设备故障" Value="EquipmentFailure" Ext="" /> -->
+		<Param Name="事故" Value="Accident" Ext="" />
+		<Param Name="拥堵" Value="Congestion" Ext="" />
+		<Param Name="求助" Value="Help" Ext="" />
+		<Param Name="举报" Value="Report" Ext="" />
+		<Param Name="投诉" Value="Complaint" Ext="" />
+		<Param Name="故障" Value="Failure" Ext="" />
+		<Param Name="其他" Value="Other" Ext="" />
+	</Param>
+	
+	<Param Name="报警来源" Value="AlarmSource" Ext="">
+		<Param Name="110" Value="01" Ext="" />
+		<Param Name="市民" Value="02" Ext="" />
+		<Param Name="民警" Value="03" Ext="" />
+		<Param Name="CCTV" Value="04" Ext="" />
+		<Param Name="拥堵报警" Value="05" Ext="" />
+		<Param Name="交通台" Value="06" Ext="" />
+		<Param Name="舆情" Value="07" Ext="" />
+		<Param Name="其他" Value="99" Ext="" />
+	</Param>
+	
+	<Param Name="警情级别" Value="PsisLevel" Ext="">
+		<Param Name="一般" Value="Level2" Ext="" />
+		<Param Name="重大" Value="Level3" Ext="" />
+		<!-- <Param Name="特大" Value="Level4" Ext="" /> -->
+		<!-- <Param Name="轻微" Value="Level1" Ext="" /> -->
+	</Param>
+
+	<Param Name="违法处理" Value="Vio" Ext="">
+		<Param Name="违法类型" Value="VioType" Ext="">
+			<Param Name="闯红灯" Value="1" Ext="" />
+			<Param Name="越线、压线" Value="2" Ext="" />
+			<Param Name="超速" Value="3" Ext="" />
+			<Param Name="不按车道行驶" Value="4" Ext="" />
+			<Param Name="逆行" Value="5" Ext="" />
+			<Param Name="违章停车" Value="6" Ext="" />
+			<Param Name="禁行" Value="7" Ext="" />
+			<Param Name="未系安全带" Value="8" Ext="" />
+			<Param Name="人工上传" Value="9" Ext="" />
+			<Param Name="车辆限行" Value="10" Ext="" />
+			<Param Name="车外抛物" Value="11" Ext="" />
+			<Param Name="拥堵超车穿插" Value="12" Ext="" />
+			<Param Name="未礼让行人" Value="13" Ext="" />
+			<Param Name="未安全行车" Value="14" Ext="" />
+			<Param Name="违章变道" Value="15" Ext="" />
+			<Param Name="不带头盔" Value="16" Ext="" />
+			<Param Name="占用应急车道" Value="17" Ext="" />
+			<Param Name="鸣笛" Value="18" Ext="" />
+			<Param Name="灯光违规" Value="19" Ext="" />
+			<Param Name="其他" Value="-1" Ext="" />
+		</Param>
+
+		<Param Name="违法审核动作" Value="Action" Ext="">
+			<Param Name="通过" Value="P" Ext="" />
+			<Param Name="不通过" Value="N" Ext="" />
+		</Param>
+
+		<Param Name="违法审核环节" Value="DealCount" Ext="">
+			<Param Name="待录入" Value="00" Ext="module:ATMS_03_01_01" />
+			<Param Name="有效性审核一" Value="10" Ext="module:ATMS_03_01_02" />
+			<Param Name="有效性审核二" Value="20" Ext="module:ATMS_03_01_03" />
+			<Param Name="有效性审核三" Value="30" Ext="module:ATMS_03_01_04" />
+			<Param Name="无效性审核一" Value="12" Ext="module:ATMS_03_01_05" />
+			<Param Name="无效性审核二" Value="22" Ext="module:ATMS_03_01_06" />
+			<Param Name="无效性审核三" Value="32" Ext="module:ATMS_03_01_07" />
+		</Param>
+		
+		<Param Name="特牌车类型" Value="SpecialCarType" Ext="">
+			<Param Name="违法白名单" Value="W" Ext="" />
+			<Param Name="违法红名单" Value="R" Ext="" />
+		</Param>
+		
+		<Param Name="违法统计类型" Value="VioStatsType" Ext="">
+			<Param Name="待录入" Value="WaitInput" Ext="" />
+			<Param Name="有效性审核" Value="ValidAudit" Ext="" />
+			<Param Name="无效性审核" Value="UnvalidAudit" Ext="" />
+			<Param Name="正式记录" Value="Formal" Ext="" />
+			<Param Name="废片库" Value="Waste" Ext="" />
+			<Param Name="特牌车记录" Value="SpecialCar" Ext="" />
+		</Param>
+		
+		<Param Name="违法审核状态" Value="VioStatus" Ext="">
+			<Param Name="待录入" Value="00" Ext="module:ATMS_03_01_01" />
+			<Param Name="有效性审核一" Value="10" Ext="module:ATMS_03_01_02" />
+			<Param Name="有效性审核二" Value="20" Ext="module:ATMS_03_01_03" />
+			<Param Name="有效性审核三" Value="30" Ext="module:ATMS_03_01_04" />
+			<Param Name="无效性审核一" Value="12" Ext="module:ATMS_03_01_05" />
+			<Param Name="无效性审核二" Value="22" Ext="module:ATMS_03_01_06" />
+			<Param Name="无效性审核三" Value="32" Ext="module:ATMS_03_01_07" />
+			<Param Name="正式记录" Value="V" Ext="module:ATMS_03_02_05" />
+			<Param Name="废片" Value="D" Ext="module:ATMS_03_02_26" />
+			<Param Name="特牌车" Value="S" Ext="module:ATMS_03_07" />
+		</Param>
+		
+		<Param Name="上传六合一状态" Value="VioPstmcapStatus" Ext="">
+			<Param Name="未上传" Value="N" Ext="" />
+			<Param Name="已上传" Value="Y" Ext="" />
+			<Param Name="上传失败" Value="F" Ext="" />
+			<Param Name="过期" Value="E" Ext="" />
+		</Param>
+	</Param>
+
+	<Param Name="相机方向" Value="CameraDirection" Ext="">
+		<Param Name="未知" Value="Unknown" Ext="" />
+		<Param Name="东" Value="East" Ext="" />
+		<Param Name="西" Value="West" Ext="" />
+		<Param Name="南" Value="South" Ext="" />
+		<Param Name="北" Value="North" Ext="" />
+		<Param Name="东南" Value="EastSouth" Ext="" />
+		<Param Name="东北" Value="EastNort" Ext="" />
+		<Param Name="西南" Value="WestSouth" Ext="" />
+		<Param Name="西北" Value="WestNorth" Ext="" />
+	</Param>
+
+	<Param Name="相机类型" Value="CameraType" Ext="">
+		<Param Name="未知" Value="Unknown" Ext="" />
+		<Param Name="球机" Value="PtzCamera" Ext="" />
+		<Param Name="枪机" Value="NormalCamera" Ext="" />
+	</Param>
+	
+	<Param Name="预置位操作" Value="PresetControlCmd" Ext="">
+		<Param Name="设置" Value="Set" Ext="" />
+		<Param Name="移除" Value="Remove" Ext="" />
+		<Param Name="调用" Value="Goto" Ext="" />
+	</Param>
+	
+	<!-- 信号控制字典表 -->
+	
+	<Param Name="相位差类型" Value="OffsetvalType" Ext="">
+		<Param Name="最小周期相位差" Value="0" Ext="" />
+		<Param Name="中间周期相位差" Value="1" Ext="" />
+		<Param Name="中间2周期相位差" Value="2" Ext="" />
+		<Param Name="最大周期相位差" Value="3" Ext="" />
+	</Param>
+	
+	<Param Name="绿信比类型" Value="GreentBiType" Ext="">
+	    <Param Name="轻交通绿信比" Value="0" Ext="" />
+		<Param Name="典型绿信比" Value="1" Ext="" />
+		<Param Name="轻度优先绿信比" Value="2" Ext="" />
+		<Param Name="重度优先绿信比" Value="3" Ext="" />
+	</Param>
+	
+	<Param Name="信号机状态" Value="DeviceState" Ext="">
+		<Param Name="多时段状态" Value="1" Ext="" />
+		<Param Name="协调优化状态" Value="2" Ext="" />
+		<Param Name="中心手动控制状态" Value="3" Ext="" />
+		<Param Name="警务状态(特勤)" Value="4" Ext="" />
+		<Param Name="感应状态" Value="5" Ext="" />
+		<Param Name="脱机状态" Value="9" Ext="" />
+	</Param>
+	
+	<Param Name="路口类型" Value="RoadTypeUtc" Ext="">
+		<Param Name="标准十字路口" Value="1" Ext="" />
+		<Param Name="南北过街路口" Value="2" Ext="" />
+		<Param Name="东西过街路口" Value="3" Ext="" />
+		<Param Name="北东南T型路口" Value="4" Ext="" />
+		<Param Name="东南西T型路口" Value="5" Ext="" />
+		<Param Name="南西北T型路口" Value="6" Ext="" />
+		<Param Name="西北东T型路口" Value="7" Ext="" />
+	</Param>
+	
+	<Param Name="灯组方向" Value="LgDir" Ext="">
+		<Param Name="北" Value="0" Ext="" />
+		<Param Name="东" Value="2" Ext="" />
+		<Param Name="南" Value="4" Ext="" />
+		<Param Name="西" Value="6" Ext="" />
+	</Param>
+	
+	<Param Name="相序类型" Value="PhaseType" Ext="">
+	    <Param Name="普通相序" Value="0" Ext="" />
+		<Param Name="黄闪相序" Value="1" Ext="" />
+		<Param Name="全红相序" Value="2" Ext="" />
+		<Param Name="关灯相序" Value="3" Ext="" />
+		<Param Name="协调优化相序" Value="4" Ext="" />
+	</Param>
+	
+	<Param Name="配时方案类型" Value="ProgramType" Ext="">
+	    <Param Name="普通配时" Value="0" Ext="" />
+		<Param Name="区域协调优化配时" Value="1" Ext="" />
+		<Param Name="关灯配时" Value="2" Ext="" />
+		<Param Name="火车优先配时" Value="3" Ext="" />
+		<Param Name="安全模式配时" Value="4" Ext="" />
+		<Param Name="快速特勤" Value="5" Ext="" />
+		<Param Name="警察小门配时" Value="6" Ext="" />
+		<Param Name="平时方案" Value="8" Ext="" />
+		<Param Name="周末方案" Value="9" Ext="" />
+	</Param>
+	
+	<Param Name="时间表方案类型" Value="DayType" Ext="">
+	    <Param Name="普通时间表" Value="0" Ext="" />
+		<Param Name="特定时间表" Value="1" Ext="" />
+		<Param Name="平时方案" Value="8" Ext="" />
+		<Param Name="周末方案" Value="9" Ext="" />
+	</Param>
+	
+	<Param Name="时段方式" Value="PeriodMode" Ext="">
+	    <Param Name="自动" Value="0" Ext="" />
+		<Param Name="黄闪" Value="1" Ext="" />
+		<Param Name="全灭" Value="2" Ext="" />
+		<Param Name="全红" Value="3" Ext="" />
+	</Param>
+	
+	<Param Name="通讯日志类型" Value="UtcMessageType" Ext="">
+		<Param Name="上传" Value="1" Ext="" />
+	    <Param Name="下发" Value="2" Ext="" />
+	    <Param Name="其它" Value="9" Ext="" />
+	</Param>
+	
+	<Param Name="通讯日志类别" Value="UtcMessageClass" Ext="">
+		<Param Name="校时" Value="1" Ext="" />
+	    <Param Name="相序方案" Value="2" Ext="" />
+	    <Param Name="配时方案" Value="3" Ext="" />
+	    <Param Name="时间表方案" Value="4" Ext="" />
+	    <Param Name="周方案" Value="5" Ext="" />
+	    <Param Name="假日方案" Value="6" Ext="" />
+	    <Param Name="控制模式" Value="7" Ext="" />
+	    <Param Name="时相控制" Value="8" Ext="" />
+	    <Param Name="当前配时" Value="9" Ext="" />
+	    <Param Name="订阅灯态" Value="10" Ext="" />
+	    <Param Name="取肖订阅灯态" Value="12" Ext="" />
+	    <Param Name="硬件故障" Value="13" Ext="" />
+	    <Param Name="信号机参数" Value="14" Ext="" />
+	    <Param Name="信号机状态" Value="15" Ext="" />
+	    <Param Name="解除手动" Value="16" Ext="" />
+	    <Param Name="其它" Value="99" Ext="" />
+	</Param>
+	
+	<Param Name="车道号" Value="LaneNo" Ext="">
+		<Param Name="第一车道" Value="01" Ext="" />
+		<Param Name="第二车道" Value="02" Ext="" />
+		<Param Name="第三车道" Value="03" Ext="" />
+		<Param Name="第四车道" Value="04" Ext="" />
+		<Param Name="第五车道" Value="05" Ext="" />
+		<Param Name="第六车道" Value="06" Ext="" />
+		<Param Name="第七车道" Value="07" Ext="" />
+		<Param Name="第八车道" Value="08" Ext="" />
+	</Param>
+	
+	<Param Name="车道类型" Value="LaneType" Ext="">
+		<Param Name="左转" Value="1" Ext="" />
+		<Param Name="直行" Value="2" Ext="" />
+		<Param Name="右转" Value="3" Ext="" />
+		<Param Name="调头" Value="4" Ext="" />
+	</Param>
+	
+    <Param Name="车道方向" Value="LaneDir" Ext="">
+        <Param Name="北" Value="0" Ext="" />
+		<Param Name="东" Value="2" Ext="" />
+		<Param Name="南" Value="4" Ext="" />
+		<Param Name="西" Value="6" Ext="" />
+	</Param>
+	
+	<Param Name="信号机配置类型" Value="SignalType" Ext="">
+        <Param Name="以相位为单位" Value="UniHz" Ext="" />
+		<Param Name="以相位为单位-II" Value="GangHui" Ext="" />
+		<Param Name="以步伐为单位" Value="DingAn" Ext="" />
+	</Param>
+	
+	<Param Name="路段级别" Value="RoadLevel" Ext="">
+        <Param Name="快速路" Value="1" Ext="Weight:40%" />
+		<Param Name="主干道" Value="2" Ext="Weight:30%" />
+		<Param Name="次干道" Value="3" Ext="Weight:20%" />
+		<Param Name="支路" Value="4" Ext="Weight:10%" />
+	</Param>
+	
+	<Param Name="路段服务级别" Value="ServiceLevel" Ext="">
+        <Param Name="开流畅通" Value="A" Ext="" />
+		<Param Name="车流稍延迟" Value="B" Ext="" />
+		<Param Name="车流延迟" Value="C" Ext="" />
+		<Param Name="车流不大稳定" Value="D" Ext="" />
+		<Param Name="车流不稳定" Value="E" Ext="" />
+		<Param Name="交通阻塞" Value="F" Ext="" />
+	</Param>
+	
+    <Param Name="违法无效原因" Value="VioInvalidReason" Ext="">
+        <Param Name="套牌"   	 Value="01" Ext="" />
+		<Param Name="无资料"   	 Value="02" Ext="" />
+		<Param Name="重复录入"	 Value="03" Ext="" />
+		<Param Name="筛选错误" 	 Value="04" Ext="" />
+		<Param Name="圆灯右转" 	 Value="05" Ext="" />
+		<Param Name="号牌残缺不清晰"	 Value="06" Ext="" />
+		<Param Name="军警车"	 Value="07" Ext="" />
+		<Param Name="大车遮挡"	 Value="08" Ext="" />
+		<Param Name="标线不清晰"	 Value="09" Ext="" />
+		<Param Name="树叶遮挡" 		 Value="10" Ext="" />
+		<Param Name="事故现场" 		 Value="11" Ext="" />
+		<Param Name="民警指挥" 		 Value="12" Ext="" />
+		<Param Name="转出"		 Value="13" Ext="" />
+		<Param Name="注销" 		 Value="14" Ext="" />
+		<Param Name="其它" 	 Value="99" Ext="" />
+	</Param>
+	
+	<!-- 此处因Value可能变动暂时加上Key, 其它参数暂时不变待生成工具出来后统一修改 -->
+	<Param Name="违法常量" Key="VioConstant" Value="VioConstant" Ext="">
+		<Param Name="有效性审核次数" Key="VioConstant_InputAuditCount" Value="1" Ext="" />
+		<Param Name="无效性审核次数" Key="VioConstant_DeleteAuditCount" Value="1" Ext="" />
+		<Param Name="自动加载车辆信息" Key="VehicleInfo_Auto" Value="N" Ext="" />
+	</Param>
+
+	<Param Name="特牌车" Key="VioSpecialCar" Value="VioSpecialCar" Ext="">
+		<Param Name="是否启用特牌车功能" Key="VioSpecialCar_Enabled" Value="Y" Ext="" />
+		<Param Name="启用的特派车类型" Key="VioSpecialCar_type_Vaild" Value="W,R" Ext="" />
+	</Param>
+
+	<Param Name="车辆归属地" Key="VehicleOwnership" Value="VehicleOwnership" Ext="">
+		<Param Name="本省车辆标识" Key="LocalProvinceVehicleSign" Value="粤" Ext="" />
+		<Param Name="本市车辆标识" Key="LocalCityVehicleSign" Value="K" Ext="" />
+	</Param>
+
+	<Param Name="工程建设类型" Value="EngineeringConstructionClass" Ext="">
+		<Param Name="自建" Value="OneClass" Ext="" />
+		<Param Name="承建" Value="TwoClass" Ext="" />
+	</Param>
+	
+	<Param Name="系统模块" Value="SystemModule" Ext="">
+		<Param Name="指挥调度" Value="DispatchCommand" Ext="" />
+		<Param Name="交通监管" Value="TrafficSup" Ext="" />
+		<Param Name="缉查布控" Value="Monitor" Ext="" />
+		<Param Name="违法处理" Value="Illegal" Ext="" />
+		<Param Name="信号控制" Value="SignalControl" Ext="" />
+		<Param Name="信息发布" Value="InfoDiffusion" Ext="" />
+		<Param Name="运维管理" Value="NetManage" Ext="" />
+		<Param Name="配置管理" Value="Configure" Ext="" />
+		<Param Name="其他" Value="Unknown" Ext="" />
+	</Param>
+	
+	<Param Name="监巡等级" Value="InspectLevel" Ext="">
+		<Param Name="一级" Value="1" Ext="" />
+		<Param Name="二级" Value="2" Ext="" />
+		<Param Name="三级" Value="3" Ext="" />
+		<Param Name="四级" Value="4" Ext="" />
+		<Param Name="五级" Value="5" Ext="" />
+	</Param>
+	
+	<Param Name="消息类别" Value="MessageClass" Ext="">
+		<Param Name="普通消息" Value="Normal" Ext="" />
+		<Param Name="待办事项" Value="Backlog" Ext="" />
+		<Param Name="执行动作" Value="Action" Ext="" />
+		<Param Name="其他" Value="Other" Ext="" />
+	</Param>
+	<Param Name="消息类型" Value="MessageType" Ext="">
+		<Param Name="违法审核消息" Value="ViolationAudit" Ext="" />
+		<Param Name="事件联动动作" Value="EventRuleAction" Ext="" />
+		<Param Name="状态消息" Value="Status" Ext="" />
+		<Param Name="报警消息" Value="Alarm" Ext="" />
+		<Param Name="其他" Value="Other" Ext="" />
+	</Param>
+	<Param Name="设备对象状态" Value="ObjectState" Ext="">
+		<!-- <Param Name="未知" Value="Unknow" Ext="" /> -->
+		<Param Name="在线" Value="OnLine" Ext="" />
+		<Param Name="离线" Value="OffLine" Ext="" />
+		<!-- <Param Name="报警" Value="Alarm" Ext="" />
+		<Param Name="注销" Value="Cancellation" Ext="" />
+		<Param Name="正常" Value="Normal" Ext="" />
+		<Param Name="视频丢失" Value="VideoLost" Ext="" /> -->
+	</Param>
+	
+	<Param Name="设备类型" Value="DeviceType" Ext="">
+		<Param Name="未知" Value="Unknow" Ext="" />
+		<Param Name="视频网关接入服务器" Value="PvgProxyServer" Ext="" />
+		<Param Name="智能网关接入服务器" Value="IvsProxyServer" Ext="" />
+		<Param Name="光端机网关接入服务器" Value="OpticalProxyServer" Ext="" />
+		<Param Name="视频诊断" Value="DiagnosisIvs" Ext="" />
+		<Param Name="报警分析" Value="AnalyseIvs" Ext="" />
+		<Param Name="录像分析" Value="RecordIvs" Ext="" />
+		<Param Name="索引分析" Value="IndexIvs" Ext="" />
+		<Param Name="解码器网关接入服务器" Value="DecoderProxyServer" Ext="" />
+	</Param>
+	
+	<Param Name="违章类型" Value="PeccancyType"  Ext="">
+	    <Param Name="正常车辆" Value="PC_0" Ext="" />
+		<Param Name="驾驶证丢失期间仍驾驶机动车的" Value="PC_1013" Ext="" />
+		<Param Name="驾驶证损毁期间仍驾驶机动车的" Value="PC_1014" Ext="" />
+		<Param Name="驾驶证被依法扣留期间仍驾驶机动车的" Value="PC_1015" Ext="" />
+		<Param Name="违法记分达到12分仍驾驶机动车的" Value="PC_1016" Ext="" />
+		<Param Name="机动车不在机动车道内行驶的" Value="PC_1018" Ext="" />
+		<Param Name="机动车违反规定使用专用车道的" Value="PC_1019" Ext="" />
+		<Param Name="遇前方机动车停车排队等候或者缓慢行驶时，未依次交替驶入车道减少后的路口、路段的" Value="PC_1023" Ext="" />
+		<Param Name="在没有交通信号灯、交通标志、交通标线或者交警指挥的交叉路口遇到停车排队等候或者缓慢行驶时，机动车未依次交替通行的" Value="PC_1024" Ext="" />
+		<Param Name="遇前方机动车停车排队等候或者缓慢行驶时，在人行横道、网状线区域内停车等候的" Value="PC_1025" Ext="" />
+		<Param Name="行经铁路道口，不按规定通行的" Value="PC_1026" Ext="" />
+		<Param Name="运载危险物品未经批准的" Value="PC_1031" Ext="" />
+		<Param Name="货运机动车违反规定载人的" Value="PC_1036" Ext="" />
+		<Param Name="未将故障车辆移到不妨碍交通的地方停放的" Value="PC_1037" Ext="" />
+		<Param Name="不避让正在作业的道路养护车、工程作业车的" Value="PC_1038" Ext="" />
+		<Param Name="机动车违反规定停放、临时停车，妨碍其它车辆、行人通行的" Value="PC_1039" Ext="" />
+		<Param Name="机动车喷涂、粘贴标识或者车身广告影响安全驾驶的" Value="PC_1040" Ext="" />
+		<Param Name="道路养护施工作业车辆、机械作业时未开启示警灯和危险报警闪光灯的" Value="PC_1041" Ext="" />
+		<Param Name="变更车道时影响正常行驶的机动车的" Value="PC_1043" Ext="" />
+		<Param Name="在禁止掉头或者禁止左转弯标志、标线的地点掉头的" Value="PC_1044" Ext="" />
+		<Param Name="在容易发生危险的路段掉头的" Value="PC_1045" Ext="" />
+		<Param Name="掉头时妨碍正常行驶的车辆和行人通行的" Value="PC_1046" Ext="" />
+		<Param Name="机动车未按规定鸣喇叭示意的" Value="PC_1047" Ext="" />
+		<Param Name="在禁止鸣喇叭的区域或者路段鸣喇叭的" Value="PC_1048" Ext="" />
+		<Param Name="在机动车驾驶室的前后窗范围内悬挂、放置妨碍驾驶人视线的物品的" Value="PC_1049" Ext="" />
+		<Param Name="机动车行经漫水路或漫水桥时未低速通过的" Value="PC_1050" Ext="" />
+		<Param Name="机动车载运超限物品行经铁路道口时不按指定的道口通过的" Value="PC_1051" Ext="" />
+		<Param Name="机动车载运超限物品行经铁路道口时不按指定的时间通过的" Value="PC_1052" Ext="" />
+		<Param Name="机动车行经渡口，不服从渡口管理人员指挥，不依次待渡的" Value="PC_1053" Ext="" />
+		<Param Name="上下渡船时，不低速慢行的" Value="PC_1054" Ext="" />
+		<Param Name="特种车辆违反规定使用警报器的" Value="PC_1055" Ext="" />
+		<Param Name="特种车辆违反规定使用标志灯具的" Value="PC_1056" Ext="" />
+		<Param Name="机动车在单位院内居民居住区内不低速行驶的" Value="PC_1057" Ext="" />
+		<Param Name="机动车在单位院内居民居住区内不避让行人的" Value="PC_1058" Ext="" />
+		<Param Name="驾驶摩托车手离车把的" Value="PC_1059" Ext="" />
+		<Param Name="驾驶摩托车在车把上悬挂物品的" Value="PC_1060" Ext="" />
+		<Param Name="拖拉机驶入大中城市中心城区内道路的" Value="PC_1061" Ext="" />
+		<Param Name="拖拉机驶入高速公路、城市快速路或其它禁止通行道路的" Value="PC_1062" Ext="" />
+		<Param Name="拖拉机违反规定载人的" Value="PC_1063" Ext="" />
+		<Param Name="拖拉机牵引多辆挂车的" Value="PC_1064" Ext="" />
+		<Param Name="学习驾驶人不按指定路线上道路学习驾驶的" Value="PC_1065" Ext="" />
+		<Param Name="学习驾驶人不按指定时间上道路学习驾驶的" Value="PC_1066" Ext="" />
+		<Param Name="学习驾驶人使用非教练车上道路驾驶的" Value="PC_1067" Ext="" />
+		<Param Name="学习驾驶人在教练不随车指导下上道路驾驶车辆的" Value="PC_1068" Ext="" />
+		<Param Name="使用教练车时有与教学无关的人员乘坐的" Value="PC_1069" Ext="" />
+		<Param Name="驾驶安全设施不全的机动车的" Value="PC_1072" Ext="" />
+		<Param Name="驾驶机件不符合技术标准的机动车的" Value="PC_1073" Ext="" />
+		<Param Name="不按规定倒车的" Value="PC_1074" Ext="" />
+		<Param Name="在车门、车厢没有关好时行车的" Value="PC_1075" Ext="" />
+		<Param Name="机动车在没有划分机动车道、非机动车道和人行道的道路上，不在道路中间通行的" Value="PC_1076" Ext="" />
+		<Param Name="驾驶机动车下陡坡时熄火、空档滑行的" Value="PC_1077" Ext="" />
+		<Param Name="使用他人机动车驾驶证驾驶机动车的" Value="PC_1082" Ext="" />
+		<Param Name="改变车身颜色、更换发动机、车身或者车架，未按规定时限办理变更登记的" Value="PC_1084" Ext="" />
+		<Param Name="机动车所有权转移后，现机动车所有人未按规定时限办理转移登记的" Value="PC_1085" Ext="" />
+		<Param Name="机动车所有人办理变更登记、转移登记，机动车档案转出登记地车辆管理所后，未按照规定时限到住所地车辆管理所申请机动车转入的" Value="PC_1086" Ext="" />
+		<Param Name="以欺骗、贿赂等不正当手段办理补、换领机动车登记证书、号牌、行驶证和检验合格标志等业务的" Value="PC_1088" Ext="" />
+		<Param Name="机动车违反警告标志指示的" Value="PC_1090" Ext="" />
+		<Param Name="机动车违反警告标线指示的" Value="PC_1091" Ext="" />
+		<Param Name="公路客运车辆以外的载客汽车违反规定载货的" Value="PC_1092" Ext="" />
+		<Param Name="驾驶时观看电视的" Value="PC_1093" Ext="" />
+		<Param Name="在同车道行驶中，不按规定与前车保持必要的安全距离的" Value="PC_1094" Ext="" />
+		<Param Name="驾驶人未按规定使用安全带的" Value="PC_1101" Ext="" />
+		<Param Name="不按规定使用灯光的" Value="PC_1102" Ext="" />
+		<Param Name="不按规定会车的" Value="PC_1103" Ext="" />
+		<Param Name="上道路行驶的机动车未放置保险标志的" Value="PC_1108" Ext="" />
+		<Param Name="未随车携带行驶证的" Value="PC_1109" Ext="" />
+		<Param Name="未随车携带驾驶证的" Value="PC_1110" Ext="" />
+		<Param Name="机动车载货长度、宽度、高度超过规定的" Value="PC_1111" Ext="" />
+		<Param Name="上道路行驶的机动车未放置检验合格标志的" Value="PC_1115" Ext="" />
+		<Param Name="驾驶摩托车时驾驶人未按规定戴安全头盔的或者乘坐人员未按规定戴安全头盔的" Value="PC_1207" Ext="" />
+		<Param Name="机动车通过有灯控路口时，不按所需行进方向驶入导向车道的" Value="PC_1208" Ext="" />
+		<Param Name="左转弯时，未靠路口中心点左侧转弯的" Value="PC_1209" Ext="" />
+		<Param Name="通过路口遇放行信号不依次通过的" Value="PC_1210" Ext="" />
+		<Param Name="通过路口遇停止信号时，停在停止线以内或路口内的" Value="PC_1211" Ext="" />
+		<Param Name="通过路口遇停止信号时，停在停止线以内或路口内" Value="PC_12110" Ext="" />
+		<Param Name="通过路口向右转弯遇同车道内有车等候放行信号时，不依次停车等候的" Value="PC_1212" Ext="" />
+		<Param Name="驾驶时拨打接听手持电话的" Value="PC_1223" Ext="" />
+		<Param Name="驾车时有其他妨碍安全行车的行为的" Value="PC_1225" Ext="" />
+		<Param Name="路口遇有交通阻塞时未依次等候的" Value="PC_1228" Ext="" />
+		<Param Name="机动车载人超过额定人数的" Value="PC_1238" Ext="" />
+		<Param Name="遇前方机动车停车排队或者缓慢行驶时，借道超车或者占用对面车道、穿插等候车辆的" Value="PC_1243" Ext="" />
+		<Param Name="在城市快速路上行驶时，驾驶人未按规定使用安全带的" Value="PC_1244" Ext="" />
+		<Param Name="驾驶校车运载学生，不按照规定放置校车标牌的" Value="PC_1247" Ext="" />
+		<Param Name="驾驶校车运载学生，不按照规定开启校车标志灯的" Value="PC_1248" Ext="" />
+		<Param Name="驾驶校车运载学生，不按照经审核确定线路行驶的" Value="PC_1249" Ext="" />
+		<Param Name="校车上下学生，不按照规定在校车停靠站点停靠的" Value="PC_1250" Ext="" />
+		<Param Name="校车未运载学生上道路行驶，使用校车标牌的" Value="PC_1251" Ext="" />
+		<Param Name="校车未运载学生上道路行驶，使用校车标志灯的" Value="PC_1252" Ext="" />
+		<Param Name="校车未运载学生上道路行驶，使用停车指示标志的" Value="PC_1253" Ext="" />
+		<Param Name="驾驶校车上道路行驶前，未对校车车况是否符合安全技术要求进行检查的" Value="PC_1254" Ext="" />
+		<Param Name="驾驶存在安全隐患的校车上道路行驶的" Value="PC_1255" Ext="" />
+		<Param Name="在校车载有学生时给车辆加油的" Value="PC_1256" Ext="" />
+		<Param Name="在校车发动机引擎熄灭前离开驾驶座位的" Value="PC_1257" Ext="" />
+		<Param Name="机动车逆向行驶的" Value="PC_1301" Ext="" />
+		<Param Name="从前车右侧超车的" Value="PC_1304" Ext="" />
+		<Param Name="前车左转弯时超车的" Value="PC_1305" Ext="" />
+		<Param Name="前车掉头时超车的" Value="PC_1306" Ext="" />
+		<Param Name="前车超车时超车的" Value="PC_1307" Ext="" />
+		<Param Name="与对面来车有会车可能时超车的" Value="PC_1308" Ext="" />
+		<Param Name="超越执行紧急任务的警车、消防车、救护车、工程救险车的" Value="PC_1309" Ext="" />
+		<Param Name="在铁路道口、路口、窄桥、弯道、陡坡、隧道、人行横道、交通流量大的路段等地点超车的" Value="PC_1310" Ext="" />
+		<Param Name="车辆在道路上发生故障或事故后，妨碍交通又难以移动的，不按规定设置警告标志或未按规定使用警示灯光的" Value="PC_1311" Ext="" />
+		<Param Name="准备进入环形路口不让已在路口内的机动车先行的" Value="PC_1312" Ext="" />
+		<Param Name="转弯的机动车未让直行的车辆、行人先行的" Value="PC_1313" Ext="" />
+		<Param Name="相对方向行驶的右转弯机动车不让左转弯车辆先行的" Value="PC_1314" Ext="" />
+		<Param Name="机动车通过无灯控或交警指挥的路口，不按交通标志、标线指示让优先通行的一方先行的" Value="PC_1315" Ext="" />
+		<Param Name="机动车通过无灯控、交警指挥、交通标志标线控制的路口，不让右方道路的来车先行的" Value="PC_1316" Ext="" />
+		<Param Name="载货汽车牵引多辆挂车的" Value="PC_1317" Ext="" />
+		<Param Name="半挂牵引车牵引多辆挂车的" Value="PC_1318" Ext="" />
+		<Param Name="小型载客汽车牵引旅居挂车以外的且总质量700千克以上挂车的" Value="PC_1320" Ext="" />
+		<Param Name="载货汽车牵引挂车的载质量超过汽车本身的载质量的" Value="PC_1322" Ext="" />
+		<Param Name="大型载客汽车牵引挂车的" Value="PC_1323" Ext="" />
+		<Param Name="中型载客汽车牵引挂车的" Value="PC_1324" Ext="" />
+		<Param Name="低速载货汽车牵引挂车的" Value="PC_1325" Ext="" />
+		<Param Name="三轮机动车汽车牵引挂车的" Value="PC_1326" Ext="" />
+		<Param Name="机动车在发生故障或事故后，不按规定使用灯光的" Value="PC_1327" Ext="" />
+		<Param Name="不避让执行任务的特种车辆的" Value="PC_1333" Ext="" />
+		<Param Name="机动车不避让盲人的" Value="PC_1334" Ext="" />
+		<Param Name="上道路行驶的机动车未按规定定期进行安全技术检验的" Value="PC_1340" Ext="" />
+		<Param Name="机动车违反禁令标志指示的" Value="PC_1344" Ext="" />
+		<Param Name="黄标车违反禁令标志指示的" Value="PC_1344A" Ext="" />
+		<Param Name="黑烟车违反禁令标志指示的" Value="PC_1344B" Ext="" />
+		<Param Name="货车违反禁令标志指示的" Value="PC_1344C" Ext="" />
+		<Param Name="机动车违反单双号限行禁令标志指示的" Value="PC_1344D" Ext="" />
+		<Param Name="外地机动车违反禁令标志指示的" Value="PC_1344E" Ext="" />
+		<Param Name="机动车违反禁止标线指示的" Value="PC_1345" Ext="" />
+		<Param Name="驾驶营运客车（不包括公共汽车）、校车以外的载客汽车载人超过核定人数未达20%的" Value="PC_1348" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" Value="PC_1349" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" Value="PC_1350" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" Value="PC_1351" Ext="" />
+		<Param Name="驾驶中型以上载客载货汽车、危险物品运输车辆以外的其他机动车行驶超过规定时速10%未达20%的" Value="PC_1352" Ext="" />
+		<Param Name="驾驶机动车在城市快速路上不按规定车道行驶的" Value="PC_1355" Ext="" />
+		<Param Name="行经人行横道，未减速行驶的" Value="PC_1356" Ext="" />
+		<Param Name="遇行人正在通过人行横道时未停车让行的" Value="PC_1357" Ext="" />
+		<Param Name="行经没有交通信号的道路时，遇行人横过道路未避让的" Value="PC_1358" Ext="" />
+		<Param Name="运载危险物品时不按规定的时间、路线、速度行驶的" Value="PC_1617" Ext="" />
+		<Param Name="运载危险物品时未悬挂警示标志的" Value="PC_1618" Ext="" />
+		<Param Name="运载危险物品时未采取必要的安全措施的" Value="PC_1619" Ext="" />
+		<Param Name="机动车在城市快速路上遇交通拥堵 ，占用应急车道行驶的" Value="PC_1622" Ext="" />
+		<Param Name="机动车驾驶人不按照规定避让校车的" Value="PC_1624" Ext="" />
+		<Param Name="驾驶机动车违反道路交通信号灯通行的" Value="PC_1625" Ext="" />
+		<Param Name="驾驶公路客运汽车、公共汽车以外的其他营运客车载人超过核定人数未达20％的" Value="PC_1626" Ext="" />
+		<Param Name="驾驶营运客车（不包括公共汽车）以外的其他载客汽车载人超过核定人数20%以上的" Value="PC_1627" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在城市快速路上行驶超过规定时速未达20％的" Value="PC_1628" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在城市快速路上行驶超过规定时速未达20％的" Value="PC_1629" Ext="" />
+		<Param Name="驾驶校车在城市快速路上行驶超过规定时速未达20％的" Value="PC_1630" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在城市快速路上行驶超过规定时速未达20％的" Value="PC_1631" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上行驶超过规定时速20%以上未达到50%的" Value="PC_1632" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上行驶超过规定时速20%以上未达到50%的" Value="PC_1633" Ext="" />
+		<Param Name="驾驶校车在高速公路、城市快速路以外的道路上行驶超过规定时速20%以上未达到50%的" Value="PC_1634" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在高速公路、城市快速路以外的道路上行驶超过规定时速20%以上未达到50%的" Value="PC_1635" Ext="" />
+		<Param Name="驾驶中型以上载客载货汽车、校车、危险物品运输车辆以外的其他机动车行驶超过规定时速20%以上未达到50%的" Value="PC_1636" Ext="" />
+		<Param Name="驾驶机动车运载超限的不可解体的物品，未按指定的时间、路线、速度行驶的" Value="PC_1640" Ext="" />
+		<Param Name="驾驶机动车运载超限的不可解体的物品，未悬挂明显标志的" Value="PC_1641" Ext="" />
+		<Param Name="连续驾驶中型以上载客汽车、危险物品运输车辆外的机动车超过4小时未停车休息或停车休息时间少于20分钟的" Value="PC_1642" Ext="" />
+		<Param Name="驾驶公路客运车辆、公共汽车以外的其他营运客车载人超过核定人数20％以上的" Value="PC_1716" Ext="" />
+		<Param Name="上道路行驶的机动车未悬挂机动车号牌的" Value="PC_1717" Ext="" />
+		<Param Name="故意遮挡机动车号牌的" Value="PC_1718" Ext="" />
+		<Param Name="故意污损机动车号牌的" Value="PC_1719" Ext="" />
+		<Param Name="不按规定安装机动车号牌的" Value="PC_1720" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在城市快速路上行驶超过规定时速20%以上未达50%的" Value="PC_1722" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在城市快速路上行驶超过规定时速20%以上未达50%的" Value="PC_1723" Ext="" />
+		<Param Name="驾驶校车在城市快速路上行驶超过规定时速20%以上未达50%的" Value="PC_1724" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在城市快速路上行驶超过规定时速20％以上未达50%的" Value="PC_1725" Ext="" />
+		<Param Name="连续驾驶中型以上载客汽车超过4小时未停车休息或者停车休息时间少于20分钟的" Value="PC_1730" Ext="" />
+		<Param Name="连续驾驶危险物品运输车辆超过4小时未停车休息或者停车休息时间少于20分钟的" Value="PC_1731" Ext="" />
+		<Param Name="拖拉机驶入高速公路的" Value="PC_4002" Ext="" />
+		<Param Name="机动车从匝道进入或驶离高速公路时不按规定使用灯光的" Value="PC_4005" Ext="" />
+		<Param Name="机动车从匝道进入高速公路时妨碍已在高速公路内的机动车正常行驶的" Value="PC_4006" Ext="" />
+		<Param Name="在高速公路的路肩上行驶的" Value="PC_4007" Ext="" />
+		<Param Name="非紧急情况下在高速公路应急车道上行驶的" Value="PC_4008" Ext="" />
+		<Param Name="机动车在高速公路上通过施工作业路段，不减速行驶的" Value="PC_4009" Ext="" />
+		<Param Name="在高速公路上骑、轧车行道分界线的" Value="PC_4010" Ext="" />
+		<Param Name="在高速公路上试车或学习驾驶机动车的" Value="PC_4011" Ext="" />
+		<Param Name="在高速公路上违反规定拖曳故障车、肇事车的" Value="PC_4012" Ext="" />
+		<Param Name="在高速公路上行驶的载货汽车车厢载人的" Value="PC_4014" Ext="" />
+		<Param Name="在高速公路上行驶的两轮摩托车载人的" Value="PC_4015" Ext="" />
+		<Param Name="在高速公路上行驶时，驾驶人未按规定使用安全带的" Value="PC_4204" Ext="" />
+		<Param Name="驾驶设计最高时速低于70公里的机动车进入高速公路的" Value="PC_4301" Ext="" />
+		<Param Name="机动车在高速公路上发生故障或交通事故后，驾驶人不按规定使用危险报警闪光灯的" Value="PC_4302" Ext="" />
+		<Param Name="高速公路上车辆发生故障或交通事故后，不按规定设置警告标志的" Value="PC_4303" Ext="" />
+		<Param Name="驾驶机动车在高速公路上正常情况下行驶速度低于规定最低时速20%以上的" Value="PC_4306" Ext="" />
+		<Param Name="在高速公路上不按规定超车的" Value="PC_4311" Ext="" />
+		<Param Name="驾驶机动车在高速公路上不按规定车道行驶的" Value="PC_4312" Ext="" />
+		<Param Name="机动车在高速公路遇交通拥堵，占用应急车道行驶的" Value="PC_4608" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在高速公路上行驶超过规定时速未达20％的" Value="PC_4609" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在高速公路上行驶超过规定时速未达20％的" Value="PC_4610" Ext="" />
+		<Param Name="驾驶校车在高速公路上行驶超过规定时速未达20％的" Value="PC_4611" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在高速公路上行驶超过规定时速未达20％的" Value="PC_4612" Ext="" />
+		<Param Name="驾驶营运客车以外的机动车在高速公路行车道上停车的" Value="PC_4613" Ext="" />
+		<Param Name="驾驶营运客车以外的机动车非紧急情况下在高速公路应急车道上停车的" Value="PC_4614" Ext="" />
+		<Param Name="低能见度气象条件下，驾驶机动车在高速公路上不按规定行驶的" Value="PC_4615" Ext="" />
+		<Param Name="在高速公路上倒车的" Value="PC_4701" Ext="" />
+		<Param Name="在高速公路上逆行的" Value="PC_4702" Ext="" />
+		<Param Name="在高速公路上穿越中央分隔带掉头的" Value="PC_4703" Ext="" />
+		<Param Name="驾驶营运客车在高速公路行车道上停车的" Value="PC_4704" Ext="" />
+		<Param Name="驾驶营运客车非紧急情况下在高速公路应急车道上停车的" Value="PC_4705" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在高速公路上行驶超过规定时速20％以上未达50%的" Value="PC_4706" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在高速公路上行驶超过规定时速20％以上未达50%的" Value="PC_4707" Ext="" />
+		<Param Name="驾驶校车在高速公路上行驶超过规定时速20％以上未达50%的" Value="PC_4708" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在高速公路上行驶超过规定时速20％以上未达50%的" Value="PC_4709" Ext="" />
+		<Param Name="其他机动车喷涂特种车特定标志图案的" Value="PC_5030" Ext="" />
+		<Param Name="服用国家管制的精神药品或麻醉药品仍继续驾驶的" Value="PC_5035" Ext="" />
+		<Param Name="患有妨碍安全驾驶机动车的疾病仍继续驾驶的" Value="PC_5036" Ext="" />
+		<Param Name="过度疲劳仍继续驾驶的" Value="PC_5037" Ext="" />
+		<Param Name="未按规定喷涂放大的牌号或者放大的牌号不清晰的的" Value="PC_5038" Ext="" />
+		<Param Name="牵引故障机动车时，被牵引的机动车除驾驶人外载人的" Value="PC_6001" Ext="" />
+		<Param Name="牵引故障机动车时，被牵引的机动车拖带挂车的" Value="PC_6002" Ext="" />
+		<Param Name="牵引故障机动车时，被牵引的机动车宽度大于牵引的机动车的" Value="PC_6003" Ext="" />
+		<Param Name="使用软连接装置牵引故障机动车时，牵引车与被牵引车之间未保持安全距离的" Value="PC_6004" Ext="" />
+		<Param Name="牵引制动失效的被牵引车，未使用硬连接牵引装置的" Value="PC_6005" Ext="" />
+		<Param Name="使用汽车吊车牵引车辆的" Value="PC_6006" Ext="" />
+		<Param Name="使用轮式专用机械牵引车辆的" Value="PC_6007" Ext="" />
+		<Param Name="使用摩托车牵引车辆的" Value="PC_6008" Ext="" />
+		<Param Name="牵引摩托车的" Value="PC_6009" Ext="" />
+		<Param Name="未使用专用清障车拖曳转向或照明、信号装置失效的机动车的" Value="PC_6010" Ext="" />
+		<Param Name="在高速公路或城市快速路以外的道路上行驶时，驾驶人未按规定使用安全带的" Value="PC_6011" Ext="" />
+		<Param Name="摩托车后座乘坐不满十二周岁未成年人的" Value="PC_6012" Ext="" />
+		<Param Name="驾驶轻便摩托车载人的" Value="PC_6013" Ext="" />
+		<Param Name="机动车载物行驶时遗洒、飘散载运物的" Value="PC_6014" Ext="" />
+		<Param Name="驾驶载客汽车以外的其他机动车载人超过核定人数的" Value="PC_6017" Ext="" />
+		<Param Name="补领机动车驾驶证后，继续使用原机动车驾驶证的" Value="PC_6018" Ext="" />
+		<Param Name="发生交通事故后，应当自行撤离现场而未撤离，造成交通堵塞的" Value="PC_6019" Ext="" />
+		<Param Name="驾驶机动车在高速公路、城市快速路以外的道路上不按规定车道行驶的" Value="PC_6023" Ext="" />
+		<Param Name="机动车驾驶人在实习期内驾驶公共汽车、营运客车或者执行任务的警车、消防车、救护车、工程救险车以及载有爆炸物品、易燃易爆化学物品、剧毒或者放射性等危险物品的机动车的" Value="PC_6024" Ext="" />
+		<Param Name="机动车驾驶人在实习期内驾驶牵引挂车的" Value="PC_6025" Ext="" />
+		<Param Name="机动车驾驶人在实习期内驾驶机动车上高速公路行驶，无相应或者更高准驾车型驾驶证三年以上的驾驶人陪同的" Value="PC_6026" Ext="" />
+		<Param Name="驾驶机动车未按规定粘贴、悬挂实习标志的" Value="PC_6027" Ext="" />
+		<Param Name="驾驶机动车未按规定粘贴、悬挂残疾人机动车专用标志的" Value="PC_6028" Ext="" />
+		<Param Name="持有大型客车、牵引车、城市公交车、中型客车、大型货车驾驶证的驾驶人，未按照规定申报变更信息的" Value="PC_6029" Ext="" />
+		<Param Name="逾期不参加审验的" Value="PC_6031" Ext="" />
+		<Param Name="挂车的灯光信号、制动、连接、安全防护等装置不符合国家标准的" Value="PC_6036" Ext="" />
+		<Param Name="挂车载人的" Value="PC_6037" Ext="" />
+		<Param Name="货运机动车驾驶室载人超过核定人数的" Value="PC_6038" Ext="" />
+		<Param Name="在机动车上安装影响交通技术监控设备正常使用的装置" Value="PC_7001" Ext="" />
+		<Param Name="在机动车号牌上喷涂、粘贴影响交通技术监控信息接收材料的" Value="PC_7002" Ext="" />
+		<Param Name="未设置导向标志、标线的交叉路口，左转弯机动车未按规定提前驶入最左侧的车道转弯或右转弯机动车未按规定提前驶入最右侧的车道转弯" Value="PC_7003" Ext="" />
+		<Param Name="驾驶车辆在超越前方车辆后突然减速、转弯" Value="PC_7004" Ext="" />
+		<Param Name="机动车在夜间或者遇风、雨、雪、雾等低能见度气象条件时在道路上临时停车，未按规定使用灯光" Value="PC_7005" Ext="" />
+		<Param Name="机动车行经没有交通信号的道路时，遇老年人、儿童、孕妇、抱婴者，以及持盲杖的盲人、行走不便的残疾人横过道路，未按规定停车让行" Value="PC_7006" Ext="" />
+		<Param Name="机动车遇喷涂“校车”字样并载有学生的车辆，未按规定让行" Value="PC_7007" Ext="" />
+		<Param Name="非紧急情况在高速公路上下乘客的" Value="PC_7008" Ext="" />
+		<Param Name="未按规定喷涂或粘贴标识" Value="PC_7009" Ext="" />
+		<Param Name="交通事故发生后，不服从交警指挥，造成交通阻塞的" Value="PC_7010" Ext="" />
+		<Param Name="机动车驾驶人在乘坐人员未按规定使用安全带的情况下驾驶机动车的" Value="PC_7012" Ext="" />
+		<Param Name="机动车在高速公路发生故障或事故后，驾驶人没有组织车上人员迅速转移到右侧路肩上或者应急车道内的" Value="PC_7024" Ext="" />
+		<Param Name="非紧急情况下在高速公路路肩上停车的" Value="PC_7601" Ext="" />
+		<Param Name="因号牌被盗、丢失等原因未悬挂机动车号牌的，且当事人能够出具报警记录或者受案回执单等相关证明的" Value="PC_6039" Ext="" />
+		<Param Name="因交通事故导致车辆号牌损坏、残缺或号牌老化、褪色等非人为因素影响号牌识认的" Value="PC_6040" Ext="" />
+		<Param Name="未按规定粘帖有效临时行驶车号牌的" Value="PC_6041" Ext="" />
+		<Param Name="使用的号牌架内侧边缘距离号牌上汉字、字母或者数字边缘不足5mm且影响号牌识认的" Value="PC_6042" Ext="" />
+		<Param Name="机动车已安装号牌但未使用号牌专用固封装置的" Value="PC_6043" Ext="" />
+		<Param Name="外地驾驶人因不熟悉道路，违反载货汽车禁令标志指示通行的，经交通警察当场指出后立即终止违法行为的" Value="PC_6044" Ext="" />
+		<Param Name="号牌不清晰、不完整的" Value="PC_6045" Ext="" />
+		<Param Name="驾驶机动车在限速低于60公里/小时的公路上超过规定车速50%以下的" Value="PC_6046" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上超过规定时速10%以下的" Value="PC_6047" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上超过规定时速10%以下的" Value="PC_6048" Ext="" />
+		<Param Name="驾驶危险物品运输车辆在高速公路、城市快速路以外的道路上超过规定时速10%以下的" Value="PC_6049" Ext="" />
+		<Param Name="驾驶中型以上载客载货汽车、危险物品运输车辆以外的机动车超过规定时速10%以下的" Value="PC_6050" Ext="" />
+		<Param Name="驾驶机动车在高速公路上行驶低于规定时速20%以下的" Value="PC_4016" Ext="" />
+		<Param Name="机动车违反禁令标志指示的" Value="PC_1229" Ext="" />
+		<Param Name="机动车不按交通信号灯规定通行的" Value="PC_1302" Ext="" />
+		<Param Name="驾驶机动车超过规定时速10%以下的" Value="PC_60500" Ext="" />
+		<Param Name="其他机动车在高速公路以外的道路超速10%以上不足20%的" Value="PC_13521" Ext="" />
+		<Param Name="其他机动车在高速公路以外的道路超速20%以上不足30%的" Value="PC_16366" Ext="" />
+		<Param Name="其他机动车在高速公路以外的道路超速30%以上不足50%的" Value="PC_16367" Ext="" />
+		<Param Name="其他车高速公路外超速50%以上不足70%" Value="PC_17215" Ext="" />
+		<Param Name="其他车高速公路外超速70%以上不足100%" Value="PC_17216" Ext="" />
+		<Param Name="其他车高速公路外超速100%以上" Value="PC_17217" Ext="" />
+		<Param Name="不按行进方向驶入导向车道" Value="PC_12080" Ext="" />
+		<Param Name="逆向行驶" Value="PC_13010" Ext="" />
+		<Param Name="违反禁令标志指示" Value="PC_13440" Ext="" />
+		<Param Name="违反禁止标线指示" Value="PC_13450" Ext="" />
+		<Param Name="违反信号灯规定" Value="PC_16250" Ext="" />
+		<Param Name="交通拥堵处随意穿越、交通拥堵处随意穿插" Value="PC_12430" Ext="" />
+		<Param Name="驾驶机动车在高速公路、城市快速路以外的道路上不按规定车道行驶的" Value="PC_60230" Ext="" />
+		<Param Name="在高速公路或城市快速路以外的道路上行驶时，驾驶人未按规定使用安全带的" Value="PC_60110" Ext="" />
+		<Param Name="未停让人行道上的行人" Value="PC_13570" Ext="" />
+		<Param Name="驾车接拨手持电话" Value="PC_12230" Ext="" />
+		<Param Name="驾车时有其他妨碍安全行车的行为的" Value="PC_12250" Ext="" />	
+		<Param Name="变更车道影响其他车辆行驶" Value="PC_10430" Ext="" />
+		<Param Name="驾驶时拨打接听手持电话的" Value="PC_1223" Ext="" />
+		<Param Name="机动车违反禁止停车标志、禁止长时停车标志或禁止停车线指示的" Value="PC_7027" Ext="" />
+		<Param Name="机动车违反禁令标志指示的" Value="PC_13441" Ext="" />
+		<Param Name="驾驶中型以上载客汽车在高速公路、城市快速路以外的道路上行驶超过规定时速10%未达20%的" Value="PC_1349A" Ext="" />
+		<Param Name="驾驶中型以上载货汽车在高速公路、城市快速路以外的道路上行驶超过规定时速未达20%的" Value="PC_1350A" Ext="" />
+		<Param Name="驾驶中型以上载客载货汽车、危险物品运输车辆以外的其他机动车行驶超过规定时速10%以上不到20%的违法行为" Value="PC_1352A" Ext="" />
+		<Param Name="驾车超过规定最高时速20公里以上的" Value="PC_1721A" Ext="" />
+		<Param Name="驾驶中型以上载客载货汽车、校车、危险物品运输车辆以外的机动车行驶超过规定时速100%以上" Value="PC_1721B" Ext="" />
+    </Param>
+
+  	<Param Name="运维监控对象类型" Value="MaintenaceObjectType" Ext="">
+		<Param Name="摄像机" Value="Camera" Ext="" />
+		<Param Name="卡口" Value="Gate" Ext="" />
+		<Param Name="信号机" Value="UtcDevice" Ext="" />
+		<Param Name="诱导屏" Value="GuideDevice" Ext="" />
+		<Param Name="中心服务器" Value="CenterServer" Ext="" />
+		<Param Name="接入服务器" Value="AccessServer" Ext="" />
+		<Param Name="视频网关服务器" Value="PvgServer" Ext="" />
+		<Param Name="卡口服务器" Value="GateServer" Ext="" />
+		<Param Name="GPS服务器" Value="GpsServer" Ext="" />		
+		<Param Name="GPS设备" Value="GpsDevice" Ext="" />
+	</Param>
+	
+	<Param Name="报障处理状态" Value="IssueStatus" Ext="">
+		<Param Name="已报障" Value="Submitted" Ext="" />
+		<Param Name="处理中" Value="Processing" Ext="" />
+		<Param Name="已反馈" Value="Replied" Ext="" />
+		<Param Name="已解决" Value="Completed" Ext="" />
+	</Param>
+
+	<Param Name="报障处理等级" Value="IssueLevel" Ext="">
+		<Param Name="紧急" Value="1" Ext="" />
+		<Param Name="严重" Value="2" Ext="" />
+		<Param Name="重要" Value="3" Ext="" />
+		<Param Name="一般" Value="4" Ext="" />
+	</Param>
+		
+	<Param Name="服务器类型" Value="ServerType" Ext="">
+		<Param Name="接入服务器" Value="AccessServer" Ext="" />
+		<Param Name="业务服务器" Value="BusinessServer" Ext="" />
+		<Param Name="中心服务器" Value="CenterServer" Ext="" />
+		<Param Name="卡口服务器" Value="GateServer" Ext="" />
+		<Param Name="时序服务器" Value="GpsServer" Ext="" />
+		<Param Name="智能分析服务器" Value="IvsServer" Ext="" />
+		<Param Name="日志服务器" Value="LogServer" Ext="" />
+		<Param Name="消息服务器" Value="MessageServer" Ext="" />
+		<Param Name="视频图像存储服务器" Value="PfsServer" Ext="" />
+		<Param Name="视频网关服务器" Value="PvgServer" Ext="" />
+	</Param>
+		
+	<Param Name="巡区类型" Value="patrolType" Ext="">
+		<Param Name="巡区" Value="Polygon" Ext="" />
+		<Param Name="巡段" Value="Polyline" Ext="" />
+		<Param Name="巡点" Value="point" Ext="" />
+	</Param>
+	
+	<Param Name="勤务考勤类型" Value="PoliceStatusCheckType" Ext="">
+		<Param Name="迟到" Value="Lated" Ext="" />
+		<Param Name="早退" Value="Early" Ext="" />
+		<Param Name="缺勤" Value="Absence" Ext="" />
+		<Param Name="正常" Value="Normal" Ext="" />
+	</Param>
+	
+	<Param Name="交通状态" Value="TrafficState" Ext="">
+		<Param Name="非常顺畅" Value="0" Ext="" />
+		<Param Name="顺畅" Value="1" Ext="" />
+		<Param Name="缓行" Value="2" Ext="" />
+		<Param Name="拥堵" Value="3" Ext="" />
+		<Param Name="严重拥堵" Value="4" Ext="" />
+	</Param>	
+	
+	<Param Name="道路类型" Value="RoadType" Ext="">
+		<Param Name="非常顺畅" Value="0" Ext="" />
+		<Param Name="顺畅" Value="1" Ext="" />
+		<Param Name="缓行" Value="2" Ext="" />
+		<Param Name="拥堵" Value="3" Ext="" />
+		<Param Name="严重拥堵" Value="4" Ext="" />
+	</Param>		
+	
+	<Param Name="事故成因" Value="AccidentReason" Ext="">
+		<Param Name="闯红灯" Value="1" Ext="" />
+		<Param Name="越线、压线" Value="2" Ext="" />
+		<Param Name="超速" Value="3" Ext="" />
+		<Param Name="不按车道行驶" Value="4" Ext="" />
+		<Param Name="逆行" Value="5" Ext="" />
+		<Param Name="违章停车" Value="6" Ext="" />
+		<Param Name="禁行" Value="7" Ext="" />
+		<Param Name="未系安全带" Value="8" Ext="" />
+		<Param Name="车辆限行" Value="10" Ext="" />
+		<Param Name="车外抛物" Value="11" Ext="" />
+		<Param Name="拥堵超车穿插" Value="12" Ext="" />
+		<Param Name="未礼让行人" Value="13" Ext="" />
+		<Param Name="未安全行车" Value="14" Ext="" />
+		<Param Name="违章变道" Value="15" Ext="" />
+		<Param Name="气象" Value="99" Ext="" />
+		<Param Name="其他" Value="-1" Ext="" />
+	</Param>
+	 
+	<Param Name="重点车辆类型" Value="KeyVehicleType" Ext="">
+	<!-- 
+		<Param Name="货运车" Value="1" Ext="" />
+		<Param Name="牵引车" Value="2" Ext="" />
+		<Param Name="危化车" Value="3" Ext="" />
+		<Param Name="泥头车" Value="4" Ext="" />
+		<Param Name="教练车" Value="5" Ext="" />
+		<Param Name="客运车" Value="6" Ext="" />
+		<Param Name="的士车" Value="7" Ext="" />
+		<Param Name="校车" Value="8" Ext="" />
+	-->
+		<Param Name="货运车" Value="3" Ext="" />
+		<Param Name="牵引车" Value="Q" Ext="" />
+		<Param Name="危化车" Value="W" Ext="" />
+		<Param Name="泥头车" Value="N" Ext="" />
+		<Param Name="教练车" Value="J" Ext="" />
+		<Param Name="客运车" Value="K" Ext="" />
+		<Param Name="的士车" Value="T" Ext="" />
+		<Param Name="校车" Value="X" Ext="" />
+	</Param>
+
+	<Param Name="限行类型" Value="RestrictionsType" Ext="">
+		<Param Name="黄标车限行" Value="1" Ext="" />
+		<Param Name="黑烟车限行" Value="2" Ext="" />
+		<!-- 
+		<Param Name="货车限行" Value="3" Ext="" />
+		 -->
+		<Param Name="单双号限行" Value="4" Ext="" />
+		<Param Name="外地车限行" Value="5" Ext="" />
+	</Param>
+	
+	<Param Name="水印位置" Value="WatermarkPosition" Ext="">
+		<Param Name="无水印" Value="0" Ext="" />
+		<Param Name="左下" Value="1" Ext="" />
+		<Param Name="左上" Value="2" Ext="" />
+		<Param Name="右下" Value="3" Ext="" />
+		<Param Name="右上" Value="4" Ext="" />
+		<Param Name="中间" Value="5" Ext="" />
+	</Param>
+	
+	<Param Name="流量设备类型" Value="FluxDeviceType" Ext="">
+		<Param Name="视频" Value="Video" Ext="" />
+		<Param Name="线圈" Value="Coil" Ext="" />
+		<Param Name="雷达" Value="Radar" Ext="" />
+		<Param Name="卡口" Value="Gate" Ext="" />
+		<Param Name="其它" Value="Other" Ext="" />
+	</Param>
+	
+	<Param Name="流量设备厂家品牌" Value="FluxDeviceBrandType" Ext="">
+		<Param Name="大华" Value="Dahua" Ext="" />
+		<Param Name="海康" Value="HikVision" Ext="" />
+		<Param Name="其它" Value="Other" Ext="" />
+	</Param>
+	
+	<Param Name="机动车状态" Value="VehicleStatus" Ext="">
+		<Param Name="正常" Value="A" Ext="" />
+		<Param Name="转出" Value="B" Ext="" />
+		<Param Name="被盗抢" Value="C" Ext="" />
+		<Param Name="停驶" Value="D" Ext="" />
+		<Param Name="注销" Value="E" Ext="" />
+		<Param Name="违法未处理" Value="G" Ext="" />
+		<Param Name="海关监管" Value="H" Ext="" />
+		<Param Name="事故未处理" Value="I" Ext="" />
+		<Param Name="嫌疑车" Value="J" Ext="" />
+		<Param Name="查封" Value="K" Ext="" />
+		<Param Name="扣留" Value="L" Ext="" />
+		<Param Name="达到报废标准" Value="M" Ext="" />
+		<Param Name="事故逃逸" Value="N" Ext="" />
+		<Param Name="锁定" Value="O" Ext="" />
+		<Param Name="达到报废标准公告牌证作废" Value="P" Ext="" />
+		<Param Name="逾期未检验" Value="Q" Ext="" />
+	</Param>
+	
+	<Param Name="违法设备类型" Value="VioDeviceType" Ext="">
+		<Param Name="电子警察" Value="01" Ext="" />
+		<Param Name="固定测速" Value="02" Ext="" />
+		<Param Name="高速测速" Value="03" Ext="" />
+		<Param Name="违法抓拍" Value="04" Ext="" />
+		<Param Name="移动摄像" Value="05" Ext="" />
+		<Param Name="警务通" Value="06" Ext="" />
+		<Param Name="违法导入" Value="99" Ext="" />
+		<Param Name="其它电子设备" Value="09" Ext="" />
+	</Param>
+	
+	<Param Name="违法数据上传规则" Value="VioUploadRegularType" Ext="">
+		<Param Name="同车牌单日多单违法只上传一单" Value="OnlyOneVio" Ext="" />
+		<Param Name="同车牌单日多单违停只上传一单且优先上传人工抓拍" Value="OnlyOneParkingVio" Ext="" />
+	</Param>
+	
+	<Param Name="违法录入审核动作类型" Value="VioAuditActionType" Ext="">
+		<Param Name="通过" Value="P" Ext="" />
+		<Param Name="不通过" Value="N" Ext="" />
+		<Param Name="有效审核进入无效审核" Value="P" Ext="" />
+		<Param Name="打入废片库" Value="D" Ext="" />
+	</Param>
+	
+	<Param Name="通行证类型" Value="PassportType" Ext="">
+		<Param Name="货车通行证" Value="01" Ext="" />
+		<Param Name="外地车通行证" Value="02" Ext="" />
+		<Param Name="危化品通行证" Value="03" Ext="" />
+		<Param Name="尾号限行通行证" Value="04" Ext="" />
+	</Param>
+	
+	<Param Name="通行证审核状态" Value="PassportState" Ext="">
+		<Param Name="待初审" Value="00" Ext="" />
+		<Param Name="初审拒绝" Value="01" Ext="" />
+		<Param Name="待复审" Value="10" Ext="" />
+		<Param Name="复审拒绝" Value="11" Ext="" />
+		<Param Name="申请成功" Value="20" Ext="" />		
+	</Param>
+	
+	<Param Name="重要限行车辆类型" Value="MajorVehicleType" Ext="">
+		<Param Name="货车限行" Value="3" Ext="" />
+		<Param Name="客运车限行" Value="K" Ext="" />
+		<Param Name="危化车限行" Value="W" Ext="" />
+		<Param Name="牵引车限行" Value="Q" Ext="" />
+		<Param Name="泥头车限行" Value="N" Ext="" />
+		<Param Name="教练车限行" Value="J" Ext="" />
+		<Param Name="的士车限行" Value="T" Ext="" />
+		<Param Name="校车限行" Value="X" Ext="" />
+	</Param>
+	
+	<Param Name="车辆使用性质" Value="PassportVehicleUsedType" Ext="">
+		<Param Name="运营" Value="1" Ext="" />
+		<Param Name="非运营" Value="2" Ext="" />
+	</Param>	
+	
+	<Param Name="通行证操作日志记录类型" Value="PassportOptLogState" Ext="">
+		<Param Name="提交申请" Value="00" Ext="" />
+		<Param Name="初审驳回" Value="01" Ext="" />
+		<Param Name="初审通过" Value="10" Ext="" />
+		<Param Name="复审驳回" Value="11" Ext="" />
+		<Param Name="复审通过" Value="20" Ext="" />		
+	</Param>
+
+	<Param Name="归属地类型" Value="locationType" Ext="">
+		<Param Name="本市车" Value="00" Ext="" />
+		<Param Name="本省外市车" Value="01" Ext="" />
+		<Param Name="本省车" Value="02" Ext="" />
+		<Param Name="外省车" Value="03" Ext="" />
+	</Param>
+
+	<Param Name="停车场类型" Value="ParkingType" Ext="">
+		<Param Name="公用停车场" Value="00" Ext="" />
+		<Param Name="专用停车场" Value="01" Ext="" />
+	</Param>
+
+	<Param Name="停车场收费模式" Value="ParkingPayType" Ext="">
+		<Param Name="按时收费" Value="00" Ext="" />
+		<Param Name="按次收费" Value="01" Ext="" />
+	</Param>
+
+	<Param Name="停车场出入口类型" Value="EntranceType" Ext="">
+		<Param Name="出口" Value="00" Ext="" />
+		<Param Name="入口" Value="01" Ext="" />
+		<Param Name="出入口" Value="02" Ext="" />
+	</Param>
+	
+</Params>

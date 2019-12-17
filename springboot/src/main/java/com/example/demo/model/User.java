@@ -9,6 +9,8 @@ public class User {
 
     private String useraddress;
 
+    private String sex;
+
     public Integer getId() {
         return id;
     }
@@ -40,4 +42,19 @@ public class User {
     public void setUseraddress(String useraddress) {
         this.useraddress = useraddress == null ? null : useraddress.trim();
     }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+    
+    
 }

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.1.xsd"
+    default-lazy-init="true">
+   
+ 	<!-- 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的userRealm.java -->
+	<bean id="userRealm" class="com.np.atms.cms.shiro.UserRealm"/>
+	
+	<bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+       <constructor-arg value="rememberMe" />
+       <property name="httpOnly" value="true" />
+       <!-- 默认记住7天（单位：秒）7 * 24 *60 *60  -->
+       <property name="maxAge" value="604800" />
+   </bean>
+   
+   <!-- rememberMe管理器 --> 
+   <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+       <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}" />
+       <property name="cookie" ref="rememberMeCookie" />
+   </bean>
+
+	<!-- Shiro默认会使用Servlet容器的Session,可通过sessionMode属性来指定使用Shiro原生Session -->
+	<!-- 即<property name="sessionMode" value="native"/>,详细说明见官方文档 -->
+	<!-- 这里主要是设置自定义的单Realm应用,若有多个Realm,可使用'realms'属性代替 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+	    <!-- <property name="rememberMeManager" ref="rememberMeManager" /> -->
+		<property name="realm" ref="userRealm"/>
+	</bean>
+	
+	<!-- 自定义验证过滤器 -->
+	<bean id="loginFormAuthenticationFilter" class="com.np.atms.cms.filter.LoginFormAuthenticationFilter">
+	    <!-- <property name="rememberMeParam" value="rememberMe"/> -->
+	</bean>
+	
+	<!-- 用户退出过滤器 -->
+	<bean id="userLogoutFilter" class="com.np.atms.cms.filter.UserLogoutFilter">
+	     <property name="redirectUrl" value="/login.html"></property>
+	</bean>
+
+	<!-- Shiro主过滤器本身功能十分强大,其强大之处就在于它支持任何基于URL路径表达式的、自定义的过滤器的执行 -->
+	<!-- Web应用中,Shiro可控制的Web请求必须经过Shiro主过滤器的拦截,Shiro对基于Spring的Web应用提供了完美的支持 -->
+	<!-- 因 ShiroFilterFactoryBean实现了 FactoryBean, BeanPostProcessor, 在加载时会立即实例化 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<!-- Shiro的核心安全接口,这个属性是必须的 -->
+		<property name="securityManager" ref="securityManager"/>
+		<property name="loginUrl" value="/login.html"></property>
+		<property name="unauthorizedUrl" value="/login.html" /> <!-- 没有权限默认跳转的页面 -->
+		<!-- anon：它对应的过滤器里面是空的,什么都没做-->
+		<!-- authc：该过滤器下的页面必须验证后才能访问,它是Shiro内置的一个拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter -->
+		<!-- user：表示访问该地址的用户是身份验证通过或RememberMe登录的都可以-->
+		<property name="filters">
+            <map>
+                <!-- 自定义验证过滤器 -->
+                <entry key="authc" value-ref="loginFormAuthenticationFilter"/>
+                <!--用户退出过滤器-->
+                <entry key="logout" value-ref="userLogoutFilter" />
+            </map>
+        </property>
+		<property name="filterChainDefinitions">
+		    <!-- Shiro验证URL时,URL匹配成功便不再继续匹配查找(所以要注意配置文件中的URL顺序,尤其在使用通配符时) 
+		                        故filterChainDefinitions的配置顺序为自上而下,以最上面的为准 -->
+			<value>
+			    /login=anon <!-- 登陆任何人都可以访问 -->
+			    /login/*=anon <!-- 其他登陆方式任何人都可以访问 -->
+			    /roadSegment/query=anon<!-- 此接口提供给大数据平台访问，需同步路段数据 -->
+			    /velometerSegment/query=anon <!-- 此接口提供给大数据平台访问，需同步区间测速车道配置 -->
+			    /velometerThreshold/query=anon <!-- 此接口提供给大数据平台访问，需同步区间测速违法代码和阈值-->
+			    /fluxDevice/query=anon  <!-- 此接口提供给大数据平台访问，需同步设备流量表-->
+			    /utcLan/query=anon
+			    /utcDevice/signalDevice=anon
+			    /utcDevice/signalHandControl=anon
+			    /utcPhaseFormal/signalPhase=anon
+			    /gateRelationShip/query=anon
+			    /restrictionsGate/queryAll=anon
+			    /restrict/gate/queryAll=anon
+			    /yellowVehicle/queryAll=anon
+			    /localVehicle/queryAll=anon
+			    /truckPassport/queryAll=anon
+			    /blackSmokeVehicle/queryAll=anon
+			    /parameter/queryByClass=anon
+			    /bdview/*=anon
+			    <!-- 大數據校驗同步版本 -->
+				/yellowVehicle/query/sync=anon
+				/utcLan/query/sync=anon
+				/blackSmokeVehicle/query/sync=anon
+				/localVehicle/query/sync=anon
+				/truckPassport/query/sync=anon
+				/restrictionsGate/query/sync=anon
+				/restrict/gate/query/sync=anon
+				/roadSegment/query/sync=anon
+				/velometerSegment/query/sync=anon
+				/velometerThreshold/query/sync=anon
+				/fluxDevice/query/sync=anon
+				/keyVehicle/query/sync=anon
+				/keyVehicle/query=anon
+				/restrict/rule/query/sync=anon
+				/restrict/rule/queryAll=anon
+				/vehiclePassport/queryAll=anon
+				/vehiclePassport/query/sync=anon
+				/gate/trend=anon
+				/gate/carAnalysis=anon
+				/gate/carAnalysis/export=anon
+				/gate/carCompare=anon
+				/vioStatWorkTime/getVioStatWorkCountTable=anon
+				/vioStatWorkTime/exportAuditing=anon
+			    /logout=logout
+			    /*=authc <!-- 需要登录 -->
+			    /*/*=authc <!-- 需要登录 -->
+			    /*/*/*=authc <!-- 需要登录 -->
+				<!-- /default/login=authc 需要登录 -->
+				<!-- /main**=authc 	需要登录 -->
+				<!-- /user/info**=authc,perms[admin:manage] 需要登录 -->
+				<!-- /admin/listUser**=authc,perms[admin:manage]已经登录并且还要有admin:manage权限才可以访问 -->
+			</value>
+		</property>
+	</bean>
+
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+	<!-- 开启Shiro的注解(如@RequiresRoles,@RequiresPermissions),需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证 -->
+	<!-- 配置以下两个bean即可实现此功能 -->
+	<!-- Enable Shiro Annotations for Spring-configured beans. Only run after the lifecycleBeanProcessor has run -->
+	<!-- 由于本例中并未使用Shiro注解,故注释掉这两个bean -->
+	<!-- 
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager"/>
+	</bean>
+	 -->
+	 <bean id="dfdf" class="com.np.atms.cms.common.AppGlobal"/>
+</beans>

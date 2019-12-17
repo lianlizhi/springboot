@@ -9,4 +9,6 @@ public interface UserService {
 
 	List<User> selectUserList();
 
+	Object addUser(Integer a) throws Exception;
+
 }

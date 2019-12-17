@@ -6,6 +6,7 @@
     <result column="userName" property="username" jdbcType="VARCHAR" />
     <result column="userAge" property="userage" jdbcType="INTEGER" />
     <result column="userAddress" property="useraddress" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, userName, userAge, userAddress
+    id, userName, userAge, userAddress, sex
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.demo.model.UserExample" >
     select
@@ -90,9 +91,9 @@
   </delete>
   <insert id="insert" parameterType="com.example.demo.model.User" >
     insert into user (id, userName, userAge, 
-      userAddress)
+      userAddress, sex)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userage,jdbcType=INTEGER}, 
-      #{useraddress,jdbcType=VARCHAR})
+      #{useraddress,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.example.demo.model.User" >
     insert into user
@@ -109,6 +110,9 @@
       <if test="useraddress != null" >
         userAddress,
       </if>
+      <if test="sex != null" >
+        sex,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -122,6 +126,9 @@
       </if>
       <if test="useraddress != null" >
         #{useraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -146,6 +153,9 @@
       <if test="record.useraddress != null" >
         userAddress = #{record.useraddress,jdbcType=VARCHAR},
       </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -156,7 +166,8 @@
     set id = #{record.id,jdbcType=INTEGER},
       userName = #{record.username,jdbcType=VARCHAR},
       userAge = #{record.userage,jdbcType=INTEGER},
-      userAddress = #{record.useraddress,jdbcType=VARCHAR}
+      userAddress = #{record.useraddress,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

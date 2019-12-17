@@ -1,0 +1,2338 @@
+[{
+    "key": "SourceType_System",
+    "value": {
+        "value": "SourceType_System",
+        "desc": "系统"
+    }
+},
+{
+    "key": "SourceType_DispatchCommand",
+    "value": {
+        "value": "SourceType_DispatchCommand",
+        "desc": "指挥调度"
+    }
+},
+{
+    "key": "SourceType_TrafficSup",
+    "value": {
+        "value": "SourceType_TrafficSup",
+        "desc": "交通监管"
+    }
+},
+{
+    "key": "SourceType_Monitor",
+    "value": {
+        "value": "SourceType_Monitor",
+        "desc": "缉查布控"
+    }
+},
+{
+    "key": "SourceType_Illegal",
+    "value": {
+        "value": "SourceType_Illegal",
+        "desc": "违法管理"
+    }
+},
+{
+    "key": "SourceType_SignalControl",
+    "value": {
+        "value": "SourceType_SignalControl",
+        "desc": "信号控制"
+    }
+},
+{
+    "key": "SourceType_InfoDiffusion",
+    "value": {
+        "value": "SourceType_InfoDiffusion",
+        "desc": "信息发布"
+    }
+},
+{
+    "key": "SourceType_dutyManagement",
+    "value": {
+        "value": "SourceType_dutyManagement",
+        "desc": "勤务管理"
+    }
+},
+{
+    "key": "SourceType_auxiliaryAnalysis",
+    "value": {
+        "value": "SourceType_auxiliaryAnalysis",
+        "desc": "辅助分析"
+    }
+},
+{
+    "key": "SourceType_NetManage",
+    "value": {
+        "value": "SourceType_NetManage",
+        "desc": "运维管理"
+    }
+},
+{
+    "key": "SourceType_Configure",
+    "value": {
+        "value": "SourceType_Configure",
+        "desc": "配置管理"
+    }
+},
+{
+    "key": "SourceType_TrafficAnalysis",
+    "value": {
+        "value": "SourceType_TrafficAnalysis",
+        "desc": "流量分析"
+    }
+},
+{
+    "key": "SourceType_SituationAnalysis",
+    "value": {
+        "value": "SourceType_SituationAnalysis",
+        "desc": "态势分析"
+    }
+},
+{
+    "key": "SourceType_Unknown",
+    "value": {
+        "value": "SourceType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "ProcedureOperationType_Report",
+    "value": {
+        "value": "ProcedureOperationType_Report",
+        "desc": "上报"
+    }
+},
+{
+    "key": "ProcedureOperationType_Reject",
+    "value": {
+        "value": "ProcedureOperationType_Reject",
+        "desc": "拒绝"
+    }
+},
+{
+    "key": "ProcedureOperationType_Auditing",
+    "value": {
+        "value": "ProcedureOperationType_Auditing",
+        "desc": "审核中"
+    }
+},
+{
+    "key": "ProcedureOperationType_Confirm",
+    "value": {
+        "value": "ProcedureOperationType_Confirm",
+        "desc": "审核通过"
+    }
+},
+{
+    "key": "ProcedureOperationType_Submit",
+    "value": {
+        "value": "ProcedureOperationType_Submit",
+        "desc": "提交"
+    }
+},
+{
+    "key": "ProcedureOperationType_Save",
+    "value": {
+        "value": "ProcedureOperationType_Save",
+        "desc": "保存"
+    }
+},
+{
+    "key": "ProcedureOperationType_Cancel",
+    "value": {
+        "value": "ProcedureOperationType_Cancel",
+        "desc": "取回"
+    }
+},
+{
+    "key": "ProcedureOperationType_Revoke",
+    "value": {
+        "value": "ProcedureOperationType_Revoke",
+        "desc": "撤销"
+    }
+},
+{
+    "key": "ProcedureOperationType_Unknown",
+    "value": {
+        "value": "ProcedureOperationType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "VideoOperationType_OpenRealTimeVideo",
+    "value": {
+        "value": "VideoOperationType_OpenRealTimeVideo",
+        "desc": "查看实时视频"
+    }
+},
+{
+    "key": "VideoOperationType_OpenRecVideo",
+    "value": {
+        "value": "VideoOperationType_OpenRecVideo",
+        "desc": "打开录像"
+    }
+},
+{
+    "key": "VideoOperationType_OpenPFSFile",
+    "value": {
+        "value": "VideoOperationType_OpenPFSFile",
+        "desc": "打开PFS文件"
+    }
+},
+{
+    "key": "VideoOperationType_QueryTimeSegment",
+    "value": {
+        "value": "VideoOperationType_QueryTimeSegment",
+        "desc": "查询录像"
+    }
+},
+{
+    "key": "VideoOperationType_QueryStream",
+    "value": {
+        "value": "VideoOperationType_QueryStream",
+        "desc": "查询流信息"
+    }
+},
+{
+    "key": "VideoOperationType_DownloadRecVideo",
+    "value": {
+        "value": "VideoOperationType_DownloadRecVideo",
+        "desc": "下载录像"
+    }
+},
+{
+    "key": "VideoOperationType_DeleteRecVideo",
+    "value": {
+        "value": "VideoOperationType_DeleteRecVideo",
+        "desc": "删除录像"
+    }
+},
+{
+    "key": "VideoOperationType_LockPtz",
+    "value": {
+        "value": "VideoOperationType_LockPtz",
+        "desc": "锁定云台"
+    }
+},
+{
+    "key": "VideoOperationType_UnLockPtz",
+    "value": {
+        "value": "VideoOperationType_UnLockPtz",
+        "desc": "解锁云台"
+    }
+},
+{
+    "key": "VideoOperationType_RobPtz",
+    "value": {
+        "value": "VideoOperationType_RobPtz",
+        "desc": "抢占云台"
+    }
+},
+{
+    "key": "VideoOperationType_PtzControl",
+    "value": {
+        "value": "VideoOperationType_PtzControl",
+        "desc": "云台控制"
+    }
+},
+{
+    "key": "VideoOperationType_VideoEnhence",
+    "value": {
+        "value": "VideoOperationType_VideoEnhence",
+        "desc": "视频调节"
+    }
+},
+{
+    "key": "VideoOperationType_SnapPicture",
+    "value": {
+        "value": "VideoOperationType_SnapPicture",
+        "desc": "视频抓图"
+    }
+},
+{
+    "key": "VideoOperationType_HandAlarm",
+    "value": {
+        "value": "VideoOperationType_HandAlarm",
+        "desc": "手动报警"
+    }
+},
+{
+    "key": "VideoOperationType_Open",
+    "value": {
+        "value": "VideoOperationType_Open",
+        "desc": "打开"
+    }
+},
+{
+    "key": "VideoOperationType_Close",
+    "value": {
+        "value": "VideoOperationType_Close",
+        "desc": "关闭"
+    }
+},
+{
+    "key": "VideoOperationType_SetPreset",
+    "value": {
+        "value": "VideoOperationType_SetPreset",
+        "desc": "设置预置位"
+    }
+},
+{
+    "key": "VideoOperationType_CallPreset",
+    "value": {
+        "value": "VideoOperationType_CallPreset",
+        "desc": "调用预置位"
+    }
+},
+{
+    "key": "VideoOperationType_UpdatePreset",
+    "value": {
+        "value": "VideoOperationType_UpdatePreset",
+        "desc": "修改预置位"
+    }
+},
+{
+    "key": "VideoOperationType_DelPreset",
+    "value": {
+        "value": "VideoOperationType_DelPreset",
+        "desc": "删除预置位"
+    }
+},
+{
+    "key": "VideoOperationType_SetKeepWatch",
+    "value": {
+        "value": "VideoOperationType_SetKeepWatch",
+        "desc": "设置守望位"
+    }
+},
+{
+    "key": "VideoOperationType_CancelKeepWatch",
+    "value": {
+        "value": "VideoOperationType_CancelKeepWatch",
+        "desc": "取消守望位"
+    }
+},
+{
+    "key": "VideoOperationType_Loop",
+    "value": {
+        "value": "VideoOperationType_Loop",
+        "desc": "轮巡"
+    }
+},
+{
+    "key": "VideoOperationType_SyncPlayBack",
+    "value": {
+        "value": "VideoOperationType_SyncPlayBack",
+        "desc": "同步回放"
+    }
+},
+{
+    "key": "VideoOperationType_ProtectRecord",
+    "value": {
+        "value": "VideoOperationType_ProtectRecord",
+        "desc": "录像保护锁定"
+    }
+},
+{
+    "key": "VideoOperationType_UnProtectRecord",
+    "value": {
+        "value": "VideoOperationType_UnProtectRecord",
+        "desc": "录像保护解锁"
+    }
+},
+{
+    "key": "VideoOperationType_Ptz3D",
+    "value": {
+        "value": "VideoOperationType_Ptz3D",
+        "desc": "3D控制"
+    }
+},
+{
+    "key": "VideoOperationType_PtzWin",
+    "value": {
+        "value": "VideoOperationType_PtzWin",
+        "desc": "窗口云台"
+    }
+},
+{
+    "key": "VideoOperationType_AddFrame",
+    "value": {
+        "value": "VideoOperationType_AddFrame",
+        "desc": "添加帧标记"
+    }
+},
+{
+    "key": "VideoOperationType_ScreenShot",
+    "value": {
+        "value": "VideoOperationType_ScreenShot",
+        "desc": "截图"
+    }
+},
+{
+    "key": "VideoOperationType_PtzAssist",
+    "value": {
+        "value": "VideoOperationType_PtzAssist",
+        "desc": "云台辅助功能"
+    }
+},
+{
+    "key": "VideoOperationType_PtzSpeedControl",
+    "value": {
+        "value": "VideoOperationType_PtzSpeedControl",
+        "desc": "云台控制速度调节"
+    }
+},
+{
+    "key": "VideoOperationType_CameraAttribute",
+    "value": {
+        "value": "VideoOperationType_CameraAttribute",
+        "desc": "摄像机属性"
+    }
+},
+{
+    "key": "VideoOperationType_Unknown",
+    "value": {
+        "value": "VideoOperationType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "MapOperationType_QueryLayer",
+    "value": {
+        "value": "MapOperationType_QueryLayer",
+        "desc": "查询图层"
+    }
+},
+{
+    "key": "MapOperationType_QuerySystemResource",
+    "value": {
+        "value": "MapOperationType_QuerySystemResource",
+        "desc": "查询设备资源"
+    }
+},
+{
+    "key": "MapOperationType_QuerySocialResource",
+    "value": {
+        "value": "MapOperationType_QuerySocialResource",
+        "desc": "查询社会资源"
+    }
+},
+{
+    "key": "MapOperationType_QueryGpsResource",
+    "value": {
+        "value": "MapOperationType_QueryGpsResource",
+        "desc": "查询警力资源"
+    }
+},
+{
+    "key": "MapOperationType_Search",
+    "value": {
+        "value": "MapOperationType_Search",
+        "desc": "资源搜索"
+    }
+},
+{
+    "key": "MapOperationType_SwitchLayer",
+    "value": {
+        "value": "MapOperationType_SwitchLayer",
+        "desc": "切换图层显示"
+    }
+},
+{
+    "key": "MapOperationType_RectSelect",
+    "value": {
+        "value": "MapOperationType_RectSelect",
+        "desc": "框选"
+    }
+},
+{
+    "key": "MapOperationType_CircleSelect",
+    "value": {
+        "value": "MapOperationType_CircleSelect",
+        "desc": "圈选"
+    }
+},
+{
+    "key": "MapOperationType_PolygonSelect",
+    "value": {
+        "value": "MapOperationType_PolygonSelect",
+        "desc": "多边形选"
+    }
+},
+{
+    "key": "MapOperationType_MeasureDistance",
+    "value": {
+        "value": "MapOperationType_MeasureDistance",
+        "desc": "测距"
+    }
+},
+{
+    "key": "MapOperationType_MeasureArea",
+    "value": {
+        "value": "MapOperationType_MeasureArea",
+        "desc": "测面"
+    }
+},
+{
+    "key": "MapOperationType_Bookmark",
+    "value": {
+        "value": "MapOperationType_Bookmark",
+        "desc": "书签管理"
+    }
+},
+{
+    "key": "MapOperationType_PreExtent",
+    "value": {
+        "value": "MapOperationType_PreExtent",
+        "desc": "上一视图"
+    }
+},
+{
+    "key": "MapOperationType_NextExtent",
+    "value": {
+        "value": "MapOperationType_NextExtent",
+        "desc": "下一视图"
+    }
+},
+{
+    "key": "MapOperationType_Clear",
+    "value": {
+        "value": "MapOperationType_Clear",
+        "desc": "清除"
+    }
+},
+{
+    "key": "MapOperationType_FullScreen",
+    "value": {
+        "value": "MapOperationType_FullScreen",
+        "desc": "全屏"
+    }
+},
+{
+    "key": "MapOperationType_SwitchBaseLayer",
+    "value": {
+        "value": "MapOperationType_SwitchBaseLayer",
+        "desc": "切换底图"
+    }
+},
+{
+    "key": "MapOperationType_OpenCamera",
+    "value": {
+        "value": "MapOperationType_OpenCamera",
+        "desc": "打开摄像机"
+    }
+},
+{
+    "key": "MapOperationType_OpenGate",
+    "value": {
+        "value": "MapOperationType_OpenGate",
+        "desc": "打开卡口/电警"
+    }
+},
+{
+    "key": "MapOperationType_OpenSignal",
+    "value": {
+        "value": "MapOperationType_OpenSignal",
+        "desc": "打开信号机"
+    }
+},
+{
+    "key": "MapOperationType_OpenGuide",
+    "value": {
+        "value": "MapOperationType_OpenGuide",
+        "desc": "打开诱导屏"
+    }
+},
+{
+    "key": "MapOperationType_OpenGpsPerson",
+    "value": {
+        "value": "MapOperationType_OpenGpsPerson",
+        "desc": "打开警员"
+    }
+},
+{
+    "key": "MapOperationType_OpenGpsCar",
+    "value": {
+        "value": "MapOperationType_OpenGpsCar",
+        "desc": "打开警车"
+    }
+},
+{
+    "key": "MapOperationType_OpenLabel",
+    "value": {
+        "value": "MapOperationType_OpenLabel",
+        "desc": "打开社会资源"
+    }
+},
+{
+    "key": "MapOperationType_AddBookmark",
+    "value": {
+        "value": "MapOperationType_AddBookmark",
+        "desc": "新增书签"
+    }
+},
+{
+    "key": "MapOperationType_DeleteBookmark",
+    "value": {
+        "value": "MapOperationType_DeleteBookmark",
+        "desc": "删除书签"
+    }
+},
+{
+    "key": "MapOperationType_UpdateBookmark",
+    "value": {
+        "value": "MapOperationType_UpdateBookmark",
+        "desc": "修改书签"
+    }
+},
+{
+    "key": "MapOperationType_QueryBookmark",
+    "value": {
+        "value": "MapOperationType_QueryBookmark",
+        "desc": "查询书签"
+    }
+},
+{
+    "key": "MapOperationType_BatchDeleteBookmark",
+    "value": {
+        "value": "MapOperationType_BatchDeleteBookmark",
+        "desc": "批量删除书签"
+    }
+},
+{
+    "key": "MapOperationType_QueryGuideStatus",
+    "value": {
+        "value": "MapOperationType_QueryGuideStatus",
+        "desc": "查询诱导屏正在播放节目"
+    }
+},
+{
+    "key": "CommonOperationType_Add",
+    "value": {
+        "value": "CommonOperationType_Add",
+        "desc": "添加"
+    }
+},
+{
+    "key": "CommonOperationType_Delete",
+    "value": {
+        "value": "CommonOperationType_Delete",
+        "desc": "删除"
+    }
+},
+{
+    "key": "CommonOperationType_Update",
+    "value": {
+        "value": "CommonOperationType_Update",
+        "desc": "修改"
+    }
+},
+{
+    "key": "CommonOperationType_Query",
+    "value": {
+        "value": "CommonOperationType_Query",
+        "desc": "查询"
+    }
+},
+{
+    "key": "CommonOperationType_Preview",
+    "value": {
+        "value": "CommonOperationType_Preview",
+        "desc": "预览"
+    }
+},
+{
+    "key": "CommonOperationType_Count",
+    "value": {
+        "value": "CommonOperationType_Count",
+        "desc": "统计"
+    }
+},
+{
+    "key": "CommonOperationType_DealWith",
+    "value": {
+        "value": "CommonOperationType_DealWith",
+        "desc": "处理"
+    }
+},
+{
+    "key": "CommonOperationType_Set",
+    "value": {
+        "value": "CommonOperationType_Set",
+        "desc": "设置"
+    }
+},
+{
+    "key": "CommonOperationType_Import",
+    "value": {
+        "value": "CommonOperationType_Import",
+        "desc": "导入"
+    }
+},
+{
+    "key": "CommonOperationType_Export",
+    "value": {
+        "value": "CommonOperationType_Export",
+        "desc": "导出"
+    }
+},
+{
+    "key": "CommonOperationType_Start",
+    "value": {
+        "value": "CommonOperationType_Start",
+        "desc": "启动"
+    }
+},
+{
+    "key": "CommonOperationType_Stop",
+    "value": {
+        "value": "CommonOperationType_Stop",
+        "desc": "停止"
+    }
+},
+{
+    "key": "CommonOperationType_Pause",
+    "value": {
+        "value": "CommonOperationType_Pause",
+        "desc": "暂停"
+    }
+},
+{
+    "key": "CommonOperationType_Continue",
+    "value": {
+        "value": "CommonOperationType_Continue",
+        "desc": "继续"
+    }
+},
+{
+    "key": "CommonOperationType_Sync",
+    "value": {
+        "value": "CommonOperationType_Sync",
+        "desc": "同步"
+    }
+},
+{
+    "key": "CommonOperationType_Clean",
+    "value": {
+        "value": "CommonOperationType_Clean",
+        "desc": "清屏"
+    }
+},
+{
+    "key": "CommonOperationType_Sort",
+    "value": {
+        "value": "CommonOperationType_Sort",
+        "desc": "排序"
+    }
+},
+{
+    "key": "CommonOperationType_Disable",
+    "value": {
+        "value": "CommonOperationType_Disable",
+        "desc": "禁用"
+    }
+},
+{
+    "key": "CommonOperationType_Enablement",
+    "value": {
+        "value": "CommonOperationType_Enablement",
+        "desc": "启用"
+    }
+},
+{
+    "key": "CommonOperationType_Open",
+    "value": {
+        "value": "CommonOperationType_Open",
+        "desc": "打开"
+    }
+},
+{
+    "key": "CommonOperationType_Close",
+    "value": {
+        "value": "CommonOperationType_Close",
+        "desc": "关闭"
+    }
+},
+{
+    "key": "CommonOperationType_Unknown",
+    "value": {
+        "value": "CommonOperationType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "CommonOperationType_BatchRelease",
+    "value": {
+        "value": "CommonOperationType_BatchRelease",
+        "desc": "批量发布"
+    }
+},
+{
+    "key": "FileOperationType_Upload",
+    "value": {
+        "value": "FileOperationType_Upload",
+        "desc": "上传"
+    }
+},
+{
+    "key": "FileOperationType_Download",
+    "value": {
+        "value": "FileOperationType_Download",
+        "desc": "下载"
+    }
+},
+{
+    "key": "FileOperationType_Print",
+    "value": {
+        "value": "FileOperationType_Print",
+        "desc": "打印"
+    }
+},
+{
+    "key": "FileOperationType_Unknown",
+    "value": {
+        "value": "FileOperationType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "TaskOperationType_Start",
+    "value": {
+        "value": "TaskOperationType_Start",
+        "desc": "启动"
+    }
+},
+{
+    "key": "TaskOperationType_Pause",
+    "value": {
+        "value": "TaskOperationType_Pause",
+        "desc": "暂停"
+    }
+},
+{
+    "key": "TaskOperationType_Continue",
+    "value": {
+        "value": "TaskOperationType_Continue",
+        "desc": "继续"
+    }
+},
+{
+    "key": "TaskOperationType_Stop",
+    "value": {
+        "value": "TaskOperationType_Stop",
+        "desc": "停止"
+    }
+},
+{
+    "key": "TaskOperationType_Unknown",
+    "value": {
+        "value": "TaskOperationType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "SystemOperationType_UserLogin",
+    "value": {
+        "value": "SystemOperationType_UserLogin",
+        "desc": "用户登录"
+    }
+},
+{
+    "key": "SystemOperationType_UserLogout",
+    "value": {
+        "value": "SystemOperationType_UserLogout",
+        "desc": "用户注销"
+    }
+},
+{
+    "key": "SystemOperationType_CheckOnline",
+    "value": {
+        "value": "SystemOperationType_CheckOnline",
+        "desc": "在线检测"
+    }
+},
+{
+    "key": "SystemOperationType_SyncData",
+    "value": {
+        "value": "SystemOperationType_SyncData",
+        "desc": "数据同步"
+    }
+},
+{
+    "key": "SystemOperationType_SyncTime",
+    "value": {
+        "value": "SystemOperationType_SyncTime",
+        "desc": "时钟同步"
+    }
+},
+{
+    "key": "SystemOperationType_Unknown",
+    "value": {
+        "value": "SystemOperationType_Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "ServersType_Query",
+    "value": {
+        "value": "ServersType_Query",
+        "desc": "服务器类型查询"
+    }
+},
+{
+    "key": "ServersHadAdd_Query",
+    "value": {
+        "value": "ServersHadAdd_Query",
+        "desc": "已添加服务器查询"
+    }
+},
+{
+    "key": "ServersHadAdd_Delete",
+    "value": {
+        "value": "ServersHadAdd_Delete",
+        "desc": "已添加服务器删除"
+    }
+},
+{
+    "key": "ServersHadAdd_Alter",
+    "value": {
+        "value": "ServersHadAdd_Alter",
+        "desc": "已添加服务器修改"
+    }
+},
+{
+    "key": "Servers_NewAdd",
+    "value": {
+        "value": "Servers_NewAdd",
+        "desc": "新增服务器"
+    }
+},
+{
+    "key": "DevicesType_Query",
+    "value": {
+        "value": "DevicesType_Query",
+        "desc": "设备查询"
+    }
+},
+{
+    "key": "DevicesType_Filtrate",
+    "value": {
+        "value": "DevicesType_Filtrate",
+        "desc": "设备搜索查询"
+    }
+},
+{
+    "key": "DevicesOperate_Query",
+    "value": {
+        "value": "DevicesOperate_Query",
+        "desc": "设备资源操作动作查询"
+    }
+},
+{
+    "key": "OrganizationType_Query",
+    "value": {
+        "value": "OrganizationType_Query",
+        "desc": "组织机构查询"
+    }
+},
+{
+    "key": "UserOperate_Query",
+    "value": {
+        "value": "UserOperate_Query",
+        "desc": "用户查询"
+    }
+},
+{
+    "key": "UserOperate_Add",
+    "value": {
+        "value": "UserOperate_Add",
+        "desc": "新增用户"
+    }
+},
+{
+    "key": "UserOperate_Delete",
+    "value": {
+        "value": "UserOperate_Delete",
+        "desc": "删除用户"
+    }
+},
+{
+    "key": "UserOperate_Alter",
+    "value": {
+        "value": "UserOperate_Alter",
+        "desc": "修改用户"
+    }
+},
+{
+    "key": "RolesOperate_Query",
+    "value": {
+        "value": "UserOperate_Query",
+        "desc": "角色查询"
+    }
+},
+{
+    "key": "RolesOperate_Add",
+    "value": {
+        "value": "UserOperate_Add",
+        "desc": "新增角色"
+    }
+},
+{
+    "key": "RolesOperate_Delete",
+    "value": {
+        "value": "UserOperate_Delete",
+        "desc": "删除角色"
+    }
+},
+{
+    "key": "RolesOperate_Alter",
+    "value": {
+        "value": "UserOperate_Alter",
+        "desc": "修改角色"
+    }
+},
+{
+    "key": "RolesOperate_Verify",
+    "value": {
+        "value": "UserOperate_Verify",
+        "desc": "角色唯一性检查"
+    }
+},
+{
+    "key": "RolesAuthority_Query",
+    "value": {
+        "value": "RolesAuthority_Query",
+        "desc": "角色权限查询"
+    }
+},
+{
+    "key": "MonitorVehicle_Query",
+    "value": {
+        "value": "MonitorVehicle_Query",
+        "desc": "布控车辆查询"
+    }
+},
+{
+    "key": "MonitorOfAttentionVehicle_Query",
+    "value": {
+        "value": "MonitorOfAttentionVehicle_Query",
+        "desc": "关注的布控车辆查询"
+    }
+},
+{
+    "key": "MonitorVehicle_Cancel",
+    "value": {
+        "value": "RolesAuthority_Cancel",
+        "desc": "撤控"
+    }
+},
+{
+    "key": "MonitorVehicle_AddAttention",
+    "value": {
+        "value": "MonitorVehicle_AddAttention",
+        "desc": "布控车辆添加关注"
+    }
+},
+{
+    "key": "MonitorVehicle_CancelAttention",
+    "value": {
+        "value": "RolesAuthority_Cancel",
+        "desc": "布控车辆取消关注"
+    }
+},
+{
+    "key": "AlarmMsg_Dispose",
+    "value": {
+        "value": "AlarmMsg_Dispose",
+        "desc": "报警信息处理"
+    }
+},
+{
+    "key": "SignalOperationType_QuerySignalProgram",
+    "value": {
+        "value": "SignalOperationType_QuerySignalProgram",
+        "desc": "上传"
+    }
+},
+{
+    "key": "SignalOperationType_SetSignalProgram",
+    "value": {
+        "value": "SignalOperationType_SetSignalProgram",
+        "desc": "下发"
+    }
+},
+{
+    "key": "SignalOperationType_SetSignalTime",
+    "value": {
+        "value": "SignalOperationType_SetSignalTime",
+        "desc": "设置信号机时间"
+    }
+},
+{
+    "key": "SignalOperationType_QuerySignalTime",
+    "value": {
+        "value": "SignalOperationType_QuerySignalTime",
+        "desc": "查询信号机时间"
+    }
+},
+{
+    "key": "SignalOperationType_JumpPhase",
+    "value": {
+        "value": "SignalOperationType_JumpPhase",
+        "desc": "跳相位"
+    }
+},
+{
+    "key": "SignalOperationType_JumpParticularPhase",
+    "value": {
+        "value": "SignalOperationType_JumpParticularPhase",
+        "desc": "特定相位"
+    }
+},
+{
+    "key": "SignalOperationType_SetYellowFlash",
+    "value": {
+        "value": "SignalOperationType_SetYellowFlash",
+        "desc": "黄闪"
+    }
+},
+{
+    "key": "SignalOperationType_SetAllRed",
+    "value": {
+        "value": "SignalOperationType_SetAllRed",
+        "desc": "全红"
+    }
+},
+{
+    "key": "SignalOperationType_OpenLamp",
+    "value": {
+        "value": "SignalOperationType_OpenLamp",
+        "desc": "开灯"
+    }
+},
+{
+    "key": "SignalOperationType_CloseLamp",
+    "value": {
+        "value": "SignalOperationType_CloseLamp",
+        "desc": "关灯"
+    }
+},
+{
+    "key": "SignalOperationType_ExecuteSignal",
+    "value": {
+        "value": "SignalOperationType_ExecuteSignal",
+        "desc": "执行"
+    }
+},
+{
+    "key": "SignalOperationType_RelieveSignal",
+    "value": {
+        "value": "SignalOperationType_RelieveSignal",
+        "desc": "解除"
+    }
+},
+{
+    "key": "DispatchCommand_OnWall",
+    "value": {
+        "value": "DispatchCommand_OnWall",
+        "desc": "视频上墙"
+    }
+},
+{
+    "key": "DispatchCommand_UnderWall",
+    "value": {
+        "value": "DispatchCommand_UnderWall",
+        "desc": "视频下墙"
+    }
+},
+{
+    "key": "DispatchCommand_SendSms",
+    "value": {
+        "value": "DispatchCommand_SendSms",
+        "desc": "发送短信"
+    }
+},
+{
+    "key": "DispatchCommand_QueryPsis",
+    "value": {
+        "value": "DispatchCommand_QueryPsis",
+        "desc": "查询警情"
+    }
+},
+{
+    "key": "DispatchCommand_AddPsis",
+    "value": {
+        "value": "DispatchCommand_AddPsis",
+        "desc": "新增警情"
+    }
+},
+{
+    "key": "DispatchCommand_UpdatePsis",
+    "value": {
+        "value": "DispatchCommand_UpdatePsis",
+        "desc": "修改警情"
+    }
+},
+{
+    "key": "DispatchCommand_AddTextPlan",
+    "value": {
+        "value": "DispatchCommand_AddTextPlan",
+        "desc": "新增文本预案"
+    }
+},
+{
+    "key": "DispatchCommand_DeleteTextPlan",
+    "value": {
+        "value": "DispatchCommand_DeleteTextPlan",
+        "desc": "删除文本预案"
+    }
+},
+{
+    "key": "DispatchCommand_UpdateTextPlan",
+    "value": {
+        "value": "DispatchCommand_UpdateTextPlan",
+        "desc": "修改文本预案"
+    }
+},
+{
+    "key": "DispatchCommand_QueryTextPlan",
+    "value": {
+        "value": "DispatchCommand_QueryTextPlan",
+        "desc": "查询文本预案"
+    }
+},
+{
+    "key": "DispatchCommand_QueryTextPlanDetail",
+    "value": {
+        "value": "DispatchCommand_QueryTextPlanDetail",
+        "desc": "查询文本预案详情"
+    }
+},
+{
+    "key": "DispatchCommand_AddPoliceDefend",
+    "value": {
+        "value": "DispatchCommand_AddPoliceDefend",
+        "desc": "新增警力保卫预案"
+    }
+},
+{
+    "key": "DispatchCommand_DeletePoliceDefend",
+    "value": {
+        "value": "DispatchCommand_DeletePoliceDefend",
+        "desc": "删除警力保卫预案"
+    }
+},
+{
+    "key": "DispatchCommand_UpdatePoliceDefend",
+    "value": {
+        "value": "DispatchCommand_UpdatePoliceDefend",
+        "desc": "修改警力保卫预案"
+    }
+},
+{
+    "key": "DispatchCommand_QueryPoliceDefend",
+    "value": {
+        "value": "DispatchCommand_QueryPoliceDefend",
+        "desc": "查询警力保卫预案"
+    }
+},
+{
+    "key": "DispatchCommand_PlayPoliceDefend",
+    "value": {
+        "value": "DispatchCommand_PlayPoliceDefend",
+        "desc": "播放警力保卫预案"
+    }
+},
+{
+    "key": "DispatchCommand_PsisLocate",
+    "value": {
+        "value": "DispatchCommand_PsisLocate",
+        "desc": "警情定位"
+    }
+},
+{
+    "key": "DispatchCommand_PsisLocateAgain",
+    "value": {
+        "value": "DispatchCommand_PsisLocateAgain",
+        "desc": "警情二次定位"
+    }
+},
+{
+    "key": "DispatchCommand_PsisEmgResource",
+    "value": {
+        "value": "DispatchCommand_PsisEmgResource",
+        "desc": "警情资源调度"
+    }
+},
+{
+    "key": "Configure_AddLayer",
+    "value": {
+        "value": "Configure_AddLayer",
+        "desc": "新增图层"
+    }
+},
+{
+    "key": "Configure_DeleteLayer",
+    "value": {
+        "value": "Configure_DeleteLayer",
+        "desc": "删除图层"
+    }
+},
+{
+    "key": "Configure_UpdateLayer",
+    "value": {
+        "value": "Configure_UpdateLayer",
+        "desc": "修改图层"
+    }
+},
+{
+    "key": "Configure_QueryLayer",
+    "value": {
+        "value": "Configure_QueryLayer",
+        "desc": "查询图层"
+    }
+},
+{
+    "key": "Configure_AddLabel",
+    "value": {
+        "value": "Configure_AddLabel",
+        "desc": "新增地图标记"
+    }
+},
+{
+    "key": "Configure_DeleteLabel",
+    "value": {
+        "value": "Configure_DeleteLabel",
+        "desc": "删除地图标记"
+    }
+},
+{
+    "key": "Configure_UpdateLabel",
+    "value": {
+        "value": "Configure_UpdateLabel",
+        "desc": "修改地图标记"
+    }
+},
+{
+    "key": "Configure_QueryLabel",
+    "value": {
+        "value": "Configure_QueryLabel",
+        "desc": "查询地图标记"
+    }
+},
+{
+    "key": "Configure_QueryLabelDetail",
+    "value": {
+        "value": "Configure_QueryLabelDetail",
+        "desc": "查询地图标记详情"
+    }
+},
+{
+    "key": "Configure_AddPosition",
+    "value": {
+        "value": "Configure_AddPosition",
+        "desc": "新增布点"
+    }
+},
+{
+    "key": "Configure_DeletePosition",
+    "value": {
+        "value": "Configure_DeletePosition",
+        "desc": "删除布点"
+    }
+},
+{
+    "key": "Configure_UpdatePosition",
+    "value": {
+        "value": "Configure_UpdatePosition",
+        "desc": "修改布点"
+    }
+},
+{
+    "key": "Configure_BatchImport",
+    "value": {
+        "value": "Configure_BatchImport",
+        "desc": "批量导入地图标记"
+    }
+},
+{
+    "key": "DutyManagement_QueryGps",
+    "value": {
+        "value": "DutyManagement_QueryGps",
+        "desc": "查询警力"
+    }
+},
+{
+    "key": "DutyManagement_QueryPoliceArea",
+    "value": {
+        "value": "DutyManagement_QueryPoliceArea",
+        "desc": "查询巡区"
+    }
+},
+{
+    "key": "DutyManagement_GpsFollow",
+    "value": {
+        "value": "DutyManagement_GpsFollow",
+        "desc": "警力跟随"
+    }
+},
+{
+    "key": "DutyManagement_GpsStopFollow",
+    "value": {
+        "value": "DutyManagement_GpsStopFollow",
+        "desc": "取消跟随"
+    }
+},
+{
+    "key": "DutyManagement_GpsHistory",
+    "value": {
+        "value": "DutyManagement_GpsHistory",
+        "desc": "查询历史轨迹"
+    }
+},
+{
+    "key": "IllegalManagement_Valid",
+    "value": {
+        "value": "IllegalManagement_Valid",
+        "desc": "有效审核"
+    }
+},
+{
+    "key": "IllegalManagement_InValid",
+    "value": {
+        "value": "IllegalManagement_InValid",
+        "desc": "无效审核"
+    }
+},
+{
+    "key": "IllegalManagement_Valid_00",
+    "value": {
+        "value": "Illegal entry",
+        "desc": "违法录入"
+    }
+},
+
+{
+    "key": "IllegalManagement_Valid_10",
+    "value": {
+        "value": "Valid review step one",
+        "desc": "有效一审"
+    }
+},
+
+{
+    "key": "IllegalManagement_Valid_20",
+    "value": {
+        "value": "Valid review step two",
+        "desc": "有效审核"
+    }
+},
+
+{
+    "key": "IllegalManagement_Valid_30",
+    "value": {
+        "value": "Valid review step three",
+        "desc": "有效审核"
+    }
+},
+
+{
+    "key": "IllegalManagement_InValid_12",
+    "value": {
+        "value": "Invalid review step one",
+        "desc": "无效一审"
+    }
+},
+
+{
+    "key": "IllegalManagement_InValid_22",
+    "value": {
+        "value": "Invalid review step two",
+        "desc": "无效二审"
+    }
+},
+
+{
+    "key": "IllegalManagement_InValid_32",
+    "value": {
+        "value": "Invalid review step three",
+        "desc": "无效三审"
+    }
+},
+
+{
+    "key": "IllegalManagement_BatchValid",
+    "value": {
+        "value": "IllegalManagement_BatchValid",
+        "desc": "批量有效审核"
+    }
+},
+{
+    "key": "IllegalManagement_BatchInValid",
+    "value": {
+        "value": "IllegalManagement_BatchInValid",
+        "desc": "批量无效审核"
+    }
+},
+{
+    "key": "IllegalManagement_Enabled",
+    "value": {
+        "value": "IllegalManagement_Enabled",
+        "desc": "禁用违法代码"
+    }
+},
+{
+    "key": "IllegalManagement_Abled",
+    "value": {
+        "value": "IllegalManagement_Abled",
+        "desc": "启用违法代码"
+    }
+},
+{
+    "key": "IllegalManagement_Query",
+    "value": {
+        "value": "IllegalManagement_Query",
+        "desc": "综合查询"
+    }
+},
+{
+    "key": "NetManage_ReportedBarrier",
+    "value": {
+        "value": "NetManage_ReportedBarrier",
+        "desc": "报障"
+    }
+},
+{
+    "key": "NetManage_Pair",
+    "value": {
+        "value": "NetManage_Pair",
+        "desc": "对时"
+    }
+},
+{
+    "key": "ObjectType_Unknown",
+    "value": {
+        "value": "Unknown",
+        "desc": "未知"
+    }
+},
+{
+    "key": "ObjectType_TimeTemplate",
+    "value": {
+        "value": "Time template",
+        "desc": "时间模板"
+    }
+},
+{
+    "key": "ObjectType_Setting",
+    "value": {
+        "value": "Setting",
+        "desc": "设置"
+    }
+},
+{
+    "key": "ObjectType_User",
+    "value": {
+        "value": "User",
+        "desc": "用户"
+    }
+},
+{
+    "key": "ObjectType_Client",
+    "value": {
+        "value": "Client",
+        "desc": "客户端"
+    }
+},
+{
+    "key": "ObjectType_OrgUnit",
+    "value": {
+        "value": "Organization",
+        "desc": "组织机构"
+    }
+},
+{
+    "key": "ObjectType_EventRule",
+    "value": {
+        "value": "Associative scenario",
+        "desc": "联动预案"
+    }
+},
+{
+    "key": "ObjectType_EventRuleTrigger",
+    "value": {
+        "value": "Associative scenario trigger",
+        "desc": "联动预案触发器"
+    }
+},
+{
+    "key": "ObjectType_EventRuleAction",
+    "value": {
+        "value": "Associative action",
+        "desc": "联动动作"
+    }
+},
+{
+    "key": "ObjectType_CenterServer",
+    "value": {
+        "value": "Central server",
+        "desc": "中心服务器"
+    }
+},
+{
+    "key": "ObjectType_AccessServer",
+    "value": {
+        "value": "Access server",
+        "desc": "接入服务器"
+    }
+},
+{
+    "key": "ObjectType_PvgChannelGroup",
+    "value": {
+        "value": "Video gateway server channel grouping",
+        "desc": "视频网关服务器通道分组"
+    }
+},
+{
+    "key": "ObjectType_Dvs",
+    "value": {
+        "value": "Video coding device",
+        "desc": "视频编码设备"
+    }
+},
+{
+    "key": "ObjectType_Camera",
+    "value": {
+        "value": "Camera",
+        "desc": "摄像机"
+    }
+},
+{
+    "key": "ObjectType_Inspect",
+    "value": {
+        "value": "Monitoring patrol grouping",
+        "desc": "监巡分组"
+    }
+},
+{
+    "key": "ObjectType_Patrol",
+    "value": {
+        "value": "Video patrol",
+        "desc": "视频巡逻"
+    }
+},
+{
+    "key": "ObjectType_Mark",
+    "value": {
+        "value": "Mark management",
+        "desc": "标记管理"
+    }
+},
+{
+    "key": "ObjectType_DvsInput",
+    "value": {
+        "value": "Dvs Alarm input",
+        "desc": "Dvs报警输入"
+    }
+},
+{
+    "key": "ObjectType_DvsOutput",
+    "value": {
+        "value": "Dvs Alarm output",
+        "desc": "Dvs报警输出"
+    }
+},
+{
+    "key": "ObjectType_CameraGroup",
+    "value": {
+        "value": "Camera grouping",
+        "desc": "摄像机分组"
+    }
+},
+{
+    "key": "ObjectType_CameraGroupData",
+    "value": {
+        "value": "Camera grouping data",
+        "desc": "摄像机分组数据"
+    }
+},
+{
+    "key": "ObjectType_UserDefineCameraGroup",
+    "value": {
+        "value": "User-defined camera grouping",
+        "desc": "用户自定义摄像机分组"
+    }
+},
+{
+    "key": "ObjectType_DvsInputGroup",
+    "value": {
+        "value": "Dvs Alarm input grouping",
+        "desc": "Dvs报警输入分组"
+    }
+},
+{
+    "key": "ObjectType_DvsOutputGroup",
+    "value": {
+        "value": "Dvs Alarm output grouping",
+        "desc": "Dvs报警输出分组"
+    }
+},
+{
+    "key": "ObjectType_View",
+    "value": {
+        "value": "View",
+        "desc": "视图"
+    }
+},
+{
+    "key": "ObjectType_RecordingFile",
+    "value": {
+        "value": "Video file",
+        "desc": "录像文件"
+    }
+},
+{
+    "key": "ObjectType_Decoder",
+    "value": {
+        "value": "All-purpose decoder",
+        "desc": "万能解码器"
+    }
+},
+{
+    "key": "ObjectType_DecoderMonitor",
+    "value": {
+        "value": "Decoding channel",
+        "desc": "解码通道"
+    }
+},
+{
+    "key": "ObjectType_TvWallLayout",
+    "value": {
+        "value": "TV Wall layout",
+        "desc": "电视墙布局"
+    }
+},
+{
+    "key": "ObjectType_TvWallLayoutData",
+    "value": {
+        "value": "TV Wall layout data",
+        "desc": "电视墙布局数据"
+    }
+},
+{
+    "key": "ObjectType_TvWallLayoutGroup",
+    "value": {
+        "value": "TV Wall layout grouping",
+        "desc": "电视墙布局分组"
+    }
+},
+{
+    "key": "ObjectType_PGis",
+    "value": {
+        "value": "PGis",
+        "desc": "PGis"
+    }
+},
+{
+    "key": "ObjectType_IvsChannelTask",
+    "value": {
+        "value": "IVS channel analysis task",
+        "desc": "IVS通道分析任务"
+    }
+},
+{
+    "key": "ObjectType_IvsServer",
+    "value": {
+        "value": "Intelligent analysis server",
+        "desc": "智能分析服务器"
+    }
+},
+{
+    "key": "ObjectType_Parameter",
+    "value": {
+        "value": "System parameter",
+        "desc": "系统参数"
+    }
+},
+{
+    "key": "ObjectType_PvgServer",
+    "value": {
+        "value": "Video gateway server",
+        "desc": "视频网关服务器"
+    }
+},
+{
+    "key": "ObjectType_GateServer",
+    "value": {
+        "value": "Bayonet server",
+        "desc": "卡口服务器"
+    }
+},
+{
+    "key": "ObjectType_Gate",
+    "value": {
+        "value": "Bayonet",
+        "desc": "卡口"
+    }
+},
+{
+    "key": "ObjectType_GateChannel",
+    "value": {
+        "value": "Bayonet channel",
+        "desc": "卡口通道"
+    }
+},
+{
+    "key": "ObjectType_GateChannelGroup",
+    "value": {
+        "value": "Gateway channel grouping",
+        "desc": "卡口通道分组"
+    }
+},
+{
+    "key": "ObjectType_DeckRmpServer",
+    "value": {
+        "value": "Duplicate plate analysis server",
+        "desc": "套牌分析服务器"
+    }
+},
+{
+    "key": "ObjectType_Role",
+    "value": {
+        "value": "Role",
+        "desc": "角色"
+    }
+},
+{
+    "key": "ObjectType_RoleObjectData",
+    "value": {
+        "value": "Authority Information",
+        "desc": "权限信息"
+    }
+},
+{
+    "key": "ObjectType_Vehicle",
+    "value": {
+        "value": "Vehicle",
+        "desc": "车辆"
+    }
+},
+{
+    "key": "ObjectType_VehicleGroup",
+    "value": {
+        "value": "Vehicle grouping",
+        "desc": "车辆分组"
+    }
+},
+{
+    "key": "ObjectType_Person",
+    "value": {
+        "value": "Officer",
+        "desc": "人员"
+    }
+},
+{
+    "key": "ObjectType_PersonGroup",
+    "value": {
+        "value": "Officer grouping",
+        "desc": "人员分组"
+    }
+},
+{
+    "key": "ObjectType_EmailServer",
+    "value": {
+        "value": "Email server",
+        "desc": "邮件服务器"
+    }
+},
+{
+    "key": "ObjectType_SmsServer",
+    "value": {
+        "value": "SMS modem",
+        "desc": "短信猫"
+    }
+},
+{
+    "key": "ObjectType_NetDevice",
+    "value": {
+        "value": "Network device",
+        "desc": "网络设备"
+    }
+},
+{
+    "key": "ObjectType_AuthServer",
+    "value": {
+        "value": "Certificate server",
+        "desc": "认证服务器"
+    }
+},
+{
+    "key": "ObjectType_NetDeviceChannel",
+    "value": {
+        "value": "Network device channel",
+        "desc": "网络设备通道"
+    }
+},
+{
+    "key": "ObjectType_CameraPreset",
+    "value": {
+        "value": "Speed dome camera presetting bit",
+        "desc": "球机预置位"
+    }
+},
+{
+    "key": "ObjectType_MonitorVehicle",
+    "value": {
+        "value": "Surveillance vehicle",
+        "desc": "布控车辆"
+    }
+},
+{
+    "key": "ObjectType_AlarmLevel",
+    "value": {
+        "value": "Alarm level",
+        "desc": "报警级别"
+    }
+},
+{
+    "key": "ObjectType_LocalComputer",
+    "value": {
+        "value": "Local computer",
+        "desc": "本地计算机"
+    }
+},
+{
+    "key": "ObjectType_LocalDiskInfo",
+    "value": {
+        "value": "Local disk",
+        "desc": "本地磁盘"
+    }
+},
+{
+    "key": "ObjectType_LocalDirInfo",
+    "value": {
+        "value": "Local catalogue",
+        "desc": "本地目录"
+    }
+},
+{
+    "key": "ObjectType_LocalFileInfo",
+    "value": {
+        "value": "Local file",
+        "desc": "本地文件"
+    }
+},
+{
+    "key": "ObjectType_Plan",
+    "value": {
+        "value": "Plan",
+        "desc": "预案"
+    }
+},
+{
+    "key": "ObjectType_PlanData",
+    "value": {
+        "value": "Plan data",
+        "desc": "预案数据"
+    }
+},
+{
+    "key": "ObjectType_IvsChannelTaskGroup",
+    "value": {
+        "value": "Intelligent analysis task grouping",
+        "desc": "智能分析任务分组"
+    }
+},
+{
+    "key": "ObjectType_IvsChannelTaskGroupData",
+    "value": {
+        "value": "Intelligent analysis task grouping data",
+        "desc": "智能分析任务分组数据"
+    }
+},
+{
+    "key": "ObjectType_GpsServer",
+    "value": {
+        "value": "GPS server",
+        "desc": "GPS服务器"
+    }
+},
+{
+    "key": "ObjectType_PGISServer",
+    "value": {
+        "value": "PGIS server",
+        "desc": "PGIS服务"
+    }
+},
+{
+    "key": "ObjectType_AlarmHost",
+    "value": {
+        "value": "Alarm host",
+        "desc": "报警主机"
+    }
+},
+{
+    "key": "ObjectType_IMServer",
+    "value": {
+        "value": "Message server",
+        "desc": "消息服务器"
+    }
+},
+{
+    "key": "ObjectType_MediaServer",
+    "value": {
+        "value": "Streaming media server",
+        "desc": "流媒体服务器"
+    }
+},
+{
+    "key": "ObjectType_Engineering",
+    "value": {
+        "value": "Engineering Unit",
+        "desc": "工程单位"
+    }
+},
+{
+    "key": "ObjectType_FreameTag",
+    "value": {
+        "value": "Frame tagging",
+        "desc": "帧标记"
+    }
+},
+{
+    "key": "ObjectType_MenuRoleResource",
+    "value": {
+        "value": "Menu access resources",
+        "desc": "菜单权限资源"
+    }
+},
+{
+    "key": "ObjectType_ApproveProcedure",
+    "value": {
+        "value": "Approving procedure",
+        "desc": "审核流程"
+    }
+},
+{
+    "key": "ObjectType_ApproveProcedureData",
+    "value": {
+        "value": "Approving procedure data",
+        "desc": "审核流程数据"
+    }
+},
+{
+    "key": "ObjectType_ApproveLog",
+    "value": {
+        "value": "Approving log",
+        "desc": "审核日志"
+    }
+},
+{
+    "key": "ObjectType_CaseAnalysis",
+    "value": {
+        "value": "Case analysis",
+        "desc": "案件分析"
+    }
+},
+{
+    "key": "ObjectType_ConcernData",
+    "value": {
+        "value": "Mark（Favorite）",
+        "desc": "关注（收藏）"
+    }
+},
+{
+    "key": "ObjectType_FaultList",
+    "value": {
+        "value": "Malfunction list",
+        "desc": "报障单"
+    }
+},
+{
+    "key": "ObjectType_FaultWorkList",
+    "value": {
+        "value": "Malfunction ticket",
+        "desc": "报障工单"
+    }
+},
+{
+    "key": "ObjectType_ObjectRelation",
+    "value": {
+        "value": "Object relation",
+        "desc": "对象关系"
+    }
+},
+{
+    "key": "ObjectType_ETC",
+    "value": {
+        "value": "ETC Controller",
+        "desc": "ETC控制器"
+    }
+},
+{
+    "key": "ObjectType_ETCChannel",
+    "value": {
+        "value": "ETC Control unit",
+        "desc": "ETC控制单元"
+    }
+},
+{
+    "key": "ObjectType_GpsDevice",
+    "value": {
+        "value": "GPS Device",
+        "desc": "GPS设备"
+    }
+},
+{
+    "key": "ObjectType_AlarmEvent",
+    "value": {
+        "value": "Alarm event",
+        "desc": "报警事件"
+    }
+},
+{
+    "key": "ObjectType_AlarmPlan",
+    "value": {
+        "value": "Alarm scheme",
+        "desc": "报警方案"
+    }
+},
+{
+    "key": "ObjectType_AlarmPlanData",
+    "value": {
+        "value": "Alarm scheme data",
+        "desc": "报警方案数据"
+    }
+},
+{
+    "key": "ObjectType_LampPost",
+    "value": {
+        "value": "Lamp post",
+        "desc": "灯杆"
+    }
+},
+{
+    "key": "ObjectType_AlarmLog",
+    "value": {
+        "value": "Alarm log",
+        "desc": "报警日志"
+    }
+},
+{
+    "key": "ObjectType_Log",
+    "value": {
+        "value": "Log",
+        "desc": "日志"
+    }
+},
+{
+    "key": "ObjectType_CameraAnalyse",
+    "value": {
+        "value": "Camera diagnosis",
+        "desc": "摄像机诊断"
+    }
+},
+{
+    "key": "ObjectType_DiagTask",
+    "value": {
+        "value": "Diagnosis of camera grouping",
+        "desc": "诊断摄像机分组"
+    }
+},
+{
+    "key": "ObjectType_DiagTaskData",
+    "value": {
+        "value": "Diagnosis of camera grouping data",
+        "desc": "诊断摄像机分组数据"
+    }
+},
+{
+    "key": "ObjectType_Ccu",
+    "value": {
+        "value": "CCU",
+        "desc": "CCU"
+    }
+},
+{
+    "key": "ObjectType_SignalControl",
+    "value": {
+        "value": "Signal controller",
+        "desc": "信号机"
+    }
+},
+{
+    "key": "ObjectType_GuideDevice",
+    "value": {
+        "value": "VMS",
+        "desc": "诱导屏"
+    }
+},
+{
+    "key": "ObjectType_BusinessServer",
+    "value": {
+        "value": "Business server",
+        "desc": "业务服务器"
+    }
+},
+{
+    "key": "ObjectType_ControlArea",
+    "value": {
+        "value": "Control sub-area",
+        "desc": "控制子区"
+    }
+},
+{
+    "key": "ObjectType_Lane",
+    "value": {
+        "value": "Lane",
+        "desc": "车道"
+    }
+},
+{
+    "key": "ObjectType_ProgramFormal",
+    "value": {
+        "value": "Timing scheme",
+        "desc": "配时方案"
+    }
+},
+{
+    "key": "ObjectType_ScheduleProgram",
+    "value": {
+        "value": "Time table scheme",
+        "desc": "时间表方案"
+    }
+},
+{
+    "key": "ObjectType_InduceProgram",
+    "value": {
+        "value": "感应方案",
+        "desc": "感应方案"
+    }
+},
+{
+    "key": "ObjectType_WeekProgram",
+    "value": {
+        "value": "Week scheme",
+        "desc": "周方案"
+    }
+},
+{
+    "key": "ObjectType_PoliceLine",
+    "value": {
+        "value": "Police service route",
+        "desc": "警务路线"
+    }
+},
+{
+    "key": "ObjectType_GreenRatioPlan",
+    "value": {
+        "value": "Split",
+        "desc": "绿信比"
+    }
+},
+{
+    "key": "ObjectType_ControlCenter",
+    "value": {
+        "value": "Control Center",
+        "desc": "控制中心"
+    }
+},
+{
+    "key": "ObjectType_RoadManage",
+    "value": {
+        "value": "Road junction",
+        "desc": "路口"
+    }
+},
+{
+    "key": "ObjectType_PhaseSequence",
+    "value": {
+        "value": "Phase sequence scheme",
+        "desc": "相序方案"
+    }
+},
+{
+    "key": "ObjectType_HolidayProgram",
+    "value": {
+        "value": "Holiday scheme",
+        "desc": "假日方案"
+    }
+},
+{
+    "key": "ObjectType_LampStateMonitor",
+    "value": {
+        "value": "Status surveillance",
+        "desc": "状态监视"
+    }
+},
+{
+    "key": "ObjectType_ParameterInfo",
+    "value": {
+        "value": "parameter information",
+        "desc": "参数信息"
+    }
+},
+{
+    "key": "ObjectType_StandardCycle",
+    "value": {
+        "value": "Standard period",
+        "desc": "标准周期"
+    }
+},
+{
+    "key": "ObjectType_CycleOptimization",
+    "value": {
+        "value": "Period optimization",
+        "desc": "周期优化"
+    }
+},
+{
+    "key": "ObjectType_Post",
+    "value": {
+        "value": "Post",
+        "desc": "岗位"
+    }
+},
+{
+    "key": "ObjectType_Program",
+    "value": {
+        "value": "VMS Program",
+        "desc": "诱导屏节目"
+    }
+},
+{
+    "key": "ObjectType_PSIS",
+    "value": {
+        "value": "Alert condition",
+        "desc": "警情"
+    }
+},
+{
+    "key": "ObjectType_IllegalCode",
+    "value": {
+        "value": "Illegal code",
+        "desc": "违法代码"
+    }
+},
+{
+    "key": "ObjectType_Road",
+    "value": {
+        "value": "Road section",
+        "desc": "路段"
+    }
+},
+{
+    "key": "ObjectType_LaneDetector",
+    "value": {
+        "value": "Vehicle detector",
+        "desc": "车检器"
+    }
+},
+{
+    "key": "UserName_Admin",
+    "value": {
+        "value": "supreme",
+        "desc": "超级管理员"
+    }
+}]

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<Root Type="MenusResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Project=>Key: 模块标识
+		Project=>Name: 模块名称
+		Project=>Ext: 扩展，暂不使用
+
+		Menu=>Key: 唯一标识
+		Menu=>Name: 名称
+		Menu=>Path: 所在路径
+		Menu=>Sequence: 显示顺序
+		Menu=>Enable: 功能是否启用, true: 启用; false: 不启用
+		Menu=>IsCommand: 是否是动作[按钮], true: 动作按钮, 放到t_function表中; false: 非动作按钮, 放到t_module表中
+		Menu=>IconPath: 图标显示路径
+		Menu=>Ext: 扩展字段，以键值对的方式存储：key:value,key:value
+				   (1)sliderStatus:0|1|2|3|4   {参数说明：键——侧边栏状态 ,
+				   值：0-无侧边栏；1-侧边栏；2-侧边栏 + 组织树，3-侧边栏 + 二级侧边栏，4-侧边栏 + 二级侧边栏 + 组织树}
+
+		Key编码规则：ATMS_xx_xx_xx_xx  （ATMS_模块编码_子模块编码_功能编码_动作编码）
+		             除前缀，以2位为单位，每增加一级添加2位
+		             补充规则：菜单栏编码同上，功能或按钮规则改为 ATMS_fk_xx_xx_xx_xx
+	-->
+	<Project Key="ATMS_08" Name="系统配置" Ext="">
+		<Menus>
+			<!--子模块菜单 start -->
+			<Menu Key="ATMS_08_01" ParentKey="ATMS_08"  Name="用户管理" Path=""
+			 Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:14"/>
+			<Menu Key="ATMS_08_02" ParentKey="ATMS_08"  Name="应用配置" Path=""
+			 Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:19"/>
+			<Menu Key="ATMS_08_03" ParentKey="ATMS_08"  Name="基础配置" Path=""
+			 Sequence="2" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:0,iconY:7"/>
+
+			<Menu Key="ATMS_08_01_01" ParentKey="ATMS_08_01"  Name="用户管理" Path="#/userManage"
+			 Sequence="0" Enable="true" IsCommand="false" IconPath="ico-user-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_01_02" ParentKey="ATMS_08_01"  Name="角色管理" Path="#/roleManage"
+			 Sequence="1" Enable="true" IsCommand="false" IconPath="ico-role-white"  Ext="sliderStatus:1"/>
+
+			<Menu Key="ATMS_08_02_01" ParentKey="ATMS_08_02"  Name="电视墙管理" Path="#/tvWallManage"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath="ico-tv-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_02_02" ParentKey="ATMS_08_02"  Name="时间模板" Path="#/timeTable"
+				  Sequence="1" Enable="false" IsCommand="false" IconPath="ico-time-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_02_03" ParentKey="ATMS_08_02"  Name="图层管理" Path="#/mapManage"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-map-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_02_04" ParentKey="ATMS_08_02"  Name="报警策略" Path="#/usersReceiveStrategy"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath="ico-alarmStrategy-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_02_07" ParentKey="ATMS_08_02"  Name="违法片区" Path="#/regionalManagement"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath="ico-regional"  Ext="sliderStatus:1"/>
+				  
+			
+			<Menu Key="ATMS_fk_08_02_03_01" ParentKey="ATMS_08_02_03"  Name="图层配置" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_08_02_03_02" ParentKey="ATMS_08_02_03"  Name="地图布点" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_08_02_03_03" ParentKey="ATMS_08_02_03"  Name="地图标记" Path=""
+				  Sequence="2" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+			<Menu Key="ATMS_fk_08_02_04_01" ParentKey="ATMS_08_02_04"  Name="用户接收方案" Path=""
+				  Sequence="0" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+			<Menu Key="ATMS_fk_08_02_04_02" ParentKey="ATMS_08_02_04"  Name="系统报警策略" Path=""
+				  Sequence="1" Enable="true" IsCommand="true" IconPath=""  Ext=""/>
+
+
+			<Menu Key="ATMS_08_03_01" ParentKey="ATMS_08_03"  Name="区域管理" Path="#/organization"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath="ico-org-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_12" ParentKey="ATMS_08_03"  Name="部门管理" Path="#/departmentManage"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath="ico-dep-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_02" ParentKey="ATMS_08_03"  Name="人员管理" Path="#/staffManagement"
+				  Sequence="2" Enable="true" IsCommand="false" IconPath="ico-staff-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_03" ParentKey="ATMS_08_03"  Name="车辆管理" Path="#/carManagement"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath="ico-car-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_04" ParentKey="ATMS_08_03"  Name="GPS设备管理" Path="#/equipmentManagement"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath="ico-gps-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_05" ParentKey="ATMS_08_03"  Name="诱导屏管理" Path="#/inductionScreen"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath="ico-induced-white"  Ext="sliderStatus:2"/>
+				  
+		 	<Menu Key="ATMS_08_03_14" ParentKey="ATMS_08_03"  Name="流量设备管理" Path="#/flowEquipmentManagement"
+		 	      Sequence="6" Enable="true" IsCommand="false" IconPath="ico-flowEquipment"  Ext="sliderStatus:2"/> 
+		 	      
+			<Menu Key="ATMS_08_03_11" ParentKey="ATMS_08_03"  Name="路段管理" Path="#/roadManagement"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath="ico-roadManage"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_13" ParentKey="ATMS_08_03"  Name="路段级别管理" Path="#/roadLevelManagement"
+				  Sequence="8" Enable="true" IsCommand="false" IconPath="ico-roadLevel-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_03_08" ParentKey="ATMS_08_03"  Name="工程单位管理" Path="#/engineeringManagement"
+				  Sequence="9" Enable="true" IsCommand="false" IconPath="ico-engineering-white"  Ext="sliderStatus:1"/>  
+			<Menu Key="ATMS_08_03_15" ParentKey="ATMS_08_03"  Name="违法地点管理" Path="#/illegalPlaceManagement"
+				  Sequence="10" Enable="true" IsCommand="false" IconPath="ico-illegal-place-management"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_09" ParentKey="ATMS_08_03"  Name="接入服务器" Path="#/insertService"
+				  Sequence="11" Enable="true" IsCommand="false" IconPath="ico-insert-white"  Ext="sliderStatus:2"/>
+			<Menu Key="ATMS_08_03_06" ParentKey="ATMS_08_03"  Name="服务器管理" Path="#/videoNetworkServer"
+				  Sequence="12" Enable="true" IsCommand="false" IconPath="ico-service-white"  Ext="sliderStatus:3"/>
+			<Menu Key="ATMS_08_03_07" ParentKey="ATMS_08_03"  Name="系统字典" Path="#/systemDictionary"
+				  Sequence="13" Enable="true" IsCommand="false" IconPath="ico-dictionary-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_03_10" ParentKey="ATMS_08_03"  Name="菜单管理" Path="#/menuManage"
+				  Sequence="14" Enable="false" IsCommand="false" IconPath="ico-menuManage-white"  Ext="sliderStatus:1"/>
+			<Menu Key="ATMS_08_03_06_00" ParentKey="ATMS_08_03_06"  Name="业务服务器" Path="#/businessServer"
+				  Sequence="0" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:3"/>
+			<Menu Key="ATMS_08_03_06_01" ParentKey="ATMS_08_03_06"  Name="视频联网服务器" Path="#/videoNetworkServer"
+				  Sequence="1" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:3"/>
+			<Menu Key="ATMS_08_03_06_02" ParentKey="ATMS_08_03_06"  Name="智能分析服务器" Path="#/smartAnalyzeServer"
+				  Sequence="2" Enable="false" IsCommand="false" IconPath=""  Ext="sliderStatus:3"/>
+			<Menu Key="ATMS_08_03_06_03" ParentKey="ATMS_08_03_06"  Name="时序服务器" Path="#/timeOrderServer"
+				  Sequence="3" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:3"/>
+			<Menu Key="ATMS_08_03_06_04" ParentKey="ATMS_08_03_06"  Name="万能解码器" Path="#/decoding"
+				  Sequence="4" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:4"/>
+			<Menu Key="ATMS_08_03_06_05" ParentKey="ATMS_08_03_06"  Name="非结构化存储服务器" Path="#/unstructuredStorageServer"
+				  Sequence="5" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:3"/>
+			<Menu Key="ATMS_08_03_06_06" ParentKey="ATMS_08_03_06"  Name="信号控制器" Path="#/signalController"
+				  Sequence="6" Enable="false" IsCommand="false" IconPath=""  Ext="sliderStatus:4"/>
+			<Menu Key="ATMS_08_03_06_07" ParentKey="ATMS_08_03_06"  Name="大数据研判服务器" Path="#/bigDataReadServer"
+				  Sequence="7" Enable="true" IsCommand="false" IconPath=""  Ext="sliderStatus:3"/>
+
+
+			<!--子模块菜单 end -->
+		</Menus>
+	</Project>
+</Root>

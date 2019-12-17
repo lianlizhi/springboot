@@ -1,0 +1,5765 @@
+<!-- 数据库升级脚本文件 UpdateItems：升级项集合 UpdateItem：升级项 Version：版本号 Body：内容主体 Item: 
+	内容项 说明：type="SqlStatement"为sql表达式 type="SqlFile"为sql文件，路径为本脚本文件的相对路径 type="SqlFolder"为sql目录，路径为本脚本文件的相对路径 
+	type="BatFile"为批处理文件，路径为本脚本文件的相对路径 dbType为数据库类型，暂支持Mysql和Oracle（注：只处只需要标注即可，程序会自已过滤执行，当type为BatFile时无效，可不配置） 
+	注：为了参数传输方便，引入两个模板通配符，仅支持SqlStatement类型 #DB_UID# 表示数据库用户名 #DB_PWD# 表示数据库密码 
+	范例 <UpdateItem> <Version>1.01</Version> <Body> <Item type="SqlStatement" 
+	dbType="Mysql"> CREATE TABLE t_diagnosis_camera ( F_ID int(11) NOT NULL, 
+	F_Ivs_Server_ID int(11) NOT NULL, F_Camera_ID int(11) NOT NULL, F_Ext varchar(1024) 
+	NULL DEFAULT NULL , PRIMARY KEY (F_ID) ) ENGINE=MyISAM DEFAULT CHARSET=utf8 
+	</Item> </Body> </UpdateItem> <UpdateItem> <Version>1.01</Version> <Body> 
+	<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170304165114.sql</Item> 
+	</Body> </UpdateItem> -->
+<UpdateItems isUpdateDbVersion="true" tableName="t_parameter"
+	fieldName="F_Param_Value" queryWhere="F_Param_Class='DBVersion'">
+	<UpdateItem>
+		<Version>5.01</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170331174024.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.02</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Left_x F_Nesw_Left_X DOUBLE(8,0) COMMENT '左转X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Left_y F_Nesw_Left_Y DOUBLE(8,0) COMMENT '左转Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Straight_x F_Nesw_Straight_X DOUBLE(8,0) COMMENT
+				'直行X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Straight_y F_Nesw_Straight_Y DOUBLE(8,0) COMMENT
+				'直行Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Right_x F_Nesw_Right_X DOUBLE(8,0) COMMENT '右转X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Right_y F_Nesw_Right_Y DOUBLE(8,0) COMMENT '右转Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Return_x F_Nesw_Return_X DOUBLE(8,0) COMMENT '调头X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Return_y F_Nesw_Return_Y DOUBLE(8,0) COMMENT '调头Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Ped_x F_Nesw_Ped_X DOUBLE(8,0) COMMENT '行人X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Ped_y F_Nesw_Ped_Y DOUBLE(8,0) COMMENT '行人Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Ped2_x F_Nesw_Ped2_X DOUBLE(8,0) COMMENT '二次行人X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device_lg
+				CHANGE F_Nesw_Ped2_y F_Nesw_Ped2_Y DOUBLE(8,0) COMMENT '二次行人Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">alter table t_utc_device_lg add
+				COLUMN F_Nesw_Left_No DOUBLE(8,0) COMMENT '北东南西左转灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">alter table t_utc_device_lg add
+				COLUMN F_Nesw_Straight_No DOUBLE(8,0) COMMENT '北东南西直行灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">alter table t_utc_device_lg add
+				COLUMN F_Nesw_Right_No DOUBLE(8,0) COMMENT '北东南西右转灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">alter table t_utc_device_lg add
+				COLUMN F_Nesw_Return_No DOUBLE(8,0) COMMENT '北东南西调头灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">alter table t_utc_device_lg add
+				COLUMN F_Nesw_Ped_No DOUBLE(8,0) COMMENT '北东南西行人灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">alter table t_utc_device_lg add
+				COLUMN F_Nesw_Ped2_No DOUBLE(8,0) COMMENT '北东南西行人2灯组号';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.03</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_control_center MODIFY F_Is_Top TINYINT(1) DEFAULT '0' COMMENT
+				'是否最高级控制中心（交警支队）(1:顶级 0:次级)';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.04</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device ADD
+				COLUMN F_Area_ID VARCHAR(32) COMMENT '控制子区ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_device ADD
+				COLUMN F_Area_Name VARCHAR(128) COMMENT '控制子区名称';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_control_center ADD COLUMN F_Opt_State TINYINT(1) DEFAULT '0'
+				COMMENT 'OPT状态(1：在线 0：离线)';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_control_center ADD COLUMN F_Ccu_State TINYINT(1) DEFAULT '0'
+				COMMENT 'CCU状态(1：在线 0：离线)';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_control_center ADD COLUMN F_OrgUnit_ID VARCHAR(32) COMMENT
+				'组织结构ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_control_center ADD COLUMN F_OrgUnit_Name VARCHAR(256) COMMENT
+				'组织结构名称';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.05</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_user ADD COLUMN
+				F_Last_Logon_Date datetime NULL COMMENT '用户最后登陆时间' AFTER
+				F_User_Level;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.06</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl ADD COLUMN F_Nesw_Left_No DECIMAL(8,0) COMMENT
+				'北东南西左转灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl ADD COLUMN F_Nesw_Straight_No DECIMAL(8,0)
+				COMMENT '北东南西直行灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl ADD COLUMN F_Nesw_Right_No DECIMAL(8,0)
+				COMMENT '北东南西右转灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl ADD COLUMN F_Nesw_Return_No DECIMAL(8,0)
+				COMMENT '北东南西调头灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl ADD COLUMN F_Nesw_Ped_No DECIMAL(8,0) COMMENT
+				'北东南西行人灯组号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl ADD COLUMN F_Nesw_Ped2_No DECIMAL(8,0) COMMENT
+				'北东南西行人2灯组号';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.07</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_holiday_formal MODIFY COLUMN F_Code VARCHAR(32) COMMENT
+				'假日方案编码';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_holiday_formal MODIFY COLUMN F_Name VARCHAR(32) COMMENT
+				'假日方案名称';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_holiday_formal MODIFY COLUMN F_Device_Code VARCHAR(32) COMMENT
+				'设备编码';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_holiday_formal CHANGE F_Day_Code F_Day_Start_Time VARCHAR(8)
+				COMMENT '开始时间';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_holiday_formal ADD COLUMN F_Program_Code VARCHAR(32) COMMENT
+				'配时方案编码';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_holiday_formal ADD COLUMN F_Induce_Code VARCHAR(32) COMMENT
+				'感应方案编码';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.08</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_message_log
+				ADD COLUMN F_Ccu_Ip_Address VARCHAR(16) COMMENT 'CCU通讯服务IP地址';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_message_log
+				ADD COLUMN F_Ccu_Ip_Port DOUBLE(8,0) COMMENT 'CCU通讯服务IP端口';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_message_log
+				ADD COLUMN F_Ccu_State TINYINT(1) DEFAULT '0' COMMENT 'CCU状态(1：在线
+				0：离线)';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.09</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_guide_sms` (
+				`F_ID` varchar(32) NOT NULL COMMENT '编号',
+				`F_Title` varchar(64)
+				DEFAULT NULL COMMENT '主题',
+				`F_Content` varchar(512) DEFAULT NULL
+				COMMENT '发送内容',
+				`F_Send_Time` datetime DEFAULT NULL COMMENT '发送时间',
+				`F_Status` varchar(16) DEFAULT NULL COMMENT '状态：已发送，未发送',
+				`F_Channel` varchar(16) DEFAULT NULL,
+				`F_Sender` varchar(64) DEFAULT
+				NULL,
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY
+				KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='短信发布表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.10</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_Utc_Control_Area_Road_XY` (
+				`F_ID` varchar(32) NOT NULL DEFAULT ''
+				COMMENT '设备ID号',
+				`F_Road_ID` varchar(32) DEFAULT NULL COMMENT
+				'路口ID号',
+				`F_Area_ID` varchar(32) DEFAULT NULL COMMENT '控制子区ID号',
+				`F_Road_Code` varchar(16) DEFAULT NULL COMMENT '路口编码',
+				`F_Road_Name`
+				varchar(128) DEFAULT NULL COMMENT '路口名称',
+				`F_Road_Type` varchar(1)
+				DEFAULT NULL COMMENT '路口类型',
+				`F_X_Value`decimal(8,0) DEFAULT NULL
+				COMMENT 'X坐标',
+				`F_Y_Value`decimal(8,0) DEFAULT NULL COMMENT 'Y坐标',
+				`F_Flag` varchar(1) DEFAULT NULL COMMENT '标识',
+				`F_Remark`
+				varchar(254) DEFAULT NULL COMMENT '备注',
+				`F_Ext` varchar(4096) DEFAULT
+				NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='区域路口';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.11</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_guide_sms MODIFY
+				COLUMN F_Title VARCHAR(512) COMMENT '主题';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.12</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170522152021.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.13</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_maintenace_status_monitor` (
+				`F_ID` varchar(32) DEFAULT NULL,
+				`F_Object_ID` varchar(32) DEFAULT NULL COMMENT '对象ID',
+				`F_Type`
+				varchar(64) DEFAULT NULL COMMENT '类型',
+				`F_Name` varchar(255) DEFAULT
+				NULL COMMENT '名称',
+				`F_Status` varchar(64) DEFAULT NULL COMMENT
+				'状态(在线，离线，故障)',
+				`F_Update_time` datetime DEFAULT NULL,
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展'
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='设备状态监控表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_maintenace_status_monitor`
+				ADD COLUMN `F_OrgUnit_ID` VARCHAR (32)
+				NULL COMMENT '组织机构ID' AFTER
+				`F_Update_time`,
+				ADD COLUMN `F_IpAddress`
+				VARCHAR (64) NULL COMMENT 'IP地址' AFTER
+				`F_OrgUnit_ID`,
+				CHANGE `F_ID`
+				`F_ID` VARCHAR (32) CHARACTER SET utf8 COLLATE
+				utf8_general_ci NOT
+				NULL,
+				CHANGE `F_Update_time` `F_Update_time` DATETIME NULL COMMENT
+				'更新时间',
+				ADD PRIMARY KEY (`F_ID`);
+			</Item>
+
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.14</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_Dvr_Ip VARCHAR(16) COMMENT '路口球机IP';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_Dvr_Port DECIMAL(8,0) COMMENT '路口球机端口';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_North_Ip VARCHAR(16) COMMENT '北方向相机IP';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_North_Port DECIMAL(8,0) COMMENT '北方向相机端口';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_East_Ip VARCHAR(16) COMMENT '东方向相机IP';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_East_Port DECIMAL(8,0) COMMENT '东方向相机端口';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_South_Ip VARCHAR(16) COMMENT '南方向相机IP';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_South_Port DECIMAL(8,0) COMMENT '南方向相机端口';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_West_Ip VARCHAR(16) COMMENT '西方向相机IP';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_road ADD
+				COLUMN F_Road_West_Port DECIMAL(8,0) COMMENT '西方向相机端口';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.15</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info`
+				CHANGE COLUMN `P_Approver` `F_Approver` VARCHAR(32) NULL DEFAULT
+				NULL COMMENT '审批人' ,
+				CHANGE COLUMN `P_Approve_Time` `F_Approve_Time`
+				DATETIME NULL DEFAULT NULL
+				COMMENT '审批时间' ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.16</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_user_cruise_group` (
+				`F_ID` varchar(32) NOT NULL COMMENT '序号',
+				`F_Name` varchar(64) DEFAULT NULL COMMENT '巡航方案名称',
+				`F_Camera_ID`
+				varchar(32) DEFAULT NULL COMMENT '摄像机ID',
+				`F_User_ID` varchar(45)
+				DEFAULT NULL COMMENT '用户序号',
+				`F_Start_Time` varchar(32) DEFAULT NULL
+				COMMENT '开始时间',
+				`F_End_Time` varchar(32) DEFAULT NULL COMMENT '结束时间',
+				`F_IntervalTime` int(11) DEFAULT NULL COMMENT '间隔时间',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='巡航方案';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.17</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_user_cruise_group_data` (
+				`F_ID` varchar(32) NOT NULL COMMENT
+				'序号',
+				`F_Cruise_Group_ID` varchar(32) DEFAULT NULL COMMENT '巡航方案ID',
+				`F_Preset_ID` varchar(32) DEFAULT NULL COMMENT '预置位ID',
+				`F_Order_No`
+				int(11) DEFAULT NULL COMMENT '排序值',
+				`F_Ext` varchar(4096) DEFAULT
+				NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='巡航方案数据表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.18</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_special ADD
+				COLUMN F_Exec_Type VARCHAR(1) COMMENT '0=跳相，1=特指';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_special_detail ADD COLUMN F_Road_Type VARCHAR(1) COMMENT
+				'路口类型';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.19</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_guide_info` ADD
+				COLUMN `F_Program_ID` VARCHAR(32) NULL DEFAULT NULL COMMENT '节目ID'
+				AFTER `F_Guide_ID`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_guide_info` ADD
+				COLUMN `F_Type` VARCHAR(255) NULL DEFAULT NULL COMMENT '节目类型';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.20</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_guide_info` ADD
+				COLUMN `F_Program_No` int(32) NULL DEFAULT NULL COMMENT
+				'节目编号(1-255)，诱导设备用' AFTER `F_Program_ID`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_guide_device`
+				ADD COLUMN `F_Brand_Model` VARCHAR(64) NULL DEFAULT NULL COMMENT
+				'诱导屏厂家型号，如Nova（西安诺瓦）' AFTER `F_Direction`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.21</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_tv_wall_layout`
+				ADD COLUMN `F_RowNum` INT(32) NULL DEFAULT 0 COMMENT '布局：行' AFTER
+				`F_OrgUnit_ID` ,
+				ADD COLUMN `F_ColNum` INT(32) NULL DEFAULT 0 COMMENT
+				'布局：列' AFTER
+				`F_RowNum` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.22</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_device`
+				ADD COLUMN `F_Width` INT(11) NULL DEFAULT 0 COMMENT '宽' AFTER
+				`F_Brand_Model` ,
+				ADD COLUMN `F_Height` INT(11) NULL DEFAULT 0
+				COMMENT '高' AFTER
+				`F_Width` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.23</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_guide_program`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Name` varchar(128)
+				DEFAULT NULL COMMENT '节目名称',
+				`F_Type` varchar(255) DEFAULT NULL
+				COMMENT
+				'节目类型TextScreen:文字、PictureScreen:图片、StripLightScreen:光带、MixedScreen:复合）',
+				`F_Description` varchar(512) DEFAULT NULL COMMENT '描述',
+				`F_Info`
+				varchar(4096) DEFAULT NULL COMMENT '显示文本',
+				`F_Font_Color`
+				varchar(64)
+				DEFAULT NULL COMMENT '颜色类型',
+				`F_Display_Mode` varchar(64)
+				DEFAULT NULL
+				COMMENT '呈现方式',
+				`F_Font_Type` varchar(64) DEFAULT NULL
+				COMMENT '字体',
+				`F_Font_Style` varchar(64) DEFAULT NULL COMMENT '字体风格',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='诱导文本节目信息表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.24</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_program`
+				DROP COLUMN `F_Font_Style` , DROP COLUMN `F_Font_Type` , DROP COLUMN
+				`F_Font_Color` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.25</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_sys_time_sync`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Name`
+				varchar(256) DEFAULT NULL COMMENT '服务器名称',
+				`F_Type` varchar(64)
+				DEFAULT NULL COMMENT '服务器类型',
+				`F_IpAddress` varchar(64) DEFAULT NULL
+				COMMENT 'IP地址',
+				`F_Location` varchar(256) DEFAULT NULL COMMENT
+				'服务器存放位置',
+				`F_Last_Update_time` datetime DEFAULT NULL COMMENT
+				'最后同步时间',
+				`F_Clock_Offset` bigint(20) DEFAULT NULL COMMENT '时差',
+				`F_Sync_Type` varchar(32) DEFAULT NULL COMMENT '同步类型(自动，手动)',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='服务器时间同步表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.26</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_program`
+				DROP COLUMN `F_Display_Mode` ,
+				ADD COLUMN `F_InScreen_Mode`
+				VARCHAR(64) NULL DEFAULT NULL COMMENT
+				'入屏方式' AFTER `F_Info` ,
+				ADD
+				COLUMN `F_OutScreen_Mode` VARCHAR(64) NULL DEFAULT NULL COMMENT
+				'出屏方式' AFTER `F_InScreen_Mode` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.27</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info`
+				CHANGE COLUMN `F_Program_No` `F_Program_No` INT(32) NULL DEFAULT 1
+				COMMENT '节目编号(1-255)，诱导设备用';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_program`
+				CHANGE COLUMN `F_InScreen_Mode` `F_InScreen_Mode` INT(32) NULL
+				DEFAULT 1 COMMENT '入屏方式' ,
+				CHANGE COLUMN `F_OutScreen_Mode`
+				`F_OutScreen_Mode` INT(32) NULL DEFAULT 1
+				COMMENT '出屏方式' ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.28</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_tv_wall_layout_data` ADD COLUMN `F_Info` VARCHAR(4096) NULL
+				DEFAULT NULL AFTER `F_Camera_Group_ID` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.29</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170622083220.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.30</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gis_mark` ADD
+				INDEX `Object_Id_Index` (`F_Object_ID`);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.31</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_user_tv_wall_group` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Name` varchar(1024) DEFAULT NULL COMMENT '名称',
+				`F_User_ID`
+				varchar(32) NOT NULL COMMENT '用户ID',
+				`F_Description` varchar(1024)
+				DEFAULT NULL COMMENT '描述',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT
+				'备注',
+				PRIMARY KEY (`F_ID`),
+				KEY `I_UserID_UserTvWallGroup`
+				(`F_User_ID`) USING BTREE
+				) ENGINE=MyISAM
+				DEFAULT CHARSET=utf8
+				COMMENT='用户自定义电视墙分组表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_user_tv_wall_group_data` (
+				`F_ID` varchar(32) NOT NULL COMMENT
+				'ID',
+				`F_Object_ID` varchar(32) NOT NULL COMMENT '用户自定义分组ID',
+				`F_Camera_ID` varchar(32) NOT NULL COMMENT '摄像机ID',
+				`F_Order_No`
+				int(11) DEFAULT NULL COMMENT '排序ID',
+				`F_Ext` varchar(4096) DEFAULT
+				NULL COMMENT '备注',
+				PRIMARY KEY (`F_ID`),
+				KEY
+				`I_UserTvWallGroupID_UserTvWallGroupData` (`F_Object_ID`) USING
+				BTREE,
+				KEY `I_CameraID_UserTvWallGroupData` (`F_Camera_ID`) USING
+				BTREE
+				)
+				ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户自定义电视墙分组数据表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.32</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_gis_bookmark` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name` varchar(128)
+				DEFAULT NULL COMMENT '书签名称',
+				`F_Lat` double(32,12) DEFAULT NULL
+				COMMENT '纬度X',
+				`F_Lon` double(32,12) DEFAULT NULL COMMENT '经度Y',
+				`F_Zoom` int(2) DEFAULT NULL,
+				`F_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '用户ID',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='地图标签';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.33</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="MySql">
+				ALTER TABLE T_VIO_INFO ADD
+				COLUMN F_Pstmcap_Status varchar(2) DEFAULT 'N' COMMENT '上传六合一状态';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.34</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_utc_message_log
+				ADD COLUMN F_Operate_State TINYINT(1) DEFAULT '0' COMMENT '操作状态(1：成功
+				0：失败)';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.35</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170705165059.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.36</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170707144942.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.37</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170710104141.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.38</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_ROAD ADD
+				COLUMN F_North_Road_Prompt VARCHAR(128) COMMENT '北路口方向提示';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_ROAD ADD
+				COLUMN F_East_Road_Prompt VARCHAR(128) COMMENT '东路口方向提示';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_ROAD ADD
+				COLUMN F_South_Road_Prompt VARCHAR(128) COMMENT '南路口方向提示';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_ROAD ADD
+				COLUMN F_West_Road_Prompt VARCHAR(128) COMMENT '西路口方向提示';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.39</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_MESSAGE_LOG
+				ADD COLUMN F_Device_ID VARCHAR(32) COMMENT '设备ID';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.40</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_MESSAGE_LOG
+				MODIFY COLUMN F_Message_Type VARCHAR(2) COMMENT '通讯日志类型';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.41</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE T_UTC_WEEK_FORMAL
+				ADD COLUMN F_Remark VARCHAR(254) COMMENT '备注';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.42</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_maintenace_device_issue` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Object_ID` varchar(32) DEFAULT NULL COMMENT '对象ID',
+				`F_Type`
+				varchar(64) DEFAULT NULL COMMENT '对象类型',
+				`F_Name` varchar(64) NULL
+				COMMENT '名称',
+				`F_Status` varchar(64) DEFAULT NULL COMMENT '故障状态',
+				`F_Level` varchar(32) DEFAULT NULL COMMENT '故障等级',
+				`F_OrgUnit_ID`
+				varchar(32) DEFAULT NULL COMMENT '组织机构ID',
+				`F_Commit_Time` datetime
+				DEFAULT NULL COMMENT '故障提交时间',
+				`F_Install_Address` varchar(256)
+				DEFAULT NULL,
+				`F_Last_Update_Time` datetime DEFAULT NULL COMMENT
+				'最后更新时间',
+				`F_Description` varchar(512) DEFAULT NULL COMMENT '故障描述',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展字段',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='设备故障信息表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.43</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_maintenace_device_issue_reply` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Issue_ID` varchar(32) DEFAULT NULL COMMENT '故障ID',
+				`F_Person`
+				varchar(64) DEFAULT NULL COMMENT '维修人',
+				`F_Phone` varchar(255)
+				DEFAULT NULL COMMENT '联系电话',
+				`F_Finish_Time` datetime DEFAULT NULL
+				COMMENT '预计完成时间',
+				`F_Reason` varchar(512) DEFAULT NULL COMMENT
+				'故障原因',
+				`F_Solving_Description` varchar(512) DEFAULT NULL COMMENT
+				'解决方法',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='故障反馈信息表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.44</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_plan` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name` varchar(32) DEFAULT
+				NULL COMMENT '预案名称',
+				`F_Demo_Time` datetime DEFAULT NULL COMMENT
+				'演示时长',
+				`F_Line` varchar(255) DEFAULT NULL COMMENT '行驶路线',
+				`F_Style`
+				varchar(255) DEFAULT NULL COMMENT '路线样式',
+				`F_Type` varchar(16)
+				DEFAULT NULL COMMENT '预案类型',
+				`F_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '创建人',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT '创建时间',
+				`F_Describe` varchar(256) DEFAULT NULL COMMENT '秒速',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='保卫预案';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_plan_task` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name` varchar(32)
+				DEFAULT NULL COMMENT '名称',
+				`F_Plan_ID` varchar(32) DEFAULT NULL
+				COMMENT '预案id',
+				`F_Object_Name` varchar(32) DEFAULT NULL COMMENT
+				'资源名称',
+				`F_Object_ID` varchar(32) DEFAULT NULL COMMENT '资源id',
+				`F_Object_Type` varchar(16) DEFAULT NULL COMMENT '资源类型',
+				`F_Demo_Start` varchar(128) DEFAULT NULL COMMENT '任务开始点位',
+				`F_Demo_End` varchar(128) DEFAULT NULL COMMENT '任务结束点位',
+				`F_Describe` varchar(255) DEFAULT NULL COMMENT '描述',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='预案任务';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_plan` MODIFY
+				COLUMN `F_Line` varchar(5000) CHARACTER SET utf8 COLLATE
+				utf8_general_ci NULL DEFAULT NULL COMMENT '行驶路线' AFTER
+				`F_Demo_Time`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_plan` MODIFY
+				COLUMN `F_Demo_Time` tinyint(30) NULL DEFAULT NULL COMMENT '演示时长'
+				AFTER `F_Name`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.45</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				create table if not exists
+				t_police_workstation(
+				F_ID varchar(32) not null,
+				F_Name varchar(64)
+				default null comment '岗位名称',
+				F_Type varchar(64) default null comment
+				'岗位类型',
+				F_OrgUnit_ID varchar(32) default null comment '组织机构',
+				F_Create_Time datetime default null comment '创建时间',
+				F_Create_User
+				varchar(32) default null comment '创建用户',
+				F_Start_Date datetime
+				default null comment '有效开始时间',
+				F_End_Date datetime default null
+				comment '有效结束时间',
+				F_Description varchar(256) default null comment
+				'描述',
+				F_Ext varchar(4096) default null,
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='岗位管理信息表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				create table if not exists
+				t_police_patrol_area(
+				F_ID varchar(32) not null,
+				F_Name varchar(64)
+				default null comment '巡区名称',
+				F_Type varchar(64) default null comment
+				'巡区类型',
+				F_Create_Time datetime default null comment '创建时间',
+				F_Create_User varchar(32) default null comment '创建用户',
+				F_OrgUnit_ID
+				varchar(32) default null comment '组织机构',
+				F_Line varchar(4096) default
+				null comment '巡区坐标',
+				F_Style varchar(256) default null comment
+				'巡区式样',
+				F_Ext varchar(4096) default null,
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='巡区管理信息表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				create table if not exists
+				t_police_patrol_time(
+				F_ID varchar(32) not null,
+				F_Workstation_ID
+				varchar(32) default null comment '岗位ID',
+				F_Start_Time varchar(5)
+				default null comment '开始时间',
+				F_End_Time varchar(5) default null
+				comment '结束时间',
+				F_Is_Over_Day tinyint(1) default null comment '是否超天',
+				F_Ext varchar(4096) default null,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='巡区巡逻时间表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				create table if not exists
+				t_police_workstation_patrol_rel(
+				F_ID varchar(32) not null,
+				F_Workstation_ID varchar(32) default null comment '岗位ID',
+				F_Patrol_Area_ID varchar(32) default null comment '巡区ID',
+				F_Ext
+				varchar(4096) default null,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='岗位巡区关系表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.46</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE T_VIO_INFO ADD
+				COLUMN F_Vehicle_Info varchar(5000) COMMENT '六合一车辆信息';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.47</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170721112308.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.48</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_police_workstation_task` (
+				`F_ID` varchar(32) NOT NULL COMMENT
+				'ID',
+				`F_Workstation_ID` varchar(32) DEFAULT NULL COMMENT '岗位ID',
+				`F_Patrol_Time_ID` varchar(32) DEFAULT NULL COMMENT '班次ID',
+				`F_Task_Date` datetime DEFAULT NULL COMMENT '排班日期',
+				`F_Create_User_ID` varchar(32) DEFAULT NULL COMMENT '创建人',
+				`F_Create_Date` datetime DEFAULT NULL COMMENT '创建日期',
+				`F_Ext`
+				varchar(255) DEFAULT NULL COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='岗位排班表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_police_workstation_task_object` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Task_ID` varchar(32) DEFAULT NULL COMMENT '排班ID',
+				`F_Object_ID`
+				varchar(32) DEFAULT NULL COMMENT '对象ID',
+				`F_Object_Type` varchar(64)
+				DEFAULT NULL COMMENT '对象类型(Person,Car)',
+				`F_Ext` varchar(255) DEFAULT
+				NULL COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8
+				COMMENT='值班的人员车辆对应关系表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.49</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info MODIFY
+				COLUMN F_Vehicle_Logo VARCHAR(20) COMMENT '车标';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.50</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170726155011.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.51</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_special_detail ADD COLUMN F_X_Value int(8) DEFAULT '0' COMMENT
+				'图标X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_special_detail ADD COLUMN F_Y_Value int(8) DEFAULT '0' COMMENT
+				'图标Y坐标';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.52</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Left_x F_Nesw_Left_X
+				DECIMAL(8,0) COMMENT '左转X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Left_y F_Nesw_Left_Y
+				DECIMAL(8,0) COMMENT '左转Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Straight_x F_Nesw_Straight_X
+				DECIMAL(8,0) COMMENT '直行X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Straight_y F_Nesw_Straight_Y
+				DECIMAL(8,0) COMMENT '直行Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Right_x F_Nesw_Right_X
+				DECIMAL(8,0) COMMENT '右转X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Right_y F_Nesw_Right_Y
+				DECIMAL(8,0) COMMENT '右转Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Return_x F_Nesw_Return_X
+				DECIMAL(8,0) COMMENT '调头X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Return_y F_Nesw_Return_Y
+				DECIMAL(8,0) COMMENT '调头Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Ped_x F_Nesw_Ped_X DECIMAL(8,0)
+				COMMENT '行人X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Ped_y F_Nesw_Ped_Y DECIMAL(8,0)
+				COMMENT '行人Y坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Ped2_x F_Nesw_Ped2_X
+				DECIMAL(8,0) COMMENT '二次行人X坐标';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_phase_formal_dl CHANGE F_Nesw_Ped2_y F_Nesw_Ped2_Y
+				DECIMAL(8,0) COMMENT '二次行人Y坐标';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>5.53</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle MODIFY COLUMN F_Min_Cycle int(8) DEFAULT
+				'0' COMMENT '最小周期';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle MODIFY COLUMN F_Middle_Cycle int(8)
+				DEFAULT '0' COMMENT '中间周期';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle MODIFY COLUMN F_Middle2_Cycle int(8)
+				DEFAULT '0' COMMENT '中间2周期';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle MODIFY COLUMN F_Max_Cycle int(8) DEFAULT
+				'0' COMMENT '最大周期';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle DROP COLUMN F_Cur_Min_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle DROP COLUMN F_Cur_Middle_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle DROP COLUMN F_Cur_Middle2_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle DROP COLUMN F_Cur_Max_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle DROP COLUMN F_Newly_Vote_Time;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_cycle DROP COLUMN F_Up_Times_Cycle;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`T_UTC_OPT_PREFERENCE_CYCLE_HRY` (
+				`F_ID`
+				varchar(32) NOT NULL COMMENT
+				'ID',
+				`F_Control_Area_ID` varchar(32)
+				DEFAULT NULL COMMENT '控制子区ID',
+				`F_COntrol_Area_Code` varchar(32)
+				DEFAULT NULL COMMENT '控制子区编码',
+				`F_COntrol_Area_Name` varchar(128)
+				DEFAULT NULL COMMENT '控制子区名称',
+				`F_Cur_Min_Cycle_Times` int(8) DEFAULT
+				'0' COMMENT '当前最小周期投票次数',
+				`F_Cur_Middle_Cycle_Times` int(8) DEFAULT
+				'0' COMMENT '当前中间周期投票次数',
+				`F_Cur_Middle2_Cycle_Times` int(8) DEFAULT
+				'0' COMMENT '当前中间2周期投票次数',
+				`F_Cur_Max_Cycle_Times` int(8) DEFAULT '0'
+				COMMENT '当前最大周期投票次数',
+				`F_Newly_Vote_Time` DATETIME DEFAULT NULL
+				COMMENT '最近投票时间',
+				`F_Up_Times_Cylce` int(8) DEFAULT '0' COMMENT
+				'上次协调优化的周期',
+				`F_Cur_Times_Cylce` int(8) DEFAULT '0' COMMENT
+				'本次协调优化的周期',
+				`F_Remark` varchar(254) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='协调优化控制子区的优先周期方案投票历史表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.54</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi modify column F_Greent_Bi_Type varchar(1)
+				DEFAULT NULL COMMENT '周期类型';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi modify column F_Phase_Count int(8)
+				DEFAULT NULL COMMENT '相位数量';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi modify column F_Elastic_Phase_No int(8)
+				DEFAULT NULL COMMENT '弹性相位';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`T_UTC_OPT_PREFERENCE_GN_BI_HRY` (
+				`F_ID`
+				varchar(32) NOT NULL COMMENT
+				'ID',
+				`F_Device_ID` varchar(32) DEFAULT
+				NULL COMMENT '设备ID',
+				`F_Device_Code` varchar(32) DEFAULT NULL COMMENT
+				'设备编码',
+				`F_Road_Name` varchar(128) DEFAULT NULL COMMENT '路口名称',
+				`F_Phase_ID`
+				varchar(32) DEFAULT NULL COMMENT '相序方案ID',
+				`F_Phase_Code` varchar(32)
+				DEFAULT NULL COMMENT '相序方案编码',
+				`F_Phase_Count` int(8) DEFAULT NULL
+				COMMENT '相位数量',
+				`F_Cur_Vote_Times` int(8) DEFAULT '0' COMMENT
+				'当前轻交通绿信比投票次数',
+				`F_Cur_Vote_Times1` int(8) DEFAULT '0' COMMENT
+				'当前典型绿信比投票次数',
+				`F_Cur_Vote_Times2` int(8) DEFAULT '0' COMMENT
+				'当前轻度优先绿信比投票次数',
+				`F_Cur_Vote_Times3` int(8) DEFAULT '0' COMMENT
+				'当前重度优先绿信比投票次数',
+				`F_Newly_Vote_Time` DATETIME DEFAULT NULL COMMENT
+				'最近投票时间',
+				`F_Up_Times_Green_Bi` int(8) DEFAULT '0' COMMENT
+				'上次协调优化的绿信比',
+				`F_Cur_Times_Green_Bi` int(8) DEFAULT '0' COMMENT
+				'本次协调优化的绿信比',
+				`F_Remark` varchar(254) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='协调优化路口绿信比方案历史表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.55</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_OPT_PREFERENCE_GN_BI_DL_HRY` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Preference_Gn_Bi_Hry_ID` varchar(32) DEFAULT NULL,
+				`F_Phase_01`
+				decimal(8,0) DEFAULT NULL,
+				`F_Phase_02` decimal(8,0) DEFAULT NULL,
+				`F_Phase_03` decimal(8,0) DEFAULT NULL,
+				`F_Phase_04` decimal(8,0)
+				DEFAULT NULL,
+				`F_Phase_05` decimal(8,0) DEFAULT NULL,
+				`F_Phase_06`
+				decimal(8,0) DEFAULT NULL,
+				`F_Phase_07` decimal(8,0) DEFAULT NULL,
+				`F_Phase_08` decimal(8,0) DEFAULT NULL,
+				`F_Phase_09` decimal(8,0)
+				DEFAULT NULL,
+				`F_Phase_10` decimal(8,0) DEFAULT NULL,
+				`F_Phase_11`
+				decimal(8,0) DEFAULT NULL,
+				`F_Phase_12` decimal(8,0) DEFAULT NULL,
+				`F_Phase_13` decimal(8,0) DEFAULT NULL,
+				`F_Phase_14` decimal(8,0)
+				DEFAULT NULL,
+				`F_Phase_15` decimal(8,0) DEFAULT NULL,
+				`F_Phase_16`
+				decimal(8,0) DEFAULT NULL,
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.56</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql"> ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Cur_Min_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Cur_Middle_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Cur_Middle2_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Cur_Max_Cycle_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Newly_Vote_Time;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Up_Times_Cycle;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset DROP COLUMN F_Up_Time_Offsetval;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset ADD COLUMN F_Offset_Value int(8) DEFAULT
+				NULL COMMENT '相位差';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset ADD COLUMN F_Re_Offset_Value int(8)
+				DEFAULT NULL COMMENT '反向相位差';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_offset ADD COLUMN F_Is_Comute varchar(1)
+				DEFAULT NULL COMMENT '是否实时计算相位差';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`T_UTC_OPT_PREFERENCE_OFFSET_HRY` (
+				`F_ID`
+				varchar(32) NOT NULL
+				COMMENT 'ID',
+				`F_Device_ID` varchar(32) DEFAULT
+				NULL COMMENT '设备ID',
+				`F_Device_Code` varchar(32) DEFAULT NULL COMMENT
+				'设备编码',
+				`F_Road_Name` varchar(128) DEFAULT NULL COMMENT '路口名称',
+				`F_Offsetval_Type` varchar(1) DEFAULT NULL COMMENT '相位差类型',
+				`F_Cur_Min_Cycle_Times` int(8) DEFAULT '0' COMMENT '当前最小周期投票次数',
+				`F_Cur_Middle_Cycle_Times` int(8) DEFAULT '0' COMMENT '当前中间周期投票次数',
+				`F_Cur_Middle2_Cycle_Times` int(8) DEFAULT '0' COMMENT
+				'当前中间2周期投票次数',
+				`F_Cur_Max_Cycle_Times` int(8) DEFAULT '0' COMMENT
+				'当前最大周期投票次数',
+				`F_Newly_Vote_Time` DATETIME DEFAULT NULL COMMENT
+				'最近投票时间',
+				`F_Up_Times_Cylce` int(8) DEFAULT '0' COMMENT '上次协调优化的周期',
+				`F_Up_Times_Offsetval` int(8) DEFAULT '0' COMMENT '上次协调优化的相位差',
+				`F_Cur_Times_Cylce` int(8) DEFAULT NULL COMMENT '本次协调优化的周期',
+				`F_Cur_Times_Offsetval` int(8) DEFAULT '0' COMMENT '本次协调优化的相位差',
+				`F_Remark` varchar(254) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='协调优化路口相位差方案历史表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.57</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">DROP TABLE IF EXISTS
+				t_utc_opt_preference_offset_dl;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.58</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi DROP COLUMN F_Cur_Vote_Times;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi DROP COLUMN F_Cur_Vote_Times1;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi DROP COLUMN F_Cur_Vote_Times2;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi DROP COLUMN F_Cur_Vote_Times3;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi DROP COLUMN F_Newly_Vote_Time;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_preference_gn_bi DROP COLUMN F_Up_Times_Green_Bi;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.59</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_police_work_check` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Patrol_Time_ID` varchar(32) DEFAULT NULL COMMENT '班次',
+				`F_Task_ID` varchar(32) DEFAULT NULL COMMENT '班次ID',
+				`F_Object_ID`
+				varchar(32) DEFAULT NULL COMMENT '考勤对象ID',
+				`F_Object_Type`
+				varchar(64) DEFAULT NULL COMMENT '对象类型',
+				`F_On_Time` datetime DEFAULT
+				NULL COMMENT '上班时间',
+				`F_Off_Time` datetime DEFAULT NULL COMMENT
+				'下班时间',
+				`F_Status` varchar(64) DEFAULT NULL COMMENT '考勤状态',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='人员考勤状态表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.60</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_tv_wall_layout`
+				ADD COLUMN `F_Create_Time` DATETIME NULL DEFAULT NULL COMMENT '创建时间'
+				AFTER `F_ColNum` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.61</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_utc_system_param` (
+				`F_ID` VARCHAR (32) NOT NULL COMMENT 'ID',
+				`F_Sysname` VARCHAR (32) DEFAULT NULL COMMENT '系统名称',
+				`F_Sysversion`
+				VARCHAR (32) DEFAULT NULL COMMENT '版本号',
+				`F_Supplier` VARCHAR (32)
+				DEFAULT NULL COMMENT '供应商',
+				`F_Remark` VARCHAR (254) DEFAULT NULL
+				COMMENT '备注',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE = INNODB DEFAULT CHARSET =
+				utf8 COMMENT = 'UTC系统参数';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.62</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_plan` MODIFY
+				COLUMN `F_Demo_Time` int(30) NULL DEFAULT NULL COMMENT '演示时长'
+				AFTER
+				`F_Name`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.63</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170807164826.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.64</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_police_workstation` ADD COLUMN `F_Status` VARCHAR(2) NOT NULL
+				COMMENT '状态' AFTER `F_Description`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.65</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				INDEX `Idx_Special_Car` (`F_Special_Car` ASC);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.66</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_user`
+				ADD COLUMN
+				`F_Delete_Flag` tinyint(1) NULL DEFAULT 0 COMMENT '删除标识（1：已删除
+				0：未删除）' AFTER `F_Is_Disable`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_person`
+				ADD
+				COLUMN `F_Delete_Flag` tinyint(1) NULL DEFAULT 0 COMMENT '删除标识（1：已删除
+				0：未删除）' AFTER `F_Police_No`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_police_workstation_task_object`
+				ADD COLUMN `F_Order` int(2) NULL
+				DEFAULT 0 COMMENT '顺序号' AFTER `F_Object_Type`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.67</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_maintenace_status_monitor` ADD INDEX `Idx_Object_ID`
+				(`F_Object_ID` ASC);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.68</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_program_formal ADD COLUMN F_Greent_Bi_Type varchar(1)
+				DEFAULT NULL COMMENT '绿信比类型';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_program_formal ADD COLUMN F_Cycle_Type varchar(1) DEFAULT
+				NULL COMMENT '周期类型';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				t_utc_opt_program_formal ADD COLUMN F_Iscur_Program varchar(1)
+				DEFAULT NULL COMMENT '是否当前配时';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.69</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_guide_program`
+				ADD COLUMN `F_GuideDevice_ID` VARCHAR(32) NULL COMMENT '关联诱导屏ID'
+				AFTER `F_OutScreen_Mode`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.70</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_plan` ADD COLUMN
+				`F_Total_Length` int NULL COMMENT '总长度';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">AlTER TABLE `t_plan_task` ADD
+				COLUMN `F_Index` int NULL COMMENT '序号';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.71</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170818184814.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.72</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170821171615.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.73</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_emergency_evnet` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Code`
+				varchar(32) DEFAULT NULL,
+				`F_Psis_Code` varchar(15) DEFAULT NULL,
+				`F_Case_Type` varchar(10) DEFAULT NULL COMMENT '警情类别',
+				`F_Case_XZ`
+				varchar(15) DEFAULT NULL,
+				`F_Case_Level` varchar(15) DEFAULT NULL
+				COMMENT '事件级别',
+				`F_Content` varchar(200) DEFAULT NULL COMMENT '报警内容',
+				`F_Address` varchar(1000) DEFAULT NULL COMMENT '事发地址',
+				`F_Alarm_Person` varchar(50) DEFAULT NULL COMMENT '报警人',
+				`F_Alarm_Time` datetime DEFAULT NULL COMMENT '报警时间',
+				`F_Alarm_Phone`
+				varchar(20) DEFAULT NULL COMMENT '报警电话',
+				`F_Deal_Org_Unit_ID`
+				varchar(32) DEFAULT NULL COMMENT '处理人所属组织机构ID',
+				`F_Deal_Person`
+				varchar(50) DEFAULT NULL COMMENT '处理人',
+				`F_Deal_Time` datetime
+				DEFAULT NULL COMMENT '处理时间',
+				`F_Deal_Situation` varchar(1000) DEFAULT
+				NULL COMMENT '处理情况',
+				`F_Deal_Phone` varchar(20) DEFAULT NULL COMMENT
+				'处理人电话',
+				`F_Status` varchar(10) DEFAULT NULL,
+				`F_Lon` varchar(50)
+				DEFAULT NULL,
+				`F_Lat` varchar(50) DEFAULT NULL,
+				`F_Title` varchar(100)
+				DEFAULT NULL,
+				`F_Source` varchar(255) DEFAULT '' COMMENT '警情来源',
+				`F_Process_Status` varchar(10) DEFAULT NULL COMMENT '处理状态',
+				`F_Create_Org_Unit_ID` varchar(32) DEFAULT NULL COMMENT
+				'录入人所属组织机构ID',
+				`F_Create_Person_ID` varchar(32) DEFAULT NULL COMMENT
+				'录入人员ID',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT '创建时间',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='警情表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.74</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_vio_info` ADD
+				COLUMN `F_Reason` varchar(64) NULL COMMENT '无效原因';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.75</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gate` ADD COLUMN
+				`F_Direction` VARCHAR(128) NULL COMMENT '方向' AFTER `F_Description`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.76</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_gate_flow_stistics` (
+				`F_ID` VARCHAR(32) NOT NULL,
+				`F_Day`
+				VARCHAR(64) NULL COMMENT '日期（天）',
+				`F_Gate_ID` VARCHAR(64) NULL
+				COMMENT '卡口ID',
+				`F_Vehicle_Type` VARCHAR(64) NULL COMMENT '车辆类型',
+				`F_Flow` DECIMAL(16,0) NULL COMMENT '流量',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT =
+				'卡口流量统计表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.77</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE `t_plan` ADD COLUMN
+				`F_Speed` int NULL COMMENT '速度';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.78</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				DROP TABLE IF EXISTS
+				`t_density_analysis`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_density_analysis` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Gate_ID`
+				varchar(32) DEFAULT NULL COMMENT '卡口ID',
+				`F_Create_Time` datetime
+				DEFAULT NULL COMMENT '创建时间',
+				`F_Num_Count` int(11) DEFAULT NULL
+				COMMENT '统计',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				)
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.79</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_gate_flow_stistics` CHANGE COLUMN `F_Day` `F_Time` VARCHAR(64)
+				NULL DEFAULT NULL COMMENT '时间' ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.80</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_user`
+				ADD COLUMN
+				`F_Create_Time` DATETIME NULL DEFAULT NULL COMMENT '创建时间'
+				AFTER
+				`F_Is_Forever_Valid`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.81</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_camera`
+				ADD
+				COLUMN `F_Include_Substream` tinyint(1) DEFAULT '0' COMMENT
+				'是否包含子码流' AFTER `F_Play_Name`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.82</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_road_gis_segment` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name`
+				varchar(240) DEFAULT NULL COMMENT '路段名称',
+				`F_Start_Gate_ID`
+				varchar(32) DEFAULT NULL COMMENT '开始卡口',
+				`F_End_Gate_ID` varchar(32)
+				DEFAULT NULL COMMENT '结束卡口',
+				`F_Distance` decimal(65,30) DEFAULT NULL
+				COMMENT '距离(米)',
+				`F_Lines` longtext COMMENT '路段地图点位信息',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_road_segment` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name` varchar(200)
+				DEFAULT NULL COMMENT '道路名称',
+				`F_OrgUnit_ID` varchar(32) DEFAULT NULL
+				COMMENT '组织机构',
+				`F_Start_Gate` varchar(3) DEFAULT NULL COMMENT
+				'路段开始点',
+				`F_End_Gate` varchar(3) DEFAULT NULL COMMENT '路段结束点',
+				`F_Start_Direction_Code` varchar(5) DEFAULT NULL COMMENT '开始路段方向',
+				`F_End_Direction_Code` varchar(5) DEFAULT NULL COMMENT '结束路段方向',
+				`F_Service_Level` varchar(1) DEFAULT NULL COMMENT '服务水平',
+				`F_Distance` float DEFAULT NULL COMMENT '路段距离（m）',
+				`F_Road_Level`
+				varchar(1) DEFAULT NULL COMMENT '道路级别',
+				`F_Avg_Speed` float DEFAULT
+				NULL COMMENT '平均车速（km/h）',
+				`F_Mark_Line` varchar(5000) DEFAULT NULL
+				COMMENT '路段长度',
+				`F_Traffic_Flow` float DEFAULT NULL COMMENT '交通流量
+				（pcu/h）',
+				`F_Traffic_State` varchar(1) DEFAULT NULL COMMENT '交通流运行状态
+				0：非常顺畅 1：顺畅 2：缓行 3：拥堵
+				4：严重拥堵',
+				`F_Travel_Time` decimal(8,0) DEFAULT
+				NULL COMMENT '路段行程时间（秒）',
+				`F_Last_Update_Time` datetime DEFAULT NULL
+				COMMENT '最后更新时间',
+				`F_Remark` varchar(255) DEFAULT NULL COMMENT '描述',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_road_service_level` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_City_ID`
+				varchar(4) DEFAULT NULL COMMENT '城市ID（1001：潮州）',
+				`F_Road_Type`
+				varchar(2) DEFAULT NULL COMMENT '路段类型（1:快速路、2:主干道、3:次干道、 4:支路）',
+				`F_Level_A` varchar(10) DEFAULT NULL COMMENT '服务水平 A',
+				`F_Level_B`
+				varchar(10) DEFAULT NULL COMMENT '服务水平 B',
+				`F_Level_C` varchar(10)
+				DEFAULT NULL COMMENT '服务水平 C',
+				`F_Level_D` varchar(10) DEFAULT NULL
+				COMMENT '服务水平 D',
+				`F_Level_E` varchar(10) DEFAULT NULL COMMENT '服务水平
+				E',
+				`F_Level_F` varchar(10) DEFAULT NULL COMMENT '服务水平 F',
+				`F_Ext`
+				varchar(500) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_road_traffic_flux` (
+				`F_ID` varchar(32) NOT NULL COMMENT '路段ID',
+				`F_Segment_ID` varchar(32) DEFAULT NULL COMMENT '路段ID',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT '创建时间',
+				`F_Flux`
+				int(11) DEFAULT NULL COMMENT '车流量',
+				`F_Avg_Speed` decimal(5,2)
+				DEFAULT NULL COMMENT '平均车速',
+				`F_Avg_Possessive_Rate` decimal(5,2)
+				DEFAULT NULL COMMENT '平均时间占用率',
+				`F_Avg_Time_Interval` decimal(5,2)
+				DEFAULT NULL COMMENT '平均时间间隔',
+				`F_Avg_Head_Distance` decimal(5,2)
+				DEFAULT NULL COMMENT '车头时距',
+				`F_Avg_Head_Gap` decimal(5,2) DEFAULT
+				NULL COMMENT '车头间距',
+				`F_Avg_Travel_Time` decimal(8,2) DEFAULT NULL
+				COMMENT '平均行程时间',
+				`F_Traffic_State` varchar(1) DEFAULT NULL COMMENT
+				'交通状态',
+				`F_Service_Level` varchar(1) DEFAULT NULL COMMENT '服务水平',
+				`F_Year` int(11) DEFAULT NULL COMMENT '年',
+				`F_Month` int(11) DEFAULT
+				NULL COMMENT '月',
+				`F_Day` int(11) DEFAULT NULL COMMENT '日',
+				`F_Hour`
+				int(11) DEFAULT NULL COMMENT '时',
+				`F_Minute` int(11) DEFAULT NULL
+				COMMENT '分',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展',
+				PRIMARY
+				KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='交通流量记录表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE IF NOT EXISTS
+				`t_road_traffic_status` (
+				`ID` varchar(32) NOT NULL,
+				`F_City_ID`
+				varchar(4) DEFAULT NULL COMMENT '城市 （1001：潮州市 ）',
+				`F_Road_Type`
+				varchar(2) DEFAULT NULL COMMENT '道路类型 （ 1:快速路、2:主干道、3:次干道、 4:支路 ）',
+				`F_Level_One` varchar(10) DEFAULT NULL COMMENT '级别1 ，非常顺畅',
+				`F_Level_Two` varchar(10) DEFAULT NULL COMMENT '级别2 ，顺畅',
+				`F_Level_Three` varchar(10) DEFAULT NULL COMMENT '级别3 ，缓行',
+				`F_Level_Four` varchar(10) DEFAULT NULL COMMENT '级别4 ，拥堵',
+				`F_Level_Five` varchar(10) DEFAULT NULL COMMENT '级别5 ，严重拥堵',
+				`F_Ext`
+				varchar(500) DEFAULT NULL,
+				PRIMARY KEY (`ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.83</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_road_gis_segment_data.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_road_service_level_data.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_road_traffic_status_data.sql</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.84</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				INSERT INTO
+				t_road_segment(F_ID,F_Name,F_OrgUnit_ID,F_Start_Gate,F_End_Gate,F_Distance,F_Road_Level)
+				SELECT
+				REPLACE(UUID(), '-', '') F_ID,
+				MAX(F_NAME) F_NAME,
+				'1'
+				F_OrgUnit_ID,
+				F_Start_Gate_ID,
+				F_End_Gate_ID,
+				SUM(F_Distance)
+				F_Distance,
+				'2' F_Road_Level
+				FROM
+				t_road_gis_segment
+				WHERE
+				F_Start_Gate_ID IS NOT NULL
+				AND F_End_Gate_ID IS NOT NULL
+				GROUP BY
+				F_Start_Gate_ID,F_End_Gate_ID ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.85</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_road_flow_stistics` (
+				`F_ID` VARCHAR(32) NOT NULL COMMENT 'id',
+				`F_Time` VARCHAR(64) NULL COMMENT '时间',
+				`F_Road_ID` VARCHAR(64) NULL
+				COMMENT '路段ID',
+				`F_Vehicle_Type` VARCHAR(64) NULL COMMENT '车辆类型',
+				`F_Flow` DECIMAL(16,0) NULL COMMENT '流量',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT = '路段流量统计表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.86</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_deck_vehicle` (
+				`F_ID` varchar(32) NOT NULL COMMENT '编号',
+				`F_Vehicle_Plate`
+				varchar(32) DEFAULT NULL COMMENT '号牌号码',
+				`F_Plate_Type` varchar(4)
+				DEFAULT NULL COMMENT '号牌种类',
+				`F_Plate_Color` varchar(2) DEFAULT NULL
+				COMMENT '车牌颜色',
+				`F_Vehicle_Type` varchar(4) DEFAULT NULL COMMENT
+				'车辆类型',
+				`F_Vehicle_Color` varchar(2) DEFAULT NULL COMMENT '车辆颜色',
+				`F_Vehicle_Logo` varchar(32) DEFAULT NULL COMMENT '车标',
+				`F_Ft_PassTime` datetime DEFAULT NULL COMMENT '首次过车时间',
+				`F_Ft_PassGate_ID` varchar(32) DEFAULT NULL COMMENT '首次经过的卡口ID',
+				`F_Ft_Speed` decimal(32,0) DEFAULT NULL COMMENT '首次行驶速度',
+				`F_Lt_PassTime` datetime DEFAULT NULL COMMENT '后一次过车时间',
+				`F_Lt_PassGate_ID` varchar(32) DEFAULT NULL COMMENT '后一次经过的卡口ID',
+				`F_Lt_Speed` decimal(32,0) DEFAULT NULL COMMENT '后一次行驶速度',
+				`F_Suspicion_Type` varchar(64) DEFAULT NULL COMMENT
+				'嫌疑类型，见枚举DeckSuspicionType',
+				`F_Suspicion_Reason` varchar(1024)
+				DEFAULT NULL COMMENT
+				'套牌原因，可视为对嫌疑类型的具体描述',
+				`F_Description`
+				varchar(512) DEFAULT NULL COMMENT '描述',
+				`F_Ext` varchar(4096) DEFAULT
+				NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY (`F_ID`),
+				KEY
+				`Idx_Deck_Vehicle_Plate` (`F_Vehicle_Plate`) USING BTREE,
+				KEY
+				`Idx_Deck_Plate_Type` (`F_Plate_Type`) USING BTREE,
+				KEY
+				`Idx_Deck_Plate_Color` (`F_Plate_Color`),
+				KEY `Idx_Deck_Vehicle_Type`
+				(`F_Vehicle_Type`),
+				KEY `Idx_Deck_Vehicle_Color` (`F_Vehicle_Color`),
+				KEY `Idx_Deck_Ft_PassTime` (`F_Ft_PassTime`),
+				KEY
+				`Idx_Deck_Ft_PassGate_ID` (`F_Ft_PassGate_ID`),
+				KEY
+				`Idx_Deck_Lt_PassTime` (`F_Lt_PassTime`),
+				KEY
+				`Idx_Deck_Lt_PassGate_ID` (`F_Lt_PassGate_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='套牌车辆信息表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.87</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_road_segment`
+				ADD COLUMN `F_Capacity` FLOAT NULL COMMENT '通行能力（辆）' AFTER
+				`F_Remark`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.88</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_deck_vehicle`
+				ADD COLUMN `F_Ft_PanoramaImage` varchar(512) DEFAULT NULL COMMENT
+				'首次过车图片' AFTER `F_Ft_Speed`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_deck_vehicle`
+				ADD COLUMN `F_Lt_PanoramaImage` varchar(512) DEFAULT NULL COMMENT
+				'最后一次过车图片' AFTER `F_Lt_Speed`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.89</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_LAN_DETECTOR` (
+				`F_ID` varchar(32) NOT NULL DEFAULT '' COMMENT
+				'检测器ID',
+				`F_Code` varchar(16) DEFAULT NULL COMMENT '检测器编码',
+				`F_Name`
+				varchar(128) DEFAULT NULL COMMENT '检测器名称',
+				`F_Road_ID` varchar(32)
+				DEFAULT NULL COMMENT '路口ID号',
+				`F_Road_Code` varchar(16) DEFAULT NULL
+				COMMENT '路口编码',
+				`F_Road_Name` varchar(128) DEFAULT NULL COMMENT
+				'路口名称',
+				`F_Road_Type` varchar(1) DEFAULT NULL COMMENT '路口类型',
+				`F_Lan_Type` varchar(1) DEFAULT NULL COMMENT '车道类型',
+				`F_Lan_Dir`
+				varchar(1) DEFAULT NULL COMMENT '车道方向',
+				`F_Lan_Code` varchar(16)
+				DEFAULT NULL COMMENT '车道编码',
+				`F_Coil_Spacing` int(8) DEFAULT NULL
+				COMMENT '环路线圈间距',
+				`F_Coil_Width` int(8) DEFAULT NULL COMMENT
+				'环路线圈宽度',
+				`F_Avg_Len` int(8) DEFAULT NULL COMMENT '平均长车',
+				`F_Lan_Classif` int(8) DEFAULT NULL COMMENT '车种判别参数',
+				`F_Speed_Limit` int(8) DEFAULT NULL COMMENT '车速高限',
+				`F_Time_Limit`
+				int(8) DEFAULT NULL COMMENT '连续有车时间上限(分)',
+				`F_Occupies_Time_Limit`
+				int(8) DEFAULT NULL COMMENT '连续无车占压时间上限',
+				`F_Flow_Value` int(8)
+				DEFAULT NULL COMMENT '流量上限异常值',
+				`F_Remark` varchar(254) DEFAULT NULL
+				COMMENT '备注',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='车检测器信息表';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>5.90</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Injured_Persons` int(2) NULL COMMENT '受伤人数' AFTER
+				`F_Deal_Phone`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Deaths` int(2) NULL COMMENT '死亡人数' AFTER
+				`F_Injured_Persons`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Escape` tinyint(1) NULL DEFAULT NULL DEFAULT 0 COMMENT
+				'是否逃逸（1：是 0：否）' AFTER `F_Deaths`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.91</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				delete from t_user where
+				f_id='1';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				delete from t_user_role where
+				f_user_id='1';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.92</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info`
+				ADD
+				COLUMN `F_Order_No` INT(32) NULL COMMENT '排序' AFTER `F_Ext`,
+				ADD
+				COLUMN `F_Duration` VARCHAR(32) NULL COMMENT '播放时长' AFTER
+				`F_Order_No`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.93</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info` ADD
+				COLUMN `F_Play_Checked` TINYINT(1) NULL COMMENT '是否选中播放' AFTER
+				`F_Type`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.94</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info`
+				ADD
+				COLUMN `F_Specification` VARCHAR(64) NULL COMMENT '规格' AFTER
+				`F_Play_Checked`;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>5.95</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_INDUCE_FORMAL` (
+				`F_ID` VARCHAR (32) NOT NULL DEFAULT ''
+				COMMENT '感应方ID',
+				`F_Code` VARCHAR (16) DEFAULT NULL COMMENT '感应方案编码',
+				`F_Device_ID` VARCHAR (32) DEFAULT NULL COMMENT '设备ID号',
+				`F_Device_Code` VARCHAR (16) DEFAULT NULL COMMENT '设备编码',
+				`F_Road_Name` VARCHAR (128) DEFAULT NULL COMMENT '信号机名称',
+				`F_Phase_Code` VARCHAR (16) DEFAULT NULL COMMENT '相序方案编号',
+				`F_Phs_Count` INT (8) DEFAULT NULL COMMENT '相位数',
+				`F_Induce_Type`
+				VARCHAR (2) DEFAULT NULL COMMENT '感应方案类型',
+				`F_Remark` VARCHAR (254)
+				DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE = INNODB
+				DEFAULT CHARSET = utf8 COMMENT = '感应方案表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.96</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_INDUCE_FORMAL_PARAM` (
+				`F_ID` VARCHAR (32) NOT NULL DEFAULT ''
+				COMMENT 'ID',
+				`F_Induce_ID` VARCHAR (32) DEFAULT NULL COMMENT
+				'感应方ID',
+				`F_Induce_Code` VARCHAR (16) DEFAULT NULL COMMENT '感应方编码',
+				`F_Phase_No` INT (8) DEFAULT NULL COMMENT '相位号',
+				`F_Phs_Min_G_Time`
+				INT (8) DEFAULT NULL COMMENT '相位最小绿灯时间',
+				`F_Phs_Max_G_Time` INT (8)
+				DEFAULT NULL COMMENT '相位最大绿灯时间',
+				`F_Phs_Sensors_Count` INT (8)
+				DEFAULT NULL COMMENT '相位感应车检器数',
+				`F_Remark` VARCHAR (254) DEFAULT
+				NULL COMMENT '备注',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE = INNODB DEFAULT
+				CHARSET = utf8 COMMENT = '感应方案相位参数表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.97</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_INDUCE_FORMAL_OPTION` (
+				`F_ID` VARCHAR (32) NOT NULL DEFAULT
+				'' COMMENT 'ID',
+				`F_Induce_Param_ID` VARCHAR (32) DEFAULT NULL
+				COMMENT '感应方参数ID',
+				`F_Phase_No` INT (8) DEFAULT NULL COMMENT '相位号',
+				`F_Sensors_Code` VARCHAR (16) DEFAULT NULL COMMENT '相位车检器的编号',
+				`F_Sensors_Row` INT (8) DEFAULT NULL COMMENT '相位车检器,第N个序号',
+				`F_Sensors_Extend_Time` INT (8) DEFAULT NULL COMMENT '相位车检器的感应延长时间',
+				`F_Sensors_Delay_Time` INT (8) DEFAULT NULL COMMENT '相位车检器的感应',
+				`F_Remark` VARCHAR (254) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE = INNODB DEFAULT CHARSET = utf8 COMMENT =
+				'感应方案相位功能表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.98</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info` DROP
+				COLUMN `F_Specification`,DROP COLUMN
+				`F_Duration`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_program`
+				ADD COLUMN `F_Width` INT(11) NULL DEFAULT '0' COMMENT '宽' AFTER
+				`F_GuideDevice_ID`,
+				ADD COLUMN `F_Height` INT(11) NULL DEFAULT '0'
+				COMMENT '高' AFTER
+				`F_Width`,
+				ADD COLUMN `F_Duration` VARCHAR(32) NULL
+				DEFAULT NULL COMMENT '播放时长'
+				AFTER `F_Height`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>5.99</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">DROP TABLE IF EXISTS
+				`t_utc_induce_formal`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_INDUCE_FORMAL` (
+				`F_ID` VARCHAR (32) NOT NULL DEFAULT ''
+				COMMENT '感应方ID',
+				`F_Induce_Code` VARCHAR (16) DEFAULT NULL COMMENT
+				'感应方案编码',
+				`F_Device_ID` VARCHAR (32) DEFAULT NULL COMMENT '设备ID号',
+				`F_Device_Code` VARCHAR (16) DEFAULT NULL COMMENT '设备编号',
+				`F_Road_Name` VARCHAR (128) DEFAULT NULL COMMENT '路口名称',
+				`F_Phase_Code` INT (8) DEFAULT NULL COMMENT '相序编码',
+				`F_Phs_Count` INT
+				(8) DEFAULT NULL COMMENT '相位数',
+				`F_Phs_Count_Limit` INT (8) DEFAULT
+				NULL COMMENT '支持相位数',
+				`F_Remark` VARCHAR (254) DEFAULT NULL COMMENT
+				'备注',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE = INNODB DEFAULT CHARSET = utf8
+				COMMENT = '感应方案表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.10</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">DROP TABLE IF EXISTS
+				`t_utc_induce_formal_param`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_INDUCE_FORMAL_PM` (
+				`F_ID` VARCHAR (32) NOT NULL DEFAULT ''
+				COMMENT 'ID',
+				`F_Induce_ID` VARCHAR (32) DEFAULT NULL COMMENT
+				'感应方案ID',
+				`F_Phase_No` INT (8) DEFAULT NULL COMMENT '相位号',
+				`F_Extend_Time` INT (8) DEFAULT NULL COMMENT '延伸秒数',
+				`F_Delay_Time`
+				INT (8) DEFAULT NULL COMMENT '延迟秒数',
+				`F_Car_Phs` INT (8) DEFAULT NULL
+				COMMENT '车辆感应',
+				`F_Min_Gl_Phs` INT (8) DEFAULT NULL COMMENT '绿灯请求',
+				`F_Gl_P_Phs` INT (8) DEFAULT NULL COMMENT '绿灯常驻',
+				`F_Synchro_Phs` INT
+				(8) DEFAULT NULL COMMENT '',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE = INNODB
+				DEFAULT CHARSET = utf8 COMMENT = '感应方案相位参数表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.11</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">DROP TABLE IF EXISTS
+				`t_utc_induce_formal_option`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`T_UTC_INDUCE_FORMAL_ON` (
+				`F_ID` VARCHAR (32) NOT NULL DEFAULT ''
+				COMMENT 'ID',
+				`F_Induce_ID` VARCHAR (32) DEFAULT NULL COMMENT
+				'感应方案ID',
+				`F_Sensors_Code` VARCHAR (16) DEFAULT NULL COMMENT
+				'相位车检器的编号',
+				`F_Extend_Time` INT (8) DEFAULT NULL COMMENT '延伸秒数',
+				`F_Delay_Time` INT (8) DEFAULT NULL COMMENT '延迟秒数',
+				`F_Light_Group_No` INT (8) DEFAULT NULL COMMENT '灯组号',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE = INNODB DEFAULT CHARSET = utf8 COMMENT =
+				'感应方案相位功能表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.12</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20170922152228.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.13</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Road_ID` VARCHAR(32) NULL COMMENT '路段ID' AFTER
+				`F_Create_Time`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.14</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Reason` VARCHAR(10) NULL COMMENT '事故成因' AFTER
+				`F_Road_ID`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.15</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_road_traffic_tpi` (
+				`F_ID` VARCHAR(32) NOT NULL COMMENT 'ID',
+				`F_Time` DATETIME NULL COMMENT '时间',
+				`F_Congestion_Ratio` FLOAT NULL
+				COMMENT '拥堵里程比例',
+				`F_Tpi` FLOAT NULL COMMENT '交通运行指数',
+				`F_Ext`
+				VARCHAR(4096) NULL DEFAULT NULL COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE = INNODB DEFAULT CHARSET = utf8 COMMENT =
+				'交通拥堵指数';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.16</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_gate_flow_stistics` ADD COLUMN `F_Gate_Channel_ID` VARCHAR(32)
+				NULL COMMENT '车道ID' AFTER `F_Flow`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.17</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_traffic_assessment` (
+				`F_ID` VARCHAR(32) NOT NULL,
+				`F_Road_ID`
+				VARCHAR(32) NULL COMMENT '路段ID',
+				`F_Create_Time` DATETIME NULL
+				COMMENT '创建时间',
+				`F_Visibility` DECIMAL(8,2) NULL COMMENT '能见度',
+				`F_Precipitation` DECIMAL(8,2) NULL COMMENT '降水量',
+				`F_Wind_Speed`
+				DECIMAL(5,2) NULL COMMENT '风速',
+				`F_Icy_Road` DECIMAL(5,2) NULL
+				COMMENT '道路结冰',
+				`F_Snowfall` DECIMAL(5,2) NULL COMMENT '降雪量',
+				`F_Flow_Percent` DECIMAL(5,2) NULL COMMENT '流量突变比例',
+				`F_Speed_Diff`
+				DECIMAL(5,2) NULL COMMENT '路段车速差值',
+				`F_Large_Car_Percent`
+				DECIMAL(5,2) NULL COMMENT '大型车占总流量的比值',
+				`F_Accident_Capacity`
+				DECIMAL(5,2) NULL COMMENT '交通事件下的路段剩余通行能力值',
+				`F_Vio_Percent`
+				DECIMAL(5,2) NULL COMMENT '违法数量环比比例值',
+				`F_Accident_Percent`
+				DECIMAL(5,2) NULL COMMENT '交通事故数量环比比例值',
+				`F_Facilities_Percent`
+				DECIMAL(5,2) NULL COMMENT '公路安全设施缺失率',
+				`F_Danger_Percent`
+				DECIMAL(5,2) NULL COMMENT '公路危险点(段)数量上升比例值',
+				PRIMARY KEY (`F_ID`))
+				COMMENT = '交通安全指标值';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.18</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_traffic_assessment`
+				CHANGE COLUMN `F_Visibility` `F_Visibility`
+				DECIMAL(12,2) NULL DEFAULT
+				NULL COMMENT '能见度' ,
+				CHANGE COLUMN
+				`F_Precipitation` `F_Precipitation` DECIMAL(12,2) NULL
+				DEFAULT NULL
+				COMMENT '降水量' ,
+				CHANGE COLUMN `F_Wind_Speed` `F_Wind_Speed`
+				DECIMAL(12,2) NULL DEFAULT
+				NULL COMMENT '风速' ,
+				CHANGE COLUMN
+				`F_Icy_Road` `F_Icy_Road` DECIMAL(12,2) NULL DEFAULT NULL
+				COMMENT
+				'道路结冰' ,
+				CHANGE COLUMN `F_Snowfall` `F_Snowfall` DECIMAL(12,2) NULL
+				DEFAULT NULL
+				COMMENT '降雪量' ,
+				CHANGE COLUMN `F_Flow_Percent`
+				`F_Flow_Percent` DECIMAL(12,2) NULL DEFAULT
+				NULL COMMENT '流量突变比例' ,
+				CHANGE COLUMN `F_Speed_Diff` `F_Speed_Diff` DECIMAL(12,2) NULL
+				DEFAULT
+				NULL COMMENT '路段车速差值' ,
+				CHANGE COLUMN `F_Large_Car_Percent`
+				`F_Large_Car_Percent` DECIMAL(12,2)
+				NULL DEFAULT NULL COMMENT
+				'大型车占总流量的比值' ,
+				CHANGE COLUMN `F_Accident_Capacity`
+				`F_Accident_Capacity` DECIMAL(12,2)
+				NULL DEFAULT NULL COMMENT
+				'交通事件下的路段剩余通行能力值' ,
+				CHANGE COLUMN `F_Vio_Percent` `F_Vio_Percent`
+				DECIMAL(12,2) NULL DEFAULT
+				NULL COMMENT '违法数量环比比例值' ,
+				CHANGE COLUMN
+				`F_Accident_Percent` `F_Accident_Percent` DECIMAL(12,2) NULL
+				DEFAULT
+				NULL COMMENT '交通事故数量环比比例值' ,
+				CHANGE COLUMN `F_Facilities_Percent`
+				`F_Facilities_Percent` DECIMAL(12,2)
+				NULL DEFAULT NULL COMMENT
+				'公路安全设施缺失率' ,
+				CHANGE COLUMN `F_Danger_Percent` `F_Danger_Percent`
+				DECIMAL(12,2) NULL
+				DEFAULT NULL COMMENT '公路危险点(段)数量上升比例值' ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.19</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_guide_program
+				modify column F_Info text DEFAULT NULL COMMENT '节目内容';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.20</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE
+				`t_density_analysis` ADD COLUMN `F_Group_Flag` int NULL COMMENT
+				'分组乏值';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.21</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_device`
+				ADD COLUMN `F_Auto_Publish` TINYINT(1) NULL DEFAULT '0' COMMENT
+				'是否自动发布' AFTER `F_Height`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.22</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_utc_hour_flow`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT '小时流量ID号',
+				`F_Road_ID`
+				varchar(32) DEFAULT NULL COMMENT '路口ID号',
+				`F_Road_Code` varchar(16)
+				DEFAULT NULL COMMENT '路口编码',
+				`F_Road_Name` varchar(128) DEFAULT NULL
+				COMMENT '路口名称',
+				`F_Flow_Time` datetime DEFAULT NULL COMMENT '采集流量时间',
+				`F_Lan_No` decimal(8,0) DEFAULT NULL COMMENT '车道号',
+				`F_Lan_Type`
+				varchar(1) DEFAULT NULL COMMENT '车道类型',
+				`F_Lan_Dir` varchar(1)
+				DEFAULT NULL COMMENT '车道方向',
+				`F_Lan_Flow` decimal(16,0) DEFAULT NULL
+				COMMENT '车道流量',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT
+				'扩展JSON数据',
+				PRIMARY KEY (`F_ID`),
+				KEY `IDX_Time_Type_Dir`
+				(`F_Flow_Time`,`F_Lan_Type`,`F_Lan_Dir`),
+				KEY `IDX_Lan_Flow`
+				(`F_Lan_Flow`),
+				KEY `IDX_Flow_Time` (`F_Flow_Time`) USING BTREE,
+				KEY
+				`IDX_Road_ID` (`F_Road_ID`) USING BTREE
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='一小时流量';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_utc_day_flow` (
+				`F_ID` varchar(32) NOT NULL COMMENT '天流量ID号',
+				`F_Road_ID` varchar(32)
+				DEFAULT NULL COMMENT '路口ID号',
+				`F_Road_Code` varchar(16) DEFAULT NULL
+				COMMENT '路口编码',
+				`F_Road_Name` varchar(128) DEFAULT NULL COMMENT
+				'路口名称',
+				`F_Flow_Time` datetime DEFAULT NULL COMMENT '采集流量时间',
+				`F_Lan_No` decimal(8,0) DEFAULT NULL COMMENT '车道号',
+				`F_Lan_Type`
+				varchar(1) DEFAULT NULL COMMENT '车道类型',
+				`F_Lan_Dir` varchar(1)
+				DEFAULT NULL COMMENT '车道方向',
+				`F_Lan_Flow` decimal(16,0) DEFAULT NULL
+				COMMENT '车道流量',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT
+				'扩展JSON数据',
+				PRIMARY KEY (`F_ID`),
+				KEY `IDX_Time_Type_Dir`
+				(`F_Flow_Time`,`F_Lan_Type`,`F_Lan_Dir`),
+				KEY `IDX_Lan_Flow`
+				(`F_Lan_Flow`),
+				KEY `IDX_Flow_Time` (`F_Flow_Time`) USING BTREE,
+				KEY
+				`IDX_Road_ID` (`F_Road_ID`) USING BTREE
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='天流量';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_utc_month_flow`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT '月流量ID号',
+				`F_Road_ID`
+				varchar(32) DEFAULT NULL COMMENT '路口ID号',
+				`F_Road_Code` varchar(16)
+				DEFAULT NULL COMMENT '路口编码',
+				`F_Road_Name` varchar(128) DEFAULT NULL
+				COMMENT '路口名称',
+				`F_Flow_Time` datetime DEFAULT NULL COMMENT '采集流量时间',
+				`F_Lan_No` decimal(8,0) DEFAULT NULL COMMENT '车道号',
+				`F_Lan_Type`
+				varchar(1) DEFAULT NULL COMMENT '车道类型',
+				`F_Lan_Dir` varchar(1)
+				DEFAULT NULL COMMENT '车道方向',
+				`F_Lan_Flow` decimal(16,0) DEFAULT NULL
+				COMMENT '车道流量',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT
+				'扩展JSON数据',
+				PRIMARY KEY (`F_ID`),
+				KEY `IDX_Time_Type_Dir`
+				(`F_Flow_Time`,`F_Lan_Type`,`F_Lan_Dir`),
+				KEY `IDX_Lan_Flow`
+				(`F_Lan_Flow`),
+				KEY `IDX_Flow_Time` (`F_Flow_Time`) USING BTREE,
+				KEY
+				`IDX_Road_ID` (`F_Road_ID`) USING BTREE
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='月流量';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.23</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_user_cer` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_User_ID` varchar(32) NOT NULL COMMENT
+				'用户id',
+				`F_Cer_ID` varchar(32) NOT NULL COMMENT '证书序列号',
+				`F_Alias`
+				varchar(20) NOT NULL,
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.24</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_manual_vio_img`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Vio_ID` varchar(32) DEFAULT ''
+				COMMENT '违法ID',
+				`F_Url` varchar(1024) DEFAULT '' COMMENT '图片路径',
+				`F_Upload_Time` datetime DEFAULT NULL COMMENT '上传时间',
+				`F_Order`
+				int(2) DEFAULT NULL COMMENT '分组排序',
+				`F_Ext` text,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.25</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_North_Ip;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_North_Port;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_East_Ip;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_East_Port;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_South_Ip;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_South_Port;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_West_Ip;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road DROP
+				COLUMN F_Road_West_Port;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_North_ID varchar(32) DEFAULT
+				NULL COMMENT '北摄像机ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_North_Name varchar(128)
+				DEFAULT NULL COMMENT
+				'北摄像机Name';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_East_ID varchar(32) DEFAULT
+				NULL COMMENT '东摄像机ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_East_Name varchar(128) DEFAULT
+				NULL COMMENT
+				'东摄像机Name';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_South_ID varchar(32) DEFAULT
+				NULL COMMENT '南摄像机ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_South_Name varchar(128)
+				DEFAULT NULL COMMENT
+				'南摄像机Name';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_West_ID varchar(32) DEFAULT
+				NULL COMMENT '西摄像机ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_utc_road ADD
+				COLUMN F_Camera_West_Name varchar(128) DEFAULT
+				NULL COMMENT
+				'西摄像机Name';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.26</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_user_cruise_group` ADD COLUMN `F_Return_Preset_ID` VARCHAR(32)
+				NULL COMMENT '回归点' AFTER `F_IntervalTime`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_user_cruise_group_data` ADD COLUMN `F_Time_Span` INT(11) NULL
+				COMMENT '间隔时间，单位，秒' AFTER `F_Order_No`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.27</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_gate_relation_ship` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Start_Gate`
+				varchar(3) DEFAULT NULL COMMENT '开始卡口',
+				`F_End_Gate` varchar(3)
+				DEFAULT NULL COMMENT '结束卡口',
+				`F_Timespan_Sec` int(11) DEFAULT NULL
+				COMMENT '最小旅行时间',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.28</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE T_VIO_INFO ADD
+				COLUMN F_Source varchar(1) DEFAULT '0' COMMENT '数据来源';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.29</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_vehicle_alarm`
+				(
+				`F_ID` VARCHAR(32) NOT NULL,
+				`F_Vehicle_ID` VARCHAR(32) NULL COMMENT
+				'车辆id',
+				`F_Vehicle_Code` VARCHAR(64) NULL COMMENT '车牌号码',
+				`F_Vehicle_Type` VARCHAR(64) NULL COMMENT '车辆类型',
+				`F_Alarm_Type`
+				VARCHAR(64) NULL COMMENT '报警类型',
+				`F_Speed` FLOAT NULL COMMENT '行驶速度',
+				`F_Lon` DOUBLE(32,12) NULL COMMENT '经度',
+				`F_Lat` DOUBLE(32,12) NULL
+				COMMENT '纬度',
+				`F_Time` DATETIME NULL COMMENT '时间',
+				`F_Ext`
+				VARCHAR(4096) NULL,
+				PRIMARY KEY (`F_ID`))
+				COMMENT = '报警信息';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.30</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_enterprise` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Dwbh` varchar(20) DEFAULT NULL
+				COMMENT '单位编号',
+				`F_Dwmc` varchar(100) DEFAULT NULL COMMENT '单位名称',
+				`F_Yzbm` varchar(20) DEFAULT NULL COMMENT '邮政编码',
+				`F_Dwdz`
+				varchar(20) DEFAULT NULL COMMENT '单位地址',
+				`F_Dwdh` varchar(255)
+				DEFAULT NULL COMMENT '单位电话',
+				`F_Ccdz` varchar(255) DEFAULT NULL
+				COMMENT '货物存储地址',
+				`F_Ssqy` varchar(20) DEFAULT NULL COMMENT '所属区域',
+				`F_Frxm` varchar(20) DEFAULT NULL COMMENT '法人姓名',
+				`F_Frdh`
+				varchar(20) DEFAULT NULL COMMENT '法人电话',
+				`F_Frsj` varchar(20) DEFAULT
+				NULL COMMENT '法人手机',
+				`F_Bwfzr` varchar(50) DEFAULT NULL COMMENT
+				'保卫负责人',
+				`F_Fzrdh` varchar(50) DEFAULT NULL COMMENT '负责人电话',
+				`F_Bgr`
+				varchar(50) DEFAULT NULL COMMENT '保管人',
+				`F_Zjzl` varchar(50) DEFAULT
+				NULL COMMENT '证件种类',
+				`F_Zjhm` varchar(50) DEFAULT NULL COMMENT
+				'证件号码',
+				`F_Xkdw` varchar(500) DEFAULT NULL COMMENT '许可单位',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='企业表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.31</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_transport_vehicle` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Hpzl`
+				varchar(2) DEFAULT NULL COMMENT '号牌种类',
+				`F_Hphm` varchar(8) DEFAULT
+				NULL COMMENT '号牌号码',
+				`F_Hpys` varchar(10) DEFAULT NULL COMMENT
+				'号牌颜色',
+				`F_Clpp` varchar(120) DEFAULT NULL COMMENT '车辆品牌',
+				`F_Clxx`
+				varchar(100) DEFAULT NULL COMMENT '车辆型号',
+				`F_Clyt` varchar(50)
+				DEFAULT NULL COMMENT '车辆用途',
+				`F_Clsbdm` varchar(20) DEFAULT NULL
+				COMMENT '车辆识别代码',
+				`F_Csys` varchar(50) DEFAULT NULL COMMENT '车身颜色',
+				`F_Hdzzl` varchar(10) DEFAULT NULL COMMENT '核定载重量',
+				`F_Ccdjrq`
+				datetime DEFAULT NULL COMMENT '初次登记日期',
+				`F_Clzk` varchar(5) DEFAULT
+				NULL COMMENT '车辆状况',
+				`F_Jdcsyr` varchar(255) DEFAULT NULL COMMENT
+				'机动车所有人',
+				`F_Jyyxq` datetime DEFAULT NULL COMMENT '检验有效期',
+				`F_Gtlx`
+				varchar(10) DEFAULT NULL COMMENT '灌体类型',
+				`F_Gtrj` varchar(10) DEFAULT
+				NULL COMMENT '灌体容积',
+				`F_Gc1hp` varchar(50) DEFAULT NULL COMMENT
+				'挂车一号牌',
+				`F_Gc2hp` varchar(50) DEFAULT NULL COMMENT '挂车二号牌',
+				`F_Gc1yszh` varchar(50) DEFAULT NULL COMMENT '挂车一运输证号',
+				`F_Gc2yszh`
+				varchar(50) DEFAULT NULL COMMENT '挂车一道路运输证号',
+				`F_Gc1hdzz` varchar(50)
+				DEFAULT NULL COMMENT '挂车一核定载重',
+				`F_Gc2hdzz` varchar(50) DEFAULT NULL
+				COMMENT '挂车二核定载重',
+				`F_Dwmc` varchar(500) DEFAULT NULL COMMENT '单位名称',
+				`F_Dwbh` varchar(50) DEFAULT NULL COMMENT '单位编号',
+				`F_Dwdz`
+				varchar(255) DEFAULT NULL COMMENT '单位地址',
+				`F_Dwdh` varchar(255)
+				DEFAULT NULL COMMENT '单位电话',
+				`F_Zjhm` varchar(25) DEFAULT NULL
+				COMMENT '证件号码',
+				`F_Fzdw` varchar(255) DEFAULT NULL COMMENT '发证单位',
+				`F_Scbzrq` datetime DEFAULT NULL COMMENT '首次办证日期',
+				`F_Fzrq` datetime
+				DEFAULT NULL COMMENT '发证日期',
+				`F_Yxqs` datetime DEFAULT NULL COMMENT
+				'有效期始',
+				`F_Yxqz` datetime DEFAULT NULL COMMENT '有效期止',
+				`F_Ysfw`
+				varchar(500) DEFAULT NULL COMMENT '运输范围',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.32</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_transport_unit`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Dwbh` varchar(20) DEFAULT NULL
+				COMMENT '单位编号',
+				`F_Dwmc` varchar(200) DEFAULT NULL COMMENT '单位名称',
+				`F_Yzbm` varchar(6) DEFAULT NULL COMMENT '邮政编码',
+				`F_Dwdz`
+				varchar(100) DEFAULT NULL COMMENT '单位地址',
+				`F_Dwdh` varchar(20)
+				DEFAULT NULL COMMENT '单位电话',
+				`F_Bgzrr` varchar(255) DEFAULT NULL
+				COMMENT '保管责任人',
+				`F_Aqzrr` varchar(255) DEFAULT NULL COMMENT '安全责任人',
+				`F_Xydj` varchar(255) DEFAULT NULL COMMENT '信用等级',
+				`F_Ssqh`
+				varchar(255) DEFAULT NULL COMMENT '所属行政区划',
+				`F_Frxm` varchar(255)
+				DEFAULT NULL COMMENT '法人姓名',
+				`F_Frdh` varchar(255) DEFAULT NULL
+				COMMENT '法人电话',
+				`F_Frsj` varchar(255) DEFAULT NULL COMMENT '法人手机',
+				`F_Zjhm` varchar(255) DEFAULT NULL COMMENT '证件号码',
+				`F_Xkdw`
+				varchar(255) DEFAULT NULL COMMENT '许可单位',
+				`F_Fzrq` datetime DEFAULT
+				NULL COMMENT '发证日期',
+				`F_Yxqs` datetime DEFAULT NULL COMMENT '有效期始',
+				`F_Yxqz` datetime DEFAULT NULL COMMENT '有效期止',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.33</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_escort_person`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Sfzhm` varchar(20) DEFAULT NULL
+				COMMENT '身份证号码',
+				`F_Xm` varchar(50) DEFAULT NULL COMMENT '姓名',
+				`F_Xb`
+				varchar(2) DEFAULT NULL COMMENT '性别',
+				`F_Csrq` datetime DEFAULT NULL
+				COMMENT '出生日期',
+				`F_Lxdh` varchar(15) DEFAULT NULL COMMENT '联系电话',
+				`F_Sjhm` varchar(18) DEFAULT NULL COMMENT '手机号码',
+				`F_Dwmc`
+				varchar(200) DEFAULT NULL COMMENT '单位名称',
+				`F_Dwbh` varchar(25)
+				DEFAULT NULL COMMENT '单位编号',
+				`F_Dwdz` varchar(50) DEFAULT NULL
+				COMMENT '单位地址',
+				`F_Dwdh` varchar(20) DEFAULT NULL COMMENT '单位电话',
+				`F_Zgzh` varchar(20) DEFAULT NULL COMMENT '资格证号',
+				`F_Yxqs` datetime
+				DEFAULT NULL COMMENT '有效期始',
+				`F_Yxqz` datetime DEFAULT NULL COMMENT
+				'有效期止',
+				`F_Fzdw` varchar(50) DEFAULT NULL COMMENT '发证单位',
+				`F_Cyzg`
+				varchar(100) DEFAULT NULL COMMENT '从业资格',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='押运人员管理';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.34</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_drive_person` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Sfzlx` varchar(25) DEFAULT NULL
+				COMMENT '身份证类型',
+				`F_Sfzhm` varchar(20) DEFAULT NULL COMMENT '身份证号码',
+				`F_Xm` varchar(50) DEFAULT NULL COMMENT '姓名',
+				`F_Xb` varchar(2)
+				DEFAULT NULL COMMENT '性别',
+				`F_Csrq` datetime DEFAULT NULL COMMENT
+				'出生日期',
+				`F_Zjcx` varchar(20) DEFAULT NULL COMMENT '准驾车型',
+				`F_Cclzrq`
+				datetime DEFAULT NULL COMMENT '初次领证日期',
+				`F_Fzjg` varchar(20) DEFAULT
+				NULL COMMENT '发证机关',
+				`F_Lxdh` varchar(15) DEFAULT NULL COMMENT
+				'联系电话',
+				`F_Sjhm` varchar(18) DEFAULT NULL COMMENT '手机号码',
+				`F_Zsdz`
+				varchar(200) DEFAULT NULL COMMENT '住所地址',
+				`F_Dwmc` varchar(200)
+				DEFAULT NULL COMMENT '单位名称',
+				`F_Dwbh` varchar(25) DEFAULT NULL
+				COMMENT '单位编号',
+				`F_Dwdz` varchar(50) DEFAULT NULL COMMENT '单位地址',
+				`F_Dwdh` varchar(20) DEFAULT NULL COMMENT '单位电话',
+				`F_Zgzh`
+				varchar(20) DEFAULT NULL COMMENT '资格证号',
+				`F_Yxqs` datetime DEFAULT
+				NULL COMMENT '有效期始',
+				`F_Yxqz` datetime DEFAULT NULL COMMENT '有效期止',
+				`F_Fzdw` varchar(50) DEFAULT NULL COMMENT '发证单位',
+				`F_Cyzg`
+				varchar(100) DEFAULT NULL COMMENT '从业资格',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='驾驶车辆人员';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.35</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_vehicle_passport` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Txzh`
+				varchar(25) DEFAULT NULL COMMENT '通行证号',
+				`F_Txqy` varchar(32) DEFAULT
+				NULL COMMENT '通行区域',
+				`F_Sfd` varchar(10) DEFAULT NULL COMMENT '始发地',
+				`F_Mdd` varchar(100) DEFAULT NULL COMMENT '目的地',
+				`F_Txlx`
+				varchar(100) DEFAULT NULL COMMENT '通行路线',
+				`F_Jxqy` varchar(50)
+				DEFAULT NULL COMMENT '禁行区域',
+				`F_Tjdd` varchar(1000) DEFAULT NULL
+				COMMENT '途径大队',
+				`F_Tjgs` varchar(50) DEFAULT NULL COMMENT '途径高速',
+				`F_Tjcs` varchar(100) DEFAULT NULL COMMENT '途径城市',
+				`F_Tjsf`
+				varchar(100) DEFAULT NULL COMMENT '途径省份',
+				`F_Yssj` datetime DEFAULT
+				NULL COMMENT '运输时间',
+				`F_Sqfs` varchar(255) DEFAULT NULL COMMENT
+				'申请方式',
+				`F_Sqrq` datetime DEFAULT NULL COMMENT '申请日期',
+				`F_Gmdw`
+				varchar(255) DEFAULT NULL COMMENT '购买单位',
+				`F_Pzlx` varchar(255)
+				DEFAULT NULL COMMENT '凭证类型',
+				`F_Pzbh` varchar(255) DEFAULT NULL
+				COMMENT '凭证编码',
+				`F_Xsdw` varchar(255) DEFAULT NULL COMMENT '销售单位',
+				`F_Sqr` varchar(255) DEFAULT NULL COMMENT '申请人',
+				`F_Sqrdh`
+				varchar(255) DEFAULT NULL COMMENT '申请人电话',
+				`F_Cydw` varchar(255)
+				DEFAULT NULL COMMENT '承运单位',
+				`F_Hpzl` varchar(255) DEFAULT NULL
+				COMMENT '号牌种类',
+				`F_Hphm` varchar(255) DEFAULT NULL COMMENT '号牌号码',
+				`F_Zjsr` varchar(255) DEFAULT NULL COMMENT '主驾驶人',
+				`F_Fjsr`
+				varchar(255) DEFAULT NULL COMMENT '副驾驶人',
+				`F_Zyyr` varchar(255)
+				DEFAULT NULL COMMENT '主押运人',
+				`F_Fyyr` varchar(255) DEFAULT NULL
+				COMMENT '副押运人',
+				`F_Yswpmc` varchar(255) DEFAULT NULL COMMENT
+				'运输物品名称',
+				`F_Zl` varchar(255) DEFAULT NULL COMMENT '重量',
+				`F_Sfbz`
+				varchar(255) DEFAULT NULL COMMENT '是否含包装',
+				`F_Cljyrq` datetime
+				DEFAULT NULL COMMENT '车辆检验日期',
+				`F_Cljyy` varchar(255) DEFAULT NULL
+				COMMENT '车辆检验员',
+				`F_Zhdlxsh` varchar(255) DEFAULT NULL COMMENT
+				'支队路线审核',
+				`F_Zodlxsh` varchar(255) DEFAULT NULL COMMENT '总队路线审核',
+				`F_Ldshrq` datetime DEFAULT NULL COMMENT '领导审核日期',
+				`F_Qfrq` datetime
+				DEFAULT NULL COMMENT '签发日期',
+				`F_Qfr` varchar(255) DEFAULT NULL
+				COMMENT '签发人',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='车辆通行证表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.36</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vehicle_alarm`
+				ADD COLUMN `F_Goods_Type` VARCHAR(64) NULL COMMENT '货品种类' AFTER
+				`F_Time`,
+				ADD COLUMN `F_Location` VARCHAR(64) NULL COMMENT '报警地点'
+				AFTER
+				`F_Goods_Type`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.37</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vehicle_alarm`
+				ADD COLUMN `F_Gpscode` VARCHAR(64) NULL COMMENT 'Gpscode' AFTER
+				`F_Location`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.38</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vehicle_alarm`
+				ADD COLUMN `F_Vehicle_Species` VARCHAR(64) NULL COMMENT '号牌种类' AFTER
+				`F_Vehicle_Code`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.39</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_restrictions` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name` varchar(30) DEFAULT NULL
+				COMMENT '限行名称',
+				`F_Type` varchar(1) DEFAULT NULL COMMENT '限行类型',
+				`F_Pic_Synthetic` int(11) DEFAULT NULL COMMENT '图片合成',
+				`F_Watermark_Position` varchar(1) DEFAULT NULL COMMENT '水印位置',
+				`F_Is_Retrieve` tinyint(1) DEFAULT NULL COMMENT '是否查询六合一',
+				`F_Start_Time` datetime DEFAULT NULL COMMENT '有效期始',
+				`F_End_Time`
+				datetime DEFAULT NULL COMMENT '有效期止',
+				`F_Single_Restrictions`
+				varchar(30) DEFAULT '' COMMENT '单号车牌限行时间',
+				`F_Double_Restrictions`
+				varchar(30) DEFAULT NULL COMMENT '双号车牌限行时间',
+				`F_Is_Enable` tinyint(1)
+				DEFAULT NULL COMMENT '是否启用',
+				`F_Ext` varchar(4096) DEFAULT NULL
+				COMMENT '扩展字段',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='车辆限行表';
+
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.40</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_restrictions_gate` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Restrictions_ID` varchar(32) DEFAULT NULL COMMENT '限行ID',
+				`F_Name` varchar(30) DEFAULT NULL COMMENT '名称',
+				`F_GateIDs`
+				varchar(4096) DEFAULT NULL COMMENT '卡口ID集合',
+				`F_Restrictions_Times`
+				varchar(255) DEFAULT NULL COMMENT '限行时间段',
+				`F_Hdzzl` int(11) DEFAULT
+				NULL COMMENT '核定载重量',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT
+				'创建时间',
+				`F_Is_Enable` tinyint(1) DEFAULT NULL COMMENT '是否启用',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='限行卡口';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.41</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_yellow_vehicle`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Hphm` varchar(12) DEFAULT NULL
+				COMMENT '号牌号码',
+				`F_Hpzl` varchar(3) DEFAULT NULL COMMENT '号牌种类',
+				`F_Clxh` varchar(255) DEFAULT NULL COMMENT '车辆型号',
+				`F_Syxz`
+				varchar(1) DEFAULT NULL COMMENT '使用性质',
+				`F_Cllx` varchar(20) DEFAULT
+				NULL COMMENT '车辆类型',
+				`F_Ccdjrq` datetime DEFAULT NULL COMMENT
+				'初次登记日期',
+				`F_Rlzl` varchar(1) DEFAULT NULL COMMENT '燃料种类',
+				`F_Fdjxh`
+				varchar(200) DEFAULT NULL COMMENT '发动机型号',
+				`F_Zzl` int(10) DEFAULT
+				NULL COMMENT '总质量',
+				`F_Hdzk` int(5) DEFAULT NULL COMMENT '核定载客',
+				`F_Qzbfqz` datetime DEFAULT NULL COMMENT '强制报废期至',
+				`F_Xzqh`
+				varchar(10) DEFAULT NULL COMMENT '行政区划',
+				`F_Zt` varchar(5) DEFAULT
+				NULL COMMENT '车辆状态',
+				`F_Pf` varchar(5) DEFAULT NULL COMMENT '排放标准',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='黄标车表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.42</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_black_smoke_vehicle` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Hphm`
+				varchar(10) DEFAULT NULL COMMENT '号牌号牌',
+				`F_Hpzl` varchar(3) DEFAULT
+				NULL COMMENT '号牌种类',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='黑烟车表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.43</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_local_vehicle`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Hphm` varchar(20) DEFAULT NULL
+				COMMENT '号牌号码',
+				`F_Hpzl` varchar(2) DEFAULT NULL COMMENT '号牌类型',
+				`F_Hdzzl` int(11) DEFAULT NULL COMMENT '核定载质量',
+				`F_Zqyzl` int(11)
+				DEFAULT NULL COMMENT '准牵引质量',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='本地车库';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.44</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_truck_passport`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Hphm` varchar(10) DEFAULT NULL
+				COMMENT '号牌号码',
+				`F_Hpzl` varchar(3) DEFAULT NULL COMMENT '号牌种类',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='货车通行证表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.45</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_first_wall` (
+				`F_ID` VARCHAR(32) NOT NULL COMMENT '编号',
+				`F_Vehicle_Plate`
+				VARCHAR(32) NULL DEFAULT NULL COMMENT '号牌号码',
+				`F_Plate_Type`
+				VARCHAR(4) NULL DEFAULT NULL COMMENT '号牌种类',
+				`F_Plate_Color`
+				VARCHAR(2) NULL DEFAULT NULL COMMENT '车牌颜色',
+				`F_Vehicle_Type`
+				VARCHAR(4) NULL DEFAULT NULL COMMENT '车辆类型',
+				`F_Vehicle_Color`
+				VARCHAR(2) NULL DEFAULT NULL COMMENT '车辆颜色',
+				`F_Vehicle_Logo`
+				VARCHAR(32) NULL DEFAULT NULL COMMENT '车标',
+				`F_PassTime` DATETIME
+				NULL DEFAULT NULL COMMENT '首次过车时间',
+				`F_Speed` DECIMAL(32,0) NULL
+				DEFAULT NULL COMMENT '首次行驶速度',
+				`F_PassGate_ID` VARCHAR(32) NULL
+				DEFAULT NULL COMMENT '经过的卡口ID',
+				`F_PassGateChannel_ID` VARCHAR(32)
+				NULL DEFAULT NULL COMMENT
+				'经过的卡口车道ID',
+				`F_PanoramaImage` VARCHAR(512)
+				NULL DEFAULT NULL COMMENT '首次过车图片',
+				`F_Ext` VARCHAR(4096) NULL
+				DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY (`F_ID`))
+				COMMENT =
+				'首次入城表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.46</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_accident_spot`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT '序号',
+				`F_Code` varchar(64)
+				DEFAULT NULL COMMENT '事故编号',
+				`F_Address` varchar(128) DEFAULT NULL
+				COMMENT '事故发生地点',
+				`F_Accident_Time` datetime DEFAULT NULL COMMENT
+				'事故发生时间',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT '记录创建时间',
+				`F_Death_Toll` int(11) DEFAULT '0' COMMENT '死亡人数',
+				`F_Injured_Num`
+				int(11) DEFAULT '0' COMMENT '受伤人数',
+				`F_Region` varchar(32) DEFAULT
+				NULL COMMENT '区域（行政区划）,此处为中文描述',
+				`F_OrgUnit_ID` varchar(32) DEFAULT
+				NULL COMMENT '组织机构编号（处理部门）',
+				`F_Ext` varchar(4096) DEFAULT NULL
+				COMMENT '备注',
+				PRIMARY KEY (`F_ID`),
+				KEY `I_Address_AccidentSpot`
+				(`F_Address`) USING BTREE,
+				KEY `I_AccidentTime_AccidentSpot`
+				(`F_Accident_Time`) USING BTREE
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='事故黑点表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.47</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_accident_spot`
+				ADD COLUMN `F_Lat` DOUBLE(32,12) NULL DEFAULT NULL COMMENT '纬度X'
+				AFTER `F_OrgUnit_ID`,
+				ADD COLUMN `F_Lon` DOUBLE(32,12) NULL DEFAULT
+				NULL COMMENT '经度Y' AFTER
+				`F_Lat`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.48</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_accident_spot`
+				ADD COLUMN `F_Creator_ID` VARCHAR(32) NULL DEFAULT NULL COMMENT
+				'创建人' AFTER `F_Accident_Time`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.49</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info`
+				ADD
+				COLUMN `F_Is_Enable` tinyint(1) DEFAULT '1' COMMENT '是否启用，1启用，0不启用'
+				AFTER `F_Play_Checked`,
+				ADD COLUMN `F_Play_Mode` varchar(16) DEFAULT
+				'Loop' COMMENT
+				'播放方式，Loop：循环, Timing：定时' AFTER `F_Play_Checked`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.50</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_guide_info` ADD
+				INDEX `I_GuideInfo_PlayMode` (`F_Play_Mode`) USING BTREE;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.51</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_truck_passport`
+				ADD COLUMN `F_Txzh` varchar(32) CHARACTER SET utf8 COLLATE
+				utf8_general_ci NULL DEFAULT NULL COMMENT '通行证号码' AFTER `F_Hpzl`,
+				ADD COLUMN `F_StartTime_Valid` datetime NULL DEFAULT NULL COMMENT
+				'有效开始时间' AFTER `F_Txzh`,
+				ADD COLUMN `F_EndTime_Valid` datetime NULL
+				DEFAULT NULL COMMENT
+				'有效截止时间' AFTER `F_StartTime_Valid`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.52</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gate`
+				ADD COLUMN
+				`F_Lhy_Sbbh` varchar(64) CHARACTER SET utf8 COLLATE
+				utf8_general_ci
+				NULL DEFAULT NULL COMMENT '六合一设备编号' AFTER
+				`F_Direction`,
+				ADD COLUMN
+				`F_Lhy_Lddm` varchar(32) CHARACTER SET utf8 COLLATE
+				utf8_general_ci
+				NULL DEFAULT NULL COMMENT '六合一路段代码' AFTER
+				`F_Lhy_Sbbh`,
+				ADD COLUMN
+				`F_Lhy_Wfdd` varchar(32) CHARACTER SET utf8 COLLATE
+				utf8_general_ci
+				NULL DEFAULT NULL COMMENT '六合一违法地点代码' AFTER
+				`F_Lhy_Lddm`,
+				ADD COLUMN
+				`F_Lhy_Xzqh` varchar(12) CHARACTER SET utf8 COLLATE
+				utf8_general_ci
+				NULL DEFAULT NULL COMMENT '六合一行政区划代码' AFTER
+				`F_Lhy_Wfdd`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.53</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_restrictions`
+				ADD COLUMN `F_Restrictions_Times` varchar(255) CHARACTER SET utf8
+				COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '限行时间段' AFTER
+				`F_Is_Enable`,
+				ADD COLUMN `F_Week_Restrictions` varchar(255)
+				CHARACTER SET utf8
+				COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT
+				'工作日限行' AFTER
+				`F_Restrictions_Times`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.54</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_restrictions`
+				ADD COLUMN `F_Vehicle_Types` varchar(4096) CHARACTER SET utf8
+				COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '车辆类型' AFTER
+				`F_Week_Restrictions`,
+				ADD COLUMN `F_Plate_Colors` varchar(4096)
+				CHARACTER SET utf8 COLLATE
+				utf8_general_ci NULL DEFAULT NULL COMMENT
+				'车牌颜色' AFTER
+				`F_Vehicle_Types`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.55</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD INDEX `Idx_EmergencyEvent_AlarmTime` (`F_Alarm_Time`),
+				ADD INDEX
+				`Idx_EmergencyEvent_InjuredPersons` (`F_Injured_Persons`),
+				ADD INDEX
+				`Idx_EmergencyEvent_Deaths` (`F_Deaths`);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.56</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_utc_step_info`
+				(
+				`F_ID` VARCHAR (32) NOT NULL COMMENT '序号',
+				`F_Code` VARCHAR (32)
+				DEFAULT NULL COMMENT '编号',
+				`F_Device_ID` VARCHAR (32) DEFAULT NULL
+				COMMENT '设备ID号',
+				`F_Device_Type` VARCHAR (16) DEFAULT NULL COMMENT
+				'设备类型',
+				`F_Road_Name` VARCHAR (32) DEFAULT NULL COMMENT '路口名称',
+				`F_Plan_Type` VARCHAR (32) DEFAULT NULL COMMENT '方案类型',
+				`F_Cycle`
+				VARCHAR (32) DEFAULT NULL COMMENT '周期时间',
+				`F_Offset` VARCHAR (32)
+				DEFAULT NULL COMMENT '相位差',
+				`F_StepCnt` VARCHAR (32) DEFAULT NULL
+				COMMENT '步伐数目',
+				`F_Step_Detail` VARCHAR (10240) DEFAULT NULL COMMENT
+				'步伐详细',
+				`F_Ext` VARCHAR (4096) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE = INNODB DEFAULT CHARSET = utf8 COMMENT =
+				'鼎安步伐信息详细';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.57</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_dept` (
+				`F_ID`
+				varchar(32) NOT NULL COMMENT '编号',
+				`F_Code` varchar(64) DEFAULT NULL
+				COMMENT '编码',
+				`F_Name` varchar(64) DEFAULT NULL COMMENT '名称',
+				`F_Parent_ID` varchar(32) DEFAULT NULL COMMENT '父编号',
+				`F_Due_Date`
+				datetime DEFAULT NULL COMMENT '有效期',
+				`F_Order_Num` int(11) DEFAULT
+				NULL COMMENT '排序序号',
+				`F_PY_Code` varchar(32) DEFAULT NULL COMMENT
+				'拼音编码',
+				`F_Description` varchar(512) DEFAULT NULL COMMENT '描述',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='部门表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.58</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_truck_passport`
+				ADD COLUMN `F_Txqy` text COMMENT '通行区域,目前是卡口ID,以英文半角[,]隔开' AFTER
+				`F_Txzh`,
+				ADD COLUMN `F_Ext` VARCHAR (4096) DEFAULT NULL COMMENT '备注'
+				AFTER
+				`F_EndTime_Valid`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.59</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_truck_passport`
+				ADD COLUMN `F_CreateTime` datetime DEFAULT NULL COMMENT '创建时间' AFTER
+				`F_EndTime_Valid`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_truck_passport`
+				ADD INDEX `Idx_TruckPassport_CreateTime` (`F_CreateTime`),
+				ADD INDEX
+				`Idx_TruckPassport_Hphm` (`F_Hphm`),
+				ADD INDEX
+				`Idx_TruckPassport_Txzh` (`F_Txzh`);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.60</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_road_segment`
+				ADD COLUMN `F_Threshold_A` varchar(10) DEFAULT NULL COMMENT
+				'速度区间(非常顺畅)A' AFTER `F_Capacity`,
+				ADD COLUMN `F_Threshold_B`
+				varchar(10) DEFAULT NULL COMMENT '速度区间(顺畅)B'
+				AFTER `F_Threshold_A`,
+				ADD COLUMN `F_Threshold_C` varchar(10) DEFAULT NULL COMMENT
+				'速度区间(缓慢)C'
+				AFTER `F_Threshold_B`,
+				ADD COLUMN `F_Threshold_D`
+				varchar(10) DEFAULT NULL COMMENT '速度区间(拥堵)D'
+				AFTER `F_Threshold_C`,
+				ADD COLUMN `F_Threshold_E` varchar(10) DEFAULT NULL COMMENT
+				'速度区间(非常拥堵)E' AFTER `F_Threshold_D`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.61</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_road_type` (
+				`F_ID` varchar(32) NOT NULL DEFAULT '' COMMENT '主键id',
+				`F_Name`
+				varchar(64) NOT NULL DEFAULT '' COMMENT '道路类型名称',
+				`F_Level` int(11)
+				DEFAULT '0' COMMENT '道路类型级别',
+				`F_Weight` int(11) DEFAULT '0' COMMENT
+				'交通运行指数权重',
+				`F_Ext` varchar(4096) CHARACTER SET utf8mb4 DEFAULT NULL
+				COMMENT '扩展字段',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='道路类型表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.62</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gate`
+				ADD COLUMN
+				`F_Order_No` int(11) DEFAULT '0' COMMENT '排序序号' AFTER
+				`F_Direction`
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.63</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_person` CHANGE
+				F_OrgUnit_ID F_Dept_ID varchar(32) DEFAULT NULL COMMENT '部门编号'
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_emergency_evnet
+				CHANGE F_Deal_Org_Unit_ID F_Deal_Dept_ID varchar(32) DEFAULT NULL
+				COMMENT '处理人所属部门ID'
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_emergency_evnet
+				CHANGE F_Create_Org_Unit_ID F_Create_Dept_ID varchar(32) DEFAULT
+				NULL COMMENT '录入人所属部门ID'
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.64</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20180529104741.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.65</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gps_car` CHANGE
+				F_OrgUnit_ID F_Dept_ID varchar(32) DEFAULT NULL COMMENT '部门编号'
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.66</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_accident_spot_region` (
+				`F_ID` varchar(32) NOT NULL COMMENT
+				'事故黑点区域ID',
+				`F_Name` varchar(256) DEFAULT NULL COMMENT '事故黑点区域名称',
+				`F_Shape_Type` varchar(256) DEFAULT NULL COMMENT '事故黑点区域类型',
+				`F_Area_Points_Str` varchar(4096) DEFAULT NULL COMMENT '事故黑点区域坐标',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展字段',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='事故黑点区域表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.67</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_police_patrol_area` CHANGE F_OrgUnit_ID F_Dept_ID varchar(32)
+				DEFAULT NULL COMMENT '部门编号';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_police_workstation` CHANGE F_OrgUnit_ID F_Dept_ID varchar(32)
+				DEFAULT NULL COMMENT '部门编号';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.68</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_accident_spot_region`
+				ADD COLUMN `F_Min_Rectangle_Points_Str`
+				varchar(256) DEFAULT NULL
+				COMMENT
+				'最小矩形区域(最小经度,最大经度,最小维度,最大维度之间用逗号隔开)' AFTER
+				`F_Area_Points_Str`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.69</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_accident_spot_region`
+				ADD COLUMN `F_Create_Time` datetime DEFAULT
+				NULL COMMENT '事故黑点区域创建时间'
+				AFTER `F_Min_Rectangle_Points_Str`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.70</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Policeman` varchar(256) DEFAULT NULL COMMENT '处警人员'
+				AFTER `F_Reason`,
+				ADD COLUMN `F_Police_Car` varchar(256) DEFAULT NULL
+				COMMENT '处理警车'
+				AFTER `F_Policeman`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.71</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` modify
+				F_Panorama_Img_Url_List varchar(1024);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` modify
+				F_Feature_Img_Url_List varchar(1024);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` CHANGE
+				`F_PSTMCAP_STATUS` `F_Pstmcap_Status` varchar(2) DEFAULT 'N' COMMENT
+				'上传公安网违法系统状态';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				COLUMN `F_Pstmcap_Message` varchar(1024)
+				DEFAULT NULL COMMENT
+				'上传公安网违法系统消息' AFTER `F_Pstmcap_status`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.72</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Weather` varchar(256) DEFAULT NULL COMMENT '天气情况'
+				AFTER `F_Police_Car`,
+				ADD COLUMN `F_Arrival_Time` datetime DEFAULT
+				NULL COMMENT '到警时间' AFTER
+				`F_Weather`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.73</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Send` int(11) DEFAULT '0' COMMENT '以发送用1表示 , 未发送用0表示'
+				AFTER `F_Arrival_Time`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.74</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gate`
+				ADD COLUMN
+				`F_Lhy_Dlms` varchar(6) CHARACTER SET utf8 COLLATE
+				utf8_general_ci
+				NULL DEFAULT NULL COMMENT '六合一道路米数' AFTER
+				`F_Lhy_Sbbh`;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>6.75</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_restrictions_gate` add COLUMN `F_Week_Restrictions` varchar(128)
+				DEFAULT NULL COMMENT '周期性' AFTER `F_Is_Enable`,
+
+				add COLUMN
+				`F_Double_Restrictions` varchar(128) DEFAULT NULL COMMENT
+				'双号周期性'
+				AFTER `F_Week_Restrictions`,
+
+				add COLUMN `F_Single_Restrictions`
+				varchar(128) DEFAULT NULL COMMENT
+				'单号周期性' AFTER
+				`F_Double_Restrictions`,
+
+				add COLUMN `F_Start_Time` datetime DEFAULT
+				NULL COMMENT '开始时间' AFTER
+				`F_Single_Restrictions`,
+
+				add COLUMN
+				`F_End_Time` datetime DEFAULT NULL COMMENT '结束时间' AFTER
+				`F_Start_Time`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.76</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_person`
+				ADD
+				COLUMN `F_Order_No` int(11) DEFAULT '0' COMMENT '警员排序' AFTER
+				`F_Sex`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.77</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gps_car`
+				ADD
+				COLUMN `F_Order_No` int(11) DEFAULT '0' COMMENT '警车排序字段' AFTER
+				`F_Remark`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.78</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20180718112758.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.79</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gps_device`
+				CHANGE F_OrgUnit_ID F_Dept_ID varchar(32) DEFAULT NULL COMMENT
+				'部门编号'
+			</Item>
+			<!--<Item type="SqlStatement" dbType="Mysql"> ALTER TABLE `t_access_server` 
+				CHANGE F_OrgUnit_ID F_Dept_ID varchar(32) DEFAULT NULL COMMENT '部门编号' </Item> -->
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.80</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE T_PARAMETER MODIFY
+				COLUMN F_PY_Code VARCHAR(128);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.81</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_gate MODIFY
+				COLUMN F_PY_Code VARCHAR(256);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.82</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_gis_mark MODIFY
+				COLUMN F_Name varchar(256) DEFAULT NULL COMMENT '对象名称';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.83</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">ALTER TABLE t_vio_info RENAME
+				TO t_vio_info_bak;
+			</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_info.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_info_tmp.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_info_waste.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_info_special.sql</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.84</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_flux_device` (
+				`F_ID` varchar(32) NOT NULL COMMENT '编号',
+				`F_Code` varchar(64)
+				DEFAULT NULL COMMENT '设备编码',
+				`F_Name` varchar(128) DEFAULT NULL
+				COMMENT '名称',
+				`F_IpAddress` varchar(64) DEFAULT NULL COMMENT 'IP地址',
+				`F_Port` int(11) DEFAULT NULL COMMENT '端口号',
+				`F_Device_Type`
+				varchar(16) DEFAULT NULL COMMENT '设备类型，见枚举FluxDeviceType，Video：视频,
+				Coil：线圈, Radar：雷达，Other：其它',
+				`F_Create_Time` datetime DEFAULT NULL
+				COMMENT '创建时间',
+				`F_OrgUnit_ID` varchar(32) DEFAULT NULL COMMENT
+				'区域ID',
+				`F_Brand` varchar(64) DEFAULT NULL COMMENT
+				'品牌，见枚举FluxDeviceBrandType，Dahua:
+				大华，HikVision：海康，Other：其它',
+				`F_PY_Code` varchar(128) DEFAULT NULL COMMENT '拼音编码',
+				`F_Direction`
+				int(11) DEFAULT NULL COMMENT '方向，见枚举GateChannelDirection，1:
+				上行/进城/环线顺时针, 2: 下行/出城/环线逆时针, 3: 由东向西, 4: 由西向东, 5: 由南向北, 6: 由北向南',
+				`F_Road_Segment_ID` varchar(32) DEFAULT NULL COMMENT '路段ID',
+				`F_Description` varchar(512) DEFAULT NULL COMMENT '描述',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='交通流量设备表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.85</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_flux_device`
+				add
+				COLUMN `F_Uid` varchar(32) DEFAULT NULL COMMENT '流量设备加用户名' AFTER
+				`F_Description`,
+				add COLUMN `F_Pwd` varchar(32) DEFAULT NULL COMMENT
+				'流量设备加用户名的密码' AFTER
+				`F_Uid` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.86</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_velometer_threshold` (
+				`F_ID` varchar(32) COLLATE utf8_bin NOT
+				NULL COMMENT 'ID',
+				`F_Vio_Code` varchar(16) COLLATE utf8_bin DEFAULT
+				NULL COMMENT '违法代码',
+				`F_Vio_Name` varchar(128) COLLATE utf8_bin
+				DEFAULT NULL COMMENT
+				'违法名称',
+				`F_Percent_Threshold` varchar(64) COLLATE
+				utf8_bin DEFAULT NULL COMMENT '速度阈值',
+				`F_Ext` varchar(4096) COLLATE
+				utf8_bin DEFAULT NULL COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+				COMMENT='区间测速违法代码和阈值';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.87</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_velometer_segment` (
+				`F_ID` varchar(32) COLLATE utf8_bin NOT NULL
+				COMMENT '区间ID',
+				`F_Name` varchar(255) COLLATE utf8_bin DEFAULT NULL
+				COMMENT '区间名称',
+				`F_Start_Channel_ID` varchar(255) COLLATE utf8_bin
+				DEFAULT NULL
+				COMMENT '起始通道集合 逗号分隔',
+				`F_End_Channel_ID` varchar(255)
+				COLLATE utf8_bin DEFAULT NULL COMMENT '结束通道集合 逗号分隔',
+				`F_Limit_Speed`
+				double DEFAULT NULL COMMENT '限速 向下取整（忽略尾数）',
+				`F_Segment_Length`
+				double DEFAULT NULL COMMENT '区间长度（米）',
+				`F_Enable` tinyint(1) DEFAULT
+				'1' COMMENT '启用',
+				`F_Ext` varchar(4096) COLLATE utf8_bin DEFAULT NULL
+				COMMENT '扩展',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COLLATE=utf8_bin
+				COMMENT='区间测速车道配置';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.88</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_velometer_threshold`
+				add COLUMN `F_Description` varchar(512)
+				COLLATE utf8_bin DEFAULT NULL
+				COMMENT '描述' AFTER
+				`F_Percent_Threshold` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.89</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_flux_device`
+				add
+				COLUMN `F_Channel_ID` varchar(64) DEFAULT NULL COMMENT '车道ID
+				多个用逗号(,)隔开' AFTER `F_Pwd` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.90</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_velometer_segment`
+				add COLUMN `F_Start_Channel_Name` varchar(255)
+				COLLATE utf8_bin DEFAULT
+				NULL COMMENT '起始通道名称集合 逗号分隔' AFTER
+				`F_Start_Channel_ID`,
+				add COLUMN `F_End_Channel_Name` varchar(255)
+				COLLATE utf8_bin DEFAULT
+				NULL COMMENT '结束通道名称集合 逗号分隔' AFTER
+				`F_End_Channel_ID` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.91</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_monitor_vehicle`
+				add COLUMN `F_Monitor_Notes` varchar(255) DEFAULT NULL COMMENT
+				'布控备注,暂时不用,目前用F_Description填写备注' AFTER `F_Create_Time` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.92</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_monitor_reason`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT '主键',
+				`F_Monitor_Code` int(32)
+				DEFAULT NULL COMMENT '布控编码',
+				`F_Monitor_Reason` varchar(512)
+				CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '布控原因',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展字段',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='布控原因';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.93</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_monitor_reason`
+				add COLUMN `F_Monitor_Reason_Name` varchar(512) DEFAULT NULL COMMENT
+				'布控原因和布控编码拼接的字符串' AFTER `F_Monitor_Reason` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.94</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_gps_device`
+				add
+				COLUMN `F_Org_Unit_ID` varchar(32) DEFAULT NULL COMMENT '区域ID'
+				AFTER
+				`F_Dept_ID` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.95</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_pvg_server`
+				add
+				COLUMN `F_InstallTime` datetime DEFAULT NULL COMMENT '安装时间' AFTER
+				`F_Gateway` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.96</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_monitor_vehicle`
+				add COLUMN `F_AlarmType_Name` varchar(1024) DEFAULT NULL COMMENT
+				'报警类型名称' AFTER `F_AlarmType` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.97</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info`
+				add
+				COLUMN `F_Vehicle_Register_Time` datetime DEFAULT NULL COMMENT
+				'登记日期' AFTER `F_Vehicle_Logo` ,
+				add COLUMN `F_Vehicle_Status`
+				varchar(32) DEFAULT NULL COMMENT '机动车状态'
+				AFTER
+				`F_Vehicle_Register_Time` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.98</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_tmp`
+				add COLUMN `F_Vehicle_Register_Time` datetime DEFAULT NULL COMMENT
+				'登记日期' AFTER `F_Vehicle_Logo` ,
+				add COLUMN `F_Vehicle_Status`
+				varchar(32) DEFAULT NULL COMMENT '机动车状态'
+				AFTER
+				`F_Vehicle_Register_Time` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>6.99</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_vio_info_special`
+				add COLUMN `F_Vehicle_Register_Time` datetime
+				DEFAULT NULL COMMENT
+				'登记日期' AFTER `F_Vehicle_Logo` ,
+				add COLUMN
+				`F_Vehicle_Status` varchar(32) DEFAULT NULL COMMENT '机动车状态'
+				AFTER
+				`F_Vehicle_Register_Time` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_waste`
+				add COLUMN `F_Vehicle_Register_Time` datetime DEFAULT NULL COMMENT
+				'登记日期' AFTER `F_Vehicle_Logo` ,
+				add COLUMN `F_Vehicle_Status`
+				varchar(32) DEFAULT NULL COMMENT '机动车状态'
+				AFTER
+				`F_Vehicle_Register_Time` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.00</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info`
+				add
+				COLUMN `F_Input_Person_ID` varchar(64) DEFAULT NULL COMMENT '录入人员'
+				AFTER `F_Reason` ,
+				add COLUMN `F_Approve_Person_ID` varchar(64)
+				DEFAULT NULL COMMENT
+				'审核人员' AFTER `F_Input_Person_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_vio_info_special`
+				add COLUMN `F_Input_Person_ID` varchar(64)
+				DEFAULT NULL COMMENT '录入人员'
+				AFTER `F_Reason` ,
+				add COLUMN
+				`F_Approve_Person_ID` varchar(64) DEFAULT NULL COMMENT
+				'审核人员' AFTER
+				`F_Input_Person_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_tmp`
+				add COLUMN `F_Input_Person_ID` varchar(64) DEFAULT NULL COMMENT
+				'录入人员' AFTER `F_Reason` ,
+				add COLUMN `F_Approve_Person_ID`
+				varchar(64) DEFAULT NULL COMMENT
+				'审核人员' AFTER `F_Input_Person_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_waste`
+				add COLUMN `F_Input_Person_ID` varchar(64) DEFAULT NULL COMMENT
+				'录入人员' AFTER `F_Reason` ,
+				add COLUMN `F_Approve_Person_ID`
+				varchar(64) DEFAULT NULL COMMENT
+				'审核人员' AFTER `F_Input_Person_ID` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.01</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_monitor_reason`
+				modify F_Monitor_Code varchar(32);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.02</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_monitor_reason`
+				add COLUMN `F_System_Flag` int(1) DEFAULT '0' COMMENT '1代表是系统自有布控原因
+				,0代表用户自定义布控原因' AFTER `F_Monitor_Reason_Name` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.03</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info` modify
+				column F_Source VARCHAR(1) DEFAULT '0'
+				comment
+				'违法数据录入方式：0-系统入库；1-人工导入';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_vio_info_special` modify column F_Source VARCHAR(1)
+				DEFAULT '0'
+				comment '违法数据录入方式：0-系统入库；1-人工导入';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_tmp`
+				modify column F_Source VARCHAR(1) DEFAULT
+				'0' comment
+				'违法数据录入方式：0-系统入库；1-人工导入';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_waste`
+				modify column F_Source VARCHAR(1) DEFAULT
+				'0' comment
+				'违法数据录入方式：0-系统入库；1-人工导入';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info`
+				add
+				COLUMN `F_Is_Priority` tinyint(1) DEFAULT '0' COMMENT
+				'是否优先处理：1-优先处理；0-非优先处理',
+				add COLUMN `F_Device_Type` int(2) DEFAULT
+				'0' COMMENT
+				'违法设备类型：1-区间、2-高速、3-高清、4-执法抓拍、5-移动警务通、0-其它';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_vio_info_special`
+				add COLUMN `F_Is_Priority` tinyint(1) DEFAULT
+				'0' COMMENT
+				'是否优先处理：1-优先处理；0-非优先处理',
+				add COLUMN `F_Device_Type` int(2)
+				DEFAULT '0' COMMENT
+				'违法设备类型：1-区间、2-高速、3-高清、4-执法抓拍、5-移动警务通、0-其它';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_tmp`
+				add COLUMN `F_Is_Priority` tinyint(1) DEFAULT '0' COMMENT
+				'是否优先处理：1-优先处理；0-非优先处理',
+				add COLUMN `F_Device_Type` int(2) DEFAULT
+				'0' COMMENT
+				'违法设备类型：1-区间、2-高速、3-高清、4-执法抓拍、5-移动警务通、0-其它';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_waste`
+				add COLUMN `F_Is_Priority` tinyint(1) DEFAULT '0' COMMENT
+				'是否优先处理：1-优先处理；0-非优先处理',
+				add COLUMN `F_Device_Type` int(2) DEFAULT
+				'0' COMMENT
+				'违法设备类型：1-区间、2-高速、3-高清、4-执法抓拍、5-移动警务通、0-其它';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.04</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_vio_lock_info`
+				(
+				`F_ID` varchar(32) NOT NULL,
+				`F_Vio_Info_ID` varchar(32) DEFAULT
+				NULL COMMENT '违法数据ID，对应违法临时表中的F_ID',
+				`F_Lock_User_ID` varchar(32)
+				DEFAULT NULL COMMENT '锁定用户',
+				`F_Lock_Time` datetime DEFAULT NULL
+				COMMENT '锁定时间',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展JSON',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='违法数据录入/审核锁定信息表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.05</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_vio_stat` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Stat_Day` varchar(16)
+				DEFAULT NULL COMMENT '统计',
+				`F_Num` int(11) DEFAULT NULL COMMENT '数量',
+				`F_Vio_Code` varchar(32) DEFAULT NULL COMMENT '违法行为代码',
+				`F_Vio_Type`
+				varchar(4) DEFAULT NULL COMMENT '违法类型',
+				`F_Gate_ID` varchar(32)
+				DEFAULT NULL COMMENT '卡口编号',
+				`F_OrgUnit_ID` varchar(32) DEFAULT NULL
+				COMMENT '组织机构编号',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT
+				'扩展JSON数据',
+				PRIMARY KEY (`F_ID`),
+				KEY `Idx_VioStat_StatDay`
+				(`F_Stat_Day`),
+				KEY `Idx_VioStat_VioCode` (`F_Vio_Code`),
+				KEY
+				`Idx_VioStat_GateID` (`F_Gate_ID`),
+				KEY `Idx_VioStat_OrgUnitID`
+				(`F_OrgUnit_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='正式违法数据统计表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_vio_upload_regular` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Name` varchar(256) DEFAULT NULL COMMENT '名称',
+				`F_Vio_Code`
+				varchar(32) DEFAULT NULL COMMENT '违法行为代码',
+				`F_Vio_Type` varchar(4)
+				DEFAULT NULL COMMENT '违法行为代码',
+				`F_Regular` varchar(32) DEFAULT NULL
+				COMMENT
+				'上传规则，OnlyOneVio-同车牌单日多单违法只上传一单；OnlyOneParkingVio-同车牌单日多单违停只上传一单且优先上传人工抓拍',
+				`F_District_IDs` varchar(1024) DEFAULT NULL COMMENT
+				'片区ID列表，多个用英文半角[,]隔开',
+				`F_Enable` tinyint(1) DEFAULT '1' COMMENT
+				'是否启用，1-启用；0-不启用',
+				`F_Remark` varchar(512) DEFAULT NULL COMMENT '备注',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='违法数据上传规则';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_district` (
+				`F_ID` varchar(32) NOT NULL COMMENT '编号',
+				`F_Code` varchar(64)
+				DEFAULT NULL COMMENT '编码',
+				`F_Name` varchar(64) DEFAULT NULL COMMENT
+				'名称',
+				`F_Parent_ID` varchar(32) DEFAULT NULL COMMENT '父编号',
+				`F_OrgUnit_IDs` varchar(1024) DEFAULT NULL COMMENT
+				'区域ID列表，多个用英文半角[,]隔开',
+				`F_Order_Num` int(11) DEFAULT NULL COMMENT
+				'排序序号',
+				`F_PY_Code` varchar(32) DEFAULT NULL COMMENT '拼音编码',
+				`F_Description` varchar(512) DEFAULT NULL COMMENT '描述',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='片区（区域集合）表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.06</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info`
+				add
+				COLUMN `F_Description` varchar(512) DEFAULT NULL COMMENT '描述(打回备注)'
+				AFTER `F_Device_Type` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_vio_info_special`
+				add COLUMN `F_Description` varchar(512) DEFAULT
+				NULL COMMENT '描述(打回备注)'
+				AFTER `F_Device_Type` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_tmp`
+				add COLUMN `F_Description` varchar(512) DEFAULT NULL COMMENT
+				'描述(打回备注)'
+				AFTER `F_Device_Type` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_waste`
+				add COLUMN `F_Description` varchar(512) DEFAULT NULL COMMENT
+				'描述(打回备注)'
+				AFTER `F_Device_Type` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.07</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_opt_history`
+				add COLUMN `F_Description` varchar(512) DEFAULT NULL COMMENT
+				'描述(打回原因)P：有效（录入或审核【包括有效审核与无效审核】通过）；N：打回（回到录入人员那里）；D：无效（直接成废片）'
+				AFTER `F_Opt_User`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.08</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table t_vio_stat_work
+				comment '人员违法处理工作统计表';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_vio_stat_today`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_User_ID` varchar(32)
+				DEFAULT NULL COMMENT '用户ID',
+				`F_Vio_Code` varchar(32) DEFAULT NULL
+				COMMENT '违法行为代码',
+				`F_Vio_Type` varchar(4) DEFAULT NULL COMMENT
+				'违法类型',
+				`F_Input_Pass_Num` int(11) DEFAULT NULL COMMENT '录入有效数量',
+				`F_Input_Total_Num` int(11) DEFAULT NULL COMMENT '录入处理总数量',
+				`F_Valid_Audit1_Pass_Num` int(11) DEFAULT NULL COMMENT '有效审核一通过数量',
+				`F_Valid_Audit2_Pass_Num` int(11) DEFAULT NULL COMMENT '有效审核二通过数量',
+				`F_Valid_Audit3_Pass_Num` int(11) DEFAULT NULL COMMENT '有效审核三通过数量',
+				`F_Valid_Audit1_Total_Num` int(11) DEFAULT NULL COMMENT
+				'有效审核一处理总数量',
+				`F_Valid_Audit2_Total_Num` int(11) DEFAULT NULL COMMENT
+				'有效审核二处理总数量',
+				`F_Valid_Audit3_Total_Num` int(11) DEFAULT NULL COMMENT
+				'有效审核三处理总数量',
+				`F_Invalid_Audit1_Pass_Num` int(11) DEFAULT NULL
+				COMMENT '无效审核一通过数量',
+				`F_Invalid_Audit2_Pass_Num` int(11) DEFAULT NULL
+				COMMENT
+				'无效审核二通过数量',
+				`F_Invalid_Audit3_Pass_Num` int(11) DEFAULT NULL
+				COMMENT '无效审核三通过数量',
+				`F_Invalid_Audit1_Total_Num` int(11) DEFAULT
+				NULL COMMENT
+				'无效审核一处理数量',
+				`F_Invalid_Audit2_Total_Num` int(11) DEFAULT
+				NULL COMMENT '无效审核二处理数量',
+				`F_Invalid_Audit3_Total_Num` int(11)
+				DEFAULT NULL COMMENT
+				'无效审核三处理数量',
+				`F_Stat_Day` varchar(16) DEFAULT
+				NULL COMMENT '统计日期，yyyy-MM-dd',
+				`F_Ext` varchar(4096) DEFAULT NULL
+				COMMENT '扩展JSON数据',
+				PRIMARY KEY (`F_ID`),
+				KEY
+				`Idx_VioStatToday_StatDay` (`F_Stat_Day`) USING BTREE,
+				KEY
+				`Idx_VioStatToday_VioCode` (`F_Vio_Code`) USING BTREE,
+				KEY
+				`Idx_VioStatToday_VioType` (`F_Vio_Type`),
+				KEY
+				`Idx_VioStatToday_UserID` (`F_User_ID`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='今日违法数据处理统计表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.09</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info`
+				add
+				COLUMN `F_Is_Pending` tinyint(1) DEFAULT '0' COMMENT
+				'是否待定数据：1-待定数据；0-非待定数据' AFTER `F_Description` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table
+				`t_vio_info_special`
+				add COLUMN `F_Is_Pending` tinyint(1) DEFAULT '0'
+				COMMENT
+				'是否待定数据：1-待定数据；0-非待定数据' AFTER `F_Description` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_tmp`
+				add COLUMN `F_Is_Pending` tinyint(1) DEFAULT '0' COMMENT
+				'是否待定数据：1-待定数据；0-非待定数据' AFTER `F_Description` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table `t_vio_info_waste`
+				add COLUMN `F_Is_Pending` tinyint(1) DEFAULT '0' COMMENT
+				'是否待定数据：1-待定数据；0-非待定数据' AFTER `F_Description` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.10</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_person`
+				ADD
+				COLUMN `F_Type` int(11) DEFAULT NULL COMMENT '人员类型, 1-警员；2-协勤 ;
+				99-其他.' AFTER `F_Name`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.11</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gis_layer`
+				ADD
+				COLUMN `F_Order_No` int(11) DEFAULT '0' COMMENT '排序字段' AFTER
+				`F_Image`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gps_device`
+				ADD
+				COLUMN `F_TelePhone` varchar(32) DEFAULT NULL COMMENT '呼叫号码' AFTER
+				`F_Description`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_gps_car`
+				ADD
+				COLUMN `F_Vehicle_Color` varchar(255) DEFAULT NULL COMMENT '车身颜色'
+				AFTER `F_Remark`,
+				ADD COLUMN `F_Plate_Color` varchar(11) DEFAULT NULL
+				COMMENT '号牌颜色'
+				AFTER `F_Vehicle_Color`,
+				ADD COLUMN `F_Vehicle_Type`
+				varchar(11) DEFAULT NULL COMMENT '车辆类型'
+				AFTER `F_Plate_Color`,
+				ADD
+				COLUMN `F_Vehicle_Logo` varchar(255) DEFAULT NULL COMMENT '车辆品牌'
+				AFTER `F_Vehicle_Type`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.12</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER table t_monitor_vehicle
+				modify F_Monitor_Scope VARCHAR(4096);
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.13</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_vio_location` (
+				`F_ID` varchar(32) NOT NULL COMMENT '编号',
+				`F_Code` varchar(128)
+				DEFAULT NULL COMMENT '地点编码',
+				`F_Name` varchar(256) DEFAULT NULL
+				COMMENT '地点名称',
+				`F_OrgUnit_ID` varchar(32) DEFAULT NULL COMMENT
+				'所属区域ID',
+				`F_Direction` varchar(128) DEFAULT NULL COMMENT
+				'方向，1-上行、进程；2-下行、出城；3-东；4-西；5-南；6-北',
+				`F_Sbbh` varchar(64) DEFAULT
+				NULL COMMENT '设备编号',
+				`F_Xzqh` varchar(12) DEFAULT NULL COMMENT
+				'行政区划代码',
+				`F_Wfdd` varchar(5) DEFAULT NULL COMMENT '违法地点代码，5位',
+				`F_Lddm` varchar(4) DEFAULT NULL COMMENT '路段代码（路段公里数），4位',
+				`F_Ddms`
+				varchar(3) DEFAULT NULL COMMENT '地点米数，3位',
+				`F_Large_Vehicle_Limit_Speed` int(11) DEFAULT '0' COMMENT '大车限速',
+				`F_Small_Vehicle_Limit_Speed` int(11) DEFAULT '0' COMMENT '小车限速',
+				`F_Order_No` int(11) DEFAULT '0' COMMENT '排序序号',
+				`F_PY_Code`
+				varchar(64) DEFAULT NULL COMMENT '拼音码',
+				`F_Description` varchar(512)
+				DEFAULT NULL COMMENT '描述',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT
+				'扩展JSON数据',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='违法地点表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.14</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\table_relation\\TableRelation_MySql_20181203145725.sql
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.15</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_location`
+				ADD COLUMN `F_Is_Direct_Upload` tinyint(1) DEFAULT '0' COMMENT
+				'是否直接上传核心板， 0 表示否 ， 1表示是' AFTER `F_Description`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.16</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info`
+				ADD
+				COLUMN `F_Is_Interval` tinyint(1) DEFAULT '0' COMMENT
+				'是否区间测速违法，0-非区间（默认）；1-区间',
+				ADD COLUMN `F_Interval_Distance`
+				float(11,3) DEFAULT '0' COMMENT
+				'区间距离（千米）',
+				ADD COLUMN
+				`F_Interval_Time` float(11,2) DEFAULT '0' COMMENT
+				'区间用时（分钟）',
+				ADD
+				COLUMN `F_Overspeed_Ratio` varchar(4) DEFAULT '0%' COMMENT
+				'超速比例，如20%',
+				ADD COLUMN `F_Collect_Type` varchar(4) DEFAULT '01'
+				COMMENT
+				'采集方式：01-电子警察；02-固定测速；03-高速测速；04-违法抓拍；05-移动摄像；06-警务通；09-其它电子设备';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special`
+				ADD COLUMN `F_Is_Interval` tinyint(1) DEFAULT
+				'0' COMMENT
+				'是否区间测速违法，0-非区间（默认）；1-区间',
+				ADD COLUMN
+				`F_Interval_Distance` float(11,3) DEFAULT '0' COMMENT
+				'区间距离（千米）',
+				ADD
+				COLUMN `F_Interval_Time` float(11,2) DEFAULT '0' COMMENT
+				'区间用时（分钟）',
+				ADD COLUMN `F_Overspeed_Ratio` varchar(4) DEFAULT '0%' COMMENT
+				'超速比例，如20%',
+				ADD COLUMN `F_Collect_Type` varchar(4) DEFAULT '01'
+				COMMENT
+				'采集方式：01-电子警察；02-固定测速；03-高速测速；04-违法抓拍；05-移动摄像；06-警务通；09-其它电子设备';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD COLUMN `F_Is_Interval` tinyint(1) DEFAULT '0' COMMENT
+				'是否区间测速违法，0-非区间（默认）；1-区间',
+				ADD COLUMN `F_Interval_Distance`
+				float(11,3) DEFAULT '0' COMMENT
+				'区间距离（千米）',
+				ADD COLUMN
+				`F_Interval_Time` float(11,2) DEFAULT '0' COMMENT
+				'区间用时（分钟）',
+				ADD
+				COLUMN `F_Overspeed_Ratio` varchar(4) DEFAULT '0%' COMMENT
+				'超速比例，如20%',
+				ADD COLUMN `F_Collect_Type` varchar(4) DEFAULT '01'
+				COMMENT
+				'采集方式：01-电子警察；02-固定测速；03-高速测速；04-违法抓拍；05-移动摄像；06-警务通；09-其它电子设备';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD COLUMN `F_Is_Interval` tinyint(1) DEFAULT '0' COMMENT
+				'是否区间测速违法，0-非区间（默认）；1-区间',
+				ADD COLUMN `F_Interval_Distance`
+				float(11,3) DEFAULT '0' COMMENT
+				'区间距离（千米）',
+				ADD COLUMN
+				`F_Interval_Time` float(11,2) DEFAULT '0' COMMENT
+				'区间用时（分钟）',
+				ADD
+				COLUMN `F_Overspeed_Ratio` varchar(4) DEFAULT '0%' COMMENT
+				'超速比例，如20%',
+				ADD COLUMN `F_Collect_Type` varchar(4) DEFAULT '01'
+				COMMENT
+				'采集方式：01-电子警察；02-固定测速；03-高速测速；04-违法抓拍；05-移动摄像；06-警务通；09-其它电子设备';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.17</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_flux_device`
+				ADD
+				COLUMN `F_Object_ID` varchar(256) DEFAULT NULL COMMENT '对象类型' AFTER
+				`F_Device_Type`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.18</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_truck_passport`
+				ADD COLUMN `F_Txzlb` varchar(8) NULL COMMENT '通行证类型' AFTER
+				`F_CreateTime`,
+				ADD COLUMN `F_Txzmc` varchar(255) NULL COMMENT
+				'通行证名称' AFTER `F_Txzlb`,
+				ADD COLUMN `F_Zt` varchar(32) NULL COMMENT
+				'状态' AFTER `F_Txzmc`,
+				ADD COLUMN `F_Sqr` varchar(255) NULL COMMENT
+				'申请人' AFTER `F_Zt`,
+				ADD COLUMN `F_Sfzh` varchar(255) NULL COMMENT
+				'身份证号' AFTER `F_Sqr`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				Update `t_truck_passport` set
+				`F_Zt` = '00',`F_Txzlb`='01';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.19</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_visitor_stat_today` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Online_Total_Num` int(11) DEFAULT NULL COMMENT '在线用户数',
+				`F_Today_Total_Num` int(11) DEFAULT NULL COMMENT '今日访问量',
+				`F_Stat_Day` varchar(16) DEFAULT NULL COMMENT '统计日期，yyyy-MM-dd',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY
+				(`F_ID`),
+				KEY `Idx_VisitorStatToday_StatDay` (`F_Stat_Day`) USING
+				BTREE
+				) ENGINE = INNODB DEFAULT CHARSET = utf8 COMMENT ='登录用户据处理统计表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.20</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_key_vehicle` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Plate` varchar(32)
+				DEFAULT NULL COMMENT '号牌号码',
+				`F_Plate_Color` varchar(11) DEFAULT ''
+				COMMENT '号牌颜色',
+				`F_Device_Code` varchar(512) DEFAULT NULL COMMENT
+				'设备编码',
+				`F_Plate_Type` varchar(8) DEFAULT NULL COMMENT '车牌类型',
+				`F_Vehicle_Type` varchar(11) DEFAULT NULL COMMENT '车辆类型',
+				`F_Vehicle_Use` varchar(11) DEFAULT NULL COMMENT '车辆用途',
+				`F_Nature`
+				varchar(20) DEFAULT NULL COMMENT '使用性质',
+				`F_Possessor` varchar(20)
+				DEFAULT NULL COMMENT '所有人',
+				`F_Remark` varchar(200) DEFAULT NULL
+				COMMENT '描述',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT '创建时间',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展JSON数据',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='重点车辆表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.21</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_vio_info_ga` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Plate` varchar(32)
+				DEFAULT NULL COMMENT '号牌号码',
+				`F_Plate_Type` varchar(8) DEFAULT NULL
+				COMMENT '号牌种类',
+				`F_Violate_Time` datetime DEFAULT NULL COMMENT
+				'违法时间',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT '创建时间',
+				`F_OrgUnit_ID` varchar(32) DEFAULT NULL COMMENT '组织机构编号',
+				`F_Gate_ID` varchar(32) DEFAULT NULL COMMENT '路口编码',
+				`F_Gate_Channel_ID` varchar(32) DEFAULT NULL COMMENT '设备编码',
+				`F_Direction` varchar(64) DEFAULT NULL COMMENT '方向',
+				`F_Lane_No`
+				varchar(2) DEFAULT NULL COMMENT '车道编号',
+				`F_Speed` decimal(6,0)
+				DEFAULT '0' COMMENT '抓拍速度',
+				`F_Max_Speed` decimal(6,0) DEFAULT '0'
+				COMMENT '最大限制速度',
+				`F_Min_Speed` decimal(6,0) DEFAULT '0' COMMENT
+				'最小限制速度',
+				`F_Catch_User_ID` varchar(32) DEFAULT NULL COMMENT '抓拍人ID',
+				`F_Status` varchar(2) DEFAULT NULL COMMENT '状态',
+				`F_Vio_Code_ID`
+				varchar(32) DEFAULT NULL COMMENT '违法行为ID',
+				`F_Lock_Flag` varchar(1)
+				DEFAULT NULL COMMENT '锁定标记',
+				`F_Lock_Time` datetime DEFAULT NULL
+				COMMENT '锁定时间',
+				`F_Lock_User_ID` varchar(32) DEFAULT NULL COMMENT
+				'锁定用户',
+				`F_Panorama_Img_Url_List` varchar(1024) DEFAULT NULL,
+				`F_Feature_Img_Url_List` varchar(1024) DEFAULT NULL,
+				`F_Plate_Color`
+				varchar(2) DEFAULT NULL COMMENT '车牌颜色',
+				`F_Face_Num` int(1) DEFAULT
+				NULL COMMENT '人脸个数',
+				`F_Opt_User_ID` varchar(32) DEFAULT NULL COMMENT
+				'操作用户ID',
+				`F_Video_Url_List` varchar(255) DEFAULT NULL COMMENT '视频',
+				`F_Special_Car` varchar(2) DEFAULT NULL COMMENT '特牌车类型',
+				`F_Print_Time` datetime DEFAULT NULL COMMENT '罚单打印时间',
+				`F_Owner_Name` varchar(64) DEFAULT NULL COMMENT '使用人/单位',
+				`F_Owner_Address` varchar(64) DEFAULT NULL COMMENT '地址',
+				`F_Owner_Phone` varchar(16) DEFAULT NULL COMMENT '联系电话',
+				`F_Car_Classify` varchar(32) DEFAULT NULL COMMENT '车辆类型',
+				`F_Car_Frame_No` varchar(32) DEFAULT NULL COMMENT '车架号',
+				`F_Car_Engine_No` varchar(32) DEFAULT NULL COMMENT '发动机号',
+				`F_Vehicle_Color` varchar(32) DEFAULT NULL COMMENT '车身颜色',
+				`F_Vehicle_Length` varchar(2) DEFAULT NULL COMMENT '车长',
+				`F_Vehicle_Logo` varchar(20) DEFAULT NULL COMMENT '车标',
+				`F_Vehicle_Register_Time` datetime DEFAULT NULL COMMENT '登记日期',
+				`F_Vehicle_Status` varchar(32) DEFAULT NULL COMMENT '机动车状态',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '扩展JSON',
+				`F_Pstmcap_Status`
+				varchar(2) DEFAULT 'N' COMMENT '上传公安网违法系统状态',
+				`F_Pstmcap_Message`
+				varchar(1024) DEFAULT NULL COMMENT '上传公安网违法系统消息',
+				`F_Vehicle_Info`
+				varchar(5000) DEFAULT NULL COMMENT '六合一车辆信息',
+				`F_Reason` varchar(64)
+				DEFAULT NULL COMMENT '无效原因',
+				`F_Input_Person_ID` varchar(64) DEFAULT
+				NULL COMMENT '录入人员',
+				`F_Approve_Person_ID` varchar(64) DEFAULT NULL
+				COMMENT '审核人员',
+				`F_Source` varchar(1) DEFAULT '0' COMMENT
+				'违法数据录入方式：0-系统入库；1-人工导入',
+				`F_Is_Priority` tinyint(1) DEFAULT '0'
+				COMMENT
+				'是否优先处理：1-优先处理；0-非优先处理',
+				`F_Device_Type` int(2) DEFAULT '0'
+				COMMENT
+				'违法设备类型：1-区间、2-高速、3-高清、4-执法抓拍、5-移动警务通、0-其它',
+				`F_Description`
+				varchar(512) DEFAULT NULL COMMENT '描述(打回备注)',
+				`F_Is_Pending`
+				tinyint(1) DEFAULT '0' COMMENT '是否待定数据：1-待定数据；0-非待定数据',
+				`F_Is_Interval` tinyint(1) DEFAULT '0' COMMENT
+				'是否区间测速违法，0-非区间（默认）；1-区间',
+				`F_Interval_Distance` float(11,3) DEFAULT
+				'0.000' COMMENT '区间距离（千米）',
+				`F_Interval_Time` float(11,2) DEFAULT
+				'0.00' COMMENT '区间用时（分钟）',
+				`F_Overspeed_Ratio` varchar(4) DEFAULT
+				'0%' COMMENT '超速比例，如20%',
+				`F_Collect_Type` varchar(4) DEFAULT '01'
+				COMMENT
+				'采集方式：01-电子警察；02-固定测速；03-高速测速；04-违法抓拍；05-移动摄像；06-警务通；09-其它电子设备',
+				PRIMARY KEY (`F_ID`),
+				KEY `Idx_Plate` (`F_Plate`) USING BTREE,
+				KEY
+				`Idx_Plate_Type` (`F_Plate_Type`),
+				KEY `Idx_Violate_Time`
+				(`F_Violate_Time`),
+				KEY `Idx_Direction` (`F_Direction`),
+				KEY
+				`Idx_Status` (`F_Status`),
+				KEY `Idx_OrgUnit_ID` (`F_OrgUnit_ID`),
+				KEY
+				`Idx_Gate_ID` (`F_Gate_ID`),
+				KEY `Idx_Gate_Channel_ID`
+				(`F_Gate_Channel_ID`),
+				KEY `Idx_Vio_Code_ID` (`F_Vio_Code_ID`) USING
+				BTREE
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT
+				COMMENT='核心版直传违法信息表(无需录入审核)';
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.22</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_location`
+				ADD COLUMN `F_Vio_Codes` varchar(512) DEFAULT NULL COMMENT
+				'违法行为编码ID' AFTER `F_Is_Direct_Upload`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.23</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+			    CREATE TABLE if not exists
+				`t_utc_phase_formal_chart` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Device_ID` varchar(32) DEFAULT NULL,
+				`F_Device_Code` varchar(16)
+				DEFAULT NULL,
+				`F_Phase_ID` varchar(32) DEFAULT NULL,
+				`F_Phase_No`
+				decimal(8,0) DEFAULT NULL,
+				`F_Lg_Dir` varchar(1) DEFAULT NULL,
+				`F_Nesw_Left_X` decimal(8,0) DEFAULT NULL COMMENT '左转X坐标',
+				`F_Nesw_Left_Y` decimal(8,0) DEFAULT NULL COMMENT '左转Y坐标',
+				`F_Nesw_Straight_X` decimal(8,0) DEFAULT NULL COMMENT '直行X坐标',
+				`F_Nesw_Straight_Y` decimal(8,0) DEFAULT NULL COMMENT '直行Y坐标',
+				`F_Nesw_Right_X` decimal(8,0) DEFAULT NULL COMMENT '右转X坐标',
+				`F_Nesw_Right_Y` decimal(8,0) DEFAULT NULL COMMENT '右转Y坐标',
+				`F_Nesw_Return_X` decimal(8,0) DEFAULT NULL COMMENT '调头X坐标',
+				`F_Nesw_Return_Y` decimal(8,0) DEFAULT NULL COMMENT '调头Y坐标',
+				`F_Nesw_Ped_X` decimal(8,0) DEFAULT NULL COMMENT '行人X坐标',
+				`F_Nesw_Ped_Y` decimal(8,0) DEFAULT NULL COMMENT '行人Y坐标',
+				`F_Nesw_Ped2_X` decimal(8,0) DEFAULT NULL COMMENT '二次行人X坐标',
+				`F_Nesw_Ped2_Y` decimal(8,0) DEFAULT NULL COMMENT '二次行人Y坐标',
+				`F_Nesw_Left_No` decimal(8,0) DEFAULT NULL COMMENT '北东南西左转灯组号',
+				`F_Nesw_Straight_No` decimal(8,0) DEFAULT NULL COMMENT '北东南西直行灯组号',
+				`F_Nesw_Right_No` decimal(8,0) DEFAULT NULL COMMENT '北东南西右转灯组号',
+				`F_Nesw_Return_No` decimal(8,0) DEFAULT NULL COMMENT '北东南西调头灯组号',
+				`F_Nesw_Ped_No` decimal(8,0) DEFAULT NULL COMMENT '北东南西行人灯组号',
+				`F_Nesw_Ped2_No` decimal(8,0) DEFAULT NULL COMMENT '北东南西行人2灯组号',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.24</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_vehicle_restrict_rule` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Name`
+				varchar(30) DEFAULT NULL COMMENT '限行名称',
+				`F_Type` varchar(1) DEFAULT
+				NULL COMMENT '限行类型',
+				`F_Pic_Synthetic` int(11) DEFAULT NULL COMMENT
+				'图片合成',
+				`F_Watermark_Position` varchar(1) DEFAULT NULL COMMENT
+				'水印位置',
+				`F_Is_Retrieve` tinyint(1) DEFAULT NULL COMMENT '是否查询六合一',
+				`F_Start_Time` datetime DEFAULT NULL COMMENT '有效期始',
+				`F_End_Time`
+				datetime DEFAULT NULL COMMENT '有效期止',
+				`F_Single_Restrictions`
+				varchar(30) DEFAULT '' COMMENT '单号车牌限行时间',
+				`F_Double_Restrictions`
+				varchar(30) DEFAULT NULL COMMENT '双号车牌限行时间',
+				`F_Is_Enable` tinyint(1)
+				DEFAULT NULL COMMENT '是否启用',
+				`F_Restrictions_Times` varchar(255)
+				DEFAULT NULL COMMENT '限行时间段',
+				`F_Week_Restrictions` varchar(255)
+				DEFAULT NULL COMMENT '工作日限行',
+				`F_Vehicle_Types` varchar(4096) DEFAULT
+				NULL COMMENT '车辆类型',
+				`F_Plate_Colors` varchar(4096) DEFAULT NULL
+				COMMENT '车牌颜色',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '扩展字段',
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='重点车辆限行规则表';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.25</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_vehicle_restrict_gate` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Restrictions_ID` varchar(32) DEFAULT NULL COMMENT '限行ID',
+				`F_Name` varchar(30) DEFAULT NULL COMMENT '名称',
+				`F_GateIDs`
+				varchar(4096) DEFAULT NULL COMMENT '卡口ID集合',
+				`F_Restrictions_Times`
+				varchar(255) DEFAULT NULL COMMENT '限行时间段',
+				`F_Hdzzl` int(11) DEFAULT
+				NULL COMMENT '核定载重量',
+				`F_Create_Time` datetime DEFAULT NULL COMMENT
+				'创建时间',
+				`F_Is_Enable` tinyint(1) DEFAULT NULL COMMENT '是否启用',
+				`F_Week_Restrictions` varchar(128) DEFAULT NULL COMMENT '周期性',
+				`F_Double_Restrictions` varchar(128) DEFAULT NULL COMMENT '双号周期性',
+				`F_Single_Restrictions` varchar(128) DEFAULT NULL COMMENT '单号周期性',
+				`F_Start_Time` datetime DEFAULT NULL COMMENT '开始时间',
+				`F_End_Time`
+				datetime DEFAULT NULL COMMENT '结束时间',
+				`F_Ext` varchar(4096) DEFAULT
+				NULL,
+				PRIMARY KEY (`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8
+				COMMENT='重点车辆限行卡口';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.26</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				DROP TABLE IF EXISTS
+				`t_vehicle_passport`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_vehicle_passport` (
+				`F_ID` varchar(32) NOT NULL,
+				`F_Hphm`
+				varchar(10) DEFAULT NULL COMMENT '号牌号码',
+				`F_Hpzl` varchar(3) DEFAULT
+				NULL COMMENT '号牌种类',
+				`F_Txzh` varchar(32) DEFAULT NULL COMMENT
+				'通行证号码',
+				`F_Txqy` text COMMENT '通行区域,目前是卡口ID,以英文半角[,]隔开',
+				`F_StartTime_Valid` datetime DEFAULT NULL COMMENT '有效开始时间',
+				`F_EndTime_Valid` datetime DEFAULT NULL COMMENT '有效截止时间',
+				`F_CreateTime` datetime DEFAULT NULL COMMENT '创建时间',
+				`F_Txzlb`
+				varchar(8) DEFAULT NULL COMMENT '通行证类型',
+				`F_Txzmc` varchar(255)
+				DEFAULT NULL COMMENT '通行证名称',
+				`F_Zt` varchar(32) DEFAULT NULL COMMENT
+				'状态',
+				`F_Sqr` varchar(255) DEFAULT NULL COMMENT '申请人',
+				`F_Sfzh`
+				varchar(255) DEFAULT NULL COMMENT '身份证号',
+				`F_Syxz` varchar(8) NULL
+				COMMENT '使用性质',
+				`F_Txsjd` varchar(255) NULL COMMENT '通行时间段',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY (`F_ID`),
+				KEY
+				`Idx_VehiclePassport_CreateTime` (`F_CreateTime`) USING BTREE,
+				KEY
+				`Idx_VehiclePassport_Hphm` (`F_Hphm`) USING BTREE,
+				KEY
+				`Idx_VehiclePassport_Txzh` (`F_Txzh`) USING BTREE
+				) ENGINE=InnoDB
+				DEFAULT CHARSET=utf8 COMMENT='货车通行证表';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.27</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				COLUMN `F_Is_Updated_Url` tinyint(1) DEFAULT '0' COMMENT
+				'是否已经变更资源url路径（跨网访问时修改图片和视频url路径为直接可访问的路径，茂名项目公安网用），0-没有变更（默认）；1-已经变更'
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga` ADD
+				COLUMN `F_Is_Updated_Url` tinyint(1) DEFAULT '0' COMMENT
+				'是否已经变更资源url路径（跨网访问时修改图片和视频url路径为直接可访问的路径，茂名项目公安网用），0-没有变更（默认）；1-已经变更'
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special` ADD COLUMN `F_Is_Updated_Url` tinyint(1)
+				DEFAULT '0' COMMENT
+				'是否已经变更资源url路径（跨网访问时修改图片和视频url路径为直接可访问的路径，茂名项目公安网用），0-没有变更（默认）；1-已经变更'
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD COLUMN `F_Is_Updated_Url` tinyint(1) DEFAULT '0' COMMENT
+				'是否已经变更资源url路径（跨网访问时修改图片和视频url路径为直接可访问的路径，茂名项目公安网用），0-没有变更（默认）；1-已经变更'
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD COLUMN `F_Is_Updated_Url` tinyint(1) DEFAULT '0' COMMENT
+				'是否已经变更资源url路径（跨网访问时修改图片和视频url路径为直接可访问的路径，茂名项目公安网用），0-没有变更（默认）；1-已经变更'
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.28</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE if not exists
+				`t_vehicle_passport_opt_log` (
+				`F_ID` varchar(32) NOT NULL COMMENT
+				'ID' ,
+				`F_Vehicle_Passport_ID` varchar(32) NULL COMMENT '通行证ID' ,
+				`F_Create_Time` datetime NULL COMMENT '创建时间' ,
+				`F_Opt_User`
+				varchar(32) NULL COMMENT '操作人' ,
+				`F_Opt_State` varchar(2) NULL
+				COMMENT '操作状态' ,
+				`F_Opt_Result` varchar(255) NULL COMMENT '原因' ,
+				`F_Ext` varchar(4096) NULL ,
+				PRIMARY KEY (`F_ID`),
+				INDEX
+				`IDX_Vehicle_Passport_ID` (`F_Vehicle_Passport_ID`)
+				)
+				COMMENT='通行证操作日志'
+				;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.29</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+
+				ALTER TABLE `t_vehicle_alarm`
+				ADD COLUMN `F_Vehicle_Use` varchar(11)
+				DEFAULT NULL COMMENT '车辆用途'
+				AFTER `F_Gpscode`
+
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.30</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vehicle_passport_opt_log`
+				ADD COLUMN `F_Opt_User_Name`
+				varchar(255) NULL COMMENT '操作用户名称' AFTER
+				`F_Opt_User`,
+				ADD COLUMN
+				`F_Opt_User_Dept` varchar(255) NULL COMMENT '操作用户部门' AFTER
+				`F_Opt_User_Name`;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.31</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_monitor_vehicle`
+				ADD COLUMN `F_User_Unit` varchar(128) DEFAULT NULL COMMENT '使用单位'
+				AFTER
+				`F_Monitor_Notes`,
+				ADD COLUMN `F_User` varchar(128) NULL COMMENT
+				'使用人' AFTER
+				`F_User_Unit`;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.32</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_gate_group` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Gate_Group_Name`
+				varchar(256) DEFAULT NULL COMMENT '分组名称',
+				`F_Gate_IDs` varchar(4000)
+				DEFAULT NULL COMMENT '卡口ID',
+				`F_Create_Time` datetime DEFAULT NULL
+				COMMENT '分组创建时间',
+				`F_Is_Enable` tinyint(1) DEFAULT NULL COMMENT
+				'是否开启',
+				`F_Ext` varchar(4096) DEFAULT NULL COMMENT '备注',
+				PRIMARY KEY
+				(`F_ID`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='卡口分组表';
+
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.33</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info`
+				ADD
+				COLUMN `F_Input_Time` datetime DEFAULT NULL COMMENT '录入时间',
+				ADD
+				COLUMN `F_Input_User_ID` varchar(32) DEFAULT NULL COMMENT '录入用户ID',
+				ADD COLUMN `F_Valid_Audit_One_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '有效一审用户ID',
+				ADD COLUMN `F_Valid_Audit_Two_User_ID`
+				varchar(32) DEFAULT NULL COMMENT
+				'有效二审用户ID',
+				ADD COLUMN
+				`F_Valid_Audit_Three_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'有效三审用户ID',
+				ADD COLUMN `F_Invalid_Audit_One_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效一审用户ID',
+				ADD COLUMN
+				`F_Invalid_Audit_Two_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'无效二审用户ID',
+				ADD COLUMN `F_Invalid_Audit_Three_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效三审用户ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga`
+				ADD
+				COLUMN `F_Input_Time` datetime DEFAULT NULL COMMENT '录入时间',
+				ADD
+				COLUMN `F_Input_User_ID` varchar(32) DEFAULT NULL COMMENT '录入用户ID',
+				ADD COLUMN `F_Valid_Audit_One_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '有效一审用户ID',
+				ADD COLUMN `F_Valid_Audit_Two_User_ID`
+				varchar(32) DEFAULT NULL COMMENT
+				'有效二审用户ID',
+				ADD COLUMN
+				`F_Valid_Audit_Three_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'有效三审用户ID',
+				ADD COLUMN `F_Invalid_Audit_One_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效一审用户ID',
+				ADD COLUMN
+				`F_Invalid_Audit_Two_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'无效二审用户ID',
+				ADD COLUMN `F_Invalid_Audit_Three_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效三审用户ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special`
+				ADD COLUMN `F_Input_Time` datetime DEFAULT NULL
+				COMMENT '录入时间',
+				ADD COLUMN `F_Input_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '录入用户ID',
+				ADD COLUMN `F_Valid_Audit_One_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '有效一审用户ID',
+				ADD COLUMN
+				`F_Valid_Audit_Two_User_ID` varchar(32) DEFAULT NULL COMMENT
+				'有效二审用户ID',
+				ADD COLUMN `F_Valid_Audit_Three_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '有效三审用户ID',
+				ADD COLUMN
+				`F_Invalid_Audit_One_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'无效一审用户ID',
+				ADD COLUMN `F_Invalid_Audit_Two_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效二审用户ID',
+				ADD COLUMN
+				`F_Invalid_Audit_Three_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'无效三审用户ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD COLUMN `F_Input_Time` datetime DEFAULT NULL COMMENT '录入时间',
+				ADD
+				COLUMN `F_Input_User_ID` varchar(32) DEFAULT NULL COMMENT '录入用户ID',
+				ADD COLUMN `F_Valid_Audit_One_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '有效一审用户ID',
+				ADD COLUMN `F_Valid_Audit_Two_User_ID`
+				varchar(32) DEFAULT NULL COMMENT
+				'有效二审用户ID',
+				ADD COLUMN
+				`F_Valid_Audit_Three_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'有效三审用户ID',
+				ADD COLUMN `F_Invalid_Audit_One_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效一审用户ID',
+				ADD COLUMN
+				`F_Invalid_Audit_Two_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'无效二审用户ID',
+				ADD COLUMN `F_Invalid_Audit_Three_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效三审用户ID';
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD COLUMN `F_Input_Time` datetime DEFAULT NULL COMMENT '录入时间',
+				ADD
+				COLUMN `F_Input_User_ID` varchar(32) DEFAULT NULL COMMENT '录入用户ID',
+				ADD COLUMN `F_Valid_Audit_One_User_ID` varchar(32) DEFAULT NULL
+				COMMENT '有效一审用户ID',
+				ADD COLUMN `F_Valid_Audit_Two_User_ID`
+				varchar(32) DEFAULT NULL COMMENT
+				'有效二审用户ID',
+				ADD COLUMN
+				`F_Valid_Audit_Three_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'有效三审用户ID',
+				ADD COLUMN `F_Invalid_Audit_One_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效一审用户ID',
+				ADD COLUMN
+				`F_Invalid_Audit_Two_User_ID` varchar(32) DEFAULT NULL
+				COMMENT
+				'无效二审用户ID',
+				ADD COLUMN `F_Invalid_Audit_Three_User_ID` varchar(32)
+				DEFAULT NULL
+				COMMENT '无效三审用户ID';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.34</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_work_by_createtime.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_work_by_inputtime.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_work_by_viotime.sql</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.35</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info`
+				ADD
+				COLUMN `F_Vehicle_Weight` varchar(12) DEFAULT NULL COMMENT '车辆总质量'
+				AFTER `F_Invalid_Audit_Three_User_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga`
+				ADD
+				COLUMN `F_Vehicle_Weight` varchar(12) DEFAULT NULL COMMENT '车辆总质量'
+				AFTER `F_Invalid_Audit_Three_User_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special`
+				ADD COLUMN `F_Vehicle_Weight` varchar(12)
+				DEFAULT NULL COMMENT '车辆总质量'
+				AFTER `F_Invalid_Audit_Three_User_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD COLUMN `F_Vehicle_Weight` varchar(12) DEFAULT NULL COMMENT
+				'车辆总质量' AFTER `F_Invalid_Audit_Three_User_ID` ;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD COLUMN `F_Vehicle_Weight` varchar(12) DEFAULT NULL COMMENT
+				'车辆总质量' AFTER `F_Invalid_Audit_Three_User_ID` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+
+	<UpdateItem>
+		<Version>7.36</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_by_createtime.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_by_inputtime.sql</Item>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_by_viotime.sql</Item>
+		</Body>
+	</UpdateItem>
+
+
+	<UpdateItem>
+		<Version>7.37</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_opt_history`
+				ADD COLUMN `F_Vio_Input_Day` varchar(16) DEFAULT NULL COMMENT
+				'违法数据录入日期，格式yyyyMMdd' AFTER `F_Deleted_Reason`,
+				ADD COLUMN
+				`F_Vio_Input_Work_Stat` varchar(2) DEFAULT NULL COMMENT
+				'是否已经按录入时间参加工作量统计' AFTER `F_Vio_Input_Day`,
+				ADD COLUMN
+				`F_Vio_Create_Day` varchar(16) DEFAULT NULL COMMENT
+				'违法数据入库日期，格式yyyyMMdd' AFTER `F_Vio_Input_Work_Stat`,
+				ADD COLUMN
+				`F_Vio_Create_Work_Stat` varchar(2) DEFAULT NULL COMMENT
+				'是否已经按入库时间参加工作量统计' AFTER `F_Vio_Create_Day`,
+				ADD COLUMN
+				`F_Vio_Action_Day` varchar(16) DEFAULT NULL COMMENT
+				'违法发生日期，格式yyyyMMdd' AFTER `F_Vio_Create_Work_Stat`,
+				ADD COLUMN
+				`F_Vio_Action_Work_Stat` varchar(2) DEFAULT NULL COMMENT
+				'是否已经按违法发生时间参加工作量统计' AFTER `F_Vio_Action_Day`;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.38</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				INDEX `Idx_Lock_User_ID` (`F_Lock_User_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga` ADD
+				INDEX `Idx_Lock_User_ID` (`F_Lock_User_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special` ADD INDEX `Idx_Lock_User_ID`
+				(`F_Lock_User_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD INDEX `Idx_Lock_User_ID` (`F_Lock_User_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD INDEX `Idx_Lock_User_ID` (`F_Lock_User_ID`);
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<!-- 违法临时表按违法时间添加表分区 -->
+	<UpdateItem>
+		<Version>7.39</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_tmp DROP
+				PRIMARY KEY, ADD PRIMARY KEY(F_ID, F_Violate_Time);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD INDEX `Idx_ID` (`F_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_tmp
+				PARTITION BY RANGE (TO_DAYS(F_Violate_Time))(
+				PARTITION p0 VALUES
+				less than (TO_DAYS('2019-01-01')),
+				PARTITION p201901 VALUES less than
+				(TO_DAYS('2019-02-01')),
+				PARTITION p201902 VALUES less than
+				(TO_DAYS('2019-03-01')),
+				PARTITION p201903 VALUES less than
+				(TO_DAYS('2019-04-01')),
+				PARTITION p201904 VALUES less than
+				(TO_DAYS('2019-05-01')),
+				PARTITION p201905 VALUES less than
+				(TO_DAYS('2019-06-01')),
+				PARTITION p201906 VALUES less than
+				(TO_DAYS('2019-07-01')),
+				PARTITION p201907 VALUES less than
+				(TO_DAYS('2019-08-01')),
+				PARTITION p201908 VALUES less than
+				(TO_DAYS('2019-09-01')),
+				PARTITION p201909 VALUES less than
+				(TO_DAYS('2019-10-01')),
+				PARTITION p201910 VALUES less than
+				(TO_DAYS('2019-11-01')),
+				PARTITION p201911 VALUES less than
+				(TO_DAYS('2019-12-01')),
+				PARTITION p201912 VALUES less than
+				(TO_DAYS('2020-01-01')),
+				PARTITION p202001 VALUES less than
+				(TO_DAYS('2020-02-01')),
+				PARTITION p202002 VALUES less than
+				(TO_DAYS('2020-03-01')),
+				PARTITION p202003 VALUES less than
+				(TO_DAYS('2020-04-01')),
+				PARTITION p202004 VALUES less than
+				(TO_DAYS('2020-05-01')),
+				PARTITION p202005 VALUES less than
+				(TO_DAYS('2020-06-01')),
+				PARTITION p202006 VALUES less than
+				(TO_DAYS('2020-07-01')),
+				PARTITION p202007 VALUES less than
+				(TO_DAYS('2020-08-01')),
+				PARTITION p202008 VALUES less than
+				(TO_DAYS('2020-09-01')),
+				PARTITION p202009 VALUES less than
+				(TO_DAYS('2020-10-01')),
+				PARTITION p202010 VALUES less than
+				(TO_DAYS('2020-11-01')),
+				PARTITION p202011 VALUES less than
+				(TO_DAYS('2020-12-01')),
+				PARTITION p202012 VALUES less than
+				(TO_DAYS('2021-01-01'))
+				);
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<!-- 功能添加是否入口标识 -->
+	<UpdateItem>
+		<Version>7.40</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_function` ADD
+				COLUMN `F_Is_Entrance` tinyint(1) DEFAULT '0' COMMENT '是否入口' AFTER
+				`F_Seq` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<!-- 模块添加子模块入口的顺序号 -->
+	<UpdateItem>
+		<Version>7.41</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_module` ADD
+				COLUMN `F_Sub_Entrance_Seq` int(4) DEFAULT '-1' COMMENT '子模块入口的顺序号'
+				AFTER `F_Is_Entrance` ;
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.42</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				INDEX `Idx_Input_Person_ID` (`F_Input_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				INDEX `Idx_Lock_Time` (`F_Lock_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info` ADD
+				INDEX `Idx_Approve_Person_ID` (`F_Approve_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga` ADD
+				INDEX `Idx_Input_Person_ID` (`F_Input_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga` ADD
+				INDEX `Idx_Lock_Time` (`F_Lock_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_ga` ADD
+				INDEX `Idx_Approve_Person_ID` (`F_Approve_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special` ADD INDEX `Idx_Input_Person_ID`
+				(`F_Input_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special` ADD INDEX `Idx_Lock_Time` (`F_Lock_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE
+				`t_vio_info_special` ADD INDEX `Idx_Approve_Person_ID`
+				(`F_Approve_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD INDEX `Idx_Input_Person_ID` (`F_Input_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD INDEX `Idx_Lock_Time` (`F_Lock_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_waste`
+				ADD INDEX `Idx_Approve_Person_ID` (`F_Approve_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD INDEX `Idx_Input_Person_ID` (`F_Input_Person_ID`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD INDEX `Idx_Lock_Time` (`F_Lock_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_info_tmp`
+				ADD INDEX `Idx_Approve_Person_ID` (`F_Approve_Person_ID`);
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.43</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_emergency_evnet`
+				ADD COLUMN `F_Is_Send_RTA` tinyint(1) DEFAULT '0' COMMENT
+				'未处理警情数据是否发送到省交通局 0表示未发送，1表示发送' AFTER `F_Send`,
+				ADD COLUMN
+				`F_Is_Send_Result_RTA` tinyint(1) DEFAULT '0' COMMENT
+				'未处理已处理的警情数据是否发送到省交通局 0表示未发送，1表示发送' AFTER `F_Is_Send_RTA`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	<UpdateItem>
+		<Version>7.44</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_gate MODIFY
+				COLUMN F_PY_Code varchar(256);
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.45</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+	CREATE TABLE `t_parking` (
+	`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+	`F_Name` varchar(128) DEFAULT NULL COMMENT '停车场名称',
+	`F_Code` varchar(32) DEFAULT NULL COMMENT '停车场 代码',
+	`F_Short_Name` varchar(32) DEFAULT NULL COMMENT '停车场简称',
+	`F_Type` varchar(32) DEFAULT NULL COMMENT '停车场类型',
+	`F_Is_Charge` tinyint(1) DEFAULT '0' COMMENT '是否收费',
+	`F_Charge_Type` varchar(32) DEFAULT NULL COMMENT '收费模式',
+	`F_Management` varchar(32) DEFAULT NULL COMMENT '管理部门',
+	`F_Owner` varchar(20) DEFAULT NULL COMMENT '所有人',
+	`F_Phone` varchar(16) DEFAULT NULL COMMENT '联系电话',
+	`F_Operate_Start_Time` datetime DEFAULT NULL COMMENT '开始时间段',
+	`F_Operate_End_Time` datetime DEFAULT NULL COMMENT '开始时间段',
+	`F_Operate_Times` varchar(128) DEFAULT NULL COMMENT '时间段',
+	`F_Berth_Num` int(11) DEFAULT NULL COMMENT '泊位数',
+	`F_Area` varchar(128) DEFAULT NULL COMMENT '行政区划',
+	`F_Address` varchar(128) DEFAULT NULL COMMENT '停车场地点',
+	`F_Rode_Code` varchar(128) DEFAULT NULL COMMENT '道路代码',
+	`F_Rode_Name` varchar(128) DEFAULT NULL COMMENT '道路名称',
+	`F_Used_Berth_Num` varchar(128) DEFAULT NULL COMMENT '已用泊位数',
+	`F_Remain_Berth_Num` varchar(128) DEFAULT NULL COMMENT '未用泊位数',
+	`F_Lat` double(32,12) DEFAULT NULL COMMENT '纬度X',
+	`F_Lon` double(32,12) DEFAULT NULL COMMENT '经度Y',
+	`F_Check_Time` datetime DEFAULT NULL COMMENT '锁定时间',
+	`F_Ext` varchar(4096) DEFAULT NULL,
+	PRIMARY KEY (`F_ID`),
+	KEY `Idx_Name` (`F_Name`),
+	KEY `Idx_Short_Name` (`F_Short_Name`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='停车场表';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.46</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE
+				`t_parking_entrance` (
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Parking_ID` varchar(32) NOT NULL COMMENT '停车场id',
+				`F_Name`
+				varchar(128) NOT NULL COMMENT '出口名称',
+				`F_Type` varchar(32) DEFAULT
+				NULL COMMENT '出口类型',
+				`F_Ext` varchar(4096) DEFAULT NULL,
+				PRIMARY KEY
+				(`F_ID`),
+				KEY `Idx_Name` (`F_Name`)
+				) ENGINE=InnoDB DEFAULT
+				CHARSET=utf8 COMMENT='停车场出入口表';
+			</Item>
+		</Body>
+	</UpdateItem>
+
+	<UpdateItem>
+		<Version>7.47</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				CREATE TABLE `t_parking_record`
+				(
+				`F_ID` varchar(32) NOT NULL COMMENT 'ID',
+				`F_Plate` varchar(32)
+				DEFAULT NULL COMMENT '号牌号码',
+				`F_Plate_Type` varchar(8) DEFAULT NULL
+				COMMENT '号牌种类',
+				`F_Area` varchar(128) DEFAULT NULL COMMENT '行政区划',
+				`F_Address` varchar(128) DEFAULT NULL COMMENT '停车场地点',
+				`F_Passage_Direction` varchar(128) DEFAULT NULL COMMENT '通行方向',
+				`F_Short_Name` varchar(32) DEFAULT NULL COMMENT '停车场简称',
+				`F_Passage_Time` datetime DEFAULT NULL COMMENT '通行时间',
+				`F_Ext`
+				varchar(4096) DEFAULT NULL,
+				PRIMARY KEY (`F_ID`),
+				KEY `Idx_Plate`
+				(`F_Plate`),
+				KEY `Idx_Plate_Type` (`F_Plate_Type`),
+				KEY `Idx_Address`
+				(`F_Address`),
+				KEY `Idx_Passage_Time` (`F_Passage_Time`),
+				KEY
+				`Idx_Short_Name` (`F_Short_Name`),
+				KEY `Idx_Area` (`F_Area`)
+				)
+				ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='停车场通行记录表';
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.48</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+			ALTER TABLE `t_emergency_evnet` 
+				ADD COLUMN  `F_Incident_Time` datetime DEFAULT NULL COMMENT '事发时间,默认当前时间'  AFTER `F_Arrival_Time`,  
+				ADD COLUMN  `F_Alarm_Location` varchar(64) DEFAULT NULL COMMENT '报警人地点'   AFTER `F_Incident_Time`, 
+				ADD COLUMN  `F_Alarm_Source` varchar(255) DEFAULT NULL COMMENT '报警来源. 包括：110、市民、民警、CCTV、拥堵报警、交通台、舆情、其他' AFTER `F_Alarm_location`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.49</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+			ALTER TABLE `t_vehicle_restrict_rule` 
+				ADD COLUMN  `F_Plate_Types` varchar(256) DEFAULT NULL COMMENT '号牌种类'  AFTER `F_Vehicle_Types`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.50</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table t_flux_device modify column F_Object_ID varchar(4096) DEFAULT NULL COMMENT '对象类型';
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.51</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table t_parking_entrance add column F_Seq int(11) DEFAULT NULL COMMENT '排序值' AFTER `F_Type`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.52</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table t_gate add column F_Vio_Location_ID varchar(32) DEFAULT NULL COMMENT '违法地点ID' AFTER `F_Lhy_Xzqh`;
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.53</Version>
+		<Body>
+		    <Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE `t_vio_opt_history` 
+				     ADD COLUMN `F_Vio_Approve_Day` varchar(16) DEFAULT NULL COMMENT '违法数据审核日期，格式yyyyMMdd' AFTER `F_Deleted_Reason`,
+				     ADD COLUMN `F_Vio_Approve_Work_Stat` varchar(2) DEFAULT NULL COMMENT '是否已经按审核时间参加工作量统计' AFTER `F_Vio_Approve_Day`;
+		    </Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info ADD `F_Approve_Time` datetime DEFAULT NULL COMMENT '审核时间' AFTER `F_Input_Time`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info ADD INDEX `Idx_Approve_Time` (`F_Approve_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info ADD INDEX `Idx_Input_Time` (`F_Input_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_ga ADD `F_Approve_Time` datetime DEFAULT NULL COMMENT '审核时间' AFTER `F_Input_Time`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_ga ADD INDEX `Idx_Approve_Time` (`F_Approve_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_ga ADD INDEX `Idx_Input_Time` (`F_Input_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_special ADD `F_Approve_Time` datetime DEFAULT NULL COMMENT '审核时间' AFTER `F_Input_Time`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_special ADD INDEX `Idx_Approve_Time` (`F_Approve_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_special ADD INDEX `Idx_Input_Time` (`F_Input_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_waste ADD `F_Approve_Time` datetime DEFAULT NULL COMMENT '审核时间' AFTER `F_Input_Time`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_waste ADD INDEX `Idx_Approve_Time` (`F_Approve_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_waste ADD INDEX `Idx_Input_Time` (`F_Input_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_tmp ADD `F_Approve_Time` datetime DEFAULT NULL COMMENT '审核时间' AFTER `F_Input_Time`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_tmp ADD INDEX `Idx_Approve_Time` (`F_Approve_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_tmp ADD INDEX `Idx_Input_Time` (`F_Input_Time`);
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.54</Version>
+		<Body>
+			<Item type="SqlFile" dbType="Mysql">mysql\\file\\t_vio_stat_work_by_approvetime.sql</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.55</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_tmp ADD INDEX `Idx_Lock_Flag` (`F_Lock_Flag`);
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<!-- 添加违法数据上传时间字段并加索引、添加违法数据上传状态索引 -->
+	<UpdateItem>
+		<Version>7.56</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info ADD `F_Upload_Time` datetime DEFAULT NULL COMMENT '违法数据上传时间' AFTER `F_Pstmcap_Message`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info ADD INDEX `Idx_Upload_Time` (`F_Upload_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info ADD INDEX `Idx_Pstmcap_Status` (`F_Pstmcap_Status`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_ga ADD `F_Upload_Time` datetime DEFAULT NULL COMMENT '违法数据上传时间' AFTER `F_Pstmcap_Message`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_ga ADD INDEX `Idx_Upload_Time` (`F_Upload_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_ga ADD INDEX `Idx_Pstmcap_Status` (`F_Pstmcap_Status`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_special ADD `F_Upload_Time` datetime DEFAULT NULL COMMENT '违法数据上传时间' AFTER `F_Pstmcap_Message`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_special ADD INDEX `Idx_Upload_Time` (`F_Upload_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_special ADD INDEX `Idx_Pstmcap_Status` (`F_Pstmcap_Status`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_waste ADD `F_Upload_Time` datetime DEFAULT NULL COMMENT '违法数据上传时间' AFTER `F_Pstmcap_Message`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_waste ADD INDEX `Idx_Upload_Time` (`F_Upload_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_waste ADD INDEX `Idx_Pstmcap_Status` (`F_Pstmcap_Status`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+			    ALTER TABLE t_vio_info_tmp ADD `F_Upload_Time` datetime DEFAULT NULL COMMENT '违法数据上传时间' AFTER `F_Pstmcap_Message`;
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_tmp ADD INDEX `Idx_Upload_Time` (`F_Upload_Time`);
+			</Item>
+			<Item type="SqlStatement" dbType="Mysql">
+				ALTER TABLE t_vio_info_tmp ADD INDEX `Idx_Pstmcap_Status` (`F_Pstmcap_Status`);
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	<UpdateItem>
+		<Version>7.57</Version>
+		<Body>
+			<Item type="SqlStatement" dbType="Mysql">
+				alter table t_gate_group MODIFY column F_Gate_IDs varchar(3000) DEFAULT NULL ;
+			</Item>
+		</Body>
+	</UpdateItem>
+	
+	
+</UpdateItems>

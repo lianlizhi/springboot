@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd   
+        http://www.springframework.org/schema/aop   
+        http://www.springframework.org/schema/aop/spring-aop-4.1.xsd   
+        http://www.springframework.org/schema/tx   
+        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd"
+	default-autowire="byName">
+	
+	<!-- 公安网系统配置 -->
+	<bean id="com.np.atms.cms.proxy.pss.system.ticp.PssTICPConfig" class="com.np.atms.cms.proxy.pss.system.ticp.PssTICPConfig">
+		<!-- 是否开启 -->
+		<property name="enable" value="true"/>
+		<!-- 是否启用中文编解码 -->
+		<property name="enableCodec" value="true"/>
+		<!-- webService访问地址
+			邹城：http://10.231.65.147:9080/rminf/services/RmOutAccess
+			茂名：http://68.220.64.11:9080/rminf/services/RmOutAccess
+		-->
+		<property name="endPoint" value="http://68.220.64.11:9080/rminf/services/RmOutAccess" />
+		<!-- webservice命名空间，邹城，茂名：http://endpoint.axis.rm.tmri.com -->
+		<property name="qName" value="http://endpoint.axis.rm.tmri.com" />
+		<!-- 接口访问超时时间  （秒）-->
+		<property name="timeOut"	value="6"/>
+		<!-- 接口序列号
+			邹城：7A1E1D0A04070304011502010002090200060905050F179AF33C6D72692E636E
+			茂名：7A1E1D0D070703040A1502010002090200060905050F178C813F6D72692E636E
+		 -->
+		<property name="jkxlh" value="7A1E1D0D070703040A1502010002090200060905050F178C813F6D72692E636E" />
+		<!-- 写入系统类别 -->
+		<property name="writeXtlb" value="60" />
+		<!-- 本地车写入接口标识，60W01-上传至筛选模块；60W02-上传至审核模块。茂名：60W01；邹城：60W02 -->
+		<property name="writeJkid" value="60W01" />
+		<!-- 本地车牌 -->
+		<property name="localPlate" value="鲁" />
+		<!-- 定时写入时间间隔 （小时） -->
+		<property name="writeTimedExecution" value="0"/>
+		<!-- 违法记录延时上传时间（小时） -->
+		<property name="delayUploadTime" value="0"/>
+		<!-- 违法数据过期时间（天）-->
+		<property name="daysOverdue" value="30"/>
+		<!-- 是否限制上传图片大小，true:是，false:否，默认false-->
+		<property name="enableLimitImageSize" value="false"/>
+		<!-- 图片最大大小（KB）-->
+		<property name="maxImageSize" value="1500"/>
+		<!-- 尝试下载违法图片次数, 默认5次 -->
+		<property name="tryDownloadImgCount" value="5"/>
+		<!-- 未配置公安网违法系统备案的设备编码直接设置为上传失败 -->
+		<property name="enableUploadFailure" value="true"/>
+		<!-- bimg地址转换启用 -->
+		<property name="enableNginxBimgAddress" value="false"/>
+		<!-- bimg地址 -->
+		<property name="nginxBimgAddress" value="http://10.43.255.160:18080/bimg/" />
+		<!-- 违法代码映射 key: 中盟平台违法代码, value: 公安交通集成指挥平台核心版违法代码 -->
+		<property name="vioCodeMap">
+			<map key-type="java.lang.String" value-type="java.lang.String">
+			</map>
+		</property>
+		
+		<!-- 是否启用违法数据直传违法平台，默认false -->
+		<property name="enableDirectUpload" value="false"/>
+		<!-- 是否启用违法图片和违法视频路径修改（茂名项目公安网启用，加图片代理前缀，通过透传的方式获取视频网上的图片） -->
+		<property name="enableUpdateResourceUrl" value="false"/>
+		<!-- 图片视频地址转发前缀,茂名项目为http://68.220.64.35:8081/trans/ga?url=, 即通过我方公安网图片代理转发至天行网安边界webservice透传服务 -->
+		<property name="resourceUrlPre" value="http://68.220.64.35:8081/trans/ga?url="/>
+		
+		<!-- 车辆信息查询方式，DB-数据库；LHY-六合一系统；LHYProxy-六合一系统代理；NO-不查询 -->
+		<property name="vehicleInfoQueryWay" value="LHYProxy"/>
+		
+		<!-- 数据库相关配置，用于查询车辆信息，邹城：10.231.62.3:1521 -->
+		<property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+     	<property name="jdbcUrl" value="jdbc:oracle:thin:@10.231.62.3:1521:orcl"/>
+     	<!-- 用户名和密码加密  -->
+    	<property name="dbUser" value="A4aak/MftFDrYfPmb/12Zg=="/>
+    	<property name="dbPassword" value="dBkHiQSkdXU="/>
+    	
+    	<!-- 六合一系统代理地址，茂名： 10.47.99.36 -->
+    	<property name="lhyProxyAddress" value="http://127.0.0.1:18081/vehicle/getVehicleInfo"/>
+    	
+	</bean>
+	
+	<!-- 公安交通集成指挥平台核心版 -->
+	<bean id="pssTICP" class="com.np.atms.cms.proxy.pss.system.ticp.PssTICP" init-method="init" destroy-method="unInit">
+		<property name="pssTicpConfig" ref="com.np.atms.cms.proxy.pss.system.ticp.PssTICPConfig"/>
+	</bean>
+
+</beans>

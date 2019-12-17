@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+	     http://www.springframework.org/schema/beans 
+	     http://www.springframework.org/schema/beans/spring-beans.xsd  
+         http://www.springframework.org/schema/task 
+         http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+	<!-- 定时更新过期布控车辆状态 -->
+	<bean id="com.np.atms.cms.task.monitor.UpdateMonitorOfOverdueTask" class="com.np.atms.cms.task.monitor.UpdateMonitorOfOverdueTask"  init-method="init">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<!-- 定时删除三个月UTC采集流量 -->
+	<bean id="com.np.atms.cms.task.flow.DeleteUtcTrafficFlowTask" class="com.np.atms.cms.task.flow.DeleteUtcTrafficFlowTask"  init-method="init">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		<property name="sqlDelete" 	  value="DELETE FROM t_utc_five_min_flow WHERE F_Flow_Time &lt; SUBDATE(NOW(),INTERVAL 3 MONTH);"></property>
+		<property name="sqlDeleteHour" 	  value="DELETE FROM t_utc_hour_flow WHERE F_Flow_Time &lt; SUBDATE(NOW(),INTERVAL 26 MONTH);"></property>
+		<property name="sqlDeleteDay" 	  value="DELETE FROM t_utc_day_flow WHERE F_Flow_Time &lt; SUBDATE(NOW(),INTERVAL 26 MONTH);"></property>
+	</bean>
+	
+	<!-- 定时删除三个月UTC操作日志 -->
+	<bean id="com.np.atms.cms.task.flow.DelateUtcMessageLog" class="com.np.atms.cms.task.flow.DelateUtcMessageLog"  init-method="init">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		<property name="sqlDelete" 	  value="DELETE FROM t_utc_message_log WHERE F_Message_Time &lt; SUBDATE(NOW(),INTERVAL 3 MONTH);"></property>
+	</bean>
+	
+	<!-- 定时平台同步信号机设备时间 -->
+	<bean id="com.np.atms.cms.task.flow.UtcSyncDeviceTime" class="com.np.atms.cms.task.flow.UtcSyncDeviceTime"  init-method="init">
+	</bean>
+	
+	<!-- GPS人员勤务数据Check -->
+	<bean id="com.np.atms.cms.task.gps.WorkStatusCheckTask" class="com.np.atms.cms.task.gps.WorkStatusCheckTask"  init-method="init">
+	</bean>
+	
+	<!-- 更新GPS人员勤务数据 -->
+	<bean id="" class="com.np.atms.cms.task.gps.UpdateWorkStatusTask"  init-method="init">
+	</bean>
+	
+	<!-- 
+	       创建违法信息表（t_vio_info、t_vio_info_tmp、t_vio_info_waste）月分区任务，表分区名称
+	       tables:                            表名列表
+	       prePartitionNum:             预创建分区数，默认预创建12个月的表分区
+	-->
+	<bean id="com.np.atms.cms.task.vio.CreateTablePartitionTask" class="com.np.atms.cms.task.vio.CreateTablePartitionTask"  init-method="init">
+		<property name="tables">
+			<list>
+				<value>t_vio_info</value>
+				<value>t_vio_info_tmp</value>
+				<value>t_vio_info_waste</value>		
+			</list>
+		</property>
+		<property name="prePartitionNum" 	  value="12"></property>
+	</bean>
+	
+	<!-- 
+	       定时解除违法记录锁定任务
+	       lockOutTime:      违法数据锁定超时时间（秒），默认60分钟，即违法记录最久锁定60分钟
+	-->
+	<bean id="com.np.atms.cms.task.vio.UnLockVioInfoTask" class="com.np.atms.cms.task.vio.UnLockVioInfoTask"  init-method="init">
+		<property name="lockOutTime" 	  value="60"></property>
+	</bean>
+	
+	<!-- 
+	       定时重传上传失败的违法数据任务, 默认每天凌晨2点执行一次重传3天内上传失败的违法数据, 比如今天是2018年7月18号凌晨2点, 则重传数据的违法时间范围为2018年7月15号凌晨0点到现在
+	       days:      重传days天内上传失败的违法数据
+	-->
+	<bean id="com.np.atms.cms.task.vio.ReUploadVioInfoTask" class="com.np.atms.cms.task.vio.ReUploadVioInfoTask"  init-method="init">
+		<property name="days" 	  value="10"></property>
+	</bean>
+	
+	<!-- 
+	       违法录入及审核工作量统计
+	       fromDays:      从几天前开始统计，默认3天前
+	-->
+	<bean id="com.np.atms.cms.task.vio.StatsWorkTask" class="com.np.atms.cms.task.vio.StatsWorkTask"  init-method="init">
+		<property name="fromDays" 	  value="10"></property>
+	</bean>
+	
+	<!-- 
+	       违法数据统计任务
+	       fromDays:      从几天前开始统计，默认5天前
+	-->
+	<bean id="com.np.atms.cms.task.vio.StatsTask" class="com.np.atms.cms.task.vio.StatsTask"  init-method="init">
+		<property name="fromDays" 	  value="10"></property>
+	</bean>
+	
+	<!-- 
+	       清理过期违法数据任务
+	       enable:                             是否启用任务，启用-true，不启用-false
+	       fromDays:                           从几天前开始清理，默认30天前
+	       deleteExpriedVioInfoSqlFormat:      删除过期违法数据sql语句模板
+	<bean id="com.np.atms.cms.task.vio.ClearExpiredVioInfoTask" class="com.np.atms.cms.task.vio.ClearExpiredVioInfoTask"  init-method="init">
+		<property name="enable" 	  value="false"></property>
+		<property name="fromDays" 	  value="30"></property>
+		<property name="deleteExpriedVioInfoSqlFormat"><value><![CDATA[delete from %s where F_Violate_Time <= '%s']]></value></property>
+	</bean>
+	-->
+	
+	<!-- 
+	       移动过期的无效违法数据至废片库任务
+	       enable:                             是否启用任务，启用-true，不启用-false
+	       invalidStatus:                      无效审核状态：12、22或32
+	       fromDays:                           从几天前开始检查，默认15天前，fromDays要大于expiredDays
+	       expiredDays:                        无效违法数据过期时间（天）（录入时间距今超过该时间视为过期），默认3天
+	-->
+	<bean id="com.np.atms.cms.task.vio.MoveInvalidVioInfoToWasteTask" class="com.np.atms.cms.task.vio.MoveInvalidVioInfoToWasteTask"  init-method="init">
+		<property name="enable" 	  value="false"></property>
+		<property name="invalidStatus"  value="12"></property>
+		<property name="fromDays" 	  value="15"></property>
+		<property name="expiredDays"  value="3"></property>
+	</bean>
+	
+	<!-- 
+	      违法图片和违法视频路径修改任务（茂名项目公安网启用，加图片代理前缀，通过透传的方式获取视频网上的图片）
+	       enable:                             是否启用任务，启用-true，不启用-false
+	       fromDays:                           修改从几天前开始的违法图片和违法视频路径，默认从10天前开始
+	       resourceUrlPre:                     图片地址前缀,茂名项目为http://68.220.64.35:8081/trans/ga?url=
+	-->
+	<bean id="com.np.atms.cms.task.vio.UpdateResourceUrlTask" class="com.np.atms.cms.task.vio.UpdateResourceUrlTask"  init-method="init">
+		<property name="enable" 	     value="false"></property>
+		<property name="fromDays" 	     value="10"></property>
+		<property name="resourceUrlPre"   value="http://68.220.64.35:8081/trans/ga?url=" />
+	</bean>
+	
+	<!-- 违法人工上传二次识别任务 -->
+	<bean id="com.np.atms.cms.task.vio.ManualVioRecognition" class="com.np.atms.cms.task.vio.ManualVioRecognition">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+		<property name="url" value="http://192.168.6.228:39002/recog/vehicle"/>
+		<property name="imgPath" value="http://192.168.1.158:8085/images"/>
+		<property name="getManualVioImgSql">
+			<value>
+				<![CDATA[
+					select f_id ID,F_Vio_ID vioId,F_Url url,F_Upload_Time uploadTime,F_Order as 'order' from t_manual_vio_img where f_vio_id in (
+					select t.f_vio_id  from (
+					select m.f_vio_id from t_manual_vio_img m 
+					inner join t_vio_info v on ( m.f_vio_id=v.f_id and ( v.f_plate is null or v.f_plate =''))
+					group by f_vio_id  
+					limit 0,100) t
+					)
+					order by uploadTime,vioId,F_Order
+				]]>
+			</value>
+		</property>
+		<property name="updateVioInfoSql" value="update t_vio_info set f_plate=?,f_plate_color=?,f_plate_type=?,f_vehicle_color=?,f_car_classify=?,f_vehicle_logo=? where f_id=?"/>
+		<property name="deleteManualVioImgSql" value="delete from t_manual_vio_img where F_vio_id='%s'"/>
+	</bean>
+	
+	<!-- 
+	  定时清理下载图片临时目录, 默认每天凌晨1点执行
+	-->
+	<bean id="com.np.atms.cms.task.file.ClearTmpDownloadDir" class="com.np.atms.cms.task.file.ClearTmpDownloadDir"  init-method="init"/>
+	
+	<!-- 
+		Cron表达式时间字段
+		位置		时间域名		允许值			允许的特殊字符
+		1		秒			0-59			,-*/
+		2		分钟			0-59			,-*/
+		3		小时			0-23			,-*/
+		4		日期			1-31			,-*?/LWC
+		5		月份			1-12			,-*/
+		6		星期			1-7				,-*?/LC#
+		7		年（可选）	空值1970-2099	,-*/
+		
+		CRON表达式    				含义 
+		"0 0 12 * * ?"    		每天中午十二点触发一次 
+		"0 15 10 ? * *"    		每天早上10：15触发一次 
+		"0 0/5 * * * ?"    		每隔5分钟(准时)执行一次 
+		"0 15 10 * * ? 2005"    2005年的每天早上10：15触发 
+		"0 * 14 * * ?"    		每天从下午2点开始到2点59分每分钟一次触发 
+		"0 0/5 14 * * ?"    	每天从下午2点开始到2：55分结束每5分钟一次触发 
+		"0 0/5 14,18 * * ?"    	每天的下午2点至2：55和6点至6点55分两个时间段内每5分钟一次触发 
+		"0 0-5 14 * * ?"    	每天14:00至14:05每分钟一次触发 
+		"0 10,44 14 ? 3 WED"    三月的每周三的14：10和14：44触发 
+		"0 15 10 ? * MON-FRI"	每个周一、周二、周三、周四、周五的10：15触发 
+	 -->	 
+	<task:scheduled-tasks>
+        <!-- 定时更新过期布控车辆状态 -->
+		<task:scheduled ref="com.np.atms.cms.task.monitor.UpdateMonitorOfOverdueTask" method="execute" cron="0 0 0 ? * *" />
+	</task:scheduled-tasks>
+	
+	
+	<!-- 信号机相关任务 -->
+	<task:scheduled-tasks>
+        <!-- 定时删除三个月UTC采集流量(每天凌晨00:00触发一次 ) -->
+		<task:scheduled ref="com.np.atms.cms.task.flow.DeleteUtcTrafficFlowTask" method="execute" cron="0 0 0 ? * *" />
+        <!-- 定时删除三个月UTC操作日志(每天凌晨00:00触发一次 ) -->
+		<task:scheduled ref="com.np.atms.cms.task.flow.DelateUtcMessageLog" method="execute" cron="0 0 0 ? * *" />
+        <!-- 定时平台同步信号机设备时间 (每天凌晨2:15触发一次 )-->
+		<task:scheduled ref="com.np.atms.cms.task.flow.UtcSyncDeviceTime" method="execute" cron="0 15 2 ? * *" />
+	</task:scheduled-tasks>
+	
+	
+	<!-- 人员勤考核相关任务 -->
+	<task:scheduled-tasks>
+        <!-- 人员勤考核状态Check任务（每5分钟取一次GPS设备的GPS信息与人员巡区进行比较） -->
+		<task:scheduled ref="com.np.atms.cms.task.gps.WorkStatusCheckTask" method="execute" cron="0 0/5 * * * ?" />
+        <!-- 更新人员勤务考核状态 (第二天凌晨00:00:05更新前一天的勤务状态) -->
+		<task:scheduled ref="com.np.atms.cms.task.gps.UpdateWorkStatusTask" method="execute" cron="0 0 5 ? * *" />
+	</task:scheduled-tasks>
+	
+	
+	<!--  违法相关任务
+			initial-delay :  表示第一次运行前需要延迟的时间，单位是毫秒
+			fixed-delay  :  表示从上一个任务完成到下一个任务开始的间隔, 单位是毫秒
+			fixed-rate    :  表示从上一个任务开始到下一个任务开始的间隔, 单位是毫秒（如果某次任务开始时上次任务还没有结束，那么在上次任务执行完成时，当前任务会立即执行）
+	 -->
+	<task:scheduler id="scheduler" pool-size="8" />
+    <task:scheduled-tasks scheduler="scheduler">
+        <!-- 创建违法信息表（t_vio_info、t_vio_info_waste）月分区任务，每天凌晨1点执行一次 -->
+	    <task:scheduled ref="com.np.atms.cms.task.vio.CreateTablePartitionTask" method="execute"  cron="0 0 1 * * ?" />
+		<!-- 违法记录锁定超时检查 (每20分钟执行一次) -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.UnLockVioInfoTask" method="execute" cron="0 0/20 * * * ?" />
+		<!-- 定时重传上传失败的违法数据任务, 默认每天凌晨2点执行一次重传3天内上传失败的违法数据, 比如今天是2018年7月18号凌晨2点, 则重传数据的违法时间范围为2018年7月15号凌晨0点到现在 -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.ReUploadVioInfoTask" method="execute" cron="0 0 2 * * ?" />
+		<!-- 违法录入及审核工作量统计 (每20分钟执行一次) -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.StatsWorkTask" method="execute" cron="0 0/10 * * * ?" />
+		<!-- 违法数据统计任务 (每20分钟执行一次) -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.StatsTask" method="execute" cron="0 0/15 * * * ?" />
+		<!-- 清理过期违法数据任务 (每天凌晨3点执行一次)
+		<task:scheduled ref="com.np.atms.cms.task.vio.ClearExpiredVioInfoTask" method="execute" cron="0 0 3 * * ?" />
+		 -->
+		<!-- 移动过期的无效审核违法数据至废片库任务 (每天凌晨2点半执行一次) -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.MoveInvalidVioInfoToWasteTask" method="execute" cron="0 30 2 * * ?" />
+		<!-- 违法图片和违法视频路径修改任务（茂名项目公安网启用，加图片代理前缀，通过透传的方式获取视频网上的图片） (每10分钟执行一次) -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.UpdateResourceUrlTask" method="execute" cron="0 0/10 * * * ?" />
+		<!-- 违法人工上传二次识别任务 -->
+		<task:scheduled ref="com.np.atms.cms.task.vio.ManualVioRecognition" method="execute" cron="0 0/5 * * * ?" />
+	</task:scheduled-tasks>
+	
+	
+	<!-- 定时清理下载图片临时目录, 默认每天凌晨1点执行  -->
+	<task:scheduled-tasks>
+		<task:scheduled ref="com.np.atms.cms.task.file.ClearTmpDownloadDir" method="execute" cron="0 0 1 * * ?" />
+	</task:scheduled-tasks>
+	
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root Type="DeviceResources" Version="1.0">
+	<!-- 权限配置 说明：
+		Device=>Key: 唯一标识编码，编码规则:Device_type_function [设备_类型_功能，其中：Device为固定前缀]
+		Device=>Name: 名称，仅用于录入标识，界面展示通过多语言包做匹配
+		Device=>Type: 设备类型：Camera|Gate|Signal|Guide|Monitor
+		Device=>Ext: 扩展，暂不使用	
+	-->
+	<Project Key="Devices" Name="设备资源">
+		<Devices>
+			<!--摄像机-->
+			<Device Key="Device_Camera_VideoPlayer" Name="实时视频浏览" Type="Camera" Ext="sliderStatus:0,sliderStatus:1"/>
+			<Device Key="Device_Camera_VideoPlayback" Name="历史视频点播" Type="Camera" Ext=""/>
+			<Device Key="Device_Camera_VideoDownload" Name="历史视频下载" Type="Camera" Ext=""/>
+			<Device Key="Device_Camera_VideoPtz" Name="云台控制" Type="Camera" Ext=""/>
+			<Device Key="Device_Camera_ManualRecord" Name="手动录像" Type="Camera" Ext=""/>
+			<Device Key="Device_Camera_ManualAlarm" Name="手动报警" Type="Camera" Ext=""/>
+			<Device Key="Device_Camera_Preset" Name="设置预置位" Type="Camera" Ext=""/>	
+			
+			<!--卡口-->
+			<Device Key="Device_Gate_Query" Name="查询" Type="Gate" Ext=""/>	
+
+			<!--信号机-->
+			<Device Key="Device_Signal_Control" Name="控制" Type="Signal" Ext=""/>
+
+
+			<!--诱导屏-->
+			<Device Key="Device_Guide_Edit" Name="编辑" Type="Guide" Ext=""/>
+			<Device Key="Device_Guide_Issue" Name="发布" Type="Guide" Ext=""/>
+			
+			<!--监视器-->
+			<Device Key="Device_Monitor_Switch" Name="切换" Type="Monitor" Ext=""/>
+		</Devices>
+	</Project>
+</Root>

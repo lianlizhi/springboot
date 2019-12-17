@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="   &#xD;&#xA;          http://www.springframework.org/schema/beans   &#xD;&#xA;          http://www.springframework.org/schema/beans/spring-beans-4.1.xsd   &#xD;&#xA;          http://www.springframework.org/schema/tx   &#xD;&#xA;          http://www.springframework.org/schema/tx/spring-tx-4.1.xsd  &#xD;&#xA;          http://www.springframework.org/schema/context   &#xD;&#xA;          http://www.springframework.org/schema/context/spring-context-4.1.xsd   &#xD;&#xA;          http://www.springframework.org/schema/aop   &#xD;&#xA;          http://www.springframework.org/schema/aop/spring-aop-4.1.xsd" default-autowire="byName">
+  <context:component-scan base-package="com.np.atms.cms">
+    <context:include-filter type="regex" expression="com.np.atms.cms.dao" />
+    <context:include-filter type="regex" expression="com.np.atms.cms.service.internal" />
+  </context:component-scan>
+  <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    <property name="driverClass" value="com.mysql.jdbc.Driver" />
+    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/tic?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8" />
+    <property name="user" value="root" />
+    <property name="password" value="sa" />
+    <property name="acquireIncrement" value="5" />
+    <!-- 当连接池中的连接用完时，C3P0一次性创建新连接的数目2 -->
+    <property name="initialPoolSize" value="10" />
+    <!-- 初始化时创建的连接数，必须在minPoolSize和maxPoolSize之间 -->
+    <property name="minPoolSize" value="5" />
+    <property name="maxPoolSize" value="100" />
+    <!-- 最大空闲时间，超过空闲时间的连接将被丢弃
+     	[需要注意：mysql默认的连接时长为8小时(28800）【可在my.ini中添加 wait_timeout=30(单位秒)设置连接超时】,这里设置c3p0的超时必须<28800] -->
+    <property name="maxIdleTime" value="300" />
+    <property name="idleConnectionTestPeriod" value="60" />
+    <!-- 每60秒检查连接池中的空闲连接 -->
+    <property name="maxStatements" value="20" />
+    <!-- jdbc的标准参数  用以控制数据源内加载的PreparedStatement数量，但由于预缓存的Statement属 于单个Connection而不是整个连接 -->
+  </bean>
+  <!-- JDBC操作模板 -->
+  <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+  <!-- mybatis的 SqlSessionFactory，同时指定数据源-->
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="mapperLocations">
+      <list>
+        <value>classpath:mapper/*.xml</value>
+        <value>classpath:mapper/manual/*.xml</value>
+      </list>
+    </property>
+  </bean>
+  <bean class="org.mybatis.spring.SqlSessionTemplate">
+    <constructor-arg ref="sqlSessionFactory" />
+  </bean>
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:sqlSessionFactory-ref="sqlSessionFactory" p:basePackage="com.np.atms.cms.dao" />
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource">
+    </property>
+  </bean>
+  <tx:annotation-driven transaction-manager="transactionManager" />
+  <!-- spring 事务属性 -->
+  <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <tx:method name="add*" propagation="REQUIRED" />
+      <tx:method name="update*" propagation="REQUIRED" />
+      <tx:method name="delete*" propagation="REQUIRED" />
+      <tx:method name="select*" read-only="true" propagation="NOT_SUPPORTED" />
+      <tx:method name="query*" read-only="true" propagation="NOT_SUPPORTED" />
+      <tx:method name="get*" read-only="true" propagation="NOT_SUPPORTED" />
+    </tx:attributes>
+  </tx:advice>
+  <!-- 将所有的Service方法纳入事务处理的范畴 -->
+  <aop:config>
+    <!-- <aop:advisor  advice-ref="transactionAdvice" pointcut="execution(* com.np.atms.cms.dao.service.impl.*Service.*(..))"/> -->
+    <aop:advisor advice-ref="transactionAdvice" pointcut="execution(* com.np.atms.cms.service.internal.impl.*Service.*(..))" />
+  </aop:config>
+  <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+    <property name="cookieName" value="language" />
+    <property name="cookieMaxAge" value="3600" />
+    <property name="defaultLocale" value="en" />
+  </bean>
+</beans>
